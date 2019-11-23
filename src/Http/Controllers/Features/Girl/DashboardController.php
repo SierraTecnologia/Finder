@@ -4,8 +4,8 @@ use App\Http\Controllers\GirlController;
 use App\Models\Blog\Article;
 use App\Models\Blog\Category;
 use App\Models\User;
-use Siravel\Models\Digital\Midia\Photo;
-use Siravel\Models\Digital\Midia\PhotoAlbum;
+use SiFinder\Models\Digital\Midia\Photo;
+use SiFinder\Models\Digital\Midia\PhotoAlbum;
 
 class DashboardController extends GirlController {
 

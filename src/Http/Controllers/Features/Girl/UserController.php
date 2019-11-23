@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\GirlController;
 use App\Models\User;
-use Siravel\Http\Requests\Admin\UserRequest;
+use SiFinder\Http\Requests\Admin\UserRequest;
 use Datatables;
 
 

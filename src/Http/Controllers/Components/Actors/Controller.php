@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Http\Controllers\Components\Actors;
+namespace SiFinder\Http\Controllers\Components\Actors;
 
-use Siravel\Http\Controllers\Components\Controller as BaseController;
+use SiFinder\Http\Controllers\Components\Controller as BaseController;
 
 class Controller extends BaseController
 {

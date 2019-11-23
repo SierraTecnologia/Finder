@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests\User;
+namespace SiFinder\Http\Requests\User;
 
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;

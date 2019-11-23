@@ -1,15 +1,15 @@
 <?php
 
-namespace Siravel\Console\Routine\Social;
+namespace SiFinder\Console\Routine\Social;
 
 use Illuminate\Console\Command;
-use Siravel\Models\MediaSend;
-use Siravel\Models\MediaEmail;
-use Siravel\Models\MediaPush;
-use Siravel\Models\Company;
+use SiFinder\Models\MediaSend;
+use SiFinder\Models\MediaEmail;
+use SiFinder\Models\MediaPush;
+use SiFinder\Models\Company;
 use App\Models\User;
 use SendGrid;
-use Siravel\Http\Controllers\Api\Controller;
+use SiFinder\Http\Controllers\Api\Controller;
 
 class RoutineImport extends Command
 {
@@ -44,7 +44,7 @@ class RoutineImport extends Command
      */
     public function handle()
     {
-        // (new \SiInteractions\Routines\Globals\BackupAll)->run();
-        (new \SiInteractions\Routines\Globals\ImportTokens)->run();
+        // (new \SiFinder\Routines\Globals\BackupAll)->run();
+        (new \SiFinder\Routines\Globals\ImportTokens)->run();
     }
 }

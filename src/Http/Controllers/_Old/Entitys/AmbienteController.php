@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Entytys\Digital\Infra\Ambiente;
+use SiFinder\Models\Entytys\Digital\Infra\Ambiente;
 
 class AmbienteController extends Controller
 {

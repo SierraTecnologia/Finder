@@ -1,17 +1,17 @@
-<?php namespace Siravel\Models\Access;
+<?php namespace SiFinder\Models\Access;
 
-use Siravel\Models\Access;
-use Siravel\Models\Role;
+use SiFinder\Models\Access;
+use SiFinder\Models\Role;
 use App\Models\User;
-use Siravel\Models\UserRepo;
-use Siravel\Exceptions\LdapException;
+use SiFinder\Models\UserRepo;
+use SiFinder\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Class LdapService
  * Handles any app-specific LDAP tasks.
- * @package Siravel\Services
+ * @package SiFinder\Services
  */
 class LdapService
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Siravel\Models\Role;
-use Siravel\Models\Customer;
+use SiFinder\Models\Role;
+use SiFinder\Models\Customer;
 use Auth;
 
 class UserController extends Controller

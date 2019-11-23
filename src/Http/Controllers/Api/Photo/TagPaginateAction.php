@@ -2,9 +2,9 @@
 
 namespace App\Http\Actions;
 
-use Siravel\Http\Requests\PaginatedRequest;
-use Siravel\Http\Resources\PaginatedResource;
-use Siravel\Http\Resources\TagPlainResource;
+use SiFinder\Http\Requests\PaginatedRequest;
+use SiFinder\Http\Resources\PaginatedResource;
+use SiFinder\Http\Resources\TagPlainResource;
 use App\Models\Contracts\TagManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;

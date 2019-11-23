@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests;
+namespace SiFinder\Http\Requests;
 
 use Auth;
 use Gate;

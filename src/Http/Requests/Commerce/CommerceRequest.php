@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Requests\Commerce;
+namespace SiFinder\Http\Requests\Commerce;
 
 use Illuminate\Support\Facades\Gate;
-use Siravel\Http\Requests\Request;
+use SiFinder\Http\Requests\Request;
 use App\Models\Feature;
 
 abstract class CommerceRequest extends Request

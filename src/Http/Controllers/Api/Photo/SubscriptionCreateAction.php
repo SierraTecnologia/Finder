@@ -2,8 +2,8 @@
 
 namespace App\Http\Actions;
 
-use Siravel\Http\Requests\ReCaptchaRequest;
-use Siravel\Http\Resources\SubscriptionPlainResource;
+use SiFinder\Http\Requests\ReCaptchaRequest;
+use SiFinder\Http\Resources\SubscriptionPlainResource;
 use App\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;

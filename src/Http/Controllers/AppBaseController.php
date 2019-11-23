@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Travels;
+namespace SiFinder\Http\Controllers\Travels;
 
 use InfyOm\Generator\Utils\ResponseUtil;
 use Response;

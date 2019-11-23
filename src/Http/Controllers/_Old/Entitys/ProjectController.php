@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Entytys\Digital\Code\Project;
+use SiFinder\Models\Entytys\Digital\Code\Project;
 
 class ProjectController extends Controller
 {

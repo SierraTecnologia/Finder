@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features;
+namespace SiFinder\Http\Controllers\Features;
 
 use App\Http\Controllers\Controller as BaseController;
 

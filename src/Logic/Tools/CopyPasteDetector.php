@@ -1,7 +1,7 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Tools;
+namespace SiFinder\Logic\Tools;
 
-use SiInteractions\Worker\Analyser\AnalysisResult;
+use SiFinder\Logic\AnalysisResult;
 use App\Helps\ArrayHelper;
 use Sabre\Xml\Reader;
 

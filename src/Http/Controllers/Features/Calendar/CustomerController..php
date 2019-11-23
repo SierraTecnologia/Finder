@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Features\Calendar;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
-use Siravel\Http\Requests\Admin\ArticleRequest;
+use SiFinder\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

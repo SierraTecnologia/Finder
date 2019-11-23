@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\System\Setting;
+use SiFinder\Models\System\Setting;
 
 class SettingController extends Controller
 {

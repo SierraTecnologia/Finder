@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Api;
+namespace SiFinder\Http\Controllers\Api;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

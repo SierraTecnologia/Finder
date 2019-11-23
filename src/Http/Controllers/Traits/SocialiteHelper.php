@@ -1,6 +1,6 @@
 <?php 
 
-namespace Siravel\Http\Controllers\Traits;
+namespace SiFinder\Http\Controllers\Traits;
 
 use Auth;
 use Socialite;

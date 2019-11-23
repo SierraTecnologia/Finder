@@ -1,7 +1,7 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Output;
+namespace SiFinder\Logic\Output;
 
-use SiInteractions\Worker\Analyser\AnalysisResult;
+use SiFinder\Logic\AnalysisResult;
 
 class TextOutput extends AbstractOutput implements TriggerableInterface
 {

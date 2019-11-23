@@ -3,7 +3,7 @@
 namespace SiObject\Http\Middleware;
 
 use Closure;
-use Siravel\Services\System\AnalyticsService;
+use SiFinder\Services\System\AnalyticsService;
 
 class Analytics
 {

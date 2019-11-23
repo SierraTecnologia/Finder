@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests;
+namespace SiFinder\Http\Requests;
 
 use App\Http\Rules\ReCaptchaRule;
 use Illuminate\Foundation\Http\FormRequest;
@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * Class ReCaptchaRequest.
  *
- * @package Siravel\Http\Requests
+ * @package SiFinder\Http\Requests
  */
 class ReCaptchaRequest extends FormRequest
 {

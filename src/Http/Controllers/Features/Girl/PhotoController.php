@@ -1,12 +1,12 @@
 <?php namespace App\Http\Controllers\Features\Girl;
 
 use App\Http\Controllers\AdminController;
-use Siravel\Models\Digital\Midia\Photo;
-use Siravel\Models\Digital\Midia\PhotoAlbum;
+use SiFinder\Models\Digital\Midia\Photo;
+use SiFinder\Models\Digital\Midia\PhotoAlbum;
 use App\Models\System\Language;
-use Siravel\Http\Requests\Admin\PhotoRequest;
-use Siravel\Http\Requests\Admin\DeleteRequest;
-use Siravel\Http\Requests\Admin\ReorderRequest;
+use SiFinder\Http\Requests\Admin\PhotoRequest;
+use SiFinder\Http\Requests\Admin\DeleteRequest;
+use SiFinder\Http\Requests\Admin\ReorderRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use App\Helpers\Thumbnail;

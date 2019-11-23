@@ -1,9 +1,9 @@
 <?php
-namespace Siravel\Console\External;
+namespace SiFinder\Console\External;
 
 use League\CLImate\CLImate;
-use SiInteractions\Worker\Analyser\Output\AbstractOutput;
-use SiInteractions\Worker\Analyser\Output\Filter\DiffOutputFilter;
+use SiFinder\Logic\Output\AbstractOutput;
+use SiFinder\Logic\Output\Filter\DiffOutputFilter;
 use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
@@ -282,11 +282,11 @@ class DirectoryExplorer
     protected function getOutputFormatClasses()
     {
         return [
-            'text' => 'SiInteractions\Worker\Analyser\Output\TextOutput',
-            'json' => 'SiInteractions\Worker\Analyser\Output\JsonOutput',
-            'xml' => 'SiInteractions\Worker\Analyser\Output\XmlOutput',
-            'csv' => 'SiInteractions\Worker\Analyser\Output\CsvOutput',
-            'html' => 'SiInteractions\Worker\Analyser\Output\HtmlOutput',
+            'text' => 'SiFinder\Logic\Output\TextOutput',
+            'json' => 'SiFinder\Logic\Output\JsonOutput',
+            'xml' => 'SiFinder\Logic\Output\XmlOutput',
+            'csv' => 'SiFinder\Logic\Output\CsvOutput',
+            'html' => 'SiFinder\Logic\Output\HtmlOutput',
         ];
     }
 

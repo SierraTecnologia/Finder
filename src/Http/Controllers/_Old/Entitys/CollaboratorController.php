@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Market\Business\Collaborator;
+use SiFinder\Models\Market\Business\Collaborator;
 
 class CollaboratorController extends Controller
 {

@@ -2,7 +2,7 @@
 
 namespace App\Http\Actions;
 
-use Siravel\Http\Resources\PostResource;
+use SiFinder\Http\Resources\PostResource;
 use App\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;

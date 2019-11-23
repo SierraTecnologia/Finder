@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Http\Controllers\System\Metrics;
+namespace SiFinder\Http\Controllers\System\Metrics;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Siravel\Models\Metrics\LarametricsRequest;
+use SiFinder\Models\Metrics\LarametricsRequest;
 use Carbon\Carbon;
 
 class PerformanceController extends Controller

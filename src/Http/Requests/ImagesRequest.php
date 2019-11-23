@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Http\Requests;
+namespace SiFinder\Http\Requests;
 
 use Auth;
 use Gate;
-use Siravel\Models\Digital\Midia\Image;
+use SiFinder\Models\Digital\Midia\Image;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ImagesRequest extends FormRequest

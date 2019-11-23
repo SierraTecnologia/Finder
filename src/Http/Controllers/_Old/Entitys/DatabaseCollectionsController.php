@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Entytys\Digital\Infra\DatabaseCollection;
+use SiFinder\Models\Entytys\Digital\Infra\DatabaseCollection;
 
 class DatabaseCollectionsController extends Controller
 {

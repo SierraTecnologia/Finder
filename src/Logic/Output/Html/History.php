@@ -1,7 +1,7 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Output\Html;
+namespace SiFinder\Logic\Output\Html;
 
-use SiInteractions\Worker\Analyser\AnalysisResult;
+use SiFinder\Logic\AnalysisResult;
 use SplFileObject;
 
 /**

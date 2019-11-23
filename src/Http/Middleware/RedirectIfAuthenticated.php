@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Middleware;
+namespace SiFinder\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

@@ -2,7 +2,7 @@
 
 namespace App\Http\Actions;
 
-use Siravel\Http\Resources\UserPlainResource;
+use SiFinder\Http\Resources\UserPlainResource;
 use App\Models\Contracts\UserManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;

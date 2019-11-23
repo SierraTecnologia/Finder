@@ -1,7 +1,7 @@
 <?php
-namespace SiInteractions\Worker\Analyser;
+namespace SiFinder\Logic;
 
-use SiInteractions\Worker\Analyser\Output\Filter\OutputFilterInterface;
+use SiFinder\Logic\Output\Filter\OutputFilterInterface;
 
 /**
  * Code analysis result.

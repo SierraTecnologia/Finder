@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers;
+namespace SiFinder\Http\Controllers;
 
 use Illuminate\Http\Request;
 

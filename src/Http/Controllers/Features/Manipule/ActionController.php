@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Http\Controllers\Features\Manipule;
+namespace SiFinder\Http\Controllers\Features\Manipule;
 
 use Illuminate\Http\Request;
-use SiInteractions\Actions\Action;
-use Siravel\Models\Entytys\Digital\Bot\Runner;
+use SiFinder\Actions\Action;
+use SiFinder\Models\Entytys\Digital\Bot\Runner;
 
 class ActionController extends Controller
 {

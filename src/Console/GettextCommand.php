@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Console\Commands;
+namespace SiFinder\Console\Commands;
 
 use File;
 use Illuminate\Console\Command;

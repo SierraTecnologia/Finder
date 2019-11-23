@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests\Commerce;
+namespace SiFinder\Http\Requests\Commerce;
 
 use App\Models\Commerce\Product;
 

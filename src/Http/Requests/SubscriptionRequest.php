@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests;
+namespace SiFinder\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 /**
  * Class SubscriptionRequest.
  *
- * @package Siravel\Http\Requests
+ * @package SiFinder\Http\Requests
  */
 class SubscriptionRequest extends FormRequest
 {

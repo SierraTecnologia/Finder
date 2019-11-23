@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Http\Controllers\Components\Actors;
+namespace SiFinder\Http\Controllers\Components\Actors;
 
-use Siravel\Http\Controllers\Controller;
+use SiFinder\Http\Controllers\Controller;
 use Auth;
 
 class NotificationsController extends Controller

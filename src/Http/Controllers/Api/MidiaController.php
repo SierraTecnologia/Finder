@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Api;
+namespace SiFinder\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Plugins\Integrations\SitecPayment\SitecPayment;

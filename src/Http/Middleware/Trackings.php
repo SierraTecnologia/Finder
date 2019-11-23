@@ -3,7 +3,7 @@
 namespace SiObject\Http\Middleware;
 
 use Closure;
-use Siravel\Services\System\TrackingsService;
+use SiFinder\Services\System\TrackingsService;
 
 class Trackings
 {

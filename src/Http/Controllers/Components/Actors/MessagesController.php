@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Http\Controllers\Components\Actors;
+namespace SiFinder\Http\Controllers\Components\Actors;
 
 use App\Models\User;
 use Carbon\Carbon;
-use Siravel\Models\Features\Messenger\Message;
-use Siravel\Models\Features\Messenger\Participant;
-use Siravel\Models\Features\Messenger\Thread;
+use SiFinder\Models\Features\Messenger\Message;
+use SiFinder\Models\Features\Messenger\Participant;
+use SiFinder\Models\Features\Messenger\Thread;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use App\Phphub\Markdown\Markdown;
 use App\Jobs\SendNotifyMail;
-use Siravel\Http\Requests\MessageRequest;
+use SiFinder\Http\Requests\MessageRequest;
 
 class MessagesController extends Controller
 {

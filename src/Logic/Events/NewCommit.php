@@ -3,10 +3,10 @@
  * Rotinas de Inclusão de Dados
  */
 
-namespace SiInteractions\Worker\Analyser\Events;
+namespace SiFinder\Logic\Events;
 
-use Siravel\Models\Entytys\Digital\Code\Commit;
-use Siravel\Models\Entytys\Digital\Infra\Pipeline;
+use SiFinder\Models\Entytys\Digital\Code\Commit;
+use SiFinder\Models\Entytys\Digital\Infra\Pipeline;
 
 class NewCommit
 {

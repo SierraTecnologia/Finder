@@ -1,9 +1,9 @@
 <?php
-namespace SiInteractions\Worker\Analyser;
+namespace SiFinder\Logic;
 
-use SiInteractions\Worker\Analyser\Output\AbstractOutput;
-use SiInteractions\Worker\Analyser\Output\Filter\OutputFilterInterface;
-use SiInteractions\Worker\Analyser\Output\TriggerableInterface;
+use SiFinder\Logic\Output\AbstractOutput;
+use SiFinder\Logic\Output\Filter\OutputFilterInterface;
+use SiFinder\Logic\Output\TriggerableInterface;
 
 /**
  * Run all script analysers and outputs their result.
@@ -65,7 +65,7 @@ class Analyser
         $this->ignoredPaths = $ignoredPaths;
 
         if (!$project) {
-            $this->languageClass = 'SiInteractions\\Actions\\Worker\\Analyser\\Language\\'.$this->defaultLanguage;
+            $this->languageClass = 'SiFinder\\Actions\\Worker\\Analyser\\Language\\'.$this->defaultLanguage;
         }
     }
 
@@ -160,7 +160,7 @@ class Analyser
 
     /**
      * Set of PHP analys integration objects.
-     * @return SiInteractions\Worker\Analyser\Tools\AbstractIntegrationTool[] set of objects.
+     * @return SiFinder\Logic\Tools\AbstractIntegrationTool[] set of objects.
      */
     protected function getAnalysisTools()
     {

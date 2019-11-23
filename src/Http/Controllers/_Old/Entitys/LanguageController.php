@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Entytys\Digital\Code\Language;
+use SiFinder\Models\Entytys\Digital\Code\Language;
 
 class LanguageController extends Controller
 {

@@ -7,7 +7,7 @@ use App\Models\Blog\Article;
 use App\Models\Blog\Category;
 use App\Models\System\Language;
 use Illuminate\Support\Facades\Input;
-use Siravel\Http\Requests\Admin\ArticleRequest;
+use SiFinder\Http\Requests\Admin\ArticleRequest;
 use Illuminate\Support\Facades\Auth;
 use Datatables;
 

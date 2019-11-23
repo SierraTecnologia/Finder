@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Components\Actors;
+namespace SiFinder\Http\Controllers\Components\Actors;
 
-use Siravel\Http\Requests;
-use Siravel\Http\Controllers\Controller;
+use SiFinder\Http\Requests;
+use SiFinder\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\Banner;
 use App\Models\Link;

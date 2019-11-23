@@ -1,5 +1,5 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Output\Html;
+namespace SiFinder\Logic\Output\Html;
 
 /**
  * Format PHP source code highlighting its quality issues.

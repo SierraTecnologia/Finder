@@ -2,9 +2,9 @@
 
 namespace App\Http\Actions;
 
-use Siravel\Http\Requests\PaginatedRequest;
-use Siravel\Http\Resources\PaginatedResource;
-use Siravel\Http\Resources\PostResource;
+use SiFinder\Http\Requests\PaginatedRequest;
+use SiFinder\Http\Resources\PaginatedResource;
+use SiFinder\Http\Resources\PostResource;
 use App\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;

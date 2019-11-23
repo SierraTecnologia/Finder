@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests\Admin;
+namespace SiFinder\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 

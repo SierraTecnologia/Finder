@@ -1,8 +1,8 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Output;
+namespace SiFinder\Logic\Output;
 
 use League\CLImate\CLImate;
-use SiInteractions\Worker\Analyser\AnalysisResult;
+use SiFinder\Logic\AnalysisResult;
 
 abstract class AbstractOutput
 {

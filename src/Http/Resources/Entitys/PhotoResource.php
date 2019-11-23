@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Resources\Entitys;
+namespace SiFinder\Http\Resources\Entitys;
 
 use function SiUtils\Helper\html_purify;
 use function SiUtils\Helper\to_object;
@@ -9,7 +9,7 @@ use function SiUtils\Helper\to_string;
 /**
  * Class PhotoResource.
  *
- * @package Siravel\Http\Resources\Entitys
+ * @package SiFinder\Http\Resources\Entitys
  */
 class PhotoResource extends PhotoPlainResource
 {

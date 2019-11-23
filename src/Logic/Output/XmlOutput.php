@@ -1,7 +1,7 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Output;
+namespace SiFinder\Logic\Output;
 
-use SiInteractions\Worker\Analyser\AnalysisResult;
+use SiFinder\Logic\AnalysisResult;
 use Sabre\Xml\Writer;
 
 class XmlOutput extends AbstractOutput
@@ -35,7 +35,7 @@ class XmlOutput extends AbstractOutput
     protected function getSabreXmlArrayFor(AnalysisResult $result)
     {
         $sabreXmlArray = [
-            'SiInteractions\Worker\Analyser' => [],
+            'SiFinder\Logic' => [],
         ];
 
         foreach ($result->toArray() as $fileName => $lines) {
@@ -62,7 +62,7 @@ class XmlOutput extends AbstractOutput
                 ];
             }
 
-            $sabreXmlArray['SiInteractions\Worker\Analyser'][] = [
+            $sabreXmlArray['SiFinder\Logic'][] = [
                 'name' => 'file',
                 'value' => $linesForXml,
                 'attributes' => ['name' => $fileName],

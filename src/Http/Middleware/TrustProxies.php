@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Middleware;
+namespace SiFinder\Http\Middleware;
 
 use Illuminate\Http\Request;
 use Fideloper\Proxy\TrustProxies as Middleware;

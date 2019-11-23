@@ -1,13 +1,13 @@
 <?php
 
-namespace Siravel\Http\Requests;
+namespace SiFinder\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class PaginatedRequest.
  *
- * @package Siravel\Http\Requests
+ * @package SiFinder\Http\Requests
  */
 class PaginatedRequest extends FormRequest
 {

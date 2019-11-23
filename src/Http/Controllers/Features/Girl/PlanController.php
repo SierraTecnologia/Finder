@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\GirlController;
 use App\Models\Plan;
-use Siravel\Http\Requests\Admin\PlanRequest;
+use SiFinder\Http\Requests\Admin\PlanRequest;
 use Datatables;
 
 

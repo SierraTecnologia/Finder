@@ -1,5 +1,5 @@
 <?php
-namespace SiInteractions\Worker\Analyser\Output;
+namespace SiFinder\Logic\Output;
 
 /**
  * Methods for triggering output events (analysis started, analyses ended, etc.).

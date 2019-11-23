@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Response;
-use Siravel\Http\Controllers\Controller as BaseController;
+use SiFinder\Http\Controllers\Controller as BaseController;
 use Illuminate\Support\Facades\Log;
 
 class Controller extends BaseController

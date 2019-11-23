@@ -3,7 +3,7 @@
 namespace App\Http\Actions;
 
 use App\Http\Proxy\Contracts\OAuthProxy;
-use Siravel\Http\Requests\CreateAuthRequest;
+use SiFinder\Http\Requests\CreateAuthRequest;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Response;
 

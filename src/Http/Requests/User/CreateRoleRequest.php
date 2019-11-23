@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Requests\User;
+namespace SiFinder\Http\Requests\User;
 
 class CreateRoleRequest extends Request
 {

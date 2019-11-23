@@ -1,10 +1,10 @@
-<?php namespace Siravel\Models\Access;
+<?php namespace SiFinder\Models\Access;
 
-use Siravel\Models\SocialAccount;
-use Siravel\Models\UserRepo;
-use Siravel\Exceptions\SocialDriverNotConfigured;
-use Siravel\Exceptions\SocialSignInAccountNotUsed;
-use Siravel\Exceptions\UserRegistrationException;
+use SiFinder\Models\SocialAccount;
+use SiFinder\Models\UserRepo;
+use SiFinder\Exceptions\SocialDriverNotConfigured;
+use SiFinder\Exceptions\SocialSignInAccountNotUsed;
+use SiFinder\Exceptions\UserRegistrationException;
 use Laravel\Socialite\Contracts\Factory as Socialite;
 use Laravel\Socialite\Contracts\User as SocialUser;
 

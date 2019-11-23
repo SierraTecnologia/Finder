@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Http\Controllers\Api;
+namespace SiFinder\Http\Controllers\Api;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;

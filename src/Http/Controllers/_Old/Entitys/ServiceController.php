@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Http\Controllers\Admin;
+namespace SiFinder\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use Siravel\Models\Components\Integrations\Service;
+use SiFinder\Models\Components\Integrations\Service;
 
 class ServiceController extends Controller
 {
