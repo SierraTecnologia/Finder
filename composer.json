@@ -1,0 +1,12 @@
+{
+    "name": "sierra/finder",
+    "require": {
+        "symfony/finder": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Ricardo Rebello Sierra",
+            "email": "contato@ricardosierra.com.br"
+        }
+    ]
+}
