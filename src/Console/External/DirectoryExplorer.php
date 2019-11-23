@@ -8,6 +8,7 @@ use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
 use UnexpectedValueException;
+use SiFinder\Logic\Analyser;
 
 /**
  * Command line tool that run all script analyzers.

@@ -1,5 +1,5 @@
 {
-    "name": "sierra/finder",
+    "name": "sierratecnologia/finder",
     "description": "Recursos para Desenvolvimento Complexo",
     "license": "MIT",
     "authors": [
@@ -18,7 +18,8 @@
         "sebastian/diff": "*",
         "srmklive/flysystem-dropbox-v2": "*",
         "google/photos-library": "^1.4",
-        "spatie/laravel-medialibrary": "^7.0.0"
+        "spatie/laravel-medialibrary": "^7.0.0",
+        "league/climate": "^3.5"
     },
     "autoload": {
         "psr-4": {

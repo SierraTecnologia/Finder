@@ -65,7 +65,7 @@ class Analyser
         $this->ignoredPaths = $ignoredPaths;
 
         if (!$project) {
-            $this->languageClass = 'SiFinder\\Actions\\Worker\\Analyser\\Language\\'.$this->defaultLanguage;
+            $this->languageClass = 'SiFinder\\Logic\\Language\\'.$this->defaultLanguage;
         }
     }
 
@@ -155,7 +155,7 @@ class Analyser
      */
     protected function getAnalysisToolsClasses()
     {
-        $this->languageClass::getAnalysisToolsClasses();
+        return $this->languageClass::getAnalysisToolsClasses();
     }
 
     /**
@@ -165,8 +165,13 @@ class Analyser
     protected function getAnalysisTools()
     {
         $objects = [];
+        $tools = $this->getAnalysisToolsClasses();
 
-        foreach ($this->getAnalysisToolsClasses() as $className) {
+        if (empty($tools)) {
+            return $objects;
+        }
+
+        foreach ($tools as $className) {
             $tool = new $className($this->binariesPath, sys_get_temp_dir());
             $tool->setIgnoredPaths($this->getIgnoredPaths());
             $objects[] = $tool;
