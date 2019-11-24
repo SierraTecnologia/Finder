@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^7.3.0",
-        "symfony/finder": "^5.5.0",
+        "symfony/finder": "^4.4.0",
         "cloudflare/sdk": "*",
         "deployer/deployer": "^6.4",
         "devio/pipedrive": "*",
