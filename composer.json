@@ -41,42 +41,49 @@
             "type": "path",
             "url": "../Informate",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         },
         {
             "type": "path",
             "url": "../Populate",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         },
         {
             "type": "path",
             "url": "../Population",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         },
         {
             "type": "path",
             "url": "../Audit",
             "options": {
-                "symlink": false
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../Tracking",
+            "options": {
+                "symlink": true
             }
         },
         {
             "type": "path",
             "url": "../Casa",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         },
         {
             "type": "path",
             "url": "../Locaravel",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         }
     ],
