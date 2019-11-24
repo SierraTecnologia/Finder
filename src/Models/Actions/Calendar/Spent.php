@@ -14,7 +14,7 @@ namespace Siravel\Models\Actions\Calendar;
 
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use Siravel\Models\Model;
-use SiFinder\Actions\Action;
+use Finder\Actions\Action;
 use Illuminate\Support\Facades\Log;
 class Spent extends Model
 {

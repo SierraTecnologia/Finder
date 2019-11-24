@@ -1,4 +1,4 @@
-<?php namespace SiFinder\Http\Requests\Admin;
+<?php namespace Finder\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 

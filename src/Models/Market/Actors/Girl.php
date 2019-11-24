@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Market\Actors;
 
-use App\Models\Model;
+use Finder\Models\Model;
 
 class Girl extends Model
 {

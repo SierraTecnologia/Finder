@@ -70,17 +70,17 @@ class User extends Model implements AuthenticatableContract
 
 	public function provider()
 	{
-		return $this->belongsTo('App\Models\Provider');
+		return $this->belongsTo('Finder\Models\Provider');
 	}
 
 	public function role()
 	{
-		return $this->belongsTo('App\Role');
+		return $this->belongsTo('Finder\Role');
 	}
 
 	public function versions()
 	{
-		return $this->hasMany('App\Version');
+		return $this->hasMany('Finder\Version');
 	}
 
 	// Events ======================================================================

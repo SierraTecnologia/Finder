@@ -12,7 +12,7 @@ class Chapter extends Entity
      */
     public function getMorphClass()
     {
-        return 'App\\Chapter';
+        return 'Finder\\Chapter';
     }
 
     /**
@@ -65,6 +65,6 @@ class Chapter extends Entity
      */
     public function entityRawQuery()
     {
-        return "'App\\\\Chapter' as entity_type, id, id as entity_id, slug, name, {$this->textField} as text, '' as html, book_id, priority, '0' as chapter_id, '0' as draft, created_by, updated_by, updated_at, created_at";
+        return "'Finder\\\\Chapter' as entity_type, id, id as entity_id, slug, name, {$this->textField} as text, '' as html, book_id, priority, '0' as chapter_id, '0' as draft, created_by, updated_by, updated_at, created_at";
     }
 }

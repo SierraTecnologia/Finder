@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use App\Models\Contracts\SubscriptionManager;
+use Finder\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 
 /**
  * Class SubscriptionDeleteByTokenAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class SubscriptionDeleteByTokenAction
 {

@@ -1,9 +1,9 @@
 <?php
-namespace SiFinder\Logic\Language;
+namespace Finder\Logic\Language;
 
-use SiFinder\Logic\Output\AbstractOutput;
-use SiFinder\Logic\Output\Filter\OutputFilterInterface;
-use SiFinder\Logic\Output\TriggerableInterface;
+use Finder\Logic\Output\AbstractOutput;
+use Finder\Logic\Output\Filter\OutputFilterInterface;
+use Finder\Logic\Output\TriggerableInterface;
 
 /**
  * Run all script analysers and outputs their result.
@@ -17,9 +17,9 @@ class Php
     public static function getAnalysisToolsClasses()
     {
         return [
-            'SiFinder\Logic\Tools\CodeSniffer',
-            'SiFinder\Logic\Tools\CopyPasteDetector',
-            'SiFinder\Logic\Tools\MessDetector',
+            'Finder\Logic\Tools\CodeSniffer',
+            'Finder\Logic\Tools\CopyPasteDetector',
+            'Finder\Logic\Tools\MessDetector',
         ];
     }
 }

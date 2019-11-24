@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Features\Marketing;
 
-use App\Models\Model;
+use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use SiObjects\Support\Traits\Models\BusinessTrait;
 
@@ -67,6 +67,6 @@ class Feature extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('Finder\Models\User', 'skillable');
     }
 }

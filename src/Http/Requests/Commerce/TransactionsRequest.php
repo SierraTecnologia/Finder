@@ -1,8 +1,8 @@
 <?php
 
-namespace SiFinder\Http\Requests\Commerce;
+namespace Finder\Http\Requests\Commerce;
 
-use App\Models\Commerce\Transaction;
+use Finder\Models\Commerce\Transaction;
 
 class TransactionsRequest extends CommerceRequest
 {

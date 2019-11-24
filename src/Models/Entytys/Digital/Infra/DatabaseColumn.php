@@ -47,16 +47,16 @@ class DatabaseColumn extends Model
 
     public function getDockerComposer()
     {
-        return $this->belongsTo('App\Models\Gateway', 'gateway_id', 'id');
+        return $this->belongsTo('Finder\Models\Gateway', 'gateway_id', 'id');
     }
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+        return $this->belongsTo('Finder\Models\User', 'user_id', 'id');
     }
 
     public function table()
     {
-        return $this->belongsTo('App\Models\DatabaseTable', 'table_id', 'id');
+        return $this->belongsTo('Finder\Models\DatabaseTable', 'table_id', 'id');
     }
 }

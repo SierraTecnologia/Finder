@@ -16,7 +16,7 @@ class Book extends Entity
      */
     public function getMorphClass()
     {
-        return 'App\\Book';
+        return 'Finder\\Book';
     }
 
     /**
@@ -106,6 +106,6 @@ class Book extends Entity
      */
     public function entityRawQuery()
     {
-        return "'App\\\\Book' as entity_type, id, id as entity_id, slug, name, {$this->textField} as text,'' as html, '0' as book_id, '0' as priority, '0' as chapter_id, '0' as draft, created_by, updated_by, updated_at, created_at";
+        return "'Finder\\\\Book' as entity_type, id, id as entity_id, slug, name, {$this->textField} as text,'' as html, '0' as book_id, '0' as priority, '0' as chapter_id, '0' as draft, created_by, updated_by, updated_at, created_at";
     }
 }

@@ -32,8 +32,8 @@ class SiravelServiceProvider extends ServiceProvider
         
         // // @todo Resolver
         // $loader->alias('FileService', \Facilitador\Services\Midia\FileService::class);
-        // $loader->alias('BusinessService', \App\Facades\BusinessServiceFacade::class);
-        // $loader->alias('EventService', \App\Facades\EventServiceFacade::class);
+        // $loader->alias('BusinessService', \Finder\Facades\BusinessServiceFacade::class);
+        // $loader->alias('EventService', \Finder\Facades\EventServiceFacade::class);
 
         // $this->app->bind('FileService', function ($app) {
         //     return new FileService();
@@ -44,7 +44,7 @@ class SiravelServiceProvider extends ServiceProvider
         // });
 
         // $this->app->bind('EventService', function ($app) {
-        //     return App::make(EventService::class);
+        //     return Finder::make(EventService::class);
         // });
     }
     protected function setProviders()

@@ -1,8 +1,8 @@
 <?php
 
-namespace SiFinder\Http\Requests\Commerce;
+namespace Finder\Http\Requests\Commerce;
 
-use App\Models\Commerce\Plan;
+use Finder\Models\Commerce\Plan;
 
 class PlanRequest extends CommerceRequest
 {

@@ -13,7 +13,7 @@ use Siravel\Models\Model;
  * @property string path
  * @property int width
  * @property int height
- * @package App\Models
+ * @package Finder\Models
  */
 class Thumbnail extends Model
 {

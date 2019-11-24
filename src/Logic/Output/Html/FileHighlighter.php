@@ -1,5 +1,5 @@
 <?php
-namespace SiFinder\Logic\Output\Html;
+namespace Finder\Logic\Output\Html;
 
 /**
  * Format PHP source code highlighting its quality issues.

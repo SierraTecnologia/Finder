@@ -41,6 +41,6 @@ class Renda extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'rendable');
+        return $this->morphedByMany('Finder\Models\User', 'rendable');
     }
 }

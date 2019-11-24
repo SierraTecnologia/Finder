@@ -156,7 +156,7 @@ class PageRepo extends EntityRepo
                 continue;
             }
 
-            // Overwrite id if not a App custom id
+            // Overwrite id if not a Finder custom id
             if ($childNode->hasAttribute('id')) {
                 $id = $childNode->getAttribute('id');
                 if (strpos($id, 'bkmrk') === 0 && array_search($id, $idArray) === false) {
@@ -191,7 +191,7 @@ class PageRepo extends EntityRepo
 
     /**
      * Get the plain text version of a page's content.
-     * @param \App\Models\Components\Book\Page $page
+     * @param \Finder\Models\Components\Book\Page $page
      * @return string
      */
     protected function pageToPlainText(Page $page) : string
@@ -204,7 +204,7 @@ class PageRepo extends EntityRepo
      * Get a new draft page instance.
      * @param Book $book
      * @param Chapter|null $chapter
-     * @return \App\Models\Components\Book\Page
+     * @return \Finder\Models\Components\Book\Page
      * @throws \Throwable
      */
     public function getDraftPage(Book $book, Chapter $chapter = null)
@@ -470,10 +470,10 @@ class PageRepo extends EntityRepo
 
     /**
      * Create a copy of a page in a new location with a new name.
-     * @param \App\Models\Components\Book\Page $page
-     * @param \App\Models\Components\Book\Entity $newParent
+     * @param \Finder\Models\Components\Book\Page $page
+     * @param \Finder\Models\Components\Book\Entity $newParent
      * @param string $newName
-     * @return \App\Models\Components\Book\Page
+     * @return \Finder\Models\Components\Book\Page
      * @throws \Throwable
      */
     public function copyPage(Page $page, Entity $newParent, string $newName = '')

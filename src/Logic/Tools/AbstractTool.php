@@ -1,7 +1,7 @@
 <?php
-namespace SiFinder\Logic\Tools;
+namespace Finder\Logic\Tools;
 
-use SiFinder\Logic\AnalysisResult;
+use Finder\Logic\AnalysisResult;
 use Sabre\Xml\Reader;
 
 /**

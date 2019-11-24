@@ -62,12 +62,12 @@ class Integration extends Model
 
     public function orders()
     {
-        return $this->hasMany('App\Models\Order', 'customer_id', 'id');
+        return $this->hasMany('Finder\Models\Order', 'customer_id', 'id');
     }
 
     public function analysis()
     {
-        return $this->hasMany('App\Models\Analysi', 'analysi_id', 'id');
+        return $this->hasMany('Finder\Models\Analysi', 'analysi_id', 'id');
     }
 
     /**
@@ -75,7 +75,7 @@ class Integration extends Model
      */
     public function customerTokens()
     {
-        return $this->hasMany('App\Models\CustomerToken', 'customer_id', 'id');
+        return $this->hasMany('Finder\Models\CustomerToken', 'customer_id', 'id');
     }
 
     /**
@@ -83,6 +83,6 @@ class Integration extends Model
      */
     public function gatewayCustomers()
     {
-        return $this->hasMany('App\Models\GatewayCustomer', 'customer_id', 'id');
+        return $this->hasMany('Finder\Models\GatewayCustomer', 'customer_id', 'id');
     }
 }

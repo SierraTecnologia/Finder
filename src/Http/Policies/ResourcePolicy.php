@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Policies;
+namespace Finder\Http\Policies;
 
-use App\Models\User;
+use Finder\Models\User;
 
 /**
  * Class ResourcePolicy.
  *
- * @package App\Http\Policies
+ * @package Finder\Http\Policies
  */
 class ResourcePolicy
 {

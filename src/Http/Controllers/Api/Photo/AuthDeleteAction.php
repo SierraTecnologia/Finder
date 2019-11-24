@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use App\Http\Proxy\Contracts\OAuthProxy;
+use Finder\Http\Proxy\Contracts\OAuthProxy;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 /**
  * Class AuthDeleteAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class AuthDeleteAction
 {

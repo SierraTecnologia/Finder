@@ -1,4 +1,4 @@
-<?php namespace SiFinder\Http\Middleware;
+<?php namespace Finder\Http\Middleware;
 
 use Carbon\Carbon;
 use Closure;
@@ -14,7 +14,7 @@ class Localization
     protected $rtlLocales = ['ar'];
 
     /**
-     * Map of App locale names to best-estimate system locale names.
+     * Map of Finder locale names to best-estimate system locale names.
      * @var array
      */
     protected $localeMap = [
@@ -72,7 +72,7 @@ class Localization
 
     /**
      * Autodetect the visitors locale by matching locales in their headers
-     * against the locales supported by App.
+     * against the locales supported by Finder.
      * @param Request $request
      * @param string $default
      * @return string

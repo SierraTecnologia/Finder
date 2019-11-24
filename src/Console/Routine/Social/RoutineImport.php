@@ -1,15 +1,15 @@
 <?php
 
-namespace SiFinder\Console\Routine\Social;
+namespace Finder\Console\Routine\Social;
 
 use Illuminate\Console\Command;
-use SiFinder\Models\MediaSend;
-use SiFinder\Models\MediaEmail;
-use SiFinder\Models\MediaPush;
-use SiFinder\Models\Company;
-use App\Models\User;
+use Finder\Models\MediaSend;
+use Finder\Models\MediaEmail;
+use Finder\Models\MediaPush;
+use Finder\Models\Company;
+use Finder\Models\User;
 use SendGrid;
-use SiFinder\Http\Controllers\Api\Controller;
+use Finder\Http\Controllers\Api\Controller;
 
 class RoutineImport extends Command
 {
@@ -44,7 +44,7 @@ class RoutineImport extends Command
      */
     public function handle()
     {
-        // (new \SiFinder\Routines\Globals\BackupAll)->run();
-        (new \SiFinder\Routines\Globals\ImportTokens)->run();
+        // (new \Finder\Routines\Globals\BackupAll)->run();
+        (new \Finder\Routines\Globals\ImportTokens)->run();
     }
 }

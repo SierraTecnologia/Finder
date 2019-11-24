@@ -39,6 +39,6 @@ class Gender extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('Finder\Models\User', 'skillable');
     }
 }

@@ -23,7 +23,7 @@ class ExportService
     /**
      * Convert a page to a self-contained HTML file.
      * Includes required CSS & image content. Images are base64 encoded into the HTML.
-     * @param \App\Models\Components\Book\Page $page
+     * @param \Finder\Models\Components\Book\Page $page
      * @return mixed|string
      * @throws \Throwable
      */
@@ -38,7 +38,7 @@ class ExportService
 
     /**
      * Convert a chapter to a self-contained HTML file.
-     * @param \App\Models\Components\Book\Chapter $chapter
+     * @param \Finder\Models\Components\Book\Chapter $chapter
      * @return mixed|string
      * @throws \Throwable
      */
@@ -88,7 +88,7 @@ class ExportService
 
     /**
      * Convert a chapter to a PDF file.
-     * @param \App\Models\Components\Book\Chapter $chapter
+     * @param \Finder\Models\Components\Book\Chapter $chapter
      * @return mixed|string
      * @throws \Throwable
      */
@@ -107,7 +107,7 @@ class ExportService
 
     /**
      * Convert a book to a PDF file
-     * @param \App\Models\Components\Book\Book $book
+     * @param \Finder\Models\Components\Book\Book $book
      * @return string
      * @throws \Throwable
      */
@@ -207,7 +207,7 @@ class ExportService
 
     /**
      * Convert a chapter into a plain text string.
-     * @param \App\Models\Components\Book\Chapter $chapter
+     * @param \Finder\Models\Components\Book\Chapter $chapter
      * @return string
      */
     public function chapterToPlainText(Chapter $chapter)

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Http\Middleware;
+namespace Finder\Http\Middleware;
 
 use Closure;
 use Illuminate\Config\Repository as Config;
@@ -8,7 +8,7 @@ use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use function App\env_production;
+use function Finder\env_production;
 
 /**
  * Class CorsHeaders.

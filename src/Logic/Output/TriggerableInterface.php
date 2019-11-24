@@ -1,5 +1,5 @@
 <?php
-namespace SiFinder\Logic\Output;
+namespace Finder\Logic\Output;
 
 /**
  * Methods for triggering output events (analysis started, analyses ended, etc.).

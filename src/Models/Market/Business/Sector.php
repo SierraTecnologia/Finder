@@ -41,7 +41,7 @@ class Sector extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+        return $this->belongsTo('Finder\Models\User', 'user_id', 'id');
     }
 
 }

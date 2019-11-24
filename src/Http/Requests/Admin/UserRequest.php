@@ -1,6 +1,6 @@
-<?php namespace SiFinder\Http\Requests\Admin;
+<?php namespace Finder\Http\Requests\Admin;
 
-use App\Models\User;
+use Finder\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest {

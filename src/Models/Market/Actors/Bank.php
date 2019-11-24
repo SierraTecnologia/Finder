@@ -62,6 +62,6 @@ class Bank extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'bankable');
+        return $this->morphedByMany('Finder\Models\User', 'bankable');
     }
 }

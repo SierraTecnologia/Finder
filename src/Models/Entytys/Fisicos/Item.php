@@ -57,6 +57,6 @@ class Item extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'itemable');
+        return $this->morphedByMany('Finder\Models\User', 'itemable');
     }
 }

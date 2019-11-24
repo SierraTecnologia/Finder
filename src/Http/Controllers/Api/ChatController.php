@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Http\Controllers\Api;
+namespace Finder\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 

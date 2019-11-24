@@ -5,11 +5,11 @@
 
 namespace Siravel\Providers\Exemplos;
 
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Foundation\Finderlication;
 use Illuminate\Support\ServiceProvider;
 
 /**
- * Class AppServiceProvider.
+ * Class FinderServiceProvider.
  *
  * @package Siravel\Providers
  */
@@ -26,7 +26,7 @@ class HomeServiceProvider extends ServiceProvider
 
         $this->registerLibServices();
 
-        $this->registerAppServices();
+        $this->registerFinderServices();
 
         $this->registerApiV1Services();
     }
@@ -48,7 +48,7 @@ class HomeServiceProvider extends ServiceProvider
             \Imagine\Imagick\Imagine::class
         );
 
-        $this->app->singleton('HTMLPurifier', function (Application $app) {
+        $this->app->singleton('HTMLPurifier', function (Finderlication $app) {
             $filesystem = $app->make('filesystem')->disk('local');
             $cacheDirectory = 'cache/HTMLPurifier_DefinitionCache';
             if (!$filesystem->exists($cacheDirectory)) {
@@ -83,7 +83,7 @@ class HomeServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerAppServices(): void
+    protected function registerFinderServices(): void
     {
         $this->app->bind(
             \Core\Contracts\LocationManager::class,
@@ -116,13 +116,13 @@ class HomeServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
-            \SiFinder\Services\Image\Contracts\ImageProcessor::class,
-            \SiFinder\Services\Image\ImagineImageProcessor::class
+            \Finder\Services\Image\Contracts\ImageProcessor::class,
+            \Finder\Services\Image\ImagineImageProcessor::class
         );
 
-        $this->app->when(\SiFinder\Services\Image\ImagineImageProcessor::class)
+        $this->app->when(\Finder\Services\Image\ImagineImageProcessor::class)
             ->needs('$config')
-            ->give(function (Application $app) {
+            ->give(function (Finderlication $app) {
                 return [
                     'thumbnails' => $app->make('config')->get('main.photo.thumbnails'),
                 ];
@@ -130,17 +130,17 @@ class HomeServiceProvider extends ServiceProvider
 
         $this->app->bind(
             \Siravel\Services\Writelabel\Manifest\Contracts\Manifest::class,
-            \Siravel\Services\Writelabel\Manifest\AppManifest::class
+            \Siravel\Services\Writelabel\Manifest\FinderManifest::class
         );
 
         $this->app->bind(
             \Siravel\Services\Writelabel\SiteMap\Contracts\SiteMapBuilder::class,
-            \Siravel\Services\Writelabel\SiteMap\AppSiteMapBuilder::class
+            \Siravel\Services\Writelabel\SiteMap\FinderSiteMapBuilder::class
         );
 
         $this->app->bind(
             \Siravel\Services\Writelabel\Rss\Contracts\RssBuilder::class,
-            \Siravel\Services\Writelabel\Rss\AppRssBuilder::class
+            \Siravel\Services\Writelabel\Rss\FinderRssBuilder::class
         );
 
         $this->app->bind(

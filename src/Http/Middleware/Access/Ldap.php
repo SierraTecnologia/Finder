@@ -1,10 +1,10 @@
-<?php namespace SiFinder\Models\Access;
+<?php namespace Finder\Models\Access;
 
 /**
  * Class Ldap
  * An object-orientated thin abstraction wrapper for common PHP LDAP functions.
  * Allows the standard LDAP functions to be mocked for testing.
- * @package SiFinder\Services
+ * @package Finder\Services
  */
 class Ldap
 {

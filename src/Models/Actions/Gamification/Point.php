@@ -46,7 +46,7 @@ class Point extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'pointable');
+        return $this->morphedByMany('Finder\Models\User', 'pointable');
     }
 
     /**
@@ -54,6 +54,6 @@ class Point extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('App\Models\Slave', 'pointable');
+        return $this->morphedByMany('Finder\Models\Slave', 'pointable');
     }
 }

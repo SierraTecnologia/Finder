@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use SiFinder\Http\Resources\PostResource;
-use App\Models\Contracts\PostManager;
+use Finder\Http\Resources\PostResource;
+use Finder\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 /**
  * Class PostGetBeforeIdAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class PostGetBeforeIdAction
 {

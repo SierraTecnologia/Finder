@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Http\Middleware;
+namespace Finder\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
 

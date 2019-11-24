@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Http\Controllers\Travels;
+namespace Finder\Http\Controllers\Travels;
 
 use InfyOm\Generator\Utils\ResponseUtil;
 use Response;
@@ -14,9 +14,9 @@ use Response;
  *   )
  * )
  * This class should be parent class for other API controllers
- * Class AppBaseController
+ * Class FinderBaseController
  */
-class AppBaseController extends Controller
+class FinderBaseController extends Controller
 {
     public function sendResponse($result, $message)
     {

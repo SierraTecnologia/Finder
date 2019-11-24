@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use SiFinder\Http\Requests\ReCaptchaRequest;
-use SiFinder\Http\Resources\SubscriptionPlainResource;
-use App\Models\Contracts\SubscriptionManager;
+use Finder\Http\Requests\ReCaptchaRequest;
+use Finder\Http\Resources\SubscriptionPlainResource;
+use Finder\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 
 /**
  * Class SubscriptionCreateAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class SubscriptionCreateAction
 {

@@ -7,7 +7,7 @@
  * Wrapped up in this provider since they are often used together
  * so this is a neater alternative to injecting all in individually.
  *
- * @package App\Models\Components\Book
+ * @package Finder\Models\Components\Book
  */
 class EntityProvider
 {

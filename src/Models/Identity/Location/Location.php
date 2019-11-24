@@ -19,7 +19,7 @@ use Illuminate\Support\Str;
  *
  * @property int id
  * @property Coordinates coordinates
- * @package App\Models
+ * @package Finder\Models
  */
 class Location extends Model
 {

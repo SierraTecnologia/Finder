@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use SiFinder\Http\Requests\ContactMessageRequest;
-use App\Mail\ContactMessage;
+use Finder\Http\Requests\ContactMessageRequest;
+use Finder\Mail\ContactMessage;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Mail;
 /**
  * Class ContactMessageSendAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class ContactMessageSendAction
 {

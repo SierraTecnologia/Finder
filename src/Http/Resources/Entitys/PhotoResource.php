@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Http\Resources\Entitys;
+namespace Finder\Http\Resources\Entitys;
 
 use function SiUtils\Helper\html_purify;
 use function SiUtils\Helper\to_object;
@@ -9,7 +9,7 @@ use function SiUtils\Helper\to_string;
 /**
  * Class PhotoResource.
  *
- * @package SiFinder\Http\Resources\Entitys
+ * @package Finder\Http\Resources\Entitys
  */
 class PhotoResource extends PhotoPlainResource
 {

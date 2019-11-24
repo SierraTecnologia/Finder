@@ -1,8 +1,8 @@
 <?php
-namespace SiFinder\Logic\Tools;
+namespace Finder\Logic\Tools;
 
-use SiFinder\Logic\AnalysisResult;
-use App\Helps\ArrayHelper;
+use Finder\Logic\AnalysisResult;
+use Finder\Helps\ArrayHelper;
 use Sabre\Xml\Reader;
 
 /**

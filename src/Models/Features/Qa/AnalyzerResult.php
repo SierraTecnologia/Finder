@@ -328,22 +328,22 @@ class AnalyzerResult extends Model
 
     public function gateway()
     {
-        return $this->belongsTo('App\Models\Gateway', 'gateway_id', 'id');
+        return $this->belongsTo('Finder\Models\Gateway', 'gateway_id', 'id');
     }
 
     public function money()
     {
-        return $this->belongsTo('App\Models\Money');
+        return $this->belongsTo('Finder\Models\Money');
     }
 
     public function fraudAnalysi()
     {
-        return $this->belongsTo('App\Models\FraudAnalysi', 'fraud_analysi_id', 'id');
+        return $this->belongsTo('Finder\Models\FraudAnalysi', 'fraud_analysi_id', 'id');
     }
 
     public function analysis()
     {
-        return $this->hasMany('App\Models\Analysi', 'analysi_id', 'id');
+        return $this->hasMany('Finder\Models\Analysi', 'analysi_id', 'id');
     }
 
     /**
@@ -353,7 +353,7 @@ class AnalyzerResult extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\Models\User');
+        return $this->belongsTo('Finder\Models\User');
     }
 
     /**
@@ -370,7 +370,7 @@ class AnalyzerResult extends Model
      */
     public function business()
     {
-        return $this->belongsTo('App\Models\User', 'business_id', 'id');
+        return $this->belongsTo('Finder\Models\User', 'business_id', 'id');
     }
 
     /**
@@ -379,7 +379,7 @@ class AnalyzerResult extends Model
      */
     public function customer()
     {
-        return $this->belongsTo('App\Models\Customer');
+        return $this->belongsTo('Finder\Models\Customer');
     }
 
     /**
@@ -388,7 +388,7 @@ class AnalyzerResult extends Model
      */
     public function customerToken()
     {
-        return $this->belongsTo('App\Models\CustomerToken');
+        return $this->belongsTo('Finder\Models\CustomerToken');
     }
 
     /**
@@ -396,7 +396,7 @@ class AnalyzerResult extends Model
      */
     public function creditCard()
     {
-        return $this->belongsTo('App\Models\CreditCard');
+        return $this->belongsTo('Finder\Models\CreditCard');
     }
 
     /**
@@ -404,7 +404,7 @@ class AnalyzerResult extends Model
      */
     public function creditToken()
     {
-        return $this->belongsTo('App\Models\CreditCardToken');
+        return $this->belongsTo('Finder\Models\CreditCardToken');
     }
 
     /**

@@ -65,6 +65,6 @@ class Character extends Person
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('Finder\Models\User', 'skillable');
     }
 }

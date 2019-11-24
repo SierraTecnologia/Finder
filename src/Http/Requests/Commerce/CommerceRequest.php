@@ -1,10 +1,10 @@
 <?php
 
-namespace SiFinder\Http\Requests\Commerce;
+namespace Finder\Http\Requests\Commerce;
 
 use Illuminate\Support\Facades\Gate;
-use SiFinder\Http\Requests\Request;
-use App\Models\Feature;
+use Finder\Http\Requests\Request;
+use Finder\Models\Feature;
 
 abstract class CommerceRequest extends Request
 {

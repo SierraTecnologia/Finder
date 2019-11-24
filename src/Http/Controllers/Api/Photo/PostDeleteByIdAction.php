@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use App\Models\Contracts\PostManager;
+use Finder\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
@@ -10,7 +10,7 @@ use Illuminate\Http\JsonResponse;
 /**
  * Class PostDeleteByIdAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class PostDeleteByIdAction
 {

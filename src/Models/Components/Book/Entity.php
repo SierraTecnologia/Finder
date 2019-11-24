@@ -1,9 +1,9 @@
 <?php namespace Siravel\Models\Components\Book;
 
-use SiFinder\Actions\Book\Activity;
-use SiFinder\Actions\Book\Comment;
-use SiFinder\Actions\Book\Tag;
-use SiFinder\Actions\Book\View;
+use Finder\Actions\Book\Activity;
+use Finder\Actions\Book\Comment;
+use Finder\Actions\Book\Tag;
+use Finder\Actions\Book\View;
 use Siravel\Models\Permissions\EntityPermission;
 use Siravel\Models\Permissions\JointPermission;
 use Siravel\Models\Ownable;
@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
  * @property int $updated_by
  * @property boolean $restricted
  *
- * @package App\Models\Components\Book
+ * @package Finder\Models\Components\Book
  */
 class Entity extends Ownable
 {
@@ -47,7 +47,7 @@ class Entity extends Ownable
      */
     public function getMorphClass()
     {
-        return 'App\\Entity';
+        return 'Finder\\Entity';
     }
 
     /**
@@ -193,7 +193,7 @@ class Entity extends Ownable
             return null;
         }
 
-        return app('App\\Entities\\' . $className);
+        return app('Finder\\Entities\\' . $className);
     }
 
     /**

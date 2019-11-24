@@ -1,9 +1,9 @@
 <?php
 
-namespace SiFinder\Http\Controllers\Api;
+namespace Finder\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use App\Plugins\Integrations\SitecPayment\SitecPayment;
+use Finder\Plugins\Integrations\SitecPayment\SitecPayment;
 use Auth;
 
 class SupportController extends Controller

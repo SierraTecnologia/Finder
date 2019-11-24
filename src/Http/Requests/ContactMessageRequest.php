@@ -1,14 +1,14 @@
 <?php
 
-namespace SiFinder\Http\Requests;
+namespace Finder\Http\Requests;
 
-use App\Http\Rules\ReCaptchaRule;
+use Finder\Http\Rules\ReCaptchaRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class ContactMessageRequest.
  *
- * @package SiFinder\Http\Requests
+ * @package Finder\Http\Requests
  */
 class ContactMessageRequest extends FormRequest
 {

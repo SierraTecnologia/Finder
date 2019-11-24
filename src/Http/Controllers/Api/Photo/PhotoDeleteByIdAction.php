@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use App\Models\Contracts\PhotoManager;
+use Finder\Models\Contracts\PhotoManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 
 /**
  * Class PhotoDeleteByIdAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class PhotoDeleteByIdAction
 {

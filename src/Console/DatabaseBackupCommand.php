@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Console\Commands;
+namespace Finder\Console\Commands;
 
 use File;
 use Carbon\Carbon;

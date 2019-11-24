@@ -5,7 +5,7 @@ namespace Siravel\Models;
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Hash;
-use App\Sitec\Business;
+use Finder\Sitec\Business;
 use Auth;
 
 class Model extends EloquentModel

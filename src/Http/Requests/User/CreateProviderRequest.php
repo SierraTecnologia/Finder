@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Http\Requests\User;
+namespace Finder\Http\Requests\User;
 
 class CreateProviderRequest extends Request
 {

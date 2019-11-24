@@ -1,10 +1,10 @@
 <?php
 
-namespace SiFinder\Http\Requests;
+namespace Finder\Http\Requests;
 
 use Auth;
 use Gate;
-use App\Models\Negocios\Page;
+use Finder\Models\Negocios\Page;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PagesRequest extends FormRequest

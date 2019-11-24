@@ -1,10 +1,10 @@
-<?php namespace SiFinder\Models\Access;
+<?php namespace Finder\Models\Access;
 
-use App\Models\User;
-use SiFinder\Models\UserRepo;
-use SiFinder\Exceptions\ConfirmationEmailException;
-use SiFinder\Exceptions\UserRegistrationException;
-use SiFinder\Notifications\ConfirmEmail;
+use Finder\Models\User;
+use Finder\Models\UserRepo;
+use Finder\Exceptions\ConfirmationEmailException;
+use Finder\Exceptions\UserRegistrationException;
+use Finder\Notifications\ConfirmEmail;
 use Carbon\Carbon;
 use Illuminate\Database\Connection as Database;
 
@@ -16,7 +16,7 @@ class EmailConfirmationService
     /**
      * EmailConfirmationService constructor.
      * @param Database $db
-     * @param \App\Models\UserRepo $users
+     * @param \Finder\Models\UserRepo $users
      */
     public function __construct(Database $db, UserRepo $users)
     {
@@ -27,7 +27,7 @@ class EmailConfirmationService
     /**
      * Create new confirmation for a user,
      * Also removes any existing old ones.
-     * @param \App\Models\User $user
+     * @param \Finder\Models\User $user
      * @throws ConfirmationEmailException
      */
     public function sendConfirmation(User $user)
@@ -88,7 +88,7 @@ class EmailConfirmationService
 
     /**
      * Delete all email confirmations that belong to a user.
-     * @param \App\Models\User $user
+     * @param \Finder\Models\User $user
      * @return mixed
      */
     public function deleteConfirmationsByUser(User $user)

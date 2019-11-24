@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\System;
 
-use App\Models\User;
+use Finder\Models\User;
 
 use Siravel\Models\Model;
 use Siravel\Models\Identity\Actors\Business;
@@ -38,7 +38,7 @@ class Setting extends Model
         'business_code'
     ];
 
-    public function getAppAtribute($atribute)
+    public function getFinderAtribute($atribute)
     {
         $settingsDefault = self::settingsForNegocios();
         
@@ -86,7 +86,7 @@ class Setting extends Model
              * Personalização Froend
              */
             'business-website-app' => [
-                'name' => 'Nome do App',
+                'name' => 'Nome do Finder',
                 'description' => 'Aparecerá no site',
                 'options' => 'string',
                 'defaultValue' => '',
@@ -102,7 +102,7 @@ class Setting extends Model
                 'config' => "app.description",
             ],
             'business-language' => [
-                'name' => 'Linguagem padrão do App',
+                'name' => 'Linguagem padrão do Finder',
                 'description' => '',
                 'options' => 'select',
                 'optionsValue' => Language::class,
@@ -207,7 +207,7 @@ class Setting extends Model
                 'config' => "services.botman.facebook_token",
             ],
             'facebook_app_secret' => [
-                'name' => 'Facebook - App Secret Token',
+                'name' => 'Facebook - Finder Secret Token',
                 'description' => '',
                 'options' => 'string',
                 'defaultValue' => '',

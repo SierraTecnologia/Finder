@@ -3,7 +3,7 @@
 namespace SiObject\Http\Middleware;
 
 use Closure;
-use SiFinder\Services\System\TrackingsService;
+use Finder\Services\System\TrackingsService;
 
 class Trackings
 {

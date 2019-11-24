@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Identity\Fisicos;
 
-use App\Models\Model;
+use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 
 class Address extends Model
@@ -51,6 +51,6 @@ class Address extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'addressable');
+        return $this->morphedByMany('Finder\Models\User', 'addressable');
     }
 }

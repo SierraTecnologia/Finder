@@ -42,6 +42,6 @@ class Gasto extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'gastoable');
+        return $this->morphedByMany('Finder\Models\User', 'gastoable');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -9,7 +9,7 @@ use Illuminate\Http\JsonResponse;
 /**
  * Class InfoGetAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class InfoGetAction
 {

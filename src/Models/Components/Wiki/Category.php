@@ -56,7 +56,7 @@ class Category extends Model
 
 	public function pages()
 	{
-		return $this->hasMany('App\Page');
+		return $this->hasMany('Finder\Page');
 	}
 
 	// Events ======================================================================

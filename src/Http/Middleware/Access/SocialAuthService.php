@@ -1,10 +1,10 @@
-<?php namespace SiFinder\Models\Access;
+<?php namespace Finder\Models\Access;
 
-use SiFinder\Models\SocialAccount;
-use SiFinder\Models\UserRepo;
-use SiFinder\Exceptions\SocialDriverNotConfigured;
-use SiFinder\Exceptions\SocialSignInAccountNotUsed;
-use SiFinder\Exceptions\UserRegistrationException;
+use Finder\Models\SocialAccount;
+use Finder\Models\UserRepo;
+use Finder\Exceptions\SocialDriverNotConfigured;
+use Finder\Exceptions\SocialSignInAccountNotUsed;
+use Finder\Exceptions\UserRegistrationException;
 use Laravel\Socialite\Contracts\Factory as Socialite;
 use Laravel\Socialite\Contracts\User as SocialUser;
 
@@ -19,7 +19,7 @@ class SocialAuthService
 
     /**
      * SocialAuthService constructor.
-     * @param \App\Models\UserRepo      $userRepo
+     * @param \Finder\Models\UserRepo      $userRepo
      * @param Socialite     $socialite
      * @param SocialAccount $socialAccount
      */

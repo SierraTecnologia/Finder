@@ -72,17 +72,17 @@ class ProjectMember extends Model
 
     public function customer()
     {
-        return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
+        return $this->belongsTo('Finder\Models\Customer', 'customer_id', 'id');
     }
 
     public function analysis()
     {
-        return $this->hasMany('App\Models\Analysi');
+        return $this->hasMany('Finder\Models\Analysi');
     }
 
     public function orders()
     {
-        return $this->hasMany('App\Models\Order');
+        return $this->hasMany('Finder\Models\Order');
     }
 
     /**
@@ -90,7 +90,7 @@ class ProjectMember extends Model
      */
     public function creditCardTokens()
     {
-        return $this->hasMany('App\Models\CreditCardToken', 'credit_card_id', 'id');
+        return $this->hasMany('Finder\Models\CreditCardToken', 'credit_card_id', 'id');
     }
 
     /**
@@ -98,6 +98,6 @@ class ProjectMember extends Model
      */
     public function gatewayCustomers()
     {
-        return $this->hasMany('App\Models\GatewayCustomer', 'customer_id', 'id');
+        return $this->hasMany('Finder\Models\GatewayCustomer', 'customer_id', 'id');
     }
 }

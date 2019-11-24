@@ -1,7 +1,7 @@
 <?php
-namespace SiFinder\Logic\Output;
+namespace Finder\Logic\Output;
 
-use SiFinder\Logic\AnalysisResult;
+use Finder\Logic\AnalysisResult;
 
 class TextOutput extends AbstractOutput implements TriggerableInterface
 {

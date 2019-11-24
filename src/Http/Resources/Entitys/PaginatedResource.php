@@ -1,13 +1,13 @@
 <?php
 
-namespace SiFinder\Http\Resources\Entitys;
+namespace Finder\Http\Resources\Entitys;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * Class PaginatedResource.
  *
- * @package SiFinder\Http\Resources\Entitys
+ * @package Finder\Http\Resources\Entitys
  */
 class PaginatedResource extends ResourceCollection
 {

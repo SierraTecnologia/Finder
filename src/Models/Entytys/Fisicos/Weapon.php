@@ -44,7 +44,7 @@ class Weapon extends Model
      */
     public function comments()
     {
-        return $this->morphMany('App\Models\Comment', 'commentable');
+        return $this->morphMany('Finder\Models\Comment', 'commentable');
     }
 
 }

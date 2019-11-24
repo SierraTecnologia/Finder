@@ -1,4 +1,4 @@
-<?php namespace SiFinder\Facades;
+<?php namespace Finder\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

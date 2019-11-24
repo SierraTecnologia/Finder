@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Resources\Consumo;
+namespace Finder\Http\Resources\Consumo;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Models\Order;
+use Finder\Models\Order;
 
 class OrderResource extends JsonResource
 {

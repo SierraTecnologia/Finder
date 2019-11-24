@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use App\Http\Proxy\Contracts\OAuthProxy;
-use SiFinder\Http\Requests\CreateAuthRequest;
+use Finder\Http\Proxy\Contracts\OAuthProxy;
+use Finder\Http\Requests\CreateAuthRequest;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Response;
 
 /**
  * Class AuthCreateAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class AuthCreateAction
 {

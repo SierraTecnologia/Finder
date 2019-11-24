@@ -1,8 +1,8 @@
 <?php
 
-namespace SiFinder\Http\Requests\Commerce;
+namespace Finder\Http\Requests\Commerce;
 
-use App\Models\Commerce\Coupon;
+use Finder\Models\Commerce\Coupon;
 
 class CouponRequest extends CommerceRequest
 {

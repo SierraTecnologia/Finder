@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use SiFinder\Http\Resources\UserPlainResource;
-use App\Models\Contracts\UserManager;
+use Finder\Http\Resources\UserPlainResource;
+use Finder\Models\Contracts\UserManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ use Illuminate\Http\Response;
 /**
  * Class UserUpdateByIdAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class UserUpdateByIdAction
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace SiFinder\Console;
+namespace Finder\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -18,15 +18,15 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\PhotoApp\ChangeUserPassword::class,
-        Commands\PhotoApp\CreateAdministratorUser::class,
-        Commands\PhotoApp\CreateRoles::class,
-        Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class,
-        Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class,
-        Commands\PhotoApp\GeneratePhotosMetadata::class,
-        Commands\PhotoApp\GenerateRestApiDocumentation::class,
-        Commands\PhotoApp\SendWeeklySubscriptionMails::class,
-        Commands\PhotoApp\TestScheduler::class,
+        Commands\PhotoFinder\ChangeUserPassword::class,
+        Commands\PhotoFinder\CreateAdministratorUser::class,
+        Commands\PhotoFinder\CreateRoles::class,
+        Commands\PhotoFinder\DeleteDetachedPhotosOlderThanWeek::class,
+        Commands\PhotoFinder\DeleteUnusedObjectsFromPhotoStorage::class,
+        Commands\PhotoFinder\GeneratePhotosMetadata::class,
+        Commands\PhotoFinder\GenerateRestApiDocumentation::class,
+        Commands\PhotoFinder\SendWeeklySubscriptionMails::class,
+        Commands\PhotoFinder\TestScheduler::class,
 
         Commands\Photoacompanhante::class,
 
@@ -52,18 +52,18 @@ class Kernel extends ConsoleKernel
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
 
 
-        $schedule->command(Commands\PhotoApp\TestScheduler::class)
+        $schedule->command(Commands\PhotoFinder\TestScheduler::class)
             ->hourly();
 
-        $schedule->command(Commands\PhotoApp\DeleteDetachedPhotosOlderThanWeek::class)
+        $schedule->command(Commands\PhotoFinder\DeleteDetachedPhotosOlderThanWeek::class)
             ->dailyAt('00:00')
             ->onOneServer();
 
-        $schedule->command(Commands\PhotoApp\DeleteUnusedObjectsFromPhotoStorage::class)
+        $schedule->command(Commands\PhotoFinder\DeleteUnusedObjectsFromPhotoStorage::class)
             ->dailyAt('00:10')
             ->onOneServer();
 
-        $schedule->command(Commands\PhotoApp\SendWeeklySubscriptionMails::class)
+        $schedule->command(Commands\PhotoFinder\SendWeeklySubscriptionMails::class)
             ->weekly()
             ->sundays()
             ->at('06:00')

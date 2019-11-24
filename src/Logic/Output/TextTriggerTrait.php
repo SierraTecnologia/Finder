@@ -1,7 +1,7 @@
 <?php
-namespace SiFinder\Logic\Output;
+namespace Finder\Logic\Output;
 
-use SiFinder\Logic\Analyser;
+use Finder\Logic\Analyser;
 
 /**
  * Outputs events information to the console.

@@ -1,9 +1,9 @@
 <?php
-namespace SiFinder\Console\Abstracts;
+namespace Finder\Console\Abstracts;
 
 use League\CLImate\CLImate;
-use SiFinder\Logic\Output\AbstractOutput;
-use SiFinder\Logic\Output\Filter\DiffOutputFilter;
+use Finder\Logic\Output\AbstractOutput;
+use Finder\Logic\Output\Filter\DiffOutputFilter;
 use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
@@ -282,11 +282,11 @@ class AbstractExternalCommand
     protected function getOutputFormatClasses()
     {
         return [
-            'text' => 'SiFinder\Logic\Output\TextOutput',
-            'json' => 'SiFinder\Logic\Output\JsonOutput',
-            'xml' => 'SiFinder\Logic\Output\XmlOutput',
-            'csv' => 'SiFinder\Logic\Output\CsvOutput',
-            'html' => 'SiFinder\Logic\Output\HtmlOutput',
+            'text' => 'Finder\Logic\Output\TextOutput',
+            'json' => 'Finder\Logic\Output\JsonOutput',
+            'xml' => 'Finder\Logic\Output\XmlOutput',
+            'csv' => 'Finder\Logic\Output\CsvOutput',
+            'html' => 'Finder\Logic\Output\HtmlOutput',
         ];
     }
 

@@ -1,17 +1,17 @@
-<?php namespace SiFinder\Models\Access;
+<?php namespace Finder\Models\Access;
 
-use SiFinder\Models\Access;
-use SiFinder\Models\Role;
-use App\Models\User;
-use SiFinder\Models\UserRepo;
-use SiFinder\Exceptions\LdapException;
+use Finder\Models\Access;
+use Finder\Models\Role;
+use Finder\Models\User;
+use Finder\Models\UserRepo;
+use Finder\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Class LdapService
  * Handles any app-specific LDAP tasks.
- * @package SiFinder\Services
+ * @package Finder\Services
  */
 class LdapService
 {
@@ -25,7 +25,7 @@ class LdapService
     /**
      * LdapService constructor.
      * @param Ldap $ldap
-     * @param \App\Models\UserRepo $userRepo
+     * @param \Finder\Models\UserRepo $userRepo
      */
     public function __construct(Access\Ldap $ldap, UserRepo $userRepo)
     {
@@ -334,7 +334,7 @@ class LdapService
 
     /**
      * Sync the LDAP groups to the user roles for the current user
-     * @param \App\Models\User $user
+     * @param \Finder\Models\User $user
      * @param string $username
      * @throws LdapException
      */
@@ -355,7 +355,7 @@ class LdapService
     }
 
     /**
-     * Match an array of group names from LDAP to App system roles.
+     * Match an array of group names from LDAP to Finder system roles.
      * Formats LDAP group names to be lower-case and hyphenated.
      * @param array $groupNames
      * @return \Illuminate\Support\Collection
@@ -383,7 +383,7 @@ class LdapService
     /**
      * Check a role against an array of group names to see if it matches.
      * Checked against role 'external_auth_id' if set otherwise the name of the role.
-     * @param \App\Models\Role $role
+     * @param \Finder\Models\Role $role
      * @param array $groupNames
      * @return bool
      */

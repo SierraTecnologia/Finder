@@ -52,17 +52,17 @@ class Page extends Model
 
 	public function category()
 	{
-		return $this->belongsTo('App\Models\Category');
+		return $this->belongsTo('Finder\Models\Category');
 	}
 
 	public function latestVersion()
 	{
-		return $this->hasOne('App\Version')->latest();
+		return $this->hasOne('Finder\Version')->latest();
 	}
 
 	public function versions()
 	{
-		return $this->hasMany('App\Version');
+		return $this->hasMany('Finder\Version');
 	}
 
 	// Events ======================================================================

@@ -14,6 +14,6 @@ class Payment  extends Model
 
     public function createByType()
     {
-        return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
+        return $this->belongsTo('Finder\Models\Customer', 'customer_id', 'id');
     }
 }

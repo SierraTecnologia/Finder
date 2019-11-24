@@ -2,7 +2,7 @@
 
 namespace Siravel\Models\Market\Actions;
 
-use App\Models\Model;
+use Finder\Models\Model;
 
 class Task extends Model
 {
@@ -70,6 +70,6 @@ class Task extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('Finder\Models\User', 'skillable');
     }
 }

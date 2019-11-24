@@ -1,8 +1,8 @@
 <?php
-namespace SiFinder\Logic\Output;
+namespace Finder\Logic\Output;
 
 use League\Csv\Writer;
-use SiFinder\Logic\AnalysisResult;
+use Finder\Logic\AnalysisResult;
 
 class CsvOutput extends AbstractOutput
 {

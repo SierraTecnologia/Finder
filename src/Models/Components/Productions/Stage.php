@@ -55,6 +55,6 @@ class Stage extends Item
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'skillable');
+        return $this->morphedByMany('Finder\Models\User', 'skillable');
     }
 }

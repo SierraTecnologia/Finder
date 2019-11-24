@@ -63,7 +63,7 @@ class Business extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'businessable'); //, 'businessable_type', 'businessable_code');
+        return $this->morphedByMany('Finder\Models\User', 'businessable'); //, 'businessable_type', 'businessable_code');
     }
 
 
@@ -80,7 +80,7 @@ class Business extends Model
     //  */
     // public function plugins()
     // {
-    //     return $this->morphToMany('App\Models\Plugin', 'pluginable');
+    //     return $this->morphToMany('Finder\Models\Plugin', 'pluginable');
     // }
 
     // /**
@@ -88,7 +88,7 @@ class Business extends Model
     //  */
     // public function widgets()
     // {
-    //     return $this->morphToMany('App\Models\Negocios\Widget', 'widgetable');
+    //     return $this->morphToMany('Finder\Models\Negocios\Widget', 'widgetable');
     // }
 
     /**
@@ -104,7 +104,7 @@ class Business extends Model
     //  */
     // public function subscriptions()
     // {
-    //     return $this->hasMany('App\Models\Negocios\Subscription');
+    //     return $this->hasMany('Finder\Models\Negocios\Subscription');
     // }
 
     /**

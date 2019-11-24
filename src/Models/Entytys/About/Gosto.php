@@ -57,6 +57,6 @@ class Gosto extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'gostoable');
+        return $this->morphedByMany('Finder\Models\User', 'gostoable');
     }
 }

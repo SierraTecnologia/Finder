@@ -46,6 +46,6 @@ class Runner extends Model
 
     public function getDockerComposer()
     {
-        return $this->belongsTo('App\Models\Gateway', 'gateway_id', 'id');
+        return $this->belongsTo('Finder\Models\Gateway', 'gateway_id', 'id');
     }
 }

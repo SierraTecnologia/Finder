@@ -50,12 +50,12 @@ class Question extends Model
 
 	public function page()
 	{
-		return $this->belongsTo('App\User');
+		return $this->belongsTo('Finder\User');
 	}
 
 	public function user()
 	{
-		return $this->belongsTo('App\User');
+		return $this->belongsTo('Finder\User');
 	}
 
 	// Events ======================================================================

@@ -10,8 +10,8 @@ class Account extends Model
     // use ComplexRelationamentTrait;
     
     // protected static $COMPLEX_RELATIONAMENT_MODELS = [
-    //     \App\Models\Photo::class,
-    //     \App\Models\Video::class
+    //     \Finder\Models\Photo::class,
+    //     \Finder\Models\Video::class
     // ];
 
     /**
@@ -66,7 +66,7 @@ class Account extends Model
      */
     public function users()
     {
-        return $this->morphedByMany('App\Models\User', 'accountable');
+        return $this->morphedByMany('Finder\Models\User', 'accountable');
     }
 
     /**

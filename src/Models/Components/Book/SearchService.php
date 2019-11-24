@@ -282,7 +282,7 @@ class SearchService
     }
 
     /**
-     * Apply a tag search term onto a entity query.
+     * Finderly a tag search term onto a entity query.
      * @param EloquentBuilder $query
      * @param string $tagTerm
      * @return mixed
@@ -334,7 +334,7 @@ class SearchService
 
     /**
      * Index multiple Entities at once
-     * @param \App\Models\Components\Book\Entity[] $entities
+     * @param \Finder\Models\Components\Book\Entity[] $entities
      */
     protected function indexEntities($entities)
     {

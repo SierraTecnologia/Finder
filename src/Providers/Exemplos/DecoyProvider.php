@@ -2,7 +2,7 @@
 
 namespace Siravel\Providers\Exemplos;
 
-use App;
+use Finder;
 use Config;
 use Former\Former;
 use Facilitador\Observers\Validation;
@@ -233,7 +233,7 @@ class DecoyProvider extends BaseServiceProvider
 
         // Require a logged in admin session but no CSRF token
         $this->app['router']->middlewareGroup('decoy.protected_endpoint', [
-            \App\Http\Middleware\EncryptCookies::class,
+            \Finder\Http\Middleware\EncryptCookies::class,
             \Illuminate\Session\Middleware\StartSession::class,
             'decoy.auth',
         ]);

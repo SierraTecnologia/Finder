@@ -14,7 +14,7 @@ use Siravel\Models\Model;
  * @property int id
  * @property string value
  * @property Collection responses
- * @package App\Models
+ * @package Finder\Models
  */
 class Question extends Model
 {

@@ -1,6 +1,6 @@
 <?php namespace Siravel\Models\Components\Book;
 
-use App\Models\User;
+use Finder\Models\User;
 use Siravel\Models\Model;
 
 class PageRevision extends Model
@@ -41,7 +41,7 @@ class PageRevision extends Model
 
     /**
      * Get the previous revision for the same page if existing
-     * @return \App\PageRevision|null
+     * @return \Finder\PageRevision|null
      */
     public function getPrevious()
     {

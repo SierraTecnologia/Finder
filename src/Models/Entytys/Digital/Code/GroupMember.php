@@ -71,16 +71,16 @@ class CreditCardToken extends InterfaceBusinessModel
 
     public function customer()
     {
-        return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
+        return $this->belongsTo('Finder\Models\Customer', 'customer_id', 'id');
     }
 
     public function creditCard()
     {
-        return $this->belongsTo('App\Models\CreditCard', 'credit_card_id', 'id');
+        return $this->belongsTo('Finder\Models\CreditCard', 'credit_card_id', 'id');
     }
 
     public function orders()
     {
-        return $this->hasMany('App\Models\Order');
+        return $this->hasMany('Finder\Models\Order');
     }
 }

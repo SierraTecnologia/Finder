@@ -1,10 +1,10 @@
 <?php
 
-namespace SiFinder\Http\Requests;
+namespace Finder\Http\Requests;
 
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\Notification;
+use Finder\Models\Notification;
 
 class NotificationUpdateRequest extends FormRequest
 {

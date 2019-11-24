@@ -50,6 +50,6 @@ class PointType extends Model
 
     public function points()
     {
-        return $this->hasMany('App\Models\Gamification\Point', 'point_type_id', 'id');
+        return $this->hasMany('Finder\Models\Gamification\Point', 'point_type_id', 'id');
     }
 }

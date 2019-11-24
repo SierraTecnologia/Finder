@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use SiFinder\Http\Resources\PhotoResource;
-use App\Models\Contracts\PhotoManager;
+use Finder\Http\Resources\PhotoResource;
+use Finder\Models\Contracts\PhotoManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 /**
  * Class PhotoCreateAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class PhotoCreateAction
 {

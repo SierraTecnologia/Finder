@@ -31,7 +31,7 @@ class Task extends Model
     ];
 
     protected static $TASKS = [
-        \App\Task\Analyzer\Analyzer::class
+        \Finder\Task\Analyzer\Analyzer::class
     ];
 
     /**

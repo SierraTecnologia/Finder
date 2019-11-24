@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Actions;
+namespace Finder\Http\Actions;
 
-use App\Models\Contracts\UserManager;
+use Finder\Models\Contracts\UserManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
@@ -10,7 +10,7 @@ use Illuminate\Http\Response;
 /**
  * Class UserDeleteByIdAction.
  *
- * @package App\Http\Actions
+ * @package Finder\Http\Actions
  */
 class UserDeleteByIdAction
 {

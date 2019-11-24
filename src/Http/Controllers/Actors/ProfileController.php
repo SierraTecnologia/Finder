@@ -1,0 +1,44 @@
+<?php
+
+namespace Finder\Http\Controllers\Components\Actors;
+
+use Finder\Http\Requests;
+use Finder\Http\Controllers\Controller;
+use Finder\Models\Activity;
+use Finder\Models\Banner;
+use Finder\Models\Link;
+use Finder\Models\ActiveUser;
+use Finder\Models\HotTopic;
+use Finder\Models\Image;
+use Illuminate\Http\Request;
+use Auth;
+
+class ProfileController extends Controller
+{
+	public function index(Request $request)
+	{
+        switch ($request->view) {
+            case 'all':
+                $activities = Activity::recent()->paginate(50);
+                break;
+
+            case 'mine':
+                $activities = Auth::user()->activities();
+                break;
+
+            default:
+                $activities = Auth::user()->subscribedActivityFeeds();
+                break;
+        }
+
+        $links  = Link::allFromCache();
+        $banners = Banner::allByPosition();
+
+        $active_users = ActiveUser::fetchAll();
+        $hot_topics = HotTopic::fetchAll();
+        $images = Image::fromActivities($activities);
+
+        return view('siravel::components.modules.activities.index', compact('activities', 'links', 'banners', 'active_users', 'hot_topics', 'images'));
+	}
+
+}

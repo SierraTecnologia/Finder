@@ -5,7 +5,7 @@
 
 namespace Siravel\Models\Actions\Calendar;
 
-use App\Models\CmsModel as BaseModel;
+use Finder\Models\CmsModel as BaseModel;
 use Siravel\Services\Normalizer;
 use SiObjects\Support\Traits\Models\Translatable;
 use Log;

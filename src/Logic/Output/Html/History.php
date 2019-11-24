@@ -1,7 +1,7 @@
 <?php
-namespace SiFinder\Logic\Output\Html;
+namespace Finder\Logic\Output\Html;
 
-use SiFinder\Logic\AnalysisResult;
+use Finder\Logic\AnalysisResult;
 use SplFileObject;
 
 /**
@@ -31,7 +31,7 @@ class History
     }
 
     /**
-     * Append analysis result data to the history.
+     * Finderend analysis result data to the history.
      * @param AnalysisResult $result analysis result.
      * @return void
      */

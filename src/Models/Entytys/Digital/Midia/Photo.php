@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Collection thumbnails
  * @property Post post
  * @property Collection posts
- * @package App\Models
+ * @package Finder\Models
  */
 class Photo extends Model
 {

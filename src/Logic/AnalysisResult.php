@@ -1,7 +1,7 @@
 <?php
-namespace SiFinder\Logic;
+namespace Finder\Logic;
 
-use SiFinder\Logic\Output\Filter\OutputFilterInterface;
+use Finder\Logic\Output\Filter\OutputFilterInterface;
 
 /**
  * Code analysis result.
