@@ -2,7 +2,7 @@
 
 namespace Finder\Logic;
 
-use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\Finder as FinderBase;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
