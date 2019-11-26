@@ -12,7 +12,7 @@ use Finder\Logic\Output\TriggerableInterface;
  * Run all script analysers and outputs their result.
  * @package qa
  */
-class Analyser
+class Finder
 {
     const EVENT_STARTING_ANALYSIS = 0;
     const EVENT_STARTING_TOOL = 1;
