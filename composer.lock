@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "155bca819487b807a000abc011d4338b",
+    "content-hash": "82c5b35e184bd64f34fb450c934ca393",
     "packages": [
         {
             "name": "cache/adapter-common",
@@ -3732,7 +3732,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "a4c1b6e2bd3a2dc92e36ed73922b87008aae9cf2"
+                "reference": "63b4da5e2736085e75665d298f45095d8471e2a4"
             },
             "require": {
                 "php": "^7.3.0",
@@ -3853,6 +3853,53 @@
                 "MIT"
             ],
             "description": "Population",
+            "transport-options": {
+                "symlink": true
+            }
+        },
+        {
+            "name": "sierratecnologia/tracking",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../Tracking",
+                "reference": "b8725fed519182185274278febc4d91533280a3c"
+            },
+            "require": {
+                "php": "^7.3.0",
+                "sierratecnologia/audit": "dev-master"
+            },
+            "bin": [
+                "bin/observador"
+            ],
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Tracking\\TrackingProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tracking\\": "src/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [],
+                "post-update-cmd": [],
+                "post-create-project-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Rebello Sierra",
+                    "email": "contato@ricardosierra.com.br"
+                }
+            ],
+            "description": "Tracking",
             "transport-options": {
                 "symlink": true
             }
@@ -4958,7 +5005,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "sierratecnologia/audit": 20,
+        "sierratecnologia/tracking": 20,
         "sierratecnologia/casa": 20
     },
     "prefer-stable": true,
