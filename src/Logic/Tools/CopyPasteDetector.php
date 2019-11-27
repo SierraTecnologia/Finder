@@ -9,7 +9,7 @@ use Sabre\Xml\Reader;
  * Integration of CodeAnalyser with CopyPasteDetector.
  * @see https://github.com/sebastianbergmann/phpcpd
  */
-class CopyPasteDetector extends AbstracTool
+class CopyPasteDetector extends AbstractTool
 {
     /**
      * @inheritdoc

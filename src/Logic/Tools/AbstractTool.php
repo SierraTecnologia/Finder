@@ -7,7 +7,7 @@ use Sabre\Xml\Reader;
 /**
  * Base class for integrations of CodeAnalyser with third party analysis tools.
  */
-abstract class AbstracTool
+abstract class AbstractTool
 {
     /**
      * Directory path to where the bin scripts are located.
