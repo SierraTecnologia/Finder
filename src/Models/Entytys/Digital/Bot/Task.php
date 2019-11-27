@@ -10,11 +10,11 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Bot;
+namespace Finder\Models\Entytys\Digital\Bot;
 
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 use SiObjects\Support\Traits\Models\TasksTrait;
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Task extends Model
 {
@@ -26,7 +26,7 @@ class Task extends Model
 
     protected static $COMPLEX_RELATIONAMENT_MODELS = [
         'model' => [
-            \Siravel\Models\Features\Qa\AnalyzerResult::class
+            \Finder\Models\Features\Qa\AnalyzerResult::class
         ]
     ];
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Finder\Models\Entytys\Digital\Code;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Branch extends Model
 {
@@ -28,7 +28,7 @@ class Branch extends Model
 
     public function project()
     {
-        return $this->belongsTo('Siravel\Models\Entytys\Digital\Code\Project', 'code_project_id', 'id');
+        return $this->belongsTo('Finder\Models\Entytys\Digital\Code\Project', 'code_project_id', 'id');
     }
 
 }

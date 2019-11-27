@@ -1,10 +1,10 @@
-<?php namespace Siravel\Models\Components\Book\Repos;
+<?php namespace Finder\Models\Components\Book\Repos;
 
-use Siravel\Models\Components\Book\Book;
-use Siravel\Models\Components\Book\Chapter;
-use Siravel\Models\Components\Book\Entity;
-use Siravel\Models\Components\Book\Page;
-use Siravel\Models\Components\Book\PageRevision;
+use Finder\Models\Components\Book\Book;
+use Finder\Models\Components\Book\Chapter;
+use Finder\Models\Components\Book\Entity;
+use Finder\Models\Components\Book\Page;
+use Finder\Models\Components\Book\PageRevision;
 use Carbon\Carbon;
 use DOMDocument;
 use DOMXPath;

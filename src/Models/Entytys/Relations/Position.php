@@ -1,9 +1,9 @@
 <?php
 
-namespace Siravel\Models\Entytys\Relations;
+namespace Finder\Models\Entytys\Relations;
 
-use Siravel\Models\Model;
-use Siravel\Models\Entytys\About\Caracteristica;
+use Finder\Models\Model;
+use Finder\Models\Entytys\About\Caracteristica;
 
 class Position extends Caracteristica
 {
@@ -39,7 +39,7 @@ class Position extends Caracteristica
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

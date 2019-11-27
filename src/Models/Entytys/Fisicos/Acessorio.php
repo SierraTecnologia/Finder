@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Fisicos;
+namespace Finder\Models\Entytys\Fisicos;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Acessorio extends Model
 {
@@ -31,7 +31,7 @@ class Acessorio extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

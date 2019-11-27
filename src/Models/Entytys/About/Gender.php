@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\About;
+namespace Finder\Models\Entytys\About;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Gender extends Model
 {
@@ -31,7 +31,7 @@ class Gender extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

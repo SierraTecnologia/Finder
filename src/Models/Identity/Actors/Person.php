@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Actors;
+namespace Finder\Models\Identity\Actors;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\AsHuman;
 
 class Person extends Model

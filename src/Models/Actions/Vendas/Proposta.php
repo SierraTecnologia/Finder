@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Actions\Vendas;
+namespace Finder\Models\Actions\Vendas;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Proposta extends Model
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Abouts;
+namespace Finder\Models\Market\Abouts;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Info extends Model
 {

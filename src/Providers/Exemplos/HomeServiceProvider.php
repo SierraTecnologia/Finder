@@ -3,7 +3,7 @@
  * Nao é usado 
  */
 
-namespace Siravel\Providers\Exemplos;
+namespace Finder\Providers\Exemplos;
 
 use Illuminate\Contracts\Foundation\Finderlication;
 use Illuminate\Support\ServiceProvider;
@@ -11,7 +11,7 @@ use Illuminate\Support\ServiceProvider;
 /**
  * Class FinderServiceProvider.
  *
- * @package Siravel\Providers
+ * @package Finder\Providers
  */
 class HomeServiceProvider extends ServiceProvider
 {
@@ -129,18 +129,18 @@ class HomeServiceProvider extends ServiceProvider
             });
 
         $this->app->bind(
-            \Siravel\Services\Writelabel\Manifest\Contracts\Manifest::class,
-            \Siravel\Services\Writelabel\Manifest\FinderManifest::class
+            \Finder\Services\Writelabel\Manifest\Contracts\Manifest::class,
+            \Finder\Services\Writelabel\Manifest\FinderManifest::class
         );
 
         $this->app->bind(
-            \Siravel\Services\Writelabel\SiteMap\Contracts\SiteMapBuilder::class,
-            \Siravel\Services\Writelabel\SiteMap\FinderSiteMapBuilder::class
+            \Finder\Services\Writelabel\SiteMap\Contracts\SiteMapBuilder::class,
+            \Finder\Services\Writelabel\SiteMap\FinderSiteMapBuilder::class
         );
 
         $this->app->bind(
-            \Siravel\Services\Writelabel\Rss\Contracts\RssBuilder::class,
-            \Siravel\Services\Writelabel\Rss\FinderRssBuilder::class
+            \Finder\Services\Writelabel\Rss\Contracts\RssBuilder::class,
+            \Finder\Services\Writelabel\Rss\FinderRssBuilder::class
         );
 
         $this->app->bind(

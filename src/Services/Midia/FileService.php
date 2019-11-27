@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Midia;
+namespace Finder\Services\Midia;
 
 use CryptoService as CryptoServiceForFiles;
 use Exception;

@@ -1,6 +1,6 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Finder\Models\Components\Book;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class SearchTerm extends Model
 {

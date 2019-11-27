@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Features\Messenger;
+namespace Finder\Models\Features\Messenger;
 
 use Cmgmyr\Messenger\Models\Participant as MessengerParticipant;
 

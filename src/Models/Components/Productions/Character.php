@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Finder\Models\Components\Productions;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Character extends Person
 {
@@ -57,7 +57,7 @@ class Character extends Person
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

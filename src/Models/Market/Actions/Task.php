@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Market\Actions;
+namespace Finder\Models\Market\Actions;
 
 use Finder\Models\Model;
 
@@ -62,7 +62,7 @@ class Task extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Girl', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Girl', 'skillable');
     }
 
     /**

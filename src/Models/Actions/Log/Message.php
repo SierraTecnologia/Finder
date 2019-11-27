@@ -3,9 +3,9 @@
  * Registra as Mensagens de Logs
  */
 
-namespace Siravel\Models\Actions\Log;
+namespace Finder\Models\Actions\Log;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Message extends Model
 {

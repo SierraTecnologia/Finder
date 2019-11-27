@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra\Ci\Base;
+namespace Finder\Models\Entytys\Digital\Infra\Ci\Base;
 
 use SiUtils\Tools\Model;
 use SiUtils\Tools\Exception\InvalidArgumentException;

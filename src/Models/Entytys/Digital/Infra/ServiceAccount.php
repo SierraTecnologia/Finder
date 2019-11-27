@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Finder\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class ServiceAccount extends Model
 {
@@ -46,7 +46,7 @@ class ServiceAccount extends Model
 
     public function service()
     {
-        return $this->belongsTo('Siravel\Models\Entytys\Digital\Infra\Service', 'infra_service_id', 'id');
+        return $this->belongsTo('Finder\Models\Entytys\Digital\Infra\Service', 'infra_service_id', 'id');
     }
 
     public function user()

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Finder\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Service extends Model
 {

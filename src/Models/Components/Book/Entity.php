@@ -1,12 +1,12 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Finder\Models\Components\Book;
 
 use Finder\Actions\Book\Activity;
 use Finder\Actions\Book\Comment;
 use Finder\Actions\Book\Tag;
 use Finder\Actions\Book\View;
-use Siravel\Models\Permissions\EntityPermission;
-use Siravel\Models\Permissions\JointPermission;
-use Siravel\Models\Ownable;
+use Finder\Models\Permissions\EntityPermission;
+use Finder\Models\Permissions\JointPermission;
+use Finder\Models\Ownable;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 

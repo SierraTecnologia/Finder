@@ -1,12 +1,12 @@
 <?php
 
-namespace Siravel\Models\System;
+namespace Finder\Models\System;
 
 use Finder\Models\User;
 
-use Siravel\Models\Model;
-use Siravel\Models\Identity\Actors\Business;
-use Siravel\Models\System\Language;
+use Finder\Models\Model;
+use Finder\Models\Identity\Actors\Business;
+use Finder\Models\System\Language;
 use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;
 
 class Setting extends Model

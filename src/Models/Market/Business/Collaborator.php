@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Business;
+namespace Finder\Models\Market\Business;
 
-use Siravel\Models\Identity\Actors\Person;
+use Finder\Models\Identity\Actors\Person;
 
 class Collaborator extends Person
 {

@@ -3,10 +3,10 @@
  * Um Evento INdividual
  */
 
-namespace Siravel\Models\Actions\Calendar;
+namespace Finder\Models\Actions\Calendar;
 
 use Finder\Models\CmsModel as BaseModel;
-use Siravel\Services\Normalizer;
+use Finder\Services\Normalizer;
 use SiObjects\Support\Traits\Models\Translatable;
 use Log;
 use Illuminate\Database\Eloquent\SoftDeletes;

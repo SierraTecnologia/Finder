@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\System;
+namespace Finder\Models\System;
 
 use Illuminate\Support\Facades\URL;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Fisicos;
+namespace Finder\Models\Entytys\Fisicos;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\AsFofocavel;
 
 class Weapon extends Model

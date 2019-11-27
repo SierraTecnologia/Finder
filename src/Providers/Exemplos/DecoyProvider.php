@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Providers\Exemplos;
+namespace Finder\Providers\Exemplos;
 
 use Finder;
 use Config;

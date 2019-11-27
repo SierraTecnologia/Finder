@@ -1,6 +1,6 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Finder\Models\Components\Book;
 
-use Siravel\Models\Permissions\PermissionService;
+use Finder\Models\Permissions\PermissionService;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Database\Query\Builder;

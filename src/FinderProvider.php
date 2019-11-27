@@ -10,12 +10,10 @@ use Illuminate\Support\Collection;
 class FinderProvider extends ServiceProvider
 {
     public static $providers = [
-        // \Finder\Providers\FinderEventServiceProvider::class,
-        // \Finder\Providers\FinderServiceProvider::class,
-        // \Finder\Providers\FinderRouteProvider::class,
+        \Finder\Providers\FinderEventServiceProvider::class,
+        \Finder\Providers\FinderRouteProvider::class,
 
-        \Audit\AuditProvider::class,
-        \Casa\CasaProvider::class,
+        \Tracking\TrackingProvider::class,
     ];
 
     /**

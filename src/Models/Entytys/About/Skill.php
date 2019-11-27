@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\About;
+namespace Finder\Models\Entytys\About;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Skill extends Model
 {
@@ -62,6 +62,6 @@ class Skill extends Model
      */
     public function persons()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Actors\Person', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Actors\Person', 'skillable');
     }
 }

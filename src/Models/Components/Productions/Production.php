@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Finder\Models\Components\Productions;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Production extends Model
 {

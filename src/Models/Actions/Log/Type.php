@@ -6,9 +6,9 @@
  * 2 -> User Log
  */
 
-namespace Siravel\Models\Actions\Log;
+namespace Finder\Models\Actions\Log;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Type extends Model
 {

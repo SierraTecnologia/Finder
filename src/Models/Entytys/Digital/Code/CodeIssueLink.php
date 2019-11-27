@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Finder\Models\Entytys\Digital\Code;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class CodeIssueLink extends Model
 {

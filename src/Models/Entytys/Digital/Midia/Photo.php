@@ -1,13 +1,13 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Midia;
+namespace Finder\Models\Entytys\Digital\Midia;
 
 use SiObjects\Manipule\Builders\PhotoBuilder;
-use Siravel\Contants\Tables;
+use Finder\Contants\Tables;
 use Carbon\Carbon;
-use Siravel\Features\Photos\Entities\PhotoEntity;
+use Finder\Features\Photos\Entities\PhotoEntity;
 use Illuminate\Database\Eloquent\Collection;
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 /**

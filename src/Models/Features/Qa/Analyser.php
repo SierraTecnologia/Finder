@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Features\Qa;
+namespace Finder\Models\Features\Qa;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Analyser extends Model
 {

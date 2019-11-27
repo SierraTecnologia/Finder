@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Business;
+namespace Finder\Models\Market\Business;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Product extends Model
 {

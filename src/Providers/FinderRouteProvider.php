@@ -1,13 +1,13 @@
 <?php
 
-namespace Siravel\Providers;
+namespace Finder\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 use SiObject\Http\Middleware\Analytics;
-use Siravel\Http\Middleware\isAjax;
+use Finder\Http\Middleware\isAjax;
 
-class SiravelRouteProvider extends ServiceProvider
+class FinderRouteProvider extends ServiceProvider
 {
     /**
      * This namespace is applied to the controller routes in your routes file.
@@ -16,7 +16,7 @@ class SiravelRouteProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'Siravel\Http\Controllers';
+    protected $namespace = 'Finder\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -35,12 +35,12 @@ class SiravelRouteProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->middleware('siravel-analytics', Analytics::class);
+        // $router->middleware('siravel-analytics', Analytics::class);
 
         $router->group([
             'namespace' => $this->namespace,
         ], function ($router) {
-            $router->middleware('isAjax', isAjax::class);
+            // $router->middleware('isAjax', isAjax::class);
             require __DIR__.'/../Routes/web.php';
         });
     }

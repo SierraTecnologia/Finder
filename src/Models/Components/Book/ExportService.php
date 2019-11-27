@@ -1,6 +1,6 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Finder\Models\Components\Book;
 
-use Siravel\Models\Components\Book\Repos\EntityRepo;
+use Finder\Models\Components\Book\Repos\EntityRepo;
 use SiObjects\Entitys\Uploads\ImageService;
 
 class ExportService

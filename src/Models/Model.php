@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models;
+namespace Finder\Models;
 
 use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Illuminate\Database\Eloquent\Builder;

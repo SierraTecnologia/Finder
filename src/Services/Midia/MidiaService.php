@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Services\Midia;
+namespace Finder\Services\Midia;
 
 use Finder;
 use Exception;
@@ -14,8 +14,8 @@ use Intervention\Image\Facades\Image;
 use Cms;
 use Log;
 use SplFileInfo;
-use Siravel\Facades\CryptoServiceFacade;
-use Siravel\Models\Entytys\Digital\Midia\Image as ModelImage;
+use Finder\Facades\CryptoServiceFacade;
+use Finder\Models\Entytys\Digital\Midia\Image as ModelImage;
 
 class MidiaService
 {

@@ -5,7 +5,7 @@ namespace Finder\Repositories;
 use Cms;
 use Config;
 use CryptoService;
-use Siravel\Models\Entytys\Digital\Midia\Image;
+use Finder\Models\Entytys\Digital\Midia\Image;
 use Finder\Models\Tag;
 use Finder\Services\Midia\FileService;
 use Illuminate\Support\Facades\Schema;

@@ -3,7 +3,7 @@
  * Importar, exportar, converter e migrar imagens.
  */
 
-namespace Siravel\Services\Midia;
+namespace Finder\Services\Midia;
 
 use CryptoService as CryptoServiceForFiles;
 use Exception;

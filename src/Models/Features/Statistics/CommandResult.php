@@ -3,9 +3,9 @@
  * Sistemas de Analise de Crédito e Fraudes
  */
 
-namespace Siravel\Models\Features\Statistics;
+namespace Finder\Models\Features\Statistics;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class CommandResult extends Model
 {

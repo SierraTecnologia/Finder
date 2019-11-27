@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Identity\Fisicos;
+namespace Finder\Models\Identity\Fisicos;
 
 use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;

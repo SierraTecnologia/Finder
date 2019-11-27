@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Models\Components\Productions;
+namespace Finder\Models\Components\Productions;
 
 /**
  * Tipos de Produções
  */
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Clothing extends Item
 {
@@ -39,7 +39,7 @@ class Clothing extends Item
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

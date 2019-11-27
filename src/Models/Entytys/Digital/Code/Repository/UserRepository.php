@@ -10,10 +10,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Siravel\Models\Entytys\Digital\Code\Repository;
+namespace Finder\Models\Entytys\Digital\Code\Repository;
 
 use Doctrine\ORM\EntityRepository;
-use Siravel\Models\Entytys\Digital\Code;
+use Finder\Models\Entytys\Digital\Code;
 
 class UserRepository extends EntityRepository
 {

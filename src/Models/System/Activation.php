@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\System;
+namespace Finder\Models\System;
 
-use Siravel\Modela\Model;
+use Finder\Modela\Model;
 
 class Activation extends Model
 {

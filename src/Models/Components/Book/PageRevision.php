@@ -1,7 +1,7 @@
-<?php namespace Siravel\Models\Components\Book;
+<?php namespace Finder\Models\Components\Book;
 
 use Finder\Models\User;
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class PageRevision extends Model
 {

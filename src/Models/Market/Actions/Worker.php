@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Actions;
+namespace Finder\Models\Market\Actions;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Worker extends Model
 {

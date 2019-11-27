@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Finder\Models\Entytys\Digital\Code;
 
 class ProjectGitAccess
 {

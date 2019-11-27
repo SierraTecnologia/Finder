@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Category;
+namespace Finder\Models\Entytys\Category;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class BibliotecaType extends Model
 {
@@ -28,6 +28,6 @@ class BibliotecaType extends Model
 
     public function bibliotecas()
     {
-        return $this->hasMany('Siravel\Models\Market\Informacao\Biblioteca', 'biblioteca_type_id', 'id');
+        return $this->hasMany('Finder\Models\Market\Informacao\Biblioteca', 'biblioteca_type_id', 'id');
     }
 }

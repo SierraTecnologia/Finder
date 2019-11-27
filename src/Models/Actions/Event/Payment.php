@@ -3,11 +3,11 @@
  * Armazena os tipos de pagamentos que fazem com cada moeda e suas taxas
  */
 
-namespace Siravel\Models\Actions\Event;
+namespace Finder\Models\Actions\Event;
 
 use Illuminate\Support\Facades\Hash;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 class Payment  extends Model
 {
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Finder\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 
 class Phone extends Model
@@ -32,7 +32,7 @@ class Phone extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

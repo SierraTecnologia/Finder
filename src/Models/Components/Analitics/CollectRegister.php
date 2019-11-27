@@ -3,9 +3,9 @@
  * Alguma ação que ocorra dentro da Produção
  */
 
-namespace Siravel\Models\Components\Analitics;
+namespace Finder\Models\Components\Analitics;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class CollectRegister extends Model
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Relations;
+namespace Finder\Models\Market\Relations;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Integration extends Model
 {
@@ -41,7 +41,7 @@ class Integration extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'skillable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'skillable');
     }
 
     /**

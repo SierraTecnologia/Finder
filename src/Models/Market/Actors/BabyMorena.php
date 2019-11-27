@@ -3,9 +3,9 @@
  * Ex: https://www.xvideos.com/video26396499/bound_bdsm_sub_raven_bay_facefucked
  *  */
 
-namespace Siravel\Models\Market\Actors;
+namespace Finder\Models\Market\Actors;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class BabyMorena extends Model
 {

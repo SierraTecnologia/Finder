@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Components\Pegadas;
+namespace Finder\Models\Components\Pegadas;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Notification extends Model
 {

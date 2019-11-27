@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Midia;
+namespace Finder\Models\Entytys\Digital\Midia;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

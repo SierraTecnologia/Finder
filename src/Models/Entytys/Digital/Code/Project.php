@@ -1,11 +1,11 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Code;
+namespace Finder\Models\Entytys\Digital\Code;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use SiUtils\Tools\Programs\Git\Repository;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 use SiUtils\Helper\General;
 
 class Project extends Model

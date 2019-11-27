@@ -1,7 +1,7 @@
 <?php
-namespace Siravel\Models\System;
+namespace Finder\Models\System;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Social extends Model {
 

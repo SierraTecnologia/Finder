@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Identity\Digital;
+namespace Finder\Models\Identity\Digital;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Telephone extends Model
 {

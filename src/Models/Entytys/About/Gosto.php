@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\About;
+namespace Finder\Models\Entytys\About;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Gosto extends Model
 {
@@ -49,7 +49,7 @@ class Gosto extends Model
      */
     public function girls()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Girl', 'gostoable');
+        return $this->morphedByMany('Finder\Models\Identity\Girl', 'gostoable');
     }
 
     /**

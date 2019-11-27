@@ -3,9 +3,9 @@
  * Servidor de Database
  */
 
-namespace Siravel\Models\Entytys\Digital\Infra;
+namespace Finder\Models\Entytys\Digital\Infra;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 
 class Container extends Model
 {

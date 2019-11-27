@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Market\Abouts;
+namespace Finder\Models\Market\Abouts;
 
-use Siravel\Models\Model;
+use Finder\Models\Model;
 use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
 
 class Renda extends Model
@@ -33,7 +33,7 @@ class Renda extends Model
      */
     public function slaves()
     {
-        return $this->morphedByMany('Siravel\Models\Identity\Slave', 'rendable');
+        return $this->morphedByMany('Finder\Models\Identity\Slave', 'rendable');
     }
 
     /**

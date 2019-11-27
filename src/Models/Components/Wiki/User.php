@@ -1,6 +1,6 @@
 <?php
 
-namespace Siravel;
+namespace Finder;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -65,7 +65,7 @@ class User extends Model implements AuthenticatableContract
 
 	public function language()
 	{
-		return $this->belongsTo('Siravel\Models\System\Language');
+		return $this->belongsTo('Finder\Models\System\Language');
 	}
 
 	public function provider()

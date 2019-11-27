@@ -1,8 +1,8 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Infra\Ci\Build;
+namespace Finder\Models\Entytys\Digital\Infra\Ci\Build;
 
-use Siravel\Models\Entytys\Digital\Infra\Ci\Build;
+use Finder\Models\Entytys\Digital\Infra\Ci\Build;
 
 /**
  * BitbucketHgBuild Build Model

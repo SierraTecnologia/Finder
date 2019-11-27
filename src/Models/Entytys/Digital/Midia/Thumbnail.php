@@ -1,10 +1,10 @@
 <?php
 
-namespace Siravel\Models\Entytys\Digital\Midia;
+namespace Finder\Models\Entytys\Digital\Midia;
 
 use SiObjects\Manipule\Builders\ThumbnailBuilder;
-use Siravel\Features\Photos\Entities\ThumbnailEntity;
-use Siravel\Models\Model;
+use Finder\Features\Photos\Entities\ThumbnailEntity;
+use Finder\Models\Model;
 
 /**
  * Class Thumbnail.
