@@ -1,4 +1,7 @@
 <?php
+/**
+ * Nao usado ainda !
+ */
 namespace Finder\Console\Abstracts;
 
 use League\CLImate\CLImate;
