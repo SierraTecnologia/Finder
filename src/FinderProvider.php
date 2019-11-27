@@ -14,6 +14,13 @@ class FinderProvider extends ServiceProvider
         \Finder\Providers\FinderRouteProvider::class,
 
         \Tracking\TrackingProvider::class,
+
+        /**
+         * Externos
+         */
+        // \CipeMotion\Medialibrary\ServiceProvider::class,
+        \SierraTecnologia\Crypto\CryptoProvider::class,
+        \Intervention\Image\ImageServiceProvider::class,
     ];
 
     /**
