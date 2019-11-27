@@ -42,30 +42,6 @@ class CreateFinderComputersStoragesTables extends Migration
             $table->nullableTimestamps();
             $table->softDeletes();
         });
-
-        Schema::create(config('app.db-prefix', '').'images', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('location');
-            $table->string('name')->nullable();
-            $table->string('original_name');
-            $table->string('storage_location')->default('local');
-            $table->string('alt_tag')->nullable();
-            $table->string('title_tag')->nullable();
-            $table->boolean('is_published')->default(0);
-            $table->integer('entity_id');
-            $table->string('entity_type');
-            $table->nullableTimestamps();
-            $table->softDeletes();
-        });
-        Schema::create(config('app.db-prefix', '').'imageables', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedInteger('image_id')->nullable();
-            // $table->foreign('image_id')->references('id')->on('images');
-            $table->unsignedInteger('imageable_id');
-            $table->string('imageable_type');
-        });
-
-
 	}
 
 	/**
