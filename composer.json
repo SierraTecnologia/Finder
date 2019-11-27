@@ -29,10 +29,22 @@
         "intervention/imagecache": "^2.3",
         "spatie/laravel-medialibrary": "^7.9.0",
         "league/climate": ">=3.4",
-        "sierratecnologia/tracking": "dev-master",
-        "sierratecnologia/casa": "dev-master",
+        "sierratecnologia/crypto": "dev-master",
+        "raiym/instagram-php-scraper": "^0.8.35",
+        "spatie/crawler": "*",
+        "rokde/laravel-slow-query-logger": "*",
+        "sebastian/phpcpd": "*",
+        "squizlabs/php_codesniffer": "*",
+        "jaeger/querylist": "^4.1",
+        "friendsofphp/php-cs-fixer": "*",
+        "m4tthumphrey/php-gitlab-api": "*",
+        "lesstif/php-jira-rest-client": "*",
+        "rap2hpoutre/laravel-log-viewer": "*",
+        "symfony/dom-crawler": "*",
         "pulkitjalan/google-apiclient": "^4.0",
-        "cache/filesystem-adapter": "^1.0"
+        "cache/filesystem-adapter": "^1.0",
+        "sierratecnologia/tracking": "dev-master",
+        "sierratecnologia/casa": "dev-master"
     },
     "autoload": {
         "psr-4": {
