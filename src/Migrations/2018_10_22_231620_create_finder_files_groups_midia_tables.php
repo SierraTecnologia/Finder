@@ -38,8 +38,6 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
 		Schema::create(config('app.db-prefix', '').'photo_albums', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();
-			$table->string('language_code');
-			$table->foreign('language_code')->references('code')->on('languages');
 			$table->integer('position')->nullable();
 			$table->string('name', 255);
 			$table->text('description')->nullable();
