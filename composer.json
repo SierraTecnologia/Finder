@@ -43,8 +43,7 @@
         "symfony/dom-crawler": "*",
         "pulkitjalan/google-apiclient": "^4.0",
         "cache/filesystem-adapter": "^1.0",
-        "sierratecnologia/tracking": "dev-master",
-        "sierratecnologia/casa": "dev-master"
+        "sierratecnologia/tracking": "dev-master"
     },
     "autoload": {
         "psr-4": {

@@ -14,7 +14,6 @@ class FinderProvider extends ServiceProvider
         \Finder\Providers\FinderRouteProvider::class,
 
         \Tracking\TrackingProvider::class,
-        \Casa\CasaProvider::class,
 
         /**
          * Externos
