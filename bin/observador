@@ -14,6 +14,9 @@ foreach ($composerAutoload as $autoload) {
     }
 }
 
+$loadLaravel = new \Finder\Helps\LoadLaravel();
+$loadLaravel->init();
+
 $cliMate = new \League\CLImate\CLImate;
 $analyser = new \Finder\Console\External\DirectoryExplorer($cliMate, $binariesPath, $_SERVER['argv']);
 if ($analyser->run()) {

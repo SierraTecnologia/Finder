@@ -14,11 +14,13 @@ abstract class Spider
 {
     protected $target = false;
     protected $parent = false;
+    protected $registrator = false;
 
     public function __construct($target, $parent = false)
     {
         $this->target = $target;
         $this->parent = $parent;
+        $this->registrator = new Registrator\FileRegistrator($this->getTarget());
     }
 
     public function getUniqueIdentify()
@@ -27,13 +29,18 @@ abstract class Spider
         return $target->getTargetPath();
     }
 
+    public function getTarget()
+    {
+        return $this->target;
+    }
+
     public function getTargetPath()
     {
-        if (is_string($this->target)) {
-            return $this->target;
+        if (is_string($this->getTarget())) {
+            return $this->getTarget();
         }
 
-        return $this->target->getRealPath();
+        return $this->getTarget()->getRealPath();
     }
 
     public function run()

@@ -48,7 +48,13 @@
     "autoload": {
         "psr-4": {
             "Finder\\": "src/"
-        }
+        },                                                                                                                                                                             
+        "classmap": [                                                                                                                                                                            
+            "utils/classes"                                                                                                                                                                 
+        ],
+        "files": [
+            "utils/funcs/load-laravel.php"
+        ]
     },
     "bin": ["bin/observador"],
     "scripts": {
