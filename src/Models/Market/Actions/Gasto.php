@@ -3,7 +3,7 @@
 namespace Finder\Models\Market\Actions;
 
 use Finder\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Gasto extends Model
 {

@@ -3,7 +3,7 @@
 namespace Finder\Models\Entytys\Fisicos;
 
 use Finder\Models\Model;
-use SiObjects\Support\Traits\Models\AsFofocavel;
+use Informate\Traits\AsFofocavel;
 
 class Weapon extends Model
 {

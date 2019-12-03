@@ -3,7 +3,7 @@
 namespace Finder\Models\Market\Actors;
 
 use Finder\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Bank extends Model
 {

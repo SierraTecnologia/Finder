@@ -12,7 +12,7 @@
 
 namespace Finder\Models\Actions\Calendar;
 
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 use Finder\Models\Model;
 use Finder\Actions\Action;
 use Illuminate\Support\Facades\Log;

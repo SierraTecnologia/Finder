@@ -3,7 +3,7 @@
 namespace Finder\Models\Identity\Actors;
 
 use Finder\Models\Model;
-use SiObjects\Support\Traits\Models\AsHuman;
+use Informate\Traits\AsHuman;
 
 class Person extends Model
 {

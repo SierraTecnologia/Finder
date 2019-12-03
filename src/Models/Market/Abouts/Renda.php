@@ -3,7 +3,7 @@
 namespace Finder\Models\Market\Abouts;
 
 use Finder\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Renda extends Model
 {

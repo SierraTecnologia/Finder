@@ -2,7 +2,7 @@
 
 namespace Finder\Models\System;
 
-use SiObjects\Support\Traits\Models\ArchiveTrait;
+use Informate\Traits\ArchiveTrait;
 
 class Archive extends ArchiveTrait
 {
