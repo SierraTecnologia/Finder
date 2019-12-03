@@ -8,11 +8,14 @@ use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
+use League\Flysystem\Adapter\Local;
+use League\Flysystem\Filesystem;
+
 /**
  * Run all script analysers and outputs their result.
  * @package qa
  */
-class Finder
+class Spider
 {
     const EVENT_STARTING_ANALYSIS = 0;
     const EVENT_STARTING_TOOL = 1;
@@ -72,6 +75,18 @@ class Finder
         }
     }
 
+    public function getAdapter()
+    {
+
+        $adapter = new Local(__DIR__.'/path/to/root/');
+    }
+
+    public function getFilesystem()
+    {
+
+        $filesystem = new Filesystem($adapter);
+    }
+
     /**
      * Run each configured PHP analysis tool.
      * @return boolean true if it didn't find code issues.
@@ -83,6 +98,10 @@ class Finder
             self::EVENT_STARTING_ANALYSIS,
             ['ignoredPaths' => $this->ignoredPaths]
         );
+
+        $this->runTargetDetectAndCollect();
+        $this->runTargetMetrics();
+        $this->runTargetAnalysis();
 
         foreach ($this->getAnalysisTools() as $tool) {
             $message = ['description' => $tool->getDescription()];

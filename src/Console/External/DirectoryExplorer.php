@@ -8,7 +8,7 @@ use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
 use UnexpectedValueException;
-use Finder\Logic\Analyser;
+use Finder\Logic\Spider;
 
 /**
  * Command line tool that run all script analyzers.
@@ -23,7 +23,7 @@ class DirectoryExplorer
 
     /**
      * Analyser.
-     * @var Analyser analyser instance.
+     * @var Spider analyser instance.
      */
     protected $analyser;
 
@@ -256,17 +256,17 @@ class DirectoryExplorer
      */
     public function getDescription()
     {
-        return 'BOSS ANALYSER ' . Analyser::VERSION;
+        return 'BOSS SPIDER ' . Spider::VERSION;
     }
 
     /**
-     * Analyser instance.
-     * @return Analyser instance.
+     * Spider instance.
+     * @return Spider instance.
      */
     public function getAnalyser()
     {
         if (null === $this->analyser) {
-            $this->analyser = new Analyser(
+            $this->analyser = new Spider(
                 $this->getOutput(),
                 $this->binariesPath,
                 $this->getAnalysedPaths(),
