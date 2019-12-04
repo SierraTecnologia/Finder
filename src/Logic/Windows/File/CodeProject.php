@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Logic\Windows\Directory;
+namespace Finder\Logic\Windows\File;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
@@ -8,7 +8,7 @@ use Finder\Logic\Output\TriggerableInterface;
 /**
  * Run all script analysers and outputs their result.
  */
-class Project
+class CodeProject
 {
     /**
      * List of PHP analys integration classes.
