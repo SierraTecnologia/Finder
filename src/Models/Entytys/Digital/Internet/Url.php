@@ -12,7 +12,7 @@
 
 namespace Finder\Models\Entytys\Digital\Internet;
 
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 use Finder\Models\Model;
 
 class Url extends Model

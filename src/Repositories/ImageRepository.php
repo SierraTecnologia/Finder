@@ -8,7 +8,7 @@ use CryptoService;
 use Finder\Models\Entytys\Digital\Midia\Image;
 use Finder\Models\Tag;
 use Finder\Services\Midia\FileService;
-use Illuminate\Support\Facades\Schema;
+
 
 class ImageRepository extends CmsRepository
 {

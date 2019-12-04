@@ -5,9 +5,9 @@ namespace Finder\Models\Identity\Location;
 use SiObjects\Manipule\Builders\LocationBuilder;
 use Finder\Contants\Tables;
 use Finder\Features\Photos\Entities\LocationEntity;
-use SiObjects\ValueObjects\Coordinates;
-use SiObjects\ValueObjects\Latitude;
-use SiObjects\ValueObjects\Longitude;
+use Informate\ValueObjects\Coordinates;
+use Informate\ValueObjects\Latitude;
+use Informate\ValueObjects\Longitude;
 use Finder\Models\Model;
 use Illuminate\Support\Str;
 

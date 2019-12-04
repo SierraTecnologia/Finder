@@ -7,10 +7,10 @@ namespace Finder\Models\Actions\Calendar;
 
 use Finder\Models\CmsModel as BaseModel;
 use Finder\Services\Normalizer;
-use SiObjects\Support\Traits\Models\Translatable;
+use Informate\Traits\Translatable;
 use Log;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use SiObjects\Support\Traits\Models\BusinessTrait;
+use Informate\Traits\BusinessTrait;
 
 class AcaoHumana extends BaseModel
 {

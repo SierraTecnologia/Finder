@@ -265,6 +265,12 @@ class DirectoryExplorer
      */
     public function getAnalyser()
     {
+        $paths = $this->getAnalysedPaths();
+        foreach ($paths as $path) {
+            $spider = new \Finder\Logic\Spider\Directory($path);
+            dd($spider->run());
+        }
+        
         if (null === $this->analyser) {
             $this->analyser = new Spider(
                 $this->getOutput(),

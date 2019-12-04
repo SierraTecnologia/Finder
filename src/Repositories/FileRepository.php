@@ -8,7 +8,7 @@ use CryptoService;
 use Finder\Models\Entytys\Digital\Midia\File;
 use Finder\Repositories\CmsRepository;
 use Finder\Services\Midia\FileService;
-use Illuminate\Support\Facades\Schema;
+
 
 class FileRepository extends CmsRepository
 {

@@ -3,7 +3,7 @@
 namespace Finder\Models\Identity\Digital;
 
 use Finder\Models\Model;
-use SiObjects\Support\Traits\Models\ComplexRelationamentTrait;
+use Informate\Traits\ComplexRelationamentTrait;
 
 class Account extends Model
 {

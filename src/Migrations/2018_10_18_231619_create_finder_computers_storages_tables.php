@@ -14,17 +14,34 @@ class CreateFinderComputersStoragesTables extends Migration
 	{
         
         
-        Schema::create(config('app.db-prefix', '').'directorys', function (Blueprint $table) {
+        Schema::create(config('app.db-prefix', '').'computer_files', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('location');
-            $table->integer('user');
-            $table->string('tags')->nullable();
-            $table->text('details')->nullable();
-            $table->string('mime');
-            $table->string('size');
-            $table->boolean('is_published')->default(0);
-            $table->integer('order');
+            $table->string('name')->nullable();
+            $table->string('location')->nullable();
+
+            $table->string('path')->nullable(); //"/home/sierra/Desenvolvimento/Libs/Finder/."
+            $table->string('filename')->nullable(); //"composer.json"
+            $table->string('basename')->nullable(); //"composer.json"
+            $table->string('pathname')->nullable(); //"/home/sierra/Desenvolvimento/Libs/Finder/./composer.json"
+            $table->string('extension')->nullable(); //"json"
+            $table->string('realPath')->nullable(); //"./composer.json"
+            $table->string('aTime')->nullable(); //2019-12-03 08:23:37
+            $table->string('mTime')->nullable(); //2019-12-03 08:23:37
+            $table->string('cTime')->nullable(); //2019-12-03 08:23:37
+            $table->string('inode')->nullable(); //51930963
+            $table->string('size')->nullable(); //2902
+            $table->string('perms')->nullable(); //0100644
+            $table->string('owner')->nullable(); //1000
+            $table->string('group')->nullable(); //1000
+            $table->string('type')->nullable(); //"file"
+            $table->string('writable')->nullable(); //true
+            $table->string('readable')->nullable(); //true
+            $table->string('executable')->nullable(); //false
+            
+            $table->string('file')->nullable(); //true
+            $table->string('dir')->nullable(); //false
+            $table->string('link')->nullable(); //false
+          
             $table->nullableTimestamps();
             $table->softDeletes();
         });

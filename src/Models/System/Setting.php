@@ -7,7 +7,7 @@ use Finder\Models\User;
 use Finder\Models\Model;
 use Finder\Models\Identity\Actors\Business;
 use Finder\Models\System\Language;
-use SiObjects\Support\Traits\Models\EloquentGetTableNameTrait;
+use Informate\Traits\EloquentGetTableNameTrait;
 
 class Setting extends Model
 {
