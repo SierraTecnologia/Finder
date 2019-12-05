@@ -5,6 +5,13 @@ if (!function_exists('config')) {
         return $defaultValue;
     }
 
+    // CHeck if Database.sqlite file exist
+    $databaseFileSqlite = __DIR__."/../../database.sqlite";
+    if (!file_exists($databaseFileSqlite)) {
+        $fh = fopen($databaseFileSqlite, 'w') or die("Can't create file");
+    }
+
+    // Configure Database with Laravel Illuminate
     $capsule = new \Illuminate\Database\Capsule\Manager;
     $capsule->addConnection([
     
@@ -12,7 +19,7 @@ if (!function_exists('config')) {
     
        "host" => "127.0.0.1",
     
-       "database" => __DIR__."/../../database.sqlite",
+       "database" => $databaseFileSqlite,
     
     //    "username" => "root",
     
@@ -25,7 +32,4 @@ if (!function_exists('config')) {
     
     // Setup the Eloquent ORM.
     $capsule->bootEloquent();
-    
-    
-    echo 'Aqui';
 }
