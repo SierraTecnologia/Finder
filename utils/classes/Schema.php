@@ -1,6 +1,7 @@
 <?php 
 
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Finder\Helps\DebugHelper;
 
 class Schema
 {
@@ -11,7 +12,7 @@ class Schema
 
     public static function create($name, $function)
     {
-        echo "\nExecutando Migrate: ".$name;
+        DebugHelper::warning("Executando Migrate: ".$name);
         
         if (Capsule::schema()->hasTable($name)) {
             return true;

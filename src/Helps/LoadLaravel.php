@@ -5,6 +5,7 @@ use Illuminate\Contracts\Console\Kernel;
 
 use Symfony\Component\Finder\Finder;
 
+use Finder\Helps\DebugHelper;
 
 /**
  * Array helper.
@@ -47,7 +48,7 @@ class LoadLaravel
         
         // check if there are any search results
         if (!$finder->hasResults()) {
-            echo 'No Migrations: '.$path;
+            DebugHelper::warning('No Migrations: '.$path);
 
             return [];
         }

@@ -6,7 +6,7 @@ use Finder\Spider\Abstracts\GroupManager;
 /**
  * Run all script analysers and outputs their result.
  */
-class Project extends GroupManager
+class Database extends GroupManager
 {
     // static protected $identificadores = [
         

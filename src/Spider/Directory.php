@@ -15,15 +15,30 @@ use Finder\Helps\DebugHelper;
  */
 class Directory extends Spider
 {
+    protected $finder = false;
 
     public function analyse()
     {
         // find all files in the current directory
-        $finder = new Finder();
-        $finder->in($this->getTargetPath());
-        DebugHelper::info('Analisando Pasta: '.$this->getTargetPath());
+        DebugHelper::debug('Analisando Pasta: '.$this->getTargetPath());
+        $this->followChildrens($this->getFinder());
+    }
 
-        $this->followChildrens($finder);
+    public function getFinder()
+    {
+
+        try {
+            if (!$this->finder) {
+                $this->finder = new Finder();
+                $this->finder->ignoreUnreadableDirs()->in($this->getTargetPath());
+            }
+        } catch (\Symfony\Component\Finder\Exception\DirectoryNotFoundException $e) {
+            DebugHelper::warning('Diretório não existe: '. $e->getMessage());
+        } catch (Exception $e) {
+            DebugHelper::warning('Exceção capturada: '. $e->getMessage());
+        }
+
+        return $this->finder;
     }
 
 }
