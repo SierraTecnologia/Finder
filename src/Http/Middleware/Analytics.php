@@ -3,7 +3,7 @@
 namespace SiObject\Http\Middleware;
 
 use Closure;
-use Finder\Services\System\AnalyticsService;
+use Tracking\Services\AnalyticsService;
 
 class Analytics
 {

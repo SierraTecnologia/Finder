@@ -1,11 +1,15 @@
 <?php
-namespace Finder\Logic\Spider;
+namespace Finder\Spider\Abstracts;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
+
+use Finder\Spider\File;
+use Finder\Spider\Directory;
+use Finder\Spider\Registrator\FileRegistrator;
 
 /**
  * Run all script analysers and outputs their result.
@@ -20,7 +24,7 @@ abstract class Spider
     {
         $this->target = $target;
         $this->parent = $parent;
-        $this->registrator = new Registrator\FileRegistrator($this->getTarget());
+        $this->registrator = new FileRegistrator($this->getTarget());
     }
 
     public function getUniqueIdentify()
@@ -68,18 +72,5 @@ abstract class Spider
         }
 
         return true;
-    }
-
-    /**
-     * List of PHP analys integration classes.
-     * @return string[] array of class names.
-     */
-    public static function getAnalysisToolsClasses()
-    {
-        return [
-            'Finder\Logic\Tools\CodeSniffer',
-            'Finder\Logic\Tools\CopyPasteDetector',
-            'Finder\Logic\Tools\MessDetector',
-        ];
     }
 }

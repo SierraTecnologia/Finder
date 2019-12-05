@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Logic\Windows\File;
+namespace Finder\Spider\Windows\File;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;

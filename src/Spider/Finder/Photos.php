@@ -1,12 +1,12 @@
 <?php
-namespace Finder\Logic\Spider\Finder;
+namespace Finder\Spider\Finder;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
-use Finder\Logic\Spider\Spider;
+use Finder\Spider\Abstracts\Spider;
 
 /**
  * Run all script analysers and outputs their result.

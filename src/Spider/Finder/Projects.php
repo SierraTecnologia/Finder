@@ -1,25 +1,32 @@
 <?php
-namespace Finder\Logic\Spider;
+namespace Finder\Spider\Finder;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
+use Finder\Spider\Abstracts\Spider;
 
 /**
  * Run all script analysers and outputs their result.
  */
-class Directory extends Spider
+class Projects extends Spider
 {
 
     public function analyse()
     {
-        // find all files in the current directory
         $finder = new Finder();
+        // find all files in the current directory
         $finder->in($this->getTargetPath());
 
-        $this->followChildrens($finder);
+        $finder->files()->name(['composer.json', 'package.json']);
+
+        foreach ($finder as $file) {
+            var_dump($file);
+        }
+        dd($finder);
     }
+
 
 }

@@ -1,28 +1,24 @@
 <?php
-namespace Finder\Logic\Spider\Extensions;
+namespace Finder\Spider\Traits;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
-use Finder\Logic\Spider\Spider;
+use Finder\Spider\Abstracts\Spider;
 use Finder\Models\Entytys\Digital\Midia\File;
 use Finder\Models\Entytys\Digital\Internet\ComputerFile;
 
+use Finder\Logic\Analyser;
+
 /**
- * Run all script analysers and outputs their result.
+ * Outputs events information to the console.
+ * @see TriggerableInterface
  */
-class Json
+trait FileManagerTrait
 {
     protected $file = false;
-
-    public function __construct($file)
-    {
-        $this->setFile($file);
-        $json = json_decode($file->getContents());
-        dd($json);
-    }
 
     protected function setFile($file)
     {
@@ -36,5 +32,4 @@ class Json
     {
         return $this->file;
     }
-
 }

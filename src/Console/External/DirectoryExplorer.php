@@ -8,7 +8,7 @@ use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
 use UnexpectedValueException;
-use Finder\Logic\Spider;
+use Finder\Spider\SpiderLinuxCommand;
 
 /**
  * Command line tool that run all script analyzers.
@@ -23,7 +23,7 @@ class DirectoryExplorer
 
     /**
      * Analyser.
-     * @var Spider analyser instance.
+     * @var SpiderLinuxCommand analyser instance.
      */
     protected $analyser;
 
@@ -256,23 +256,23 @@ class DirectoryExplorer
      */
     public function getDescription()
     {
-        return 'BOSS SPIDER ' . Spider::VERSION;
+        return 'BOSS SPIDER ' . SpiderLinuxCommand::VERSION;
     }
 
     /**
-     * Spider instance.
-     * @return Spider instance.
+     * SpiderLinuxCommand instance.
+     * @return SpiderLinuxCommand instance.
      */
     public function getAnalyser()
     {
         $paths = $this->getAnalysedPaths();
         foreach ($paths as $path) {
-            $spider = new \Finder\Logic\Spider\Directory($path);
+            $spider = new \Finder\Spider\Directory($path);
             dd($spider->run());
         }
         
         if (null === $this->analyser) {
-            $this->analyser = new Spider(
+            $this->analyser = new SpiderLinuxCommand(
                 $this->getOutput(),
                 $this->binariesPath,
                 $this->getAnalysedPaths(),

@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Logic;
+namespace Finder\Spider;
 
 use Symfony\Component\Finder\Finder as FinderBase;
 
@@ -15,7 +15,7 @@ use League\Flysystem\Filesystem;
  * Run all script analysers and outputs their result.
  * @package qa
  */
-class Spider
+class SpiderLinuxCommand
 {
     const EVENT_STARTING_ANALYSIS = 0;
     const EVENT_STARTING_TOOL = 1;

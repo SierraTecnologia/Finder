@@ -1,12 +1,12 @@
 <?php
-namespace Finder\Logic\Spider\Registrator;
+namespace Finder\Spider\Registrator;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
-use Finder\Logic\Spider\Spider;
+use Finder\Spider\Abstracts\Spider;
 use Finder\Models\Entytys\Digital\Midia\File;
 use Finder\Models\Entytys\Digital\Internet\ComputerFile;
 
