@@ -1,16 +1,10 @@
 <?php
 namespace Finder\Spider\Traits;
 
-use Finder\Logic\Output\AbstractOutput;
-use Finder\Logic\Output\Filter\OutputFilterInterface;
-use Finder\Logic\Output\TriggerableInterface;
+use Finder\Spider\Abstracts\MetricManager;
 
-use Symfony\Component\Finder\Finder;
-use Finder\Spider\Abstracts\Spider;
 use Finder\Models\Entytys\Digital\Midia\File;
 use Finder\Models\Entytys\Digital\Internet\ComputerFile;
-
-use Finder\Logic\Analyser;
 
 use Finder\Helps\DebugHelper;
 
@@ -35,8 +29,38 @@ trait MetricManagerTrait
     /**
      * Type pode ser: Extensions, Identificadores, Groups
      */
-    public function registerMetric($type)
+    public function registerMetricCount($type, $group, $sum = 1)
     {
+        if (!isset($this->metrics[$type])) {
+            $this->metrics[$type] = [];
+        }
+
+        if (!isset($this->metrics[$type][$group])) {
+            $this->metrics[$type][$group] = 0;
+        }
+
+        return $this->metrics[$type][$group] += $sum;
+    }
+    public function mergeWith($mergeWith)
+    {
+        $this->metrics = array_merge_recursive($this->metrics, $mergeWith);
 
     }
+
+    public function saveAndReturnArray()
+    {
+        $this->save();
+        return $this->returnMetrics();
+    }
+
+    protected function save()
+    {
+        return $this->metrics;
+    }
+
+    protected function returnMetrics()
+    {
+        return $this->metrics;
+    }
+
 }

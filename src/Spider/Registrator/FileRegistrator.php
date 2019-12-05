@@ -11,42 +11,15 @@ use Finder\Models\Entytys\Digital\Internet\ComputerFile;
  */
 class FileRegistrator extends TargetManager
 {
-    protected $target = false;
-    protected $isStringPath = false;
 
-    public function __construct($target)
+    public function __construct($target, $parent = false)
     {
-        $this->setTarget($target);
+        parent::__construct($target, $parent);
 
-        
 
         if (!ComputerFile::where('location', $this->getLocation())->first()) {
             ComputerFile::create($this->getArray());
         }
-    }
-
-    protected function setTarget($target)
-    {
-        if (is_string($target)) {
-            $this->isStringPath = true;
-        }
-        $this->target = $target;
-    }
-
-    public function getTarget()
-    {
-        return $this->target;
-    }
-
-    public function getLocation()
-    {
-
-        if ($this->isStringPath) {
-            return $this->getTarget();
-        }
-
-
-        return self::clearUrl($this->getTarget()->getRealPath());
     }
 
     protected function getArray()

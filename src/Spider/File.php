@@ -24,7 +24,7 @@ class File extends Spider
         $class = '\\Finder\\Spider\\Extensions\\'.ucfirst($this->getTarget()->getExtension());
         DebugHelper::info('Analisando Arquivo: '.$this->getTargetPath());
         if (class_exists($class)) {
-            $analyse = new $class($this->getTarget());
+            $analyse = new $class($this->getTarget(), $this->getMetric());
 
         }
 

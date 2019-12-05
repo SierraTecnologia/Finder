@@ -19,6 +19,13 @@ class PackageJson extends IdentificadorManager
 {
 
     /**
+     * Identificar Group para a Pasta Pai
+     */
+    public static $groups = [
+        \Finder\Spider\Groups\Project::class,
+    ];
+
+    /**
      * If is Composer Package
      */
     public function identify()
@@ -30,9 +37,10 @@ class PackageJson extends IdentificadorManager
         return true;
     }
 
-    public function collectData()
+    public function collectDataEstrutura()
     {
-        dd($this->getContents());
-        dd($this->getContents()['author']);
+        return [
+            "author",
+        ];
     }
 }

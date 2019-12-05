@@ -10,12 +10,12 @@ use Finder\Spider\Abstracts\Spider;
 use Finder\Models\Entytys\Digital\Midia\File;
 use Finder\Models\Entytys\Digital\Internet\ComputerFile;
 
-use Finder\Spider\Abstracts\FileManager;
+use Finder\Spider\Abstracts\ExtensionManager;
 
 /**
  * Run all script analysers and outputs their result.
  */
-class Json extends FileManager
+class Json extends ExtensionManager
 {
     static protected $identificadores = [
         \Finder\Spider\Identificadores\ComposerFile::class,

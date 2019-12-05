@@ -21,10 +21,12 @@ abstract class TargetManager
 {
     protected $target = false;
     protected $parent = false;
+    protected $isStringPath = false;
 
     public function __construct($target, $parent = false)
     {
-        $this->target = $target;
+        $this->setTarget($target);
+        $this->setParent($parent);
         $this->parent = $parent;
     }
 
@@ -39,9 +41,22 @@ abstract class TargetManager
         return $this->parent;
     }
 
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
     public function getTarget()
     {
         return $this->target;
+    }
+
+    protected function setTarget($target)
+    {
+        if (is_string($target)) {
+            $this->isStringPath = true;
+        }
+        $this->target = $target;
     }
 
     public function getTargetPath()
@@ -51,6 +66,17 @@ abstract class TargetManager
         }
 
         return $this->getTarget()->getRealPath();
+    }
+
+    public function getLocation()
+    {
+
+        if ($this->isStringPath) {
+            return $this->getTarget();
+        }
+
+
+        return self::clearUrl($this->getTarget()->getRealPath());
     }
 
     protected static function clearUrl($url)

@@ -13,56 +13,45 @@ use Finder\Spider\Registrator\FileRegistrator;
 use Finder\Spider\Metrics\FileMetric;
 
 use Finder\Helps\DebugHelper;
+use Finder\Helps\CodeFileHelper;
 
 /**
  * Run all script analysers and outputs their result.
  */
 abstract class Spider extends TargetManager
 {
-    protected $target = false;
-    protected $parent = false;
-
     protected $registrator = false;
     protected $metrics = false;
 
     public function __construct($target, $parent = false)
     {
-        $this->target = $target;
-        $this->parent = $parent;
+        parent::__construct($target, $parent);
+        
         $this->registrator = new FileRegistrator($this->getTarget(), $this->getParent());
-        $this->metrics = new FileMetric($this->getTarget(), $this->getParent());
-    }
+        $this->setMetric();
 
-    public function getUniqueIdentify()
-    {
-        // @todo reescrever
-        return $target->getTargetPath();
-    }
-
-    public function getParent()
-    {
-        return $this->parent;
-    }
-
-    public function getTarget()
-    {
-        return $this->target;
-    }
-
-    public function getTargetPath()
-    {
-        if (is_string($this->getTarget())) {
-            return $this->getTarget();
+        if ($this->getParent()) {
+            $this->getMetric()->registerMetricCount('Targets', CodeFileHelper::getClassName($this));
         }
+    }
 
-        return $this->getTarget()->getRealPath();
+    public function getMetric()
+    {
+        return $this->metrics;
+    }
+
+    public function setMetric($metricClass = false)
+    {
+        if (!$metricClass) {
+            $metricClass = new FileMetric($this->getTarget(), $this->getParent());
+        }
+        $this->metrics = $metricClass;
     }
 
     public function run()
     {
         $this->analyse();
     }
-
 
     public function followChildrens($finder)
     {
@@ -80,6 +69,14 @@ abstract class Spider extends TargetManager
                 $newSpider = new Directory($file, $this);
             }
             $newSpider->run();
+
+            $this->getMetric()->mergeWith(
+                $newSpider->getMetric()->saveAndReturnArray()
+            );
+        }
+
+        if (!$this->getParent()) {
+            dd($this->returnMetrics());
         }
 
         return true;
