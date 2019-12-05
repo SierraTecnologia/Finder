@@ -23,6 +23,7 @@ class ComposerFile extends IdentificadorManager
      */
     public function identify()
     {
+        dd($this->getFile()->getFilename());
         if (!$this->getFile()->getFilename()=='composer.json') {
             return false;
         }
