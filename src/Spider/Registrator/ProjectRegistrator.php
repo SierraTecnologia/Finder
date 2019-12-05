@@ -1,19 +1,15 @@
 <?php
 namespace Finder\Spider\Registrator;
 
-use Finder\Logic\Output\AbstractOutput;
-use Finder\Logic\Output\Filter\OutputFilterInterface;
-use Finder\Logic\Output\TriggerableInterface;
+use Finder\Spider\Abstracts\TargetManager;
 
-use Symfony\Component\Finder\Finder;
-use Finder\Spider\Abstracts\Spider;
 use Finder\Models\Entytys\Digital\Midia\Project;
 use Finder\Models\Entytys\Digital\Internet\ComputerProject;
 
 /**
  * Run all script analysers and outputs their result.
  */
-class ProjectRegistrator
+class ProjectRegistrator extends TargetManager
 {
     protected $target = false;
     protected $isStringPath = false;
@@ -107,10 +103,5 @@ class ProjectRegistrator
             'location' => $md5,
             'name' => $this->getTarget()->getProjectname()
         ]);
-    }
-
-    private static function clearUrl($url)
-    {
-        return str_replace('./', '', $url);
     }
 }

@@ -15,7 +15,7 @@ use Finder\Spider\Abstracts\IdentificadorManager;
 /**
  * Run all script analysers and outputs their result.
  */
-class ComposerFile extends IdentificadorManager
+class PackageJson extends IdentificadorManager
 {
 
     /**
@@ -23,7 +23,7 @@ class ComposerFile extends IdentificadorManager
      */
     public function identify()
     {
-        if ($this->getFile()->getFilename()!=='composer.json') {
+        if ($this->getFile()->getFilename()!=='package.json') {
             return false;
         }
 

@@ -18,21 +18,21 @@ use Finder\Helps\DebugHelper;
  * Outputs events information to the console.
  * @see TriggerableInterface
  */
-trait FileManagerTrait
+trait GroupManagerTrait
 {
-    protected $file = false;
+    protected $group = false;
 
-    protected function setFile($file)
+    protected function setGroup($group)
     {
-        if (is_string($file)) {
+        if (is_string($group)) {
             $this->stringPath = true;
         }
-        $this->file = $file;
+        $this->group = $group;
     }
 
-    public function getFile()
+    public function getGroup()
     {
-        return $this->file;
+        return $this->group;
     }
 
     public function getContents()
@@ -45,22 +45,8 @@ trait FileManagerTrait
      */
     protected function run()
     {
-        DebugHelper::debug('Run FileManager '.$this->getFile());
-        return $this->identificar();
-    }
-    protected function identificar()
-    {
-        if (!isset(static::$identificadores)) {
-            return true;
-        }
-
-        if (empty(static::$identificadores)) {
-            return true;
-        }
-
-        foreach (static::$identificadores as $identificador) {
-            $identificadorInstance = new $identificador($this);
-        }
+        DebugHelper::debug('Run GroupManager '.$this->getFile());
+        
         return true;
     }
 }

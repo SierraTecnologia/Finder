@@ -8,7 +8,7 @@ class DebugHelper
 {
     public static function debug($message)
     {
-        self::printMessage('[Debug] '.$message);
+        // self::printMessage('[Debug] '.$message);
     }
 
     public static function info($message)

@@ -17,20 +17,15 @@ use Finder\Helps\DebugHelper;
 /**
  * Run all script analysers and outputs their result.
  */
-abstract class Spider extends TargetManager
+abstract class TargetManager
 {
     protected $target = false;
     protected $parent = false;
-
-    protected $registrator = false;
-    protected $metrics = false;
 
     public function __construct($target, $parent = false)
     {
         $this->target = $target;
         $this->parent = $parent;
-        $this->registrator = new FileRegistrator($this->getTarget(), $this->getParent());
-        $this->metrics = new FileMetric($this->getTarget(), $this->getParent());
     }
 
     public function getUniqueIdentify()
@@ -58,30 +53,8 @@ abstract class Spider extends TargetManager
         return $this->getTarget()->getRealPath();
     }
 
-    public function run()
+    protected static function clearUrl($url)
     {
-        $this->analyse();
-    }
-
-
-    public function followChildrens($finder)
-    {
-        // check if there are any search results
-        if (!$finder->hasResults()) {
-            DebugHelper::info('No Results: '.$this->getTargetPath());
-
-            return true;
-        }
-
-        foreach ($finder as $file) {
-            if ($file->getType() == 'file') {
-                $newSpider = new File($file, $this);
-            } else {
-                $newSpider = new Directory($file, $this);
-            }
-            $newSpider->run();
-        }
-
-        return true;
+        return str_replace('./', '', $url);
     }
 }

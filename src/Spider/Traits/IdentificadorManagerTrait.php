@@ -12,6 +12,8 @@ use Finder\Models\Entytys\Digital\Internet\ComputerFile;
 
 use Finder\Spider\Abstracts\FileManager;
 
+use Finder\Helps\DebugHelper;
+
 use Finder\Logic\Analyser;
 
 /**
@@ -47,20 +49,14 @@ trait IdentificadorManagerTrait
      */
     protected function run()
     {
+        DebugHelper::debug('Run Identificador '.$this->getFile());
         if ($this->identify()) {
-            DebugHelper::debug('Arquivo identificado'.$this->getFile());
-            $this->doCollect();
+            DebugHelper::info('Arquivo identificado'.$this->getFile());
+            $this->collectData();
         }
     }
     protected function doCollect()
     {
-        if (!empty(static::$identificadores)) {
-            return true;
-        }
-
-        foreach (static::$identificadores as $identificador) {
-            new $identificador($this);
-        }
-        return true;
+        $this->collectData();
     }
 }
