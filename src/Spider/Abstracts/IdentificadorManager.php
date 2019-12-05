@@ -11,7 +11,7 @@ use Finder\Models\Entytys\Digital\Midia\File;
 use Finder\Models\Entytys\Digital\Internet\ComputerFile;
 
 use Finder\Logic\Analyser;
-use Finder\Spider\Traits\FileManagerTrait;
+use Finder\Spider\Traits\IdentificadorManagerTrait;
 
 use Finder\Helps\DebugHelper;
 
@@ -19,13 +19,13 @@ use Finder\Helps\DebugHelper;
  * Outputs events information to the console.
  * @see TriggerableInterface
  */
-abstract class FileManager
+abstract class IdentificadorManager
 {
-    use FileManagerTrait;
+    use IdentificadorManagerTrait;
 
-    public function __construct($file)
+    public function __construct(FileManager $extension)
     {
-        $this->setFile($file);
+        $this->setExtension($extension);
         $this->run();
     }
 }

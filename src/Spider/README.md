@@ -1,7 +1,15 @@
-# Estagios
+# Spider
 
-## Descoberta e Mapeamento
+## Folders
 
+- Abstracts
 
+- Extensions
 
-## Novo Arquivo
+- Finder
+
+- Identificadores
+
+- Registrator
+
+- Windows

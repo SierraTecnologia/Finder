@@ -11,6 +11,8 @@ use Finder\Spider\File;
 use Finder\Spider\Directory;
 use Finder\Spider\Registrator\FileRegistrator;
 
+use Finder\Helps\DebugHelper;
+
 /**
  * Run all script analysers and outputs their result.
  */
@@ -57,7 +59,7 @@ abstract class Spider
     {
         // check if there are any search results
         if (!$finder->hasResults()) {
-            echo 'No Results: '.$this->getTargetPath();
+            DebugHelper::info('No Results: '.$this->getTargetPath());
 
             return true;
         }

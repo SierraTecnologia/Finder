@@ -8,6 +8,8 @@ use Finder\Logic\Output\TriggerableInterface;
 use Symfony\Component\Finder\Finder;
 use Finder\Spider\Abstracts\Spider;
 
+use Finder\Helps\DebugHelper;
+
 /**
  * Run all script analysers and outputs their result.
  */
@@ -20,7 +22,7 @@ class File extends Spider
 
         $file = $this->registrator->registerAndReturnFile();
         $class = '\\Finder\\Spider\\Extensions\\'.ucfirst($this->getTarget()->getExtension());
-        echo "\n\n".'Analisando Arquivo: '.$this->getTargetPath();
+        DebugHelper::info('Analisando Arquivo: '.$this->getTargetPath());
         if (class_exists($class)) {
             $analyse = new $class($this->getTarget());
 

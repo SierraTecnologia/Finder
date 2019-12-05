@@ -8,6 +8,8 @@ use Finder\Logic\Output\TriggerableInterface;
 use Symfony\Component\Finder\Finder;
 use Finder\Spider\Abstracts\Spider;
 
+use Finder\Helps\DebugHelper;
+
 /**
  * Run all script analysers and outputs their result.
  */
@@ -29,7 +31,7 @@ class Photos extends Spider
 
         // $finder->files()->contains('sierra');
 
-        echo 'Fotos encontradas: '.$finder->count()."\n\n";
+        DebugHelper::info('Fotos encontradas: '.$finder->count());
 
 
         foreach ($finder as $file)
@@ -37,9 +39,8 @@ class Photos extends Spider
 
 
     
-            echo "Endereço Completo: ".$file->getRealPath()."\n";
-            echo "Nome: ".$file->getRelativePathname();
-            echo "\n\n";
+            DebugHelper::info("Endereço Completo: ".$file->getRealPath());
+            DebugHelper::info("Nome: ".$file->getRelativePathname());
 
             dd('oi');
 

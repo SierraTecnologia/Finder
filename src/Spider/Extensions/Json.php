@@ -17,7 +17,15 @@ use Finder\Spider\Abstracts\FileManager;
  */
 class Json extends FileManager
 {
-    protected $identificadores = [
+    static protected $identificadores = [
         \Finder\Spider\Identificadores\ComposerFile::class,
     ];
+
+    /**
+     * Referente ao Json
+     */
+    public function getContents()
+    {
+        return json_decode(parent::getContents());
+    }
 }

@@ -8,6 +8,8 @@ use Finder\Logic\Output\TriggerableInterface;
 use Symfony\Component\Finder\Finder;
 use Finder\Spider\Abstracts\Spider;
 
+use Finder\Helps\DebugHelper;
+
 /**
  * Run all script analysers and outputs their result.
  */
@@ -19,7 +21,7 @@ class Directory extends Spider
         // find all files in the current directory
         $finder = new Finder();
         $finder->in($this->getTargetPath());
-        echo "\n\n".'Analisando Pasta: '.$this->getTargetPath();
+        DebugHelper::info('Analisando Pasta: '.$this->getTargetPath());
 
         $this->followChildrens($finder);
     }
