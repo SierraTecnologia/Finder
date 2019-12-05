@@ -24,13 +24,20 @@ class Directory extends Spider
         $this->followChildrens($this->getFinder());
     }
 
-    public function getFinder()
+    public function getFinder($fast = true)
     {
 
         try {
             if (!$this->finder) {
                 $this->finder = new Finder();
-                $this->finder->ignoreUnreadableDirs()->in($this->getTargetPath());
+                $this->finder->ignoreUnreadableDirs();
+                if ($fast) {
+                    if (file_exists($this->getTargetPath().'gitignore')) {
+                        // excludes files/directories matching the .gitignore patterns
+                        $this->finder->ignoreVCSIgnored(true);
+                    }
+                }
+                $this->finder->in($this->getTargetPath());
             }
         } catch (\Symfony\Component\Finder\Exception\DirectoryNotFoundException $e) {
             DebugHelper::warning('Diretório não existe: '. $e->getMessage());
