@@ -76,7 +76,7 @@ abstract class Spider extends TargetManager
         }
 
         if (!$this->getParent()) {
-            dd($this->returnMetrics());
+            dd($this->getMetric()->returnMetrics());
         }
 
         return true;

@@ -37,6 +37,9 @@ class Directory extends Spider
                         $this->finder->ignoreVCSIgnored(true);
                     }
                 }
+                // Ignorar Recursividade
+                $this->finder->depth('== 0');
+                // Buscar Pastas e Arquivos
                 $this->finder->in($this->getTargetPath());
             }
         } catch (\Symfony\Component\Finder\Exception\DirectoryNotFoundException $e) {

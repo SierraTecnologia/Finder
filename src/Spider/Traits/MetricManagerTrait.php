@@ -43,8 +43,7 @@ trait MetricManagerTrait
     }
     public function mergeWith($mergeWith)
     {
-        $this->metrics = array_merge_recursive($this->metrics, $mergeWith);
-
+        $this->metrics = $this->arrayMergeRecursive($this->metrics, $mergeWith);
     }
 
     public function saveAndReturnArray()
@@ -53,14 +52,40 @@ trait MetricManagerTrait
         return $this->returnMetrics();
     }
 
+    public function returnMetrics()
+    {
+        return $this->metrics;
+    }
+
     protected function save()
     {
         return $this->metrics;
     }
 
-    protected function returnMetrics()
-    {
-        return $this->metrics;
-    }
 
+    protected function arrayMergeRecursive($array1, $array2)
+    {
+        if (empty($array2)) {
+            return $array1;
+        }
+        if (empty($array1)) {
+            return $array2;
+        }
+
+        foreach ($array2 as $indice => $valor) {
+            if (!isset($array1[$indice])) {
+                $array1[$indice] = $array2[$indice];
+            } else {
+                foreach ($array2[$indice] as $indice2 => $valor2) {
+                    if (!isset($array1[$indice][$indice2])) {
+                        $array1[$indice][$indice2] = $array2[$indice][$indice2];
+                    } else{
+                        $array1[$indice][$indice2] += $array2[$indice][$indice2];
+                    }
+                }
+            }
+        }
+
+        return $array1;
+    }
 }
