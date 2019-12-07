@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Actions;
 
-use Finder\Models\Contracts\UserManager;
+use Population\Models\Contracts\UserManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;

@@ -5,7 +5,7 @@ namespace Finder\Http\Actions;
 use Finder\Http\Requests\PaginatedRequest;
 use Finder\Http\Resources\PaginatedResource;
 use Finder\Http\Resources\SubscriptionPlainResource;
-use Finder\Models\Contracts\SubscriptionManager;
+use Population\Models\Contracts\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 

@@ -4,12 +4,12 @@ namespace Finder\Http\Controllers\Components\Actors;
 
 use Finder\Http\Requests;
 use Finder\Http\Controllers\Controller;
-use Finder\Models\Activity;
-use Finder\Models\Banner;
-use Finder\Models\Link;
-use Finder\Models\ActiveUser;
-use Finder\Models\HotTopic;
-use Finder\Models\Image;
+use Population\Models\Activity;
+use Population\Models\Banner;
+use Population\Models\Link;
+use Population\Models\ActiveUser;
+use Population\Models\HotTopic;
+use Population\Models\Image;
 use Illuminate\Http\Request;
 use Auth;
 

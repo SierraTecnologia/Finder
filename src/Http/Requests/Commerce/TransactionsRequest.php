@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Requests\Commerce;
 
-use Finder\Models\Commerce\Transaction;
+use Population\Models\Commerce\Transaction;
 
 class TransactionsRequest extends CommerceRequest
 {

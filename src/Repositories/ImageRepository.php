@@ -6,7 +6,7 @@ use Cms;
 use Config;
 use CryptoService;
 use Informate\Models\Entytys\Digital\Midia\Image;
-use Finder\Models\Tag;
+use Population\Models\Tag;
 use Finder\Services\Midia\FileService;
 
 

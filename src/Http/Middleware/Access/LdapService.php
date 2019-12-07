@@ -1,11 +1,11 @@
 <?php
 
-namespace Finder\Models\Access;
+namespace Population\Models\Access;
 
-use Finder\Models\Access;
-use Finder\Models\Role;
-use Finder\Models\User;
-use Finder\Models\UserRepo;
+use Population\Models\Access;
+use Population\Models\Role;
+use Population\Models\User;
+use Population\Models\UserRepo;
 use Finder\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,7 +27,7 @@ class LdapService
     /**
      * LdapService constructor.
      * @param Ldap $ldap
-     * @param \Finder\Models\UserRepo $userRepo
+     * @param \Population\Models\UserRepo $userRepo
      */
     public function __construct(Access\Ldap $ldap, UserRepo $userRepo)
     {
@@ -336,7 +336,7 @@ class LdapService
 
     /**
      * Sync the LDAP groups to the user roles for the current user
-     * @param \Finder\Models\User $user
+     * @param \Population\Models\User $user
      * @param string $username
      * @throws LdapException
      */
@@ -385,7 +385,7 @@ class LdapService
     /**
      * Check a role against an array of group names to see if it matches.
      * Checked against role 'external_auth_id' if set otherwise the name of the role.
-     * @param \Finder\Models\Role $role
+     * @param \Population\Models\Role $role
      * @param array $groupNames
      * @return bool
      */

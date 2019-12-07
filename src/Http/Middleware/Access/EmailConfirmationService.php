@@ -1,9 +1,9 @@
 <?php
 
-namespace Finder\Models\Access;
+namespace Population\Models\Access;
 
-use Finder\Models\User;
-use Finder\Models\UserRepo;
+use Population\Models\User;
+use Population\Models\UserRepo;
 use Finder\Exceptions\ConfirmationEmailException;
 use Finder\Exceptions\UserRegistrationException;
 use Finder\Notifications\ConfirmEmail;
@@ -18,7 +18,7 @@ class EmailConfirmationService
     /**
      * EmailConfirmationService constructor.
      * @param Database $db
-     * @param \Finder\Models\UserRepo $users
+     * @param \Population\Models\UserRepo $users
      */
     public function __construct(Database $db, UserRepo $users)
     {
@@ -29,7 +29,7 @@ class EmailConfirmationService
     /**
      * Create new confirmation for a user,
      * Also removes any existing old ones.
-     * @param \Finder\Models\User $user
+     * @param \Population\Models\User $user
      * @throws ConfirmationEmailException
      */
     public function sendConfirmation(User $user)
@@ -90,7 +90,7 @@ class EmailConfirmationService
 
     /**
      * Delete all email confirmations that belong to a user.
-     * @param \Finder\Models\User $user
+     * @param \Population\Models\User $user
      * @return mixed
      */
     public function deleteConfirmationsByUser(User $user)

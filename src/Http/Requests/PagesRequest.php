@@ -4,7 +4,7 @@ namespace Finder\Http\Requests;
 
 use Auth;
 use Gate;
-use Finder\Models\Negocios\Page;
+use Population\Models\Negocios\Page;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PagesRequest extends FormRequest

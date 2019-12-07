@@ -4,7 +4,7 @@ namespace Finder\Http\Requests;
 
 use Auth;
 use Gate;
-use Finder\Models\Negocios\Promotion;
+use Population\Models\Negocios\Promotion;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PromotionRequest extends FormRequest

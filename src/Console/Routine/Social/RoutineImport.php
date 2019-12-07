@@ -3,11 +3,11 @@
 namespace Finder\Console\Routine\Social;
 
 use Illuminate\Console\Command;
-use Finder\Models\MediaSend;
-use Finder\Models\MediaEmail;
-use Finder\Models\MediaPush;
-use Finder\Models\Company;
-use Finder\Models\User;
+use Population\Models\MediaSend;
+use Population\Models\MediaEmail;
+use Population\Models\MediaPush;
+use Population\Models\Company;
+use Population\Models\User;
 use SendGrid;
 use Finder\Http\Controllers\Api\Controller;
 

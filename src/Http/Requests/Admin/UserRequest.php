@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Requests\Admin;
 
-use Finder\Models\User;
+use Population\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest {

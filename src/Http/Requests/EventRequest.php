@@ -4,7 +4,7 @@ namespace Finder\Http\Requests;
 
 use Auth;
 use Gate;
-use Finder\Models\Calendar\Event;
+use Population\Models\Calendar\Event;
 use Illuminate\Foundation\Http\FormRequest;
 
 class EventRequest extends FormRequest

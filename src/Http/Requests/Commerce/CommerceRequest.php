@@ -4,7 +4,7 @@ namespace Finder\Http\Requests\Commerce;
 
 use Illuminate\Support\Facades\Gate;
 use Finder\Http\Requests\Request;
-use Finder\Models\Feature;
+use Population\Models\Feature;
 
 abstract class CommerceRequest extends Request
 {

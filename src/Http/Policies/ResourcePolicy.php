@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Policies;
 
-use Finder\Models\User;
+use Population\Models\User;
 
 /**
  * Class ResourcePolicy.

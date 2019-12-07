@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Requests\Commerce;
 
-use Finder\Models\Commerce\Coupon;
+use Population\Models\Commerce\Coupon;
 
 class CouponRequest extends CommerceRequest
 {

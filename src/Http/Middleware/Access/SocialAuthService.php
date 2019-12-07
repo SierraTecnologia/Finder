@@ -1,9 +1,9 @@
 <?php
 
-namespace Finder\Models\Access;
+namespace Population\Models\Access;
 
-use Finder\Models\SocialAccount;
-use Finder\Models\UserRepo;
+use Population\Models\SocialAccount;
+use Population\Models\UserRepo;
 use Finder\Exceptions\SocialDriverNotConfigured;
 use Finder\Exceptions\SocialSignInAccountNotUsed;
 use Finder\Exceptions\UserRegistrationException;
@@ -21,7 +21,7 @@ class SocialAuthService
 
     /**
      * SocialAuthService constructor.
-     * @param \Finder\Models\UserRepo      $userRepo
+     * @param \Population\Models\UserRepo      $userRepo
      * @param Socialite     $socialite
      * @param SocialAccount $socialAccount
      */

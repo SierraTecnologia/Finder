@@ -5,8 +5,8 @@
 
 namespace Finder\Logic\Events;
 
-use Finder\Models\Entytys\Digital\Code\Commit;
-use Finder\Models\Entytys\Digital\Infra\Pipeline;
+use Population\Models\Entytys\Digital\Code\Commit;
+use Population\Models\Entytys\Digital\Infra\Pipeline;
 
 class NewCommit
 {

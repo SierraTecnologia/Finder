@@ -3,7 +3,7 @@
 namespace Finder\Http\Actions;
 
 use Finder\Http\Resources\PhotoResource;
-use Finder\Models\Contracts\PhotoManager;
+use Population\Models\Contracts\PhotoManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;

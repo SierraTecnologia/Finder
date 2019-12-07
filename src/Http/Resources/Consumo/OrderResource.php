@@ -3,7 +3,7 @@
 namespace Finder\Http\Resources\Consumo;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Finder\Models\Order;
+use Population\Models\Order;
 
 class OrderResource extends JsonResource
 {

@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Requests\Commerce;
 
-use Finder\Models\Commerce\Plan;
+use Population\Models\Commerce\Plan;
 
 class PlanRequest extends CommerceRequest
 {

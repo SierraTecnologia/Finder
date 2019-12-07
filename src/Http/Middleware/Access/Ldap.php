@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Models\Access;
+namespace Population\Models\Access;
 
 /**
  * Class Ldap

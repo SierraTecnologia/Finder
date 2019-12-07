@@ -2,8 +2,8 @@
 
 namespace Finder\Http\Controllers\Features\Midia;
 
-use Finder\Models\Blog\Article;
-use Finder\Models\Digital\Midia\PhotoAlbum;
+use Population\Models\Blog\Article;
+use Population\Models\Digital\Midia\PhotoAlbum;
 use DB;
 
 class HomeController extends Controller {

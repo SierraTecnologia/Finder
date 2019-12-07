@@ -4,7 +4,7 @@ namespace Finder\Http\Requests;
 
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
-use Finder\Models\Notification;
+use Population\Models\Notification;
 
 class NotificationUpdateRequest extends FormRequest
 {

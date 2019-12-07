@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Actions;
 
-use Finder\Models\Contracts\PostManager;
+use Population\Models\Contracts\PostManager;
 use Illuminate\Contracts\Cache\Factory as CacheManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;

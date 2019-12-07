@@ -2,11 +2,11 @@
 
 namespace Finder\Http\Controllers\Components\Actors;
 
-use Finder\Models\User;
+use Population\Models\User;
 use Carbon\Carbon;
-use Finder\Models\Features\Messenger\Message;
-use Finder\Models\Features\Messenger\Participant;
-use Finder\Models\Features\Messenger\Thread;
+use Population\Models\Features\Messenger\Message;
+use Population\Models\Features\Messenger\Participant;
+use Population\Models\Features\Messenger\Thread;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
