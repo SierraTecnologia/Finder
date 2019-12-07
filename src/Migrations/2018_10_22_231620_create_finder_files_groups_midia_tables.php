@@ -12,26 +12,26 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
 	 */
 	public function up()
 	{
-        Schema::create(config('app.db-prefix', '').'images', function (Blueprint $table) {
+        Schema::create(config('app.db-prefix', '').'imagens', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('location');
+            $table->string('location')->nullable();
             $table->string('name')->nullable();
-            $table->string('original_name');
+            $table->string('original_name')->nullable();
             $table->string('storage_location')->default('local');
             $table->string('alt_tag')->nullable();
             $table->string('title_tag')->nullable();
             $table->boolean('is_published')->default(0);
-            $table->integer('entity_id');
-            $table->string('entity_type');
+            $table->integer('entity_id')->nullable();
+            $table->string('entity_type')->nullable();
             $table->nullableTimestamps();
             $table->softDeletes();
         });
-        Schema::create(config('app.db-prefix', '').'imageables', function (Blueprint $table) {
+        Schema::create(config('app.db-prefix', '').'imagenables', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('image_id')->nullable();
-            // $table->foreign('image_id')->references('id')->on('images');
-            $table->string('imageable_id');
-            $table->string('imageable_type');
+            $table->unsignedInteger('imagen_id')->nullable();
+            // $table->foreign('image_id')->references('id')->on('imagens');
+            $table->string('imagenable_id');
+            $table->string('imagenable_type');
         });
 
         
