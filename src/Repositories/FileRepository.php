@@ -5,7 +5,7 @@ namespace Finder\Repositories;
 use Auth;
 use Config;
 use CryptoService;
-use Finder\Models\Entytys\Digital\Midia\File;
+use Informate\Models\Entytys\Digital\Midia\File;
 use Finder\Repositories\CmsRepository;
 use Finder\Services\Midia\FileService;
 

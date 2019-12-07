@@ -3,7 +3,7 @@ namespace Finder\Spider\Registrator;
 
 use Finder\Spider\Abstracts\TargetManager;
 
-use Finder\Models\Entytys\Digital\Midia\Project;
+use Informate\Models\Entytys\Digital\Midia\Project;
 
 /**
  * Run all script analysers and outputs their result.

@@ -1,7 +1,7 @@
 <?php
 namespace Finder\Spider\Extensions;
 
-use Finder\Models\Entytys\Digital\Midia\File;
+use Informate\Models\Entytys\Digital\Midia\File;
 use Finder\Models\Entytys\Digital\Internet\ComputerFile;
 
 use Finder\Spider\Abstracts\ExtensionManager;
