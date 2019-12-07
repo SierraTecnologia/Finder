@@ -1,4 +1,6 @@
-<?php namespace Finder\Models\Access;
+<?php
+
+namespace Finder\Models\Access;
 
 use Finder\Models\User;
 use Finder\Models\UserRepo;

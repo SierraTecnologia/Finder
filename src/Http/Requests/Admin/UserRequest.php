@@ -1,4 +1,6 @@
-<?php namespace Finder\Http\Requests\Admin;
+<?php
+
+namespace Finder\Http\Requests\Admin;
 
 use Finder\Models\User;
 use Illuminate\Foundation\Http\FormRequest;

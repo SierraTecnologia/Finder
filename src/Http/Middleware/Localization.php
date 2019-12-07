@@ -1,4 +1,6 @@
-<?php namespace Finder\Http\Middleware;
+<?php
+
+namespace Finder\Http\Middleware;
 
 use Carbon\Carbon;
 use Closure;

@@ -1,4 +1,6 @@
-<?php namespace Finder\Models\Components\Book\Repos;
+<?php
+
+namespace Finder\Models\Components\Book\Repos;
 
 use Finder\Models\Components\Book\Book;
 use Finder\Models\Components\Book\Chapter;

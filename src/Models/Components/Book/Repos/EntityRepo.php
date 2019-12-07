@@ -1,4 +1,6 @@
-<?php namespace Finder\Models\Components\Book\Repos;
+<?php
+
+namespace Finder\Models\Components\Book\Repos;
 
 use Finder\Actions\Book\TagRepo;
 use Finder\Actions\Book\ViewService;

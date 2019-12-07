@@ -1,4 +1,6 @@
-<?php namespace Finder\Models\Components\Book;
+<?php
+
+namespace Finder\Models\Components\Book;
 
 class Chapter extends Entity
 {
