@@ -61,7 +61,7 @@ class CreateFinderComputersHistorysTables extends Migration
         //     $table->increments('id');
         //     $table->unsignedInteger('image_id')->nullable();
         //     // $table->foreign('image_id')->references('id')->on('images');
-        //     $table->unsignedInteger('imageable_id');
+        //     $table->string('imageable_id');
         //     $table->string('imageable_type');
         // });
 

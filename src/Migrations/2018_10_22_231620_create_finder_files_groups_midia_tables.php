@@ -30,7 +30,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
             $table->increments('id');
             $table->unsignedInteger('image_id')->nullable();
             // $table->foreign('image_id')->references('id')->on('images');
-            $table->unsignedInteger('imageable_id');
+            $table->string('imageable_id');
             $table->string('imageable_type');
         });
 
@@ -92,7 +92,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
             $table->increments('id');
             $table->unsignedInteger('video_id')->nullable();
             // $table->foreign('video_id')->references('id')->on('videos');
-            $table->unsignedInteger('videoable_id');
+            $table->string('videoable_id');
             $table->string('videoable_type');
         });
         
@@ -111,7 +111,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
             $table->increments('id');
             $table->unsignedInteger('thumbnail_id')->nullable();
             // $table->foreign('thumbnail_id')->references('id')->on('thumbnails');
-            $table->unsignedInteger('thumbnailable_id');
+            $table->string('thumbnailable_id');
             $table->string('thumbnailable_type');
         });
 
