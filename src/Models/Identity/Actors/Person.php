@@ -3,7 +3,7 @@
 namespace Finder\Models\Identity\Actors;
 
 use Finder\Models\Model;
-use Informate\Traits\AsHuman;
+use Population\Traits\AsHuman;
 
 class Person extends Model
 {
