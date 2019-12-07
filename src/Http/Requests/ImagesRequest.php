@@ -4,7 +4,7 @@ namespace Finder\Http\Requests;
 
 use Auth;
 use Gate;
-use Population\Models\Digital\Midia\Image;
+use Informate\Models\Entytys\Digital\Midia\Image;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ImagesRequest extends FormRequest

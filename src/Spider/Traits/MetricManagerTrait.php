@@ -4,7 +4,7 @@ namespace Finder\Spider\Traits;
 use Finder\Spider\Abstracts\MetricManager;
 
 use Informate\Models\Entytys\Digital\Midia\File;
-use Population\Models\Entytys\Digital\Internet\ComputerFile;
+use Informate\Models\Entytys\Digital\Internet\ComputerFile;
 
 use Finder\Helps\DebugHelper;
 

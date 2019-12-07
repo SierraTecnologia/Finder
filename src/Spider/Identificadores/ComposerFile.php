@@ -8,7 +8,7 @@ use Finder\Logic\Output\TriggerableInterface;
 use Symfony\Component\Finder\Finder;
 use Finder\Spider\Abstracts\Spider;
 use Informate\Models\Entytys\Digital\Midia\File;
-use Population\Models\Entytys\Digital\Internet\ComputerFile;
+use Informate\Models\Entytys\Digital\Internet\ComputerFile;
 
 use Finder\Spider\Abstracts\IdentificadorManager;
 
