@@ -1,7 +1,7 @@
 <?php
 namespace Finder\Spider\Metrics;
 
-use Finder\Spider\Abstracts\MetricManager;
+use Tracking\Abstracts\MetricManager;
 
 /**
  * Run all script analysers and outputs their result.
