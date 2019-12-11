@@ -11,23 +11,55 @@ use Informate\Models\Entytys\Digital\Internet\ComputerFile;
  */
 class FileRegistrator extends TargetManager
 {
+    protected $file = false;
+    protected $computerFile = false;
 
     public function __construct($target, $parent = false)
     {
         parent::__construct($target, $parent);
 
-
-        if (!ComputerFile::where('location', $this->getLocation())->first()) {
-            ComputerFile::create($this->getArray());
-        }
+        $computer = $this->returnComputerFile();
+        // @todo Verificar se alterou o arquivo e gravar o novo arquivo
     }
 
-    protected function getArray()
+    private function returnComputerFile()
+    {
+        if ($this->computerFile) {
+            return $this->computerFile;
+        }
+
+        if (!$this->computerFile = ComputerFile::where('location', $this->getLocation())->first()) {
+            $this->computerFile = ComputerFile::create($this->getArray());
+        }
+        
+        return $this->computerFile;
+    }
+
+    private function returnFile()
+    {
+        if ($this->file) {
+            return $this->file;
+        }
+
+        $md5 = md5($this->getTarget()->getContents());
+
+        if ($file = File::where('location', $md5)->first()) {
+            return $file;
+        }
+
+        return File::create([
+            'location' => $md5,
+            'name' => $this->getTarget()->getFilename()
+        ]);
+    }
+
+    private function getArray()
     {
         $target = $this->getTarget();
 
-        $array = [];
-
+        $array = [
+            'file_id' => $this->returnFile()->id,
+        ];
 
         if ($this->isStringPath) {
             return array_merge($array, [
@@ -60,21 +92,6 @@ class FileRegistrator extends TargetManager
             // 'file' => $target->getFile(),
             // 'dir' => $target->getDir(),
             // 'link' => $target->getLink(),
-        ]);
-    }
-
-    public function registerAndReturnFile()
-    {
-
-        $md5 = md5($this->getTarget()->getContents());
-
-        if ($file = File::where('location', $md5)->first()) {
-            return $file;
-        }
-
-        return File::create([
-            'location' => $md5,
-            'name' => $this->getTarget()->getFilename()
         ]);
     }
 }

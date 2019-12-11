@@ -12,7 +12,7 @@ class Schema
 
     public static function create($name, $function)
     {
-        DebugHelper::warning("Executando Migrate: ".$name);
+        DebugHelper::info("[Migrate] Criando tabela: ".$name);
         
         if (Capsule::schema()->hasTable($name)) {
             return true;

@@ -29,7 +29,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
         Schema::create(config('app.db-prefix', '').'imagenables', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('imagen_id')->nullable();
-            // $table->foreign('image_id')->references('id')->on('imagens');
+            // $table->foreign('imagen_id')->references('id')->on('imagens');
             $table->string('imagenable_id');
             $table->string('imagenable_type');
         });

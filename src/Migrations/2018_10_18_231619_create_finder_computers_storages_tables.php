@@ -12,6 +12,18 @@ class CreateFinderComputersStoragesTables extends Migration
 	 */
 	public function up()
 	{
+        Schema::create(config('app.db-prefix', '').'files', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name')->nullable();
+            $table->string('location')->nullable();
+            $table->string('tags')->nullable();
+            $table->text('details')->nullable();
+            $table->string('extension')->nullable(); //"json"
+            $table->string('mime')->nullable();
+            $table->string('size')->nullable();
+            $table->nullableTimestamps();
+            $table->softDeletes();
+        });
         
         
         Schema::create(config('app.db-prefix', '').'computer_files', function (Blueprint $table) {
@@ -42,18 +54,10 @@ class CreateFinderComputersStoragesTables extends Migration
             $table->string('dir')->nullable(); //false
             $table->string('link')->nullable(); //false
           
-            $table->nullableTimestamps();
-            $table->softDeletes();
-        });
-        Schema::create(config('app.db-prefix', '').'files', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name')->nullable();
-            $table->string('location')->nullable();
-            $table->string('tags')->nullable();
-            $table->text('details')->nullable();
-            $table->string('extension')->nullable(); //"json"
-            $table->string('mime')->nullable();
-            $table->string('size')->nullable();
+            $table->unsignedInteger('file_id')->nullable();
+            // $table->foreign('file_id')->references('id')->on('files');
+            $table->unsignedInteger('computer_id')->nullable();
+            // $table->foreign('computer_id')->references('id')->on('computers');
             $table->nullableTimestamps();
             $table->softDeletes();
         });

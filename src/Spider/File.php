@@ -19,8 +19,7 @@ class File extends Spider
     {
         $absoluteFilePath = $this->getTargetPath();
         $fileNameWithExtension = $this->target->getRelativePathname();
-
-        $file = $this->registrator->registerAndReturnFile();
+        
         $class = '\\Finder\\Spider\\Extensions\\'.ucfirst($this->getTarget()->getExtension());
         DebugHelper::info('Analisando Arquivo: '.$this->getTargetPath());
         if (class_exists($class)) {
