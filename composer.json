@@ -46,7 +46,6 @@
         "sierratecnologia/crypto": "dev-master",
         "raiym/instagram-php-scraper": "^0.8.35",
         "spatie/crawler": "*",
-        "rokde/laravel-slow-query-logger": "*",
         "jaeger/querylist": "^4.1",
         "friendsofphp/php-cs-fixer": "*",
         "rap2hpoutre/laravel-log-viewer": "*",
