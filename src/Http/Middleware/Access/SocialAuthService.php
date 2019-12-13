@@ -4,9 +4,9 @@ namespace Population\Models\Access;
 
 use Population\Models\SocialAccount;
 use Population\Models\UserRepo;
-use Finder\Exceptions\SocialDriverNotConfigured;
-use Finder\Exceptions\SocialSignInAccountNotUsed;
-use Finder\Exceptions\UserRegistrationException;
+use SiUtils\Exceptions\SocialDriverNotConfigured;
+use SiUtils\Exceptions\SocialSignInAccountNotUsed;
+use SiUtils\Exceptions\UserRegistrationException;
 use Laravel\Socialite\Contracts\Factory as Socialite;
 use Laravel\Socialite\Contracts\User as SocialUser;
 

@@ -4,8 +4,8 @@ namespace Population\Models\Access;
 
 use Population\Models\User;
 use Population\Models\UserRepo;
-use Finder\Exceptions\ConfirmationEmailException;
-use Finder\Exceptions\UserRegistrationException;
+use SiUtils\Exceptions\ConfirmationEmailException;
+use SiUtils\Exceptions\UserRegistrationException;
 use Finder\Notifications\ConfirmEmail;
 use Carbon\Carbon;
 use Illuminate\Database\Connection as Database;

@@ -6,7 +6,7 @@ use Population\Models\Access;
 use Population\Models\Role;
 use Population\Models\User;
 use Population\Models\UserRepo;
-use Finder\Exceptions\LdapException;
+use SiUtils\Exceptions\LdapException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Builder;
 
