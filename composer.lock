@@ -10825,7 +10825,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "b826cd109e3f7de206680ae1521d502bff4c1b31"
+                "reference": "2c95e78356241922ae4337bf84ee2d4e0c9fde60"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
