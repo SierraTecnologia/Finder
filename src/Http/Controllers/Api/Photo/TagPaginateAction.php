@@ -5,7 +5,7 @@ namespace Finder\Http\Actions;
 use Finder\Http\Requests\PaginatedRequest;
 use Finder\Http\Resources\PaginatedResource;
 use Finder\Http\Resources\TagPlainResource;
-use Population\Models\Contracts\TagManager;
+use Informate\Managers\TagManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;

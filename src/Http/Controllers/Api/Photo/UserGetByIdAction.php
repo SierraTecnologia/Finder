@@ -3,7 +3,7 @@
 namespace Finder\Http\Actions;
 
 use Finder\Http\Resources\UserPlainResource;
-use Population\Models\Contracts\UserManager;
+use Informate\Managers\UserManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Response;
