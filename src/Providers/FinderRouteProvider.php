@@ -4,7 +4,7 @@ namespace Finder\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use SiObject\Http\Middleware\Analytics;
+use SiObjects\Http\Middleware\Analytics;
 use Finder\Http\Middleware\isAjax;
 
 class FinderRouteProvider extends ServiceProvider
