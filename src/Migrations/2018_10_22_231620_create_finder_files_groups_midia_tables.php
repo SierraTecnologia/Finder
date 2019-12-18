@@ -21,8 +21,9 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
             $table->string('alt_tag')->nullable();
             $table->string('title_tag')->nullable();
             $table->boolean('is_published')->default(0);
-            $table->integer('entity_id')->nullable();
-            $table->string('entity_type')->nullable();
+            
+            $table->unsignedInteger('file_id')->nullable();
+            // $table->foreign('file_id')->references('id')->on('files');
             $table->nullableTimestamps();
             $table->softDeletes();
         });

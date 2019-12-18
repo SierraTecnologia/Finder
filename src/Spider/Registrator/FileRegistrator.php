@@ -35,7 +35,7 @@ class FileRegistrator extends TargetManager
         return $this->computerFile;
     }
 
-    private function returnFile()
+    protected function returnFile()
     {
         if ($this->file) {
             return $this->file;
@@ -43,11 +43,11 @@ class FileRegistrator extends TargetManager
 
         $md5 = md5($this->getTarget()->getContents());
 
-        if ($file = File::where('location', $md5)->first()) {
-            return $file;
+        if ($this->file = File::where('location', $md5)->first()) {
+            return $this->file;
         }
 
-        return File::create([
+        return $this->file = File::create([
             'location' => $md5,
             'name' => $this->getTarget()->getFilename()
         ]);
