@@ -12,8 +12,8 @@ use Finder\Spider\Directory;
 use Finder\Spider\Registrator\FileRegistrator;
 use Finder\Spider\Metrics\FileMetric;
 
-use Finder\Helps\DebugHelper;
-use Finder\Helps\CodeFileHelper;
+use Support\Helps\DebugHelper;
+use Support\Helps\CodeFileHelper;
 
 /**
  * Run all script analysers and outputs their result.

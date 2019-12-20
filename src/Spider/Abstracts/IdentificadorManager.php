@@ -2,7 +2,7 @@
 namespace Finder\Spider\Abstracts;
 
 use Finder\Spider\Traits\IdentificadorManagerTrait;
-use Finder\Helps\DebugHelper;
+use Support\Helps\DebugHelper;
 use Finder\Spider\Abstracts\ExtensionManager;
 
 /**

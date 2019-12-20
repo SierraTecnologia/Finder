@@ -1,22 +1,41 @@
 <?php
-namespace Finder\Helps;
+namespace Support\Helps;
 
 use Illuminate\Contracts\Console\Kernel;
 
 use Symfony\Component\Finder\Finder;
 
-use Finder\Helps\DebugHelper;
+use Support\Helps\DebugHelper;
 
 /**
  * Array helper.
  */
 class LoadLaravel
 {
-    public static $migrationsPaths = [
+    protected $migrationsPaths = [
         __DIR__.'/../../vendor/sierratecnologia/informate/src/Migrations/',
         __DIR__.'/../../vendor/sierratecnologia/population/src/Migrations/',
         __DIR__.'/../../src/Migrations/',
     ];
+
+    public function addMigrationsPaths($migrationsPaths)
+    {
+        if (is_string($migrationsPaths)) {
+            $migrationsPaths = [$migrationsPaths];
+        }
+        if (is_empty($migrationsPaths)) {
+            return false;
+        }
+
+
+        $this->migrationsPaths = array_merge(
+            $this->migrationsPaths,
+            $migrationsPaths
+        );
+
+        return true;
+    }
+
     /**
      * 
      */
@@ -41,7 +60,7 @@ class LoadLaravel
 
 
 
-    public function runMIgrations()
+    protected function runMIgrations()
     {
         $finder = new Finder();
         $finder->in(self::$migrationsPaths)->files()->sortByName();

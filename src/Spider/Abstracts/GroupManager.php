@@ -2,7 +2,7 @@
 namespace Finder\Spider\Abstracts;
 
 use Finder\Spider\Traits\GroupManagerTrait;
-use Finder\Helps\DebugHelper;
+use Support\Helps\DebugHelper;
 
 /**
  * Outputs events information to the console.

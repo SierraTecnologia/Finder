@@ -1,7 +1,7 @@
 <?php
 namespace Finder\Spider\Traits;
 
-use Finder\Helps\DebugHelper;
+use Support\Helps\DebugHelper;
 
 /**
  * Outputs events information to the console.

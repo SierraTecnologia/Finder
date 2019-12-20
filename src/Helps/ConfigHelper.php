@@ -1,6 +1,6 @@
 <?php 
 
-namespace Finder\Helps;
+namespace Support\Helps;
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 

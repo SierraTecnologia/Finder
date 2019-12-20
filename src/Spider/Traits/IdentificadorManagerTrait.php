@@ -1,7 +1,7 @@
 <?php
 namespace Finder\Spider\Traits;
 
-use Finder\Helps\DebugHelper;
+use Support\Helps\DebugHelper;
 use Finder\Spider\Abstracts\ExtensionManager;
 
 /**

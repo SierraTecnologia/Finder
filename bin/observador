@@ -14,7 +14,7 @@ foreach ($composerAutoload as $autoload) {
     }
 }
 
-$loadLaravel = new \Finder\Helps\LoadLaravel();
+$loadLaravel = new \Support\Helps\LoadLaravel();
 $loadLaravel->init();
 
 $cliMate = new \League\CLImate\CLImate;

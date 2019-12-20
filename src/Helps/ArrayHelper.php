@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Helps;
+namespace Support\Helps;
 
 /**
  * Array helper.

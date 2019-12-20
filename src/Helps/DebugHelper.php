@@ -1,6 +1,6 @@
 <?php 
 
-namespace Finder\Helps;
+namespace Support\Helps;
 
 class DebugHelper
 {
