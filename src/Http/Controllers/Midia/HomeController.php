@@ -3,7 +3,7 @@
 namespace Finder\Http\Controllers\Features\Midia;
 
 use Population\Models\Blog\Article;
-use Informate\Models\Entytys\Digital\Midia\PhotoAlbum;
+use Population\Models\Entytys\Digital\Midia\PhotoAlbum;
 use DB;
 
 class HomeController extends Controller {

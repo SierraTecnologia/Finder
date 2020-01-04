@@ -3,9 +3,9 @@ namespace Finder\Spider\Registrator;
 
 use Finder\Spider\Abstracts\TargetManager;
 
-use Informate\Models\Entytys\Digital\Midia\File;
-use Informate\Models\Entytys\Digital\Midia\Imagen;
-use Informate\Models\Entytys\Digital\Internet\ComputerFile;
+use Population\Models\Entytys\Digital\Midia\File;
+use Population\Models\Entytys\Digital\Midia\Imagen;
+use Population\Models\Entytys\Digital\Internet\ComputerFile;
 
 /**
  * Run all script analysers and outputs their result.
