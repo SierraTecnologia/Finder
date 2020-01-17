@@ -7,8 +7,8 @@ namespace Finder\Routines\Globals;
 
 use Finder\Routines\Tokens\ImportRoutine;
 
-use App\Actions\Action;
-use App\Actions\ActionCollection;
+use Finder\Actions\Action;
+use Finder\Actions\ActionCollection;
 use Population\Models\Components\Integrations\Token;
 use Population\Models\Components\Integrations\TokenAccess;
 

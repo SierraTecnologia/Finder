@@ -5,8 +5,8 @@
 
 namespace Finder\Routines\Tokens;
 
-use App\Actions\Action;
-use App\Actions\ActionCollection;
+use Finder\Actions\Action;
+use Finder\Actions\ActionCollection;
 use SiInteractions\Worker\Sync\Database\ImportCollection;
 
 use Population\Models\Components\Integrations\Token;
