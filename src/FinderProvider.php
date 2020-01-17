@@ -2,13 +2,32 @@
 
 namespace Finder;
 
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\View;
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use Finder\Services\FinderService;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\View;
+
+use Log;
+use App;
+use Config;
+use Route;
+use Illuminate\Routing\Router;
+
+use Support\ClassesHelpers\Traits\Models\ConsoleTools;
+
+use Finder\Facades\Finder as FinderFacade;
+use Illuminate\Contracts\Events\Dispatcher;
+use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 
 class FinderProvider extends ServiceProvider
 {
+    use ConsoleTools;
+
+    public static $aliasProviders = [
+        'Finder' => \Finder\Facades\Finder::class,
+    ];
+
     public static $providers = [
         \Finder\Providers\FinderEventServiceProvider::class,
         \Finder\Providers\FinderRouteProvider::class,
@@ -26,22 +45,47 @@ class FinderProvider extends ServiceProvider
     /**
      * Alias the services in the boot.
      */
-    public function boot()
+    public function boot(Dispatcher $events)
     {
-        // $this->publishes([
-        //     __DIR__.'/Publishes/resources/tools' => base_path('resources/tools'),
-        //     __DIR__.'/Publishes/app/Services' => app_path('Services'),
-        //     __DIR__.'/Publishes/public/js' => base_path('public/js'),
-        //     __DIR__.'/Publishes/public/css' => base_path('public/css'),
-        //     __DIR__.'/Publishes/public/img' => base_path('public/img'),
-        //     __DIR__.'/Publishes/config' => base_path('config'),
-        //     __DIR__.'/Publishes/routes' => base_path('routes'),
-        //     __DIR__.'/Publishes/app/Controllers' => app_path('Http/Controllers/Finder'),
-        // ]);
+        
+        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
+            $event->menu->add('Finder');
+            $event->menu->add([
+                'text'    => 'Finder',
+                'icon'    => 'cog',
+                'nivel' => \App\Models\Role::$GOOD,
+                'submenu' => \Finder\Services\MenuService::getAdminMenu(),
+            ]);
+        });
+        
+        // Register configs, migrations, etc
+        $this->registerDirectories();
 
-        // $this->publishes([
-        //     __DIR__.'../resources/views' => base_path('resources/views/vendor/Finder'),
-        // ], 'SierraTecnologia Finder');
+        // // COloquei no register pq nao tava reconhecendo as rotas para o adminlte
+        // $this->app->booted(function () {
+        //     $this->routes();
+        // });
+    }
+
+    /**
+     * Register the tool's routes.
+     *
+     * @return void
+     */
+    protected function routes()
+    {
+        if ($this->app->routesAreCached()) {
+            return;
+        }
+
+        /**
+         * Finder Routes
+         */
+        Route::group([
+            'namespace' => '\Finder\Http\Controllers',
+        ], function ($router) {
+            require __DIR__.'/Routes/web.php';
+        });
     }
 
     /**
@@ -49,36 +93,99 @@ class FinderProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom($this->getPublishesPath('config/sitec/finder.php'), 'sitec.finder');
+        
+
         $this->setProviders();
+        $this->routes();
 
-        // // View namespace
-        // $this->loadViewsFrom(__DIR__.'/Views', 'Finder');
 
-        // if (is_dir(base_path('resources/Finder'))) {
-        //     $this->app->view->addNamespace('Finder-frontend', base_path('resources/Finder'));
-        // } else {
-        //     $this->app->view->addNamespace('Finder-frontend', __DIR__.'/Publishes/resources/Finder');
-        // }
 
-        $this->loadMigrationsFrom(__DIR__.'/Migrations');
+        // Register Migrations
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        // // Configs
-        // $this->app->config->set('Finder.modules.Finder', include(__DIR__.'/config.php'));
+        $loader = AliasLoader::getInstance();
+        $loader->alias('Finder', FinderFacade::class);
 
+        $this->app->singleton('finder', function () {
+            return new Finder();
+        });
+        
         /*
         |--------------------------------------------------------------------------
-        | Register the Commands
+        | Register the Utilities
         |--------------------------------------------------------------------------
         */
+        /**
+         * Singleton Finder
+         */
+        $this->app->singleton(FinderService::class, function($app)
+        {
+            Log::info('Singleton Finder');
+            return new FinderService(config('sitec.finder'));
+        });
 
-        $this->commands([]);
+        // Register commands
+        $this->registerCommandFolders([
+            base_path('vendor/sierratecnologia/finder/src/Console/Commands') => '\Finder\Console\Commands',
+        ]);
     }
 
-    private function setProviders()
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
     {
-        (new Collection(self::$providers))->map(function ($provider) {
-            $this->app->register($provider);
-        });
+        return [
+            'finder',
+        ];
+    }
+
+    /**
+     * Register configs, migrations, etc
+     *
+     * @return void
+     */
+    public function registerDirectories()
+    {
+        // Publish config files
+        $this->publishes([
+            // Paths
+            $this->getPublishesPath('config/sitec') => config_path('sitec'),
+        ], ['config',  'sitec', 'sitec-config']);
+
+        // // Publish finder css and js to public directory
+        // $this->publishes([
+        //     $this->getDistPath('finder') => public_path('assets/finder')
+        // ], ['public',  'sitec', 'sitec-public']);
+
+        $this->loadViews();
+        $this->loadTranslations();
+
+    }
+
+    private function loadViews()
+    {
+        // View namespace
+        $viewsPath = $this->getResourcesPath('views');
+        $this->loadViewsFrom($viewsPath, 'finder');
+        $this->publishes([
+            $viewsPath => base_path('resources/views/vendor/finder'),
+        ], ['views',  'sitec', 'sitec-views']);
+
+    }
+    
+    private function loadTranslations()
+    {
+        // Publish lanaguage files
+        $this->publishes([
+            $this->getResourcesPath('lang') => resource_path('lang/vendor/finder')
+        ], ['lang',  'sitec', 'sitec-lang', 'translations']);
+
+        // Load translations
+        $this->loadTranslationsFrom($this->getResourcesPath('lang'), 'finder');
     }
 
 }

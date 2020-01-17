@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Http\Controllers\Travels;
+namespace Finder\Http\Controllers;
 
 use InfyOm\Generator\Utils\ResponseUtil;
 use Response;
