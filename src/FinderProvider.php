@@ -43,20 +43,42 @@ class FinderProvider extends ServiceProvider
     ];
 
     /**
+     * Rotas do Menu
+     */
+    public static $menuItens = [
+        'Procurar' => [
+            [
+                'text'        => 'Finder Home',
+                'route'       => 'finder.home',
+                'icon'        => 'dashboard',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Finder Index',
+                'route'       => 'finder.finder',
+                'icon'        => 'dashboard',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Finder Pessoas',
+                'route'       => 'finder.persons',
+                'icon'        => 'dashboard',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+        ],
+    ];
+
+    /**
      * Alias the services in the boot.
      */
-    public function boot(Dispatcher $events)
+    public function boot()
     {
-        
-        $events->listen(BuildingMenu::class, function (BuildingMenu $event) {
-            $event->menu->add('Finder');
-            $event->menu->add([
-                'text'    => 'Finder',
-                'icon'    => 'cog',
-                'nivel' => \App\Models\Role::$GOOD,
-                'submenu' => \Finder\Services\MenuService::getAdminMenu(),
-            ]);
-        });
         
         // Register configs, migrations, etc
         $this->registerDirectories();
