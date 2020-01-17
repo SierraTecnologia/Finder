@@ -43,6 +43,8 @@ class PersonsSync extends Command
         $countTotal = Person::count();
         $persons = Person::all();
         foreach ($persons as $person) {
+            ++$count;
+            
             $this->info('['.$count.'/'.$countTotal.'] Trackiando Pessoa: '. $person->name);
             $track = new PersonTrack($person);
             $track->exec();
