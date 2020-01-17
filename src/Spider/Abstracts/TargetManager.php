@@ -27,7 +27,6 @@ abstract class TargetManager
     {
         $this->setTarget($target);
         $this->setParent($parent);
-        $this->parent = $parent;
     }
 
     public function getUniqueIdentify()

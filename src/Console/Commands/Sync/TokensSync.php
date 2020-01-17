@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Console\Routine\Social;
+namespace Finder\Console\Commands\Sync;
 
 use Illuminate\Console\Command;
 use Population\Models\MediaSend;
@@ -11,14 +11,14 @@ use Population\Models\User;
 use SendGrid;
 use Finder\Http\Controllers\Api\Controller;
 
-class RoutineImport extends Command
+class TokensSync extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'routine:importAll';
+    protected $signature = 'sync:tokens';
 
     /**
      * The console command description.

@@ -1,19 +1,19 @@
 <?php
-namespace Finder\Console\External;
+namespace Finder\Console\External\Explorer;
 
 use League\CLImate\CLImate;
-use Finder\Logic\Analyser;
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\DiffOutputFilter;
 use ReflectionMethod;
 use SebastianBergmann\Diff\Parser;
 use SebastianBergmann\Git\Git;
 use UnexpectedValueException;
+use Finder\Spider\SpiderLinuxCommand;
 
 /**
  * Command line tool that run all script analyzers.
  */
-class CodeAnalyser
+class DirectoryExplorer
 {
     /**
      * CLI tool.
@@ -23,7 +23,7 @@ class CodeAnalyser
 
     /**
      * Analyser.
-     * @var Analyser analyser instance.
+     * @var SpiderLinuxCommand analyser instance.
      */
     protected $analyser;
 
@@ -256,17 +256,23 @@ class CodeAnalyser
      */
     public function getDescription()
     {
-        return 'BOSS ANALYSER ' . Analyser::VERSION;
+        return 'BOSS SPIDER ' . SpiderLinuxCommand::VERSION;
     }
 
     /**
-     * Analyser instance.
-     * @return Analyser instance.
+     * SpiderLinuxCommand instance.
+     * @return SpiderLinuxCommand instance.
      */
     public function getAnalyser()
     {
+        $paths = $this->getAnalysedPaths();
+        foreach ($paths as $path) {
+            $spider = new \Finder\Spider\Directory($path);
+            dd($spider->run());
+        }
+        
         if (null === $this->analyser) {
-            $this->analyser = new Analyser(
+            $this->analyser = new SpiderLinuxCommand(
                 $this->getOutput(),
                 $this->binariesPath,
                 $this->getAnalysedPaths(),

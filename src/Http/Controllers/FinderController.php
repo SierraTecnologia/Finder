@@ -4,6 +4,7 @@ namespace Finder\Http\Controllers;
 
 use Finder\Services\FinderService;
 use Illuminate\Support\Facades\Schema;
+use Population\Repositories\PersonRepository;
 
 class FinderController extends Controller
 {
@@ -21,8 +22,11 @@ class FinderController extends Controller
         return view('finder::finder.home');
     }
 
-    public function persons()
+    public function persons(PersonRepository $personRepo)
     {
-        return view('finder::finder.persons');
+        // $orders = $personRepo->getByCustomer(auth()->id())->orderBy('created_at', 'DESC')->paginate(config('cms.pagination'));
+        $persons = $personRepo->all(); //->paginate(config('cms.pagination'));
+
+        return view('finder::finder.persons')->with('persons', $persons);
     }
 }
