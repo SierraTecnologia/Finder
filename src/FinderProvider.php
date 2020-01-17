@@ -46,30 +46,39 @@ class FinderProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Procurar' => [
+        'Ferramentas' => [
             [
-                'text'        => 'Finder Home',
-                'route'       => 'finder.home',
-                'icon'        => 'dashboard',
+                'text'        => 'Procurar',
+                'icon'        => 'fas fa-fw fa-search',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
                 // 'access' => \App\Models\Role::$ADMIN
             ],
-            [
-                'text'        => 'Finder Index',
-                'route'       => 'finder.finder',
-                'icon'        => 'dashboard',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Finder Pessoas',
-                'route'       => 'finder.persons',
-                'icon'        => 'dashboard',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
+            'Procurar' => [
+                [
+                    'text'        => 'Finder Home',
+                    'route'       => 'finder.home',
+                    'icon'        => 'fas fa-fw fa-ship',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Finder Index',
+                    'route'       => 'finder.finder',
+                    'icon'        => 'fas fa-fw fa-gavel',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Finder Pessoas',
+                    'route'       => 'finder.persons',
+                    'icon'        => 'fas fa-fw fa-group',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
             ],
         ],
     ];
