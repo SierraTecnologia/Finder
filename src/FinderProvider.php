@@ -40,6 +40,7 @@ class FinderProvider extends ServiceProvider
         // \CipeMotion\Medialibrary\ServiceProvider::class,
         \SierraTecnologia\Crypto\CryptoProvider::class,
         \Intervention\Image\ImageServiceProvider::class,
+        \Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
     ];
 
     /**
@@ -124,6 +125,7 @@ class FinderProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->mergeConfigFrom($this->getPublishesPath('config/medialibrary.php'), 'medialibrary');
         $this->mergeConfigFrom($this->getPublishesPath('config/sitec/finder.php'), 'sitec.finder');
         
 
@@ -185,6 +187,7 @@ class FinderProvider extends ServiceProvider
         $this->publishes([
             // Paths
             $this->getPublishesPath('config/sitec') => config_path('sitec'),
+            $this->getPublishesPath('config/medialibrary.php') => config_path('medialibrary.php'),
         ], ['config',  'sitec', 'sitec-config']);
 
         // // Publish finder css and js to public directory

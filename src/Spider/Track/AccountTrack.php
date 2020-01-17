@@ -13,7 +13,7 @@ class AccountTrack extends Track
     {
         // Caso Seja Instagram
         if ($this->model->integration_id == \SiWeapons\Integrations\Instagram\Instagram::getPrimary()) {
-            $this->getInformateArray(\SiWeapons\Integrations\Instagram\Profile::getProfile($this->model->username));
+            $this->addInformateArray(\SiWeapons\Integrations\Instagram\Profile::getProfile($this->model->username));
         }
         return true;
     }

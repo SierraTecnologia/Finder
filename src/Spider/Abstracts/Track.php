@@ -19,13 +19,15 @@ use Support\Helps\DebugHelper;
  */
 abstract class Track
 {
-    protected $target = false;
+    protected $model = false;
     protected $parent = false;
 
-    public function __construct($target, $parentTrack = false)
+    protected $subTracks = [];
+
+    public function __construct($model, $parentTrack = false)
     {
-        $this->setTarget($target);
-        $this->setParent($parent);
+        $this->setModel($model);
+        $this->setParent($parentTrack);
     }
 
     public function getParent()
@@ -38,14 +40,14 @@ abstract class Track
         $this->parent = $parent;
     }
 
-    public function getTarget()
+    public function getModel()
     {
-        return $this->target;
+        return $this->model;
     }
 
-    protected function setTarget($target)
+    protected function setModel($model)
     {
-        $this->target = $target;
+        $this->model = $model;
     }
 
 
@@ -56,7 +58,7 @@ abstract class Track
     {
         $this->subTracks[] = $track;
     }
-    public function getSubTrack(Track $track)
+    public function getSubTrack()
     {
         return $this->subTracks;
     }
@@ -67,9 +69,14 @@ abstract class Track
      */
     public function addInformateArray($array)
     {
+        if (!is_array($array)) {
+            return false;
+        }
+
         foreach ($array as $indice => $valor) {
             $this->addInformate($indice, $valor);
         }
+        return true;
     }
     public function addInformate($name, $valor)
     {
@@ -110,12 +117,15 @@ abstract class Track
         $this->run();
 
         // ROdando os FIlhos
-        $trackingsChields = $this->getTrackModel()->tracks()->get();
-        foreach ($trackingsChields as $trackingsChield) {
-            $trackingsChield->exec()->saveInformate(
-                $this->collectInformateFromSubTracks()
-            );
+        if (is_array($trackingsChields = $this->getSubTrack())) {
+            foreach ($trackingsChields as $trackingsChield) {
+                $trackingsChield->exec()->saveInformate(
+                    $this->collectInformateFromSubTracks()
+                );
+            }
         }
+
+        return $this;
     }
 
 
