@@ -23,6 +23,7 @@ abstract class Track
     protected $parent = false;
 
     protected $subTracks = [];
+    protected $informate = [];
 
     public function __construct($model, $parentTrack = false)
     {
