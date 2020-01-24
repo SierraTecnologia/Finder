@@ -19,6 +19,6 @@ class PersonController extends Controller
 
     public function index()
     {
-        return view('finder::finder.home');
+        return view('finder::finder.person.home');
     }
 }
