@@ -29,8 +29,6 @@ class FinderProvider extends ServiceProvider
     ];
 
     public static $providers = [
-        \Finder\Providers\FinderEventServiceProvider::class,
-        \Finder\Providers\FinderRouteProvider::class,
 
         \Tracking\TrackingProvider::class,
 
