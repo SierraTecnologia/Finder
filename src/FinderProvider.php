@@ -20,12 +20,15 @@ use Finder\Facades\Finder as FinderFacade;
 use Illuminate\Contracts\Events\Dispatcher;
 use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 
+use Finder\Services\Midia\FileService;
+
 class FinderProvider extends ServiceProvider
 {
     use ConsoleTools;
 
     public static $aliasProviders = [
         'Finder' => \Finder\Facades\Finder::class,
+        'FileService' => FileService::class,
     ];
 
     public static $providers = [
@@ -135,11 +138,12 @@ class FinderProvider extends ServiceProvider
         // Register Migrations
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        $loader = AliasLoader::getInstance();
-        $loader->alias('Finder', FinderFacade::class);
-
         $this->app->singleton('finder', function () {
             return new Finder();
+        });
+
+        $this->app->bind('FileService', function ($app) {                                                                                                                                                                                                                      
+            return new FileService();
         });
         
         /*

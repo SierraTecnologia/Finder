@@ -2,7 +2,7 @@
 
 namespace Finder\Services\Midia;
 
-use CryptoService as CryptoServiceForFiles;
+use Crypto as CryptoServiceForFiles;
 use Exception;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\File;
@@ -119,7 +119,7 @@ class FileService
      */
     public static function fileAsPublicAsset($fileName)
     {
-        return '/public-asset/'.CryptoServiceForFiles::url_encode($fileName);
+        return '/public-asset/'.CryptoServiceForFiles::encrypt($fileName);
     }
 
     /**
@@ -132,7 +132,7 @@ class FileService
      */
     public static function fileAsDownload($fileName, $realFileName)
     {
-        return '/public-download/'.CryptoServiceForFiles::url_encode($fileName).'/'.CryptoServiceForFiles::url_encode($realFileName);
+        return '/public-download/'.CryptoServiceForFiles::encrypt($fileName).'/'.CryptoServiceForFiles::encrypt($realFileName);
     }
 
     /**
@@ -148,6 +148,6 @@ class FileService
             return url('storage/'.str_replace('public/', '', $fileName));
         }
 
-        return '/public-preview/'.CryptoServiceForFiles::url_encode($fileName);
+        return '/public-preview/'.CryptoServiceForFiles::encrypt($fileName);
     }
 }

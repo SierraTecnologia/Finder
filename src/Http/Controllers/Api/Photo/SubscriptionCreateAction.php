@@ -4,7 +4,7 @@ namespace Finder\Http\Actions;
 
 use Finder\Http\Requests\ReCaptchaRequest;
 use Finder\Http\Resources\SubscriptionPlainResource;
-use Informate\Managers\SubscriptionManager;
+use Population\Manipule\Managers\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 

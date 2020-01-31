@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Actions;
 
-use Informate\Managers\PhotoManager;
+use Population\Manipule\Managers\PhotoManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 

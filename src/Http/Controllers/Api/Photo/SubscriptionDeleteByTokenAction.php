@@ -2,7 +2,7 @@
 
 namespace Finder\Http\Actions;
 
-use Informate\Managers\SubscriptionManager;
+use Population\Manipule\Managers\SubscriptionManager;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\JsonResponse;
 
