@@ -1,11 +1,11 @@
 <?php
 
-namespace SiInteractions\Services\Image\Contracts;
+namespace Finder\Components\Services\Image\Contracts;
 
 /**
  * Interface ImageProcessor.
  *
- * @package SiInteractions\Services\Image\Contracts
+ * @package Finder\Components\Services\Image\Contracts
  */
 interface ImageProcessor
 {

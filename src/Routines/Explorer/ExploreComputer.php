@@ -7,7 +7,7 @@ namespace Finder\Routines\Database;
 
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
-use SiInteractions\Worker\Sync\Database\BackupCollection;
+use Finder\Components\Worker\Sync\Database\BackupCollection;
 
 use Population\Models\Entytys\Digital\Infra\Database;
 use Population\Models\Entytys\Digital\Infra\Computer;

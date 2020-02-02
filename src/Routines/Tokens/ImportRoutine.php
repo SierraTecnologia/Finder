@@ -7,7 +7,7 @@ namespace Finder\Routines\Tokens;
 
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
-use SiInteractions\Worker\Sync\Database\ImportCollection;
+use Finder\Components\Worker\Sync\Database\ImportCollection;
 
 use Population\Models\Components\Integrations\Token;
 

@@ -4,7 +4,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBusinessVendasTables extends Migration
+class CreateBusinessProjectsTables extends Migration
 {
     /**
      * Run the migrations.
