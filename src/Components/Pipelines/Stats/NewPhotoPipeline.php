@@ -4,8 +4,8 @@ namespace Finder\Components\Pipelines\Stats;
 
 use Log;
 use App\Models\User;
-use SiWeapons\Integrations\Instagram\Instagram;
-use SiWeapons\Integrations\Instagram\Facebook;
+use Finder\Spider\Integrations\Instagram\Instagram;
+use Finder\Spider\Integrations\Instagram\Facebook;
 
 
 use Finder\Actions\PublishPost;

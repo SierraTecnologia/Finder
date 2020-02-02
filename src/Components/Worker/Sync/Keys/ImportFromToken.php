@@ -7,9 +7,9 @@ namespace Finder\Components\Worker\Sync\Keys;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Population\Models\Components\Integrations\Token;
-use SiWeapons\Integrations\Sentry\Sentry;
-use SiWeapons\Integrations\Jira\Jira;
-use SiWeapons\Integrations\Gitlab\Gitlab;
+use Finder\Spider\Integrations\Sentry\Sentry;
+use Finder\Spider\Integrations\Jira\Jira;
+use Finder\Spider\Integrations\Gitlab\Gitlab;
 use Log;
 
 class ImportFromToken
@@ -30,11 +30,11 @@ class ImportFromToken
         Log::info('Tratando Token .. '.print_r($this->token, true));
 
         if ($this->token->account->integration_id == Sentry::getCodeForPrimaryKey()) {
-            // (new \SiWeapons\Integrations\Sentry\Import($this->token))->bundle();
+            // (new \Finder\Spider\Integrations\Sentry\Import($this->token))->bundle();
         } else if ($this->token->account->integration_id == Jira::getCodeForPrimaryKey()) {
-            (new \SiWeapons\Integrations\Jira\Import($this->token))->bundle();
+            (new \Finder\Spider\Integrations\Jira\Import($this->token))->bundle();
         } else if ($this->token->account->integration_id == Gitlab::getCodeForPrimaryKey()) {
-            (new \SiWeapons\Integrations\Gitlab\Import($this->token))->bundle();
+            (new \Finder\Spider\Integrations\Gitlab\Import($this->token))->bundle();
         }
 
         return true;

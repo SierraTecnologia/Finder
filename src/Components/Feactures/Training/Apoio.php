@@ -8,8 +8,8 @@ class Apoio
     public function plataforms()
     {
         return [
-            SiWeapons\Integrations\Coursera\Coursera::class,
-            SiWeapons\Integrations\Youtube\Youtube::class,
+            Finder\Spider\Integrations\Coursera\Coursera::class,
+            Finder\Spider\Integrations\Youtube\Youtube::class,
         ];
     }
 
