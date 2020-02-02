@@ -6,10 +6,10 @@
 namespace Finder\Components\Worker\Sync;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
-use Population\Models\Entytys\Digital\Infra\Token;
-use Population\Models\Entytys\Digital\Infra\SshKey;
+use Finder\Models\Digital\Infra\Token;
+use Finder\Models\Digital\Infra\SshKey;
 use SiUtils\Tools\Programs\Git\Admin as GitManiputor;
-use Population\Models\Entytys\Digital\Code\Project as ProjectModel;
+use Finder\Models\Digital\Code\Project as ProjectModel;
 class Project
 {
 

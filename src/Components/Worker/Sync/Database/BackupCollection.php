@@ -6,7 +6,7 @@
 namespace Finder\Components\Worker\Sync\Database;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
-use Population\Models\Entytys\Digital\Infra\DatabaseCollection;
+use Finder\Models\Digital\Infra\DatabaseCollection;
 
 class BackupCollection
 {

@@ -2,7 +2,7 @@
 
 namespace Finder\Actions\Models\Accounts;
 
-use Population\Models\Entytys\Digital\Code\Account;
+use Finder\Models\Digital\Code\Account;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;

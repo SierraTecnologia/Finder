@@ -4,7 +4,7 @@ namespace Finder\Http\Controllers\Action;
 
 use Illuminate\Http\Request;
 use Finder\Actions\Action;
-use Population\Models\Entytys\Digital\Bot\Runner;
+use Finder\Models\Digital\Bot\Runner;
 
 class ActionController extends Controller
 {

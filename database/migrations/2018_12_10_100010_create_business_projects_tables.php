@@ -15,10 +15,16 @@ class CreateBusinessProjectsTables extends Migration
     {
 
         Schema::table('project', function (Blueprint $table) {
-            $table->string('slug')->nullable();
-            $table->string('url')->nullable();
-            $table->string('repository')->nullable();
-            $table->string('code_language_id')->nullable();
+
+            if (!Schema::hasColumn('project', 'url')) {
+                $table->string('url')->nullable();
+            }
+            if (!Schema::hasColumn('project', 'repository')) {
+                $table->string('repository')->nullable();
+            }
+            if (!Schema::hasColumn('project', 'code_language_id')) {
+                $table->string('code_language_id')->nullable();
+            }
         });
     }
 
@@ -29,6 +35,6 @@ class CreateBusinessProjectsTables extends Migration
      */
     public function down()
     {
-		Schema::dropIfExists('propostas');
+        
     }
 }

@@ -11,7 +11,7 @@ use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 use Finder\Components\Worker\Sync\Database\SpiderCollection;
 
-use Population\Models\Entytys\Digital\Infra\Domain;
+use Finder\Models\Digital\Infra\Domain;
 
 class SpiderAll extends ActionCollection
 {

@@ -9,8 +9,8 @@ use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 use Finder\Components\Worker\Sync\Database\BackupCollection;
 
-use Population\Models\Entytys\Digital\Infra\Database;
-use Population\Models\Entytys\Digital\Infra\Computer;
+use Finder\Models\Digital\Infra\Database;
+use Finder\Models\Digital\Infra\Computer;
 
 class ExploreComputer extends ActionCollection
 {

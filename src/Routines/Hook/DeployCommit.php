@@ -8,7 +8,7 @@ namespace Finder\Routines\Hook;
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 
-use Population\Models\Entytys\Digital\Code\Commit;
+use Finder\Models\Digital\Code\Commit;
 
 class DeployCommit extends ActionCollection
 {

@@ -5,7 +5,7 @@ namespace Finder\Actions\Instagram;
 use Informate\Models\Actions\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
-use Population\Models\Entytys\Digital\Midia\Imagen as Image;
+use Finder\Models\Digital\Midia\Imagen as Image;
 
 class GetMidias extends Instagram
 {

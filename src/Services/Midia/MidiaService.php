@@ -15,7 +15,7 @@ use Cms;
 use Log;
 use SplFileInfo;
 use Finder\Facades\CryptoServiceFacade;
-use Population\Models\Entytys\Digital\Midia\Imagen as ModelImage;
+use Finder\Models\Digital\Midia\Imagen as ModelImage;
 
 class MidiaService
 {

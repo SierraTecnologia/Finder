@@ -8,7 +8,7 @@ namespace Finder\Routines\Database;
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 
-use Population\Models\Entytys\Digital\Infra\Domain;
+use Finder\Models\Digital\Infra\Domain;
 
 class ScanDomain extends ActionCollection
 {

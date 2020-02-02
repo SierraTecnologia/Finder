@@ -2,7 +2,7 @@
 
 namespace Finder\Components\Worker\Deploy;
 
-use Population\Models\Entytys\Digital\Infra\Commit;
+use Finder\Models\Digital\Infra\Commit;
 
 /**
  * DeployBusinessAmbiente Class

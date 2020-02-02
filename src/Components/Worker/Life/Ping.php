@@ -2,9 +2,9 @@
 
 namespace Finder\Components\Worker\Life;
 
-use Population\Models\Entytys\Digital\Infra\Domain;
-use Population\Models\Entytys\Digital\Infra\Url;
-use Population\Models\Entytys\Digital\Infra\UrlLink;
+use Finder\Models\Digital\Infra\Domain;
+use Finder\Models\Digital\Infra\Url;
+use Finder\Models\Digital\Infra\UrlLink;
 
 /**
  * Ping Class
