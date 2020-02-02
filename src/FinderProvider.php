@@ -56,6 +56,31 @@ class FinderProvider extends ServiceProvider
                 'label_color' => 'success',
                 // 'access' => \App\Models\Role::$ADMIN
             ],
+            [
+                'text'        => 'Bots',
+                'icon'        => 'fas fa-fw fa-industry',
+                'icon_color'  => 'red',
+                'label_color' => 'success',
+                // 'nivel' => \App\Models\Role::$GOOD,
+            ],
+            'Bots' => [
+                [
+                    'text'        => 'Runners',
+                    'url'         => 'runners',
+                    'icon'        => 'fas fa-fw fa-industry',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
+                [
+                    'text'        => 'Actions',
+                    'route'       => 'finder.action.actions.index',
+                    'icon'        => 'fas fa-fw fa-coffee',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
+            ],
             'Procurar' => [
                 [
                     'text'        => 'Finder Home',
