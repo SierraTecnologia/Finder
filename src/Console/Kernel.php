@@ -19,7 +19,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\PhotoFinder\ChangeUserPassword::class,
-        Commands\PhotoFinder\CreateAdministratorconfig('sitec.core.models.user', \App\Models\User::class),
+        Commands\PhotoFinder\User::class,
         Commands\PhotoFinder\CreateRoles::class,
         Commands\PhotoFinder\DeleteDetachedPhotosOlderThanWeek::class,
         Commands\PhotoFinder\DeleteUnusedObjectsFromPhotoStorage::class,

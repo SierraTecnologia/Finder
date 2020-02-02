@@ -14,6 +14,7 @@ class Instagram
     {
         $this->account = $instagram;
         $this->userName = $this->account->getUser();
+        // dd($instagram, $this->userName, $this->account->getPassword());
         ($this->executor = \InstagramScraper\Instagram::withCredentials(
             $this->userName, $this->account->getPassword(), $this->getCache($cache)
         ))->login();
