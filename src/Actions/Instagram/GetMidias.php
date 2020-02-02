@@ -2,7 +2,7 @@
 
 namespace Finder\Actions\Instagram;
 
-use Informate\Models\Actions\Calendar\AcaoHumana;
+use Casa\Models\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
 use Finder\Models\Digital\Midia\Imagen as Image;
