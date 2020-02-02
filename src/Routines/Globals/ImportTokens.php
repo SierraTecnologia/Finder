@@ -25,8 +25,8 @@ class ImportTokens extends ActionCollection
         // Import de Todos os Bancos de Dados
         $tokens = Token::all();
         $this->othersTargets = count($tokens);
+        
         foreach ($tokens as $token) {
-            dd($token, $token->account);
             $importRoutine = new ImportRoutine();
             $importRoutine->prepareTargets($token);
             $this->newAction($importRoutine);
