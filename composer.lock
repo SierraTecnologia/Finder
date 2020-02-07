@@ -108,16 +108,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.8",
+            "version": "3.133.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "c564fcccd5fc7b5e8514d1cbe35558be1e3a11cd"
+                "reference": "59e059bd6d25d315a03cdad10b79102df5cb0a1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c564fcccd5fc7b5e8514d1cbe35558be1e3a11cd",
-                "reference": "c564fcccd5fc7b5e8514d1cbe35558be1e3a11cd",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/59e059bd6d25d315a03cdad10b79102df5cb0a1b",
+                "reference": "59e059bd6d25d315a03cdad10b79102df5cb0a1b",
                 "shasum": ""
             },
             "require": {
@@ -188,7 +188,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-02-05T19:12:47+00:00"
+            "time": "2020-02-06T19:11:31+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -12027,7 +12027,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Audit",
-                "reference": "f3bc036cb38c5f365bf5d723826e8cf34c125c10"
+                "reference": "50810407a3e2c9e7ff7858a89910922a3d49c0df"
             },
             "require": {
                 "kassner/log-parser": "*",
@@ -12225,7 +12225,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Informate",
-                "reference": "f465ffa610e904486323e3a6859353a15ef96ced"
+                "reference": "31fd34b2ce7a15695bc80760ac493bf20bf68ffa"
             },
             "require": {
                 "php": ">=7.2.0",
@@ -12377,7 +12377,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Population",
-                "reference": "d8e345b3f107a592608cd2f4d5d30e356765b8b4"
+                "reference": "3d0a1767ed98aaaea692d6c06505540f7ad936e1"
             },
             "require": {
                 "sierratecnologia/informate": "dev-master",
@@ -12415,7 +12415,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tracking",
-                "reference": "2e57e6b27fa87f250444372cc91eef1a96c17d8d"
+                "reference": "8b0a535c5e93c6016ae4caaafc1994b8b70649cf"
             },
             "require": {
                 "aschmelyun/larametrics": "^1.1",
