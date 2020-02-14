@@ -3,6 +3,7 @@
 namespace Finder\Actions\Instagram;
 
 use Illuminate\Support\Facades\Facade;
+use Population\Models\Identity\Digital\Account;
 
 class GetFollowers extends Instagram
 {
@@ -24,7 +25,7 @@ class GetFollowers extends Instagram
          */
         $account = Account::create([
             'username' => 'ricardosierra',
-            'integration_id' => \Finder\Spider\Integrations\Facebook\Instagram::$ID,
+            'integration_id' => \Finder\Spider\Integrations\Instagram\Instagram::$ID,
             // 'likes' => '43 pessoas curtiram'
         ]);
         $account->relations()->attach($account, ['relation_type' => 'followers']);

@@ -58,7 +58,10 @@ class Integration
     {
         $this->error = $errorMessage;
         $this->errorCode = $code;
+
+        
         var_dump($errorMessage);
+        throw new \Exception($errorMessage) ;
     }
 
     public function getError()

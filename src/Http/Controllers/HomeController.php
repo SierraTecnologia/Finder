@@ -4,6 +4,7 @@ namespace Finder\Http\Controllers;
 
 use Finder\Services\FinderService;
 use Illuminate\Support\Facades\Schema;
+use Finder\Models\Digital\Midia\Media;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,13 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('finder::dash.home');
+
+        $results = Media::all();
+
+        // dd($results);
+        return view(
+            'finder::dash.home',
+            compact('results')
+        );
     }
 }

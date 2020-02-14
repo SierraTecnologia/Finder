@@ -33,6 +33,24 @@ class Import extends Jira
         $this->getInfoFromIssues($command);
     }
 
+    public function getFields($command = false)
+    {
+        try {
+            $fieldService = new FieldService($this->getConfig($this->_token));
+        
+            // return custom field only. 
+            $fields = $fieldService->getAllFields(Field::CUSTOM); 
+            foreach($fields as $field) {
+                FieldModel::firstOrCreate([
+                    'name' => $field->name
+                ]);
+            }
+            
+        } catch (JiraException $e) {
+            $this->setError('testSearch Failed : '.$e->getMessage());
+        }
+    }
+
     public function getProjects($command = false)
     {
         Log::info('Importando Projetos do Jira...');
@@ -224,24 +242,6 @@ class Import extends Jira
             }
         } catch (JiraException $e) {
             $this->setError($e->getMessage());
-        }
-    }
-
-    public function getFields($command = false)
-    {
-        try {
-            $fieldService = new FieldService($this->getConfig($this->_token));
-        
-            // return custom field only. 
-            $fields = $fieldService->getAllFields(Field::CUSTOM); 
-            foreach($fields as $field) {
-                FieldModel::firstOrCreate([
-                    'name' => $field->name
-                ]);
-            }
-            
-        } catch (JiraException $e) {
-            $this->setError('testSearch Failed : '.$e->getMessage());
         }
     }
 

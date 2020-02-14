@@ -3,6 +3,7 @@
 namespace Finder\Actions\Instagram;
 
 use Illuminate\Support\Facades\Facade;
+use Population\Models\Identity\Digital\Account;
 
 class GetStories extends Instagram
 {

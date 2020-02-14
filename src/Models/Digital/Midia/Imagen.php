@@ -150,4 +150,18 @@ class Imagen extends ArchiveTrait
 
         return false;
     }
+
+    /**
+     * Check the location of the file.
+     *
+     * @return bool
+     */
+    public static function createByExternalLink($link, $target, $data = [])
+    {
+        $personClass = config('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class);
+
+        $person = $personClass::createIfNotExistAndReturn($target);
+
+        return $person->addMediaFromUrl($link)->preservingOriginal()->toMediaCollection('images');
+    }
 }

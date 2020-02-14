@@ -6,6 +6,7 @@ use Casa\Models\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
 use Finder\Models\Digital\Midia\Imagen as Image;
+use Population\Models\Identity\Digital\Account;
 
 class GetMidias extends Instagram
 {
@@ -48,6 +49,7 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
     public function executeForEach($target)
     {
         collect($this->executor->getMedias($target, 25))->each(function ($media) use ($target) {
+            $new = true;
             $name = md5($media->getShortCode());
             // if ($media->getType()=='image') {
             //     Log::info('É imagem');
@@ -61,6 +63,7 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
                         'fingerprint' => $name,
                         'people_slug' => $target
                         ]);
+                    $new = false;
             }
             Log::info($name);
 
@@ -73,14 +76,16 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
             $acaoHumana->addInfo('posted_at', $media->getCreatedTime());
             $acaoHumana->addStat('comments', $media->getCommentsCount());
             $acaoHumana->addStat('links', $media->getLikesCount());
-            
+
+
             $i = Image::createByExternalLink(
+                $media->getImageHighResolutionUrl(),
+                $target,
                 [
                     'name' => $name,
                     'fingerprint' => $name,
                     'external' => $media->getImageHighResolutionUrl(),
-                ],
-                $target
+                ]
             );
             // Importar Imagem
             

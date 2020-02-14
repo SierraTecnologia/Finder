@@ -171,12 +171,12 @@ class Project extends Base
 
     public function getSlug()
     {
-        return $this->slug;
+        return $this->projectPathKey;
     }
 
-    public function setSlug($slug)
+    public function setSlug($projectPathKey)
     {
-        $this->slug = $slug;
+        $this->projectPathKey = $projectPathKey;
     }
 
     public function getRepositorySize()
