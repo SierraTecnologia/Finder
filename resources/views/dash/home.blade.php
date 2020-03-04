@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="col-md-12">
-        <div class="row">->getFullUrl();
+        <div class="row">
         @foreach($results as $result)
             <img src="{!! $result->getFullUrl() !!}" >
         @endforeach
