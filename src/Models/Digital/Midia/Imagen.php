@@ -164,4 +164,20 @@ class Imagen extends ArchiveTrait
 
         return $person->addMediaFromUrl($link)->preservingOriginal()->toMediaCollection('images');
     }
+
+    /**
+     * Check the location of the file.
+     *
+     * @return bool
+     */
+    public static function createByMediaFromDisk($disk, $link, $target, $data = [])
+    {
+        if (is_string($target)) {
+            $personClass = config('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class);
+            $person = $personClass::createIfNotExistAndReturn($target);
+        } else {
+            $person = $target;
+        }
+        return $person->addMediaFromDisk($disk, $link)->toMediaCollection('images');
+    }
 }
