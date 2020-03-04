@@ -108,7 +108,7 @@ class Imagen extends ArchiveTrait
             if ($this->isLocalFile()) {
                 $imagePath = storage_path('app/'.$this->location);
             } else {
-                $imagePath = Storage::disk(config('gpower.storage-location', 'local'))->url($this->location);
+                $imagePath = Storage::disk(config('facilitador.storage.disk', config('filesystems.default', 'local')))->url($this->location);
             }
 
             $image = InterventionImage::make($imagePath)->resize(800, null);
@@ -178,6 +178,8 @@ class Imagen extends ArchiveTrait
         } else {
             $person = $target;
         }
-        return $person->addMediaFromDisk($disk, $link)->toMediaCollection('images');
+        $link = storage_path('app/'.$link);
+        // return $person->addMediaFromDisk($disk, $link)->toMediaCollection('images');
+        return $person->addMedia($link)->toMediaCollection('images');
     }
 }

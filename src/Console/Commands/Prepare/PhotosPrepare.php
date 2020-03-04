@@ -60,7 +60,7 @@ class PhotosPrepare extends Command
     public function getDisk()
     {
         // @todo usar config
-        return 'local';
+        return config('facilitador.storage.disk', config('filesystems.default'));
     }
 
     /**
