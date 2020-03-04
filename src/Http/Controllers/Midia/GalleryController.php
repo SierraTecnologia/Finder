@@ -29,7 +29,7 @@ class GalleryController extends Controller
             abort(404);
         }
 
-        return view('features.midia.gallery.all')
+        return view('facilitador::midia.gallery.all')
             ->with('tags', $tags)
             ->with('images', $images);
     }
@@ -48,7 +48,7 @@ class GalleryController extends Controller
             abort(404);
         }
 
-        return view('features.midia.gallery.all')
+        return view('facilitador::midia.gallery.all')
             ->with('tags', $tags)
             ->with('images', $images);
     }
@@ -69,7 +69,7 @@ class GalleryController extends Controller
             abort(404);
         }
 
-        return view('features.midia.gallery.show')
+        return view('facilitador::midia.gallery.show')
             ->with('tags', $tags)
             ->with('images', $images)
             ->with('title', $tag);
