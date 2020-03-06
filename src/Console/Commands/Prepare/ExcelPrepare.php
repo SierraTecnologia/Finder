@@ -62,6 +62,7 @@ class ExcelPrepare extends Command
             // $collection = (new FastExcel)->configureCsv(';', '#', '\n', 'gbk')->import($file);
             $users = (new FastExcel)->import($file, function ($line) {
                 dd($line);
+                \Casa\Models\Economic\Gasto;
                 // return User::create([
                 //     'name' => $line['Name'],
                 //     'email' => $line['Email']
