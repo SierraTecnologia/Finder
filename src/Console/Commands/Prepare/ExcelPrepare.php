@@ -8,7 +8,9 @@ use Finder\Spider\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
 use Finder\Models\Digital\Midia\Imagen;
 
-class PhotosPrepare extends Command
+use Rap2hpoutre\FastExcel\FastExcel;
+
+class ExcelPrepare extends Command
 {
     /**
      * The name and signature of the console command.
@@ -41,32 +43,14 @@ class PhotosPrepare extends Command
      */
     public function handle()
     {
-        $folder = 'midia';
-        
-        // dd(Storage::files($folder));
-        // dd(Storage::allFiles($folder));
-        $directorys = Storage::directories($folder);
-
-        foreach ($directorys as $directory) {
-            $directoryName = explode('/', $directory);
-            $person = Person::createIfNotExistAndReturn($directoryName[count($directoryName)-1]);
-            $this->importFromFolder($person, $directory);
-        }
+        $folder = 'import';
+        $this->importFromFolder($folder);
     }
 
     /**
-     * Tirardaqui @todo
+     * Tirardaqui
      */
-    public function getDisk()
-    {
-        // @todo usar config
-        return config('facilitador.storage.disk', config('filesystems.default'));
-    }
-
-    /**
-     * Tirardaqui @todo
-     */
-    public function importFromFolder($target, $folder)
+    public function importFromFolder($folder)
     {
         $files = Storage::allFiles($folder);
         // dd('oi', $files);
@@ -75,15 +59,24 @@ class PhotosPrepare extends Command
             $fileName = explode('/', $file);
             $fileName = $fileName[count($fileName)-1];
 
-            Imagen::createByMediaFromDisk(
-                $this->getDisk(),
-                $file,
-                $target,
-                [
-                    'name' => $fileName,
-                    'fingerprint' => $fileName
-                ]
-            );
+            // $collection = (new FastExcel)->configureCsv(';', '#', '\n', 'gbk')->import($file);
+            $users = (new FastExcel)->import($file, function ($line) {
+                dd($line);
+                // return User::create([
+                //     'name' => $line['Name'],
+                //     'email' => $line['Email']
+                // ]);
+            });
+
+            // Imagen::createByMediaFromDisk(
+            //     $this->getDisk(),
+            //     $file,
+            //     $target,
+            //     [
+            //         'name' => $fileName,
+            //         'fingerprint' => $fileName
+            //     ]
+            // );
 
             // $this->count = $this->count + 1;
         }
