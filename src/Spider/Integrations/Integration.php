@@ -17,7 +17,7 @@ use Finder\Spider\Integrations\Pipedrive\Pipedrive;
 use Finder\Spider\Integrations\Sentry\Sentry;
 use Finder\Spider\Integrations\Testlink\Testlink;
 use Finder\Spider\Integrations\Zoho\Zoho;
-use Support\Coder\Parser\ParseClass;
+use Support\Parser\ParseClass;
 
 use Population\Models\Components\Integrations\Integration as IntegrationModel;
 
