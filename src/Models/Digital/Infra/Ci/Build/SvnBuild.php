@@ -21,6 +21,10 @@ class SvnBuild extends Build
      */
     protected function getCloneUrl()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $url    = rtrim($this->getProject()->getReference(), '/') . '/';
         $branch = ltrim($this->getBranch(), '/');
 
@@ -77,6 +81,10 @@ class SvnBuild extends Build
      */
     public function createWorkingCopy(Builder $builder, $buildPath)
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $this->extendSvnCommandFromConfig($builder);
 
         $key = trim($this->getProject()->getSshPrivateKey());

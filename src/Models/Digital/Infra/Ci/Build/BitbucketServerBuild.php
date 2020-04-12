@@ -24,6 +24,10 @@ class BitbucketServerBuild extends GitBuild
      */
     public function getCommitLink()
     {
+        if (is_null($this->getProject())) {
+            return '';
+        }
+        
         return $this->getProject()->getReference() . '/commits/' . $this->getCommitId();
     }
 
@@ -34,6 +38,10 @@ class BitbucketServerBuild extends GitBuild
      */
     public function getBranchLink()
     {
+        if (is_null($this->getProject())) {
+            return '';
+        }
+        
         return $this->getProject()->getReference() . '/src/?at=' . $this->getBranch();
     }
 

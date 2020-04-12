@@ -20,6 +20,10 @@ class GitBuild extends Build
      */
     protected function getCloneUrl()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+
         return $this->getProject()->getReference();
     }
 
@@ -35,6 +39,10 @@ class GitBuild extends Build
      */
     public function createWorkingCopy(Builder $builder, $buildPath)
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $key = trim($this->getProject()->getSshPrivateKey());
 
         if (!empty($key)) {

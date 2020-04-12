@@ -24,6 +24,10 @@ class LocalBuild extends Build
      */
     public function createWorkingCopy(Builder $builder, $buildPath)
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $reference  = $this->getProject()->getReference();
         $reference  = substr($reference, -1) == '/' ? substr($reference, 0, -1) : $reference;
         $buildPath  = substr($buildPath, 0, -1);

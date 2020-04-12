@@ -19,6 +19,10 @@ class HgBuild extends Build
      */
     protected function getCloneUrl()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         return $this->getProject()->getReference();
     }
 
@@ -34,6 +38,10 @@ class HgBuild extends Build
      */
     public function createWorkingCopy(Builder $builder, $buildPath)
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $key = trim($this->getProject()->getSshPrivateKey());
 
         if (!empty($key)) {

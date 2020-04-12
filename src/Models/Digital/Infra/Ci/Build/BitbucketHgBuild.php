@@ -18,6 +18,10 @@ class BitbucketHgBuild extends HgBuild
      */
     public function getCommitLink()
     {
+        if (is_null($this->getProject())) {
+            return '';
+        }
+        
         return 'https://bitbucket.org/' . $this->getProject()->getReference() . '/commits/' . $this->getCommitId();
     }
 
@@ -28,6 +32,10 @@ class BitbucketHgBuild extends HgBuild
      */
     public function getBranchLink()
     {
+        if (is_null($this->getProject())) {
+            return '';
+        }
+        
         return 'https://bitbucket.org/' . $this->getProject()->getReference() . '/src/?at=' . $this->getBranch();
     }
 
@@ -61,6 +69,10 @@ class BitbucketHgBuild extends HgBuild
      */
     protected function getCloneUrl()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $key = trim($this->getProject()->getSshPrivateKey());
 
         if (!empty($key)) {

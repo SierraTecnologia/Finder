@@ -14,6 +14,10 @@ class GogsBuild extends GitBuild
      */
     protected function getCleanedReferenceForLink()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         return preg_replace('/\.git$/i', '', $this->getProject()->getReference());
     }
 

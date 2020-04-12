@@ -32,6 +32,10 @@ class GithubBuild extends GitBuild
      */
     protected function getDomain()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $domain = $this->getProject()->getAccessInformation('domain');
         if (!$domain) {
             $domain = 'github.com';
@@ -47,6 +51,10 @@ class GithubBuild extends GitBuild
      */
     public function getCommitLink()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         return '//' . $this->getDomain() . '/' . $this->getProject()->getReference() . '/commit/' . $this->getCommitId();
     }
 
@@ -57,6 +65,10 @@ class GithubBuild extends GitBuild
      */
     public function getBranchLink()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         return '//' . $this->getDomain() . '/' . $this->getProject()->getReference() . '/tree/' . $this->getBranch();
     }
 
@@ -80,6 +92,10 @@ class GithubBuild extends GitBuild
      */
     public function getTagLink()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         return '//' . $this->getDomain() . '/' . $this->getProject()->getReference() . '/tree/' . $this->getTag();
     }
 
@@ -165,6 +181,10 @@ class GithubBuild extends GitBuild
      */
     protected function getCloneUrl()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $key = trim($this->getProject()->getSshPrivateKey());
 
         $port = $this->getProject()->getAccessInformation('port');
@@ -213,6 +233,10 @@ class GithubBuild extends GitBuild
      */
     public function getFileLinkTemplate()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $reference = $this->getProject()->getReference();
         if (in_array($this->getSource(), Build::$pullRequestSources, true)) {
             $reference = $this->getExtra('remote_reference');

@@ -16,6 +16,10 @@ class GitlabBuild extends GitBuild
      */
     public function getCommitLink()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $domain = $this->getProject()->getAccessInformation('domain');
         return '//' . $domain . '/' . $this->getProject()->getReference() . '/commit/' . $this->getCommitId();
     }
@@ -27,6 +31,10 @@ class GitlabBuild extends GitBuild
      */
     public function getBranchLink()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $domain = $this->getProject()->getAccessInformation('domain');
         return '//' . $domain . '/' . $this->getProject()->getReference() . '/tree/' . $this->getBranch();
     }
@@ -38,6 +46,10 @@ class GitlabBuild extends GitBuild
      */
     public function getFileLinkTemplate()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         return sprintf(
             '//%s/%s/blob/%s/{FILE}#L{LINE}',
             $this->getProject()->getAccessInformation('domain'),
@@ -51,6 +63,10 @@ class GitlabBuild extends GitBuild
     */
     protected function getCloneUrl()
     {
+        if (is_null($this->getProject())) {
+            return false;
+        }
+        
         $key = trim($this->getProject()->getSshPrivateKey());
 
         $user   = $this->getProject()->getAccessInformation('user');
