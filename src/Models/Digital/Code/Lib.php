@@ -76,8 +76,10 @@ class Lib extends Base
     public function getUsers()
     {
         $result = array();
-        foreach ($this->userRoles as $userRole) {
-            $result[] = $userRole->getUser();
+        if (!empty($this->userRoles) && is_array($this->userRoles)) {
+            foreach ($this->userRoles as $userRole) {
+                $result[] = $userRole->getUser();
+            }
         }
 
         return $result;
