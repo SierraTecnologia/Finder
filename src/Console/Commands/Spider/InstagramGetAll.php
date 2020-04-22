@@ -34,11 +34,11 @@ class InstagramGetAll extends Command
     public function handle()
     {
 
-        $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
+        // $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
         
         $account = Account::where('username', 'ricardorsierra')->first();
 
-        (new GetMidias($account))->prepare('felicia_avila')->execute();
+        (new GetMidias($account))->prepare('avilafmaria')->execute();
         // (new GetStories($account))->prepare('jean_grey380')->execute();
         // (new GetFollowers($account))->prepare('jean_grey380')->execute();
     }

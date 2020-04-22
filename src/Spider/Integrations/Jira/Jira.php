@@ -17,6 +17,7 @@ class Jira extends Integration
 
     public $registersForPage = 10;
 
+
     protected function getConnection($token = false)
     {
         return $this;

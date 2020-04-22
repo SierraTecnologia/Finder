@@ -38,9 +38,11 @@ class UserRoleProject extends Base
         $roles   = array();
         $project = $this->getProject();
 
-        foreach ($this->role->getPermissions() as $permission) {
-            $name = $permission->getName();
-            $roles[] = new ProjectRole($project, $name);
+        if (!empty($this->role)) {
+            foreach ($this->role->getPermissions() as $permission) {
+                $name = $permission->getName();
+                $roles[] = new ProjectRole($project, $name);
+            }
         }
 
         return $roles;

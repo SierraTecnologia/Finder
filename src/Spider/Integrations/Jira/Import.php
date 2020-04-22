@@ -10,6 +10,8 @@ use Casa\Models\Registers\Spent;
 use Casa\Models\Calendar\Estimate;
 use Casa\Models\Calendar\Event;
 
+use Informate\Models\Comment;
+
 use Finder\Models\Digital\Code\Release;
 use Finder\Models\Digital\Code\Issue;
 use Finder\Models\Digital\Code\Field as FieldModel;
@@ -38,12 +40,10 @@ class Import extends Jira
         try {
             $fieldService = new FieldService($this->getConfig($this->_token));
         
-            // return custom field only. 
-            $fields = $fieldService->getAllFields(Field::CUSTOM); 
+            // $fieldService->getAllFields(Field::CUSTOM),
+            $fields = $fieldService->getAllFields(); 
             foreach($fields as $field) {
-                FieldModel::firstOrCreate([
-                    'name' => $field->name
-                ]);
+                FieldModel::registerFieldForProject($field, $this->_token->account->customize_url);
             }
             
         } catch (JiraException $e) {
@@ -58,16 +58,21 @@ class Import extends Jira
             $proj = new ProjectService($this->getConfig($this->_token));
         
             $prjs = $proj->getAllProjects();
-            Log::info(print_r($prjs, true));
+            // Log::info(print_r($prjs, true));
         
             foreach ($prjs as $p) {
-                Log::info(print_r($p, true));
+                // Log::info(print_r($p, true));
                 // Project Key:USS, Id:10021, Name:User Shipping Service, projectCategory: Desenvolvimento
                 if (!$projModel = ProjectModel::where('projectPathKey', $p->key)->first()){
-                    $projModel = ProjectModel::create([
-                        'name' => $p->name,
-                        'projectPathKey' => $p->key,
-                    ]);
+                    if (!$projModel && !$projModel = ProjectModel::where('projectPath', $p->name)->first()){
+                        $projModel = ProjectModel::create([
+                            'name' => $p->name,
+                            'projectPathKey' => $p->key,
+                        ]);
+                    } else {
+                        $projModel->projectPathKey = $p->key;
+                        $projModel->save();
+                    }
                 }
                 $this->projectVersions($projModel);
 
@@ -91,8 +96,8 @@ class Import extends Jira
                 if ($command) {                                                                                                                                                                  
                     $command->returnOutput()->progressAdvance($chunkNumber);                                                                                                                                 
                 }
-                $object->issueTimeTracking($issue->key_name);
-                $object->issueWorklog($issue->key_name);
+                // $object->issueTimeTracking($issue->key_name); // @todo Retirar Depois
+                // $object->issueWorklog($issue->key_name);
                 $object->comment($issue->key_name);
                 $object->getIssueRemoteLink($issue->key_name);
             }
@@ -108,15 +113,15 @@ class Import extends Jira
         $result = $this->searchIssue($jql, $paginate);
         if (!empty($result->issues)){
             foreach ($result->issues as $issue) {
-                if (!Issue::where(['key_name' => $issue->key])->first()) {       
-                    Issue::create([
+                var_dump($issue);
+                if (!$issueInstance = Issue::where(['key_name' => $issue->key])->first()) {       
+                    $issueInstance = Issue::create([
                         'key_name' => $issue->key,
                         'url' => $issue->self,
+                        // 'sumary' => '', @todo fazer aqui 
                     ]);
                     if (!empty($issue->fields)){
-                        foreach($issue->fields as $field) {
-                            var_dump($field);
-                        }
+                        $issueInstance->setField($issue->fields);
                     }
                 }
             }
@@ -162,14 +167,8 @@ class Import extends Jira
             
             // get issue's time tracking info
             $rets = $issueService->getTimeTracking($issueKey);
-            if (!empty($rets)){
-                foreach ($rets as $ret) {
-                    var_dump($ret);
-                    Spent::firstOrCreate([
-                        'name' => $ret->name
-                    ]);
-                }
-            }
+            Spent::registerSpentForIssue($rets, $this->_token->account->customize_url);
+
             
             // $timeTracking = new TimeTracking;
 
@@ -191,14 +190,7 @@ class Import extends Jira
             
             // get issue's all worklog
             $worklogs = $issueService->getWorklog($issueKey)->getWorklogs();
-            if (!empty($worklogs)) {
-                foreach ($worklogs as $worklog) {
-                    var_dump($worklog);
-                    Spent::firstOrCreate([
-                        'name' => $worklog->name
-                    ]);
-                }
-            }
+            Spent::registerSpentForIssue($worklogs, $this->_token->account->customize_url);
             
             // // get worklog by id
             // $wlId = 12345;
@@ -252,12 +244,7 @@ class Import extends Jira
             $issueService = new IssueService($this->getConfig($this->_token));
         
             $comments = $issueService->getComments($issueKey);
-            foreach($comments as $comment) {
-                var_dump($comment);
-                Coment::firstOrCreate([
-                    'name' => $comment->name
-                ]);
-            }
+            Comment::registerComents($comments, $this->_token->account->customize_url);
         
         
         } catch (JiraException $e) {

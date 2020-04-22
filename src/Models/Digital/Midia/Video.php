@@ -41,7 +41,7 @@ class Video extends Base
     }
 
     /**
-     * Get all of the users that are assigned this tag.
+     * Get all of the users that are assigned this video.
      */
     public function users()
     {
@@ -49,7 +49,7 @@ class Video extends Base
     }
 
     /**
-     * Get all of the persons that are assigned this tag.
+     * Get all of the persons that are assigned this video.
      */
     public function persons()
     {

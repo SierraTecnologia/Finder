@@ -3,6 +3,9 @@
 namespace Finder\Models\Digital\Code;
 
 use Support\Models\Base;
+use Finder\Models\Reference;
+use Finder\Models\Digital\Code\Project;
+use StdClass;
 
 class Issue extends Base
 {
@@ -32,8 +35,21 @@ class Issue extends Base
 
     public function project()
     {
-        return $this->belongsTo('Finder\Models\Digital\Code\Project', 'code_project_id', 'id');
+        return $this->belongsTo(Project::class, 'code_project_id', 'id');
     }
 
-    
+    public function setField($fields)
+    {
+        // @todo fazer aqui 
+        foreach ($fields as $fieldIdentify=>$result) {
+
+            if (is_a($result, StdClass::class)) {
+
+            }
+            var_dump('IssueModel');
+            var_dump($fieldIdentify);
+            var_dump($result);
+        }
+
+    }
 }

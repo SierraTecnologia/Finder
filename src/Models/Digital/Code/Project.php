@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use SiUtils\Tools\Programs\Git\Repository;
 
 use Support\Models\Base;
+use Finder\Models\Reference;
 use SiUtils\Helper\General;
 
 class Project extends Base
@@ -147,8 +148,10 @@ class Project extends Base
     public function getUsers()
     {
         $result = array();
-        foreach ($this->userRoles as $userRole) {
-            $result[] = $userRole->getUser();
+        if (!empty($this->userRoles)) {
+            foreach ($this->userRoles as $userRole) {
+                $result[] = $userRole->getUser();
+            }
         }
 
         return $result;
@@ -265,6 +268,11 @@ class Project extends Base
         } catch (\LogicException $e) {
             throw new \RuntimeException('Unable to determine if repository is empty', null, $e);
         }
+    }
+    
+    public function references()
+    {
+        return $this->morphToMany(Reference::class, 'referenceable');
     }
 }
 
