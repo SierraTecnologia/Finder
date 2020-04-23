@@ -4,6 +4,8 @@ namespace Finder\Spider\Integrations\Instagram;
 
 use Log;
 use App\Models\User;
+use Exception;
+use Support\ClassesHelpers\Development\ErrorHelper;
 
 class Profile extends Instagram
 {
@@ -69,9 +71,9 @@ class Profile extends Instagram
             return $data;
             
         } catch (\Exception $e) {
-            dd('Exception', $e);
-            return false;
+            ErrorHelper::registerAndReturnMessage($e);
         }
+        return false;
 
     }
 
