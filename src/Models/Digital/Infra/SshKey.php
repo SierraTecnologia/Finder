@@ -56,7 +56,7 @@ class SshKey extends Base
 
     public function getLocalKey()
     {
-        return file_get_contents(storage_path().DS.self::$storageFolder.DS.$this->slug.'PEM');
+        return file_get_contents(storage_path().DIRECTORY_SEPARATOR.self::$storageFolder.DIRECTORY_SEPARATOR.$this->slug.'PEM');
     }
 
     public function getApresentationName()

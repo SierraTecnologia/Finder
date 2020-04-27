@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Population\Manipule\Entities\PhotoEntity;
 use Illuminate\Database\Eloquent\Collection;
 use Support\Models\Base;
-use TCG\Voyager\Models\Post;
+use Facilitador\Models\Post;
 use Population\Models\Identity\Location\Location;
 use RicardoSierra\Translation\Models\Language;
 
