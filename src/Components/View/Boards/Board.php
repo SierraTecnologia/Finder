@@ -60,7 +60,7 @@ class Board
     {
         $classAExecutar = '\\'.$this->classAExecutar;
         if (!$instance instanceof $this->classAfetada) {
-            Log::notice('Não é instancia de '. $this->classAfetada.'!');
+            Log::channel('sitec-finder')->notice('Não é instancia de '. $this->classAfetada.'!');
             return abort(500, 'Não é instancia de!');
         }
         return new $classAExecutar($instance);

@@ -18,8 +18,10 @@ use Finder\Spider\Integrations\Sentry\Sentry;
 use Finder\Spider\Integrations\Testlink\Testlink;
 use Finder\Spider\Integrations\Zoho\Zoho;
 use Support\Parser\ParseClass;
-
+use Support\ClassesHelpers\Development\ErrorHelper;
 use Population\Models\Components\Integrations\Integration as IntegrationModel;
+use ReflectionGenerator;
+use Exception;
 
 class Integration
 {
@@ -115,8 +117,20 @@ class Integration
                     ]);
                 }
 
-                if (is_file($realPath . $item)) {
-                    Log::warning('Não deveria ter aquivo nessa pasta');         
+                if (is_file($realPath . $item) && $item!=='Integration.php') {
+                    Log::channel('sitec-finder')->warning(
+                        ErrorHelper::tratarMensagem(
+                            'Não deveria ter arquivo nessa pasta: '.$realPath . $item
+                        )
+                    );
+
+                    //@todo Remover
+                    try {
+                        throw new Exception;
+                    } catch(Exception $e) {
+                        dd($e->getTrace());
+                    }
+                    
                 }
             });
     }

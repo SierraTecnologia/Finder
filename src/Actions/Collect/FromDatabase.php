@@ -40,7 +40,7 @@ class FromDatabase implements \SiObjects\Support\Contracts\Robot
     protected function completeRunner($runner)
     {
         $this->executedActions = $this->executedActions+1;
-        Log::notice('Runner Completada. Concluido:'.$this->getPorcDone());
+        Log::channel('sitec-finder')->notice('Runner Completada. Concluido:'.$this->getPorcDone());
     }
 
     public function getActionToExecute()

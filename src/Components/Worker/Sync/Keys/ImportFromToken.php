@@ -27,7 +27,7 @@ class ImportFromToken
         if (!$this->token->account->status) {
             return false;
         }
-        Log::info('Tratando Token .. '.print_r($this->token, true));
+        Log::channel('sitec-finder')->info('Tratando Token .. '.print_r($this->token, true));
 
         if ($this->token->account->integration_id == Sentry::getCodeForPrimaryKey()) {
             // (new \Finder\Spider\Integrations\Sentry\Import($this->token))->bundle();

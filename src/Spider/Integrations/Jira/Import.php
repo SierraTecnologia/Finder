@@ -29,7 +29,7 @@ class Import extends Jira
 {
     public function bundle($command = false)
     {
-        Log::info('Importando Jira...');
+        Log::channel('sitec-finder')->info('Importando Jira...');
         $this->getFields($command);
         $this->getProjects($command);
         $this->getInfoFromIssues($command);
@@ -53,15 +53,15 @@ class Import extends Jira
 
     public function getProjects($command = false)
     {
-        Log::info('Importando Projetos do Jira...');
+        Log::channel('sitec-finder')->info('Importando Projetos do Jira...');
         try {
             $proj = new ProjectService($this->getConfig($this->_token));
         
             $prjs = $proj->getAllProjects();
-            // Log::info(print_r($prjs, true));
+            // Log::channel('sitec-finder')->info(print_r($prjs, true));
         
             foreach ($prjs as $p) {
-                // Log::info(print_r($p, true));
+                // Log::channel('sitec-finder')->info(print_r($p, true));
                 // Project Key:USS, Id:10021, Name:User Shipping Service, projectCategory: Desenvolvimento
                 if (!$projModel = ProjectModel::where('projectPathKey', $p->key)->first()){
                     if (!$projModel && !$projModel = ProjectModel::where('projectPath', $p->name)->first()){
@@ -148,7 +148,7 @@ class Import extends Jira
 
     public function project($project)
     {
-        Log::info('Importando Projeto do Jira...');
+        Log::channel('sitec-finder')->info('Importando Projeto do Jira...');
         try {
             $proj = new ProjectService($this->getConfig($this->_token));
         

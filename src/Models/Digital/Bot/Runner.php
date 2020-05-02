@@ -71,7 +71,7 @@ class Runner extends Base
         }
 
         if (!$this->action) {
-            \Log::warning('[Estimate] Nenhuma ação para executar');
+            \Log::channel('sitec-finder')->warning('[Estimate] Nenhuma ação para executar');
             return false;
         }
         

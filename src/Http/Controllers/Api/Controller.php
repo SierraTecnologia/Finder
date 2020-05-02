@@ -29,27 +29,27 @@ class Controller extends BaseController
         }
 
         if(!empty($_SERVER['HTTP_VERSION'])) {
-            Log::info('Usando Version: '.$_SERVER['HTTP_VERSION']);
+            Log::channel('sitec-finder')->info('Usando Version: '.$_SERVER['HTTP_VERSION']);
             return User::where('token', $_SERVER['HTTP_VERSION'])->first();
         }
             
         if(!empty($_POST['version'])) {
-            Log::info('Usando Version: '.$_POST['version']);
+            Log::channel('sitec-finder')->info('Usando Version: '.$_POST['version']);
             return User::where('token', $_POST['version'])->first();
         }
         
         if(!empty($_POST['VERSION'])) {
-            Log::info('Usando Version: '.$_POST['VERSION']);
+            Log::channel('sitec-finder')->info('Usando Version: '.$_POST['VERSION']);
             return User::where('token', $_POST['VERSION'])->first();
         }
         
         if(!empty($_GET['version'])) {
-            Log::info('Usando Version: '.$_GET['version']);
+            Log::channel('sitec-finder')->info('Usando Version: '.$_GET['version']);
             return User::where('token', $_GET['version'])->first();
         }
         
         if(!empty($_GET['VERSION'])) {
-            Log::info('Usando Version: '.$_GET['VERSION']);
+            Log::channel('sitec-finder')->info('Usando Version: '.$_GET['VERSION']);
             return User::where('token', $_GET['VERSION'])->first();
         }
         

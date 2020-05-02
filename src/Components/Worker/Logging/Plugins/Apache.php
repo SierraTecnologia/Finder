@@ -45,7 +45,7 @@ class Apache {
         public $files = array(
             'error'  => array(
                 'error.log' ,
-                'Log::notice' ,
+                'Log::channel('sitec-finder')->notice' ,
                 'apache_error.log' ,
             ) ,
             'access' => array(
@@ -128,7 +128,7 @@ class Apache {
             // Write a line of log and try to guess the format
             $remain = 10;
             $test   = 0;
-            Log::notice( 'Pimp my Log has been successfully configured with Apache' );
+            Log::channel('sitec-finder')->notice( 'Pimp my Log has been successfully configured with Apache' );
             foreach ( LogParser::getLinesFromBottom( $file , 10 ) as $line ) {
                 $test = @preg_match('|^\[(.*) (.*) (.*) (.*):(.*):(.*)\.(.*) (.*)\] \[(.*):(.*)\] \[pid (.*)\] .*\[client (.*):(.*)\] (.*)(, referer: (.*))*$|U', $line );
                 if ( $test === 1 ) {

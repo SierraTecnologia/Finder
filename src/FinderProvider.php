@@ -123,6 +123,8 @@ class FinderProvider extends ServiceProvider
         // $this->app->booted(function () {
         //     $this->routes();
         // });
+
+        $this->loadLogger();
     }
 
     /**
@@ -181,7 +183,7 @@ class FinderProvider extends ServiceProvider
          */
         $this->app->singleton(FinderService::class, function($app)
         {
-            Log::info('Singleton Finder');
+            Log::channel('sitec-finder')->info('Singleton Finder');
             return new FinderService(config('sitec.finder'));
         });
 
@@ -247,6 +249,19 @@ class FinderProvider extends ServiceProvider
 
         // Load translations
         $this->loadTranslationsFrom($this->getResourcesPath('lang'), 'finder');
+    }
+
+
+    /**
+     * 
+     */
+    private function loadLogger()
+    {
+        Config::set('logging.channels.sitec-finder', [
+            'driver' => 'single',
+            'path' => storage_path('logs/sitec-finder.log'),
+            'level' => env('APP_LOG_LEVEL', 'debug'),
+        ]);
     }
 
 }
