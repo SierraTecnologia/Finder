@@ -14,7 +14,7 @@ use Config;
 use Route;
 use Illuminate\Routing\Router;
 
-use Support\ClassesHelpers\Traits\Models\ConsoleTools;
+use Support\Helpers\Traits\Models\ConsoleTools;
 
 use Finder\Facades\Finder as FinderFacade;
 use Illuminate\Contracts\Events\Dispatcher;
