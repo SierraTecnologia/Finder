@@ -1,8 +1,12 @@
 #!/usr/bin/env php
 <?php
+/**
+ * 
+ */
 $composerAutoload = [
-    __DIR__ . '/../vendor/autoload.php',
     __DIR__ . '/../../../autoload.php',
+    __DIR__ . '/../vendor/autoload.php',
+    'vendor/autoload.php',
 ];
 $vendorPath = $binariesPath = null;
 foreach ($composerAutoload as $autoload) {
@@ -14,11 +18,17 @@ foreach ($composerAutoload as $autoload) {
     }
 }
 
-$loadLaravel = new \Support\Helps\LoadLaravel();
-$loadLaravel->init();
+$loadLaravel = new \Support\Helps\LoadLaravel(
+    [
+        __DIR__.'/../vendor/sierratecnologia/informate/src/Migrations/',
+        __DIR__.'/../vendor/sierratecnologia/population/src/Migrations/',
+        __DIR__.'/../database/migrations/',
+    ]
+);
+$loadLaravel->runMigrations();
 
 $cliMate = new \League\CLImate\CLImate;
-$analyser = new \Finder\Console\External\DirectoryExplorer($cliMate, $binariesPath, $_SERVER['argv']);
+$analyser = new \Finder\Console\External\Explorer\DirectoryExplorer($cliMate, $binariesPath, $_SERVER['argv']);
 if ($analyser->run()) {
     // No issues found
     exit(0);

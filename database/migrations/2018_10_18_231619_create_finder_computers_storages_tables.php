@@ -12,7 +12,7 @@ class CreateFinderComputersStoragesTables extends Migration
 	 */
 	public function up()
 	{
-        Schema::create(config('app.db-prefix', '').'files', function (Blueprint $table) {
+        Schema::create('files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('location')->nullable();
@@ -26,7 +26,7 @@ class CreateFinderComputersStoragesTables extends Migration
         });
         
         
-        Schema::create(config('app.db-prefix', '').'computer_files', function (Blueprint $table) {
+        Schema::create('computer_files', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('location')->nullable();

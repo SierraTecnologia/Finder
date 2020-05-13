@@ -12,7 +12,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
 	 */
 	public function up()
 	{
-        Schema::create(config('app.db-prefix', '').'imagens', function (Blueprint $table) {
+        Schema::create('imagens', function (Blueprint $table) {
             $table->increments('id');
             $table->string('location')->nullable();
             $table->string('name')->nullable();
@@ -27,7 +27,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
             $table->nullableTimestamps();
             $table->softDeletes();
         });
-        Schema::create(config('app.db-prefix', '').'imagenables', function (Blueprint $table) {
+        Schema::create('imagenables', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('imagen_id')->nullable();
             // $table->foreign('imagen_id')->references('id')->on('imagens');
@@ -36,7 +36,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
         });
 
         
-		Schema::create(config('app.db-prefix', '').'photo_albums', function (Blueprint $table) {
+		Schema::create('photo_albums', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();
 			$table->integer('position')->nullable();
@@ -52,7 +52,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
         });
         
 
-		Schema::create(config('app.db-prefix', '').'photos', function (Blueprint $table) {
+		Schema::create('photos', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();
 
@@ -78,7 +78,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
         
 
         
-		Schema::create(config('app.db-prefix', '').'videos', function (Blueprint $table) {
+		Schema::create('videos', function (Blueprint $table) {
 			$table->engine = 'InnoDB';
 			$table->increments('id')->unsigned();
 			$table->string('name', 255)->nullable();
@@ -89,7 +89,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
 			$table->timestamps();
             $table->softDeletes();
         });
-        Schema::create(config('app.db-prefix', '').'videoables', function (Blueprint $table) {
+        Schema::create('videoables', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('video_id')->nullable();
             // $table->foreign('video_id')->references('id')->on('videos');
@@ -98,7 +98,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
         });
         
 
-        Schema::create(config('app.db-prefix', '').'thumbnails', function (Blueprint $table) {
+        Schema::create('thumbnails', function (Blueprint $table) {
             $table->increments('id');
             $table->string('path')->default('');
             $table->string('relative_url')->default('');
@@ -108,7 +108,7 @@ class CreateFinderFilesGroupsMidiaTables extends Migration
 			$table->integer('thumbnail_id')->default(0)->nullable();
             // $table->foreign('photo_id')->references('id')->on('phonees');
         });
-        Schema::create(config('app.db-prefix', '').'thumbnailables', function (Blueprint $table) {
+        Schema::create('thumbnailables', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('thumbnail_id')->nullable();
             // $table->foreign('thumbnail_id')->references('id')->on('thumbnails');

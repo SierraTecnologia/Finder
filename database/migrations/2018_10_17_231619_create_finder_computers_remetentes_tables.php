@@ -14,7 +14,7 @@ class CreateFinderComputersRemetentesTables extends Migration
 	{
         
         
-        Schema::create(config('app.db-prefix', '').'computers', function (Blueprint $table) {
+        Schema::create('computers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('location');
