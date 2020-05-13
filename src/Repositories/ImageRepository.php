@@ -19,7 +19,7 @@ class ImageRepository extends CmsRepository
     public function __construct(Image $model)
     {
         $this->model = $model;
-        $this->table = config('cms.db-prefix').'images';
+        $this->table = \Illuminate\Support\Facades\Config::get('cms.db-prefix').'images';
     }
 
     public function published()
@@ -82,7 +82,7 @@ class ImageRepository extends CmsRepository
 
         $input['is_published'] = 1;
         $input['location'] = $savedFile['name'];
-        $input['storage_location'] = config('cms.storage-location');
+        $input['storage_location'] = \Illuminate\Support\Facades\Config::get('cms.storage-location');
         $input['original_name'] = $savedFile['original'];
 
         $image = $this->model->create($input);
@@ -115,7 +115,7 @@ class ImageRepository extends CmsRepository
         }
 
         $input['location'] = CryptoService::decrypt($savedFile['name']);
-        $input['storage_location'] = config('cms.storage-location');
+        $input['storage_location'] = \Illuminate\Support\Facades\Config::get('cms.storage-location');
         $input['original_name'] = $savedFile['original'];
         $input['tags'] = explode(',', $input['tags']);
         $image = $this->model->create($input);

@@ -43,7 +43,7 @@ class Twitter extends Integration
           return $instagram;
     }
 
-    public function config($component)
+    public function \Illuminate\Support\Facades\Config::get($component)
     {
 
         define('CONSUMER_KEY', 'insert_your_consumer_key_here');

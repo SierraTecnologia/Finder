@@ -60,7 +60,7 @@ class PhotosPrepare extends Command
     public function getDisk()
     {
         // @todo usar config
-        return config('facilitador.storage.disk', config('filesystems.default'));
+        return \Illuminate\Support\Facades\Config::get('facilitador.storage.disk', \Illuminate\Support\Facades\Config::get('filesystems.default'));
     }
 
     /**

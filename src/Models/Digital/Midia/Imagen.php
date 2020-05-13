@@ -46,7 +46,7 @@ class Imagen extends ArchiveTrait
      */
     public function users()
     {
-        return $this->morphedByMany(config('sitec.core.models.user', \App\Models\User::class), 'imagenable');
+        return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class), 'imagenable');
     }
 
     /**
@@ -54,7 +54,7 @@ class Imagen extends ArchiveTrait
      */
     public function persons()
     {
-        return $this->morphedByMany(config('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class), 'imagenable');
+        return $this->morphedByMany(\Illuminate\Support\Facades\Config::get('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class), 'imagenable');
     }
 
     /**
@@ -108,7 +108,7 @@ class Imagen extends ArchiveTrait
             if ($this->isLocalFile()) {
                 $imagePath = storage_path('app/'.$this->location);
             } else {
-                $imagePath = Storage::disk(config('facilitador.storage.disk', config('filesystems.default', 'local')))->url($this->location);
+                $imagePath = Storage::disk(\Illuminate\Support\Facades\Config::get('facilitador.storage.disk', \Illuminate\Support\Facades\Config::get('filesystems.default', 'local')))->url($this->location);
             }
 
             $image = InterventionImage::make($imagePath)->resize(800, null);
@@ -158,7 +158,7 @@ class Imagen extends ArchiveTrait
      */
     public static function createByExternalLink($link, $target, $data = [])
     {
-        $personClass = config('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class);
+        $personClass = \Illuminate\Support\Facades\Config::get('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class);
 
         $person = $personClass::createIfNotExistAndReturn($target);
 
@@ -173,7 +173,7 @@ class Imagen extends ArchiveTrait
     public static function createByMediaFromDisk($disk, $link, $target, $data = [])
     {
         if (is_string($target)) {
-            $personClass = config('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class);
+            $personClass = \Illuminate\Support\Facades\Config::get('sitec.core.models.person', \Population\Models\Identity\Actors\Person::class);
             $person = $personClass::createIfNotExistAndReturn($target);
         } else {
             $person = $target;
