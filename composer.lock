@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b2b04ac67a1bff04c52e5b9a6c615cb",
+    "content-hash": "c9bfe4bff8a4ccc8957f9eb5c9e23873",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -5561,6 +5561,47 @@
                 "processing"
             ],
             "time": "2019-04-03T23:46:42+00:00"
+        },
+        {
+            "name": "league/mime-type-detection",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/mime-type-detection.git",
+                "reference": "521ff65678b30c9efab86462eba3bf9e0676f25b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/521ff65678b30c9efab86462eba3bf9e0676f25b",
+                "reference": "521ff65678b30c9efab86462eba3bf9e0676f25b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.11",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\MimeTypeDetection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "Mime-type detection for Flysystem",
+            "time": "2020-04-04T15:43:58+00:00"
         },
         {
             "name": "lesstif/php-jira-rest-client",

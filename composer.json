@@ -65,7 +65,8 @@
         "predis/predis": "*",
         "sebastian/diff": "*",
         "sebastian/phpcpd": "*",
-        "sierratecnologia/tracking": "dev-master"
+        "sierratecnologia/tracking": "dev-master",
+        "league/mime-type-detection": "^1.1"
     },
     "autoload": {
         "psr-4": {

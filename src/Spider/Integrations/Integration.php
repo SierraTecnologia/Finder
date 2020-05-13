@@ -18,7 +18,7 @@ use Finder\Spider\Integrations\Sentry\Sentry;
 use Finder\Spider\Integrations\Testlink\Testlink;
 use Finder\Spider\Integrations\Zoho\Zoho;
 use Support\Components\Coders\Parser\ParseClass;
-use Support\Helpers\Development\ErrorHelper;
+use Support\Traits\Debugger\ErrorHelper;
 use Population\Models\Components\Integrations\Integration as IntegrationModel;
 use ReflectionGenerator;
 use Exception;
