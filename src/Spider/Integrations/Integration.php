@@ -22,6 +22,7 @@ use Support\Traits\Debugger\ErrorHelper;
 use Population\Models\Components\Integrations\Integration as IntegrationModel;
 use ReflectionGenerator;
 use Exception;
+use Support\Utils\Extratores\ClasserExtractor;
 
 class Integration
 {
@@ -112,7 +113,7 @@ class Integration
                    
                     IntegrationModel::createIfNotExistAndReturn([
                         'id' =>  call_user_func(array($modelName, 'getPrimary')),
-                        'name' => ParseClass::getClassName($modelName),
+                        'name' => ClasserExtractor::getClassName($modelName),
                         'code' => $modelName,
                     ]);
                 }
