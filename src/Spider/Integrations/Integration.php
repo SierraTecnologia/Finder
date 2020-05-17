@@ -95,7 +95,7 @@ class Integration
     {
         $integration = IntegrationModel::createIfNotExistAndReturn([
             'id' => static::$ID,
-            'name' => get_called_class(),
+            'name' => ClasserExtractor::getClassName($modelName),
             'code' => static::class,
         ]);
         return $integration->id;
