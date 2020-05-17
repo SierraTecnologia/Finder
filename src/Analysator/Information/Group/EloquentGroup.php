@@ -5,41 +5,17 @@
 
 namespace Finder\Analysator\Informate\Group;
 
-abstract class EloquentGroup
+use Support\Contracts\Categorizador\AbstractCategorizador;
+
+abstract class EloquentGroup extends AbstractCategorizador
 {
     /**
      * Identify
      */
-    protected $typesByOrder = [
+    public static $typesByOrder = [
         GroupFinanceEntity::class,
         GroupSocietyEntity::class,
     ];
-
-
-    /**
-     * Construct
-     */
-    public function __construct()
-    {
-        
-
-    }
-
-    // /**
-    //  * Agrupando
-    //  */ 
-    // public function groupByNamespace()
-    // {
-    //     $namespaces = [];
-    //     $namespaces = [
-    //         'name' => 'Calendar',
-    //         'localeNamespace' => 'App\Models',
-    //         'tables' => []
-    //     ];
-
-    //     return $namespaces;
-    // }
-
 
 
 }

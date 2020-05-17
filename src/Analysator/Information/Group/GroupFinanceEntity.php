@@ -8,7 +8,7 @@ namespace Finder\Analysator\HistoryType;
 
 class GroupFinanceEntity extends EloquentGroup
 {
-    public $name = 'Finance';
+    public static $name = 'Finance';
 
     public static $examples = [
         'bank',

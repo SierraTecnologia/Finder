@@ -1,6 +1,6 @@
 <?php
 /**
- * Algo em determinado Tempo
+ * Uma informação em determinado Tempo (log)
  */
 
 namespace Finder\Analysator\RegisterTypes;
@@ -8,9 +8,10 @@ namespace Finder\Analysator\RegisterTypes;
 
 class RegisterHistoricEntity extends AbstractRegisterType
 {
+    public static $name = 'Historic';
 
     public static $examples = [
-        
+        'log', 'logger', 'registro', 'data'
     ];
 
 

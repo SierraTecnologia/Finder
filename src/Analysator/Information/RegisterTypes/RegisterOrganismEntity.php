@@ -8,8 +8,11 @@ namespace Finder\Analysator\RegisterTypes;
 
 class RegisterOrganismEntity extends AbstractRegisterType
 {
+    public static $name = 'Organism';
     public static $examples = [
-        
+        'person', 'pessoa', 'personagem', 'persona',
+
+        'business', 'negocio', 'organismo', 'empreendimento'
     ];
 
 

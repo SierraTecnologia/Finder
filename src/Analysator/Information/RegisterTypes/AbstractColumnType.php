@@ -5,28 +5,19 @@
 
 namespace Finder\Analysator\RegisterTypes;
 
+use Support\Contracts\Categorizador\AbstractCategorizador;
 
-abstract class AbstractRegisterType
+abstract class AbstractRegisterType extends AbstractCategorizador
 {
     /**
      * Identify
      */
-    protected $typesByOrder = [
+    public static $typesByOrder = [
         RegisterEventEntity::class,
         RegisterHistoricEntity::class,
         RegisterTestimonialEntity::class,
         RegisterInformationEntity::class,
         RegisterOrganismEntity::class,
     ];
-
-
-    /**
-     * Construct
-     */
-    public function __construct()
-    {
-        
-
-    }
 
 }

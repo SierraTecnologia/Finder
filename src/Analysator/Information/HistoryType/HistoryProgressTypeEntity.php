@@ -8,7 +8,7 @@ namespace Finder\Analysator\HistoryType;
 
 class HistoryProgressTypeEntity extends AbstractHistoryType
 {
-    public $name = 'Progress';
+    public static $name = 'Progress';
 
     public static $examples = [
 

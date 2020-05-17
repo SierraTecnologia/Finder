@@ -8,7 +8,7 @@ namespace Finder\Analysator\HistoryType;
 
 class HistoryDinamicTypeEntity extends AbstractHistoryType
 {
-    public $name = 'Dinamic';
+    public static $name = 'Dinamic';
 
     public static $examples = [
 

@@ -8,7 +8,7 @@ namespace Finder\Analysator\HistoryType;
 
 class GroupSocietyEntity extends EloquentGroup
 {
-    public $name = 'Society';
+    public static $name = 'Society';
 
     public static $examples = [
         'gender',

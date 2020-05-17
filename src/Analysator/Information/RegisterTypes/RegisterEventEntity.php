@@ -8,9 +8,16 @@ namespace Finder\Analysator\RegisterTypes;
 
 class RegisterEventEntity extends AbstractRegisterType
 {
+    public static $name = 'Event';
     public static $examples = [
         'event',
-        'post'
+        'post',
+        'calendar',
+        'payment', 'pagamento', 'transferencia', 'transfer',
+
+
+
+        'issue'
     ];
 
 

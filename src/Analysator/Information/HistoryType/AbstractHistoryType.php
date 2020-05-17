@@ -5,26 +5,17 @@
 
 namespace Finder\Analysator\HistoryType;
 
+use Support\Contracts\Categorizador\AbstractCategorizador;
 
-abstract class AbstractHistoryType
+abstract class AbstractHistoryType extends AbstractCategorizador
 {
     /**
      * Identify
      */
-    protected $typesByOrder = [
+    public static $typesByOrder = [
         HistoryDinamicTypeEntity::class,
         HistoryImutavelTypeEntity::class,
         HistoryProgressTypeEntity::class,
     ];
-
-
-    /**
-     * Construct
-     */
-    public function __construct()
-    {
-        
-
-    }
 
 }
