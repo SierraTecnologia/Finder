@@ -9,7 +9,7 @@ trait AskForFilename
     /**
      * Ask the user for a filename.
      *
-     * @param string        $label Input label
+     * @param string        $label    Input label
      * @param callable|null $callback
      *
      * @return $this

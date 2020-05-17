@@ -33,32 +33,32 @@ class WikiPage extends Base
     ];
     /*# frozen_string_literal: true
 
-# rubocop:disable Rails/ActiveRecordAliases
-class WikiPage
-  PageChangedError = Class.new(StandardError)
-  PageRenameError = Class.new(StandardError)
+    # rubocop:disable Rails/ActiveRecordAliases
+    class WikiPage
+    PageChangedError = Class.new(StandardError)
+    PageRenameError = Class.new(StandardError)
 
-  include ActiveModel::Validations
-  include ActiveModel::Conversion
-  include StaticModel
-  extend ActiveModel::Naming
+    include ActiveModel::Validations
+    include ActiveModel::Conversion
+    include StaticModel
+    extend ActiveModel::Naming
 
-  def self.primary_key
+    def self.primary_key
     'slug'
-  end
+    end
 
-  def self.model_name
+    def self.model_name
     ActiveModel::Name.new(self, nil, 'wiki')
-  end
+    end
 
-  # Sorts and groups pages by directory.
-  #
-  # pages - an array of WikiPage objects.
-  #
-  # Returns an array of WikiPage and WikiDirectory objects. The entries are
-  # sorted by alphabetical order (directories and pages inside each directory).
-  # Pages at the root level come before everything.
-  def self.group_by_directory(pages)
+    # Sorts and groups pages by directory.
+    #
+    # pages - an array of WikiPage objects.
+    #
+    # Returns an array of WikiPage and WikiDirectory objects. The entries are
+    # sorted by alphabetical order (directories and pages inside each directory).
+    # Pages at the root level come before everything.
+    def self.group_by_directory(pages)
     return [] if pages.blank?
 
     pages.sort_by { |page| [page.directory, page.slug] }
@@ -71,180 +71,180 @@ class WikiPage
         end
       end
       .flatten
-  end
+    end
 
-  def self.unhyphenize(name)
+    def self.unhyphenize(name)
     name.gsub(/-+/, ' ')
-  end
+    end
 
-  def to_key
+    def to_key
     [:slug]
-  end
+    end
 
-  validates :title, presence: true
-  validates :content, presence: true
+    validates :title, presence: true
+    validates :content, presence: true
 
-  # The GitLab ProjectWiki instance.
-  attr_reader :wiki
+    # The GitLab ProjectWiki instance.
+    attr_reader :wiki
 
-  # The raw Gitlab::Git::WikiPage instance.
-  attr_reader :page
+    # The raw Gitlab::Git::WikiPage instance.
+    attr_reader :page
 
-  # The attributes Hash used for storing and validating
-  # new Page values before writing to the raw repository.
-  attr_accessor :attributes
+    # The attributes Hash used for storing and validating
+    # new Page values before writing to the raw repository.
+    attr_accessor :attributes
 
-  def hook_attrs
+    def hook_attrs
     Gitlab::HookData::WikiPageBuilder.new(self).build
-  end
+    end
 
-  def initialize(wiki, page = nil, persisted = false)
+    def initialize(wiki, page = nil, persisted = false)
     @wiki       = wiki
     @page       = page
     @persisted  = persisted
     @attributes = {}.with_indifferent_access
 
     set_attributes if persisted?
-  end
+    end
 
-  # The escaped URL path of this page.
-  def slug
+    # The escaped URL path of this page.
+    def slug
     if @attributes[:slug].present?
       @attributes[:slug]
     else
       wiki.wiki.preview_slug(title, format)
     end
-  end
+    end
 
-  alias_method :to_param, :slug
+    alias_method :to_param, :slug
 
-  def human_title
+    def human_title
     return 'Home' if title == 'home'
 
     title
-  end
+    end
 
-  # The formatted title of this page.
-  def title
+    # The formatted title of this page.
+    def title
     if @attributes[:title]
       CGI.unescape_html(self.class.unhyphenize(@attributes[:title]))
     else
       ""
     end
-  end
+    end
 
-  # Sets the title of this page.
-  def title=(new_title)
+    # Sets the title of this page.
+    def title=(new_title)
     @attributes[:title] = new_title
-  end
+    end
 
-  # The raw content of this page.
-  def content
+    # The raw content of this page.
+    def content
     @attributes[:content] ||= @page&.text_data
-  end
+    end
 
-  # The hierarchy of the directory this page is contained in.
-  def directory
+    # The hierarchy of the directory this page is contained in.
+    def directory
     wiki.page_title_and_dir(slug)&.last.to_s
-  end
+    end
 
-  # The processed/formatted content of this page.
-  def formatted_content
+    # The processed/formatted content of this page.
+    def formatted_content
     @attributes[:formatted_content] ||= @wiki.page_formatted_data(@page)
-  end
+    end
 
-  # The markup format for the page.
-  def format
+    # The markup format for the page.
+    def format
     @attributes[:format] || :markdown
-  end
+    end
 
-  # The commit message for this page version.
-  def message
+    # The commit message for this page version.
+    def message
     version.try(:message)
-  end
+    end
 
-  # The GitLab Commit instance for this page.
-  def version
+    # The GitLab Commit instance for this page.
+    def version
     return unless persisted?
 
     @version ||= @page.version
-  end
+    end
 
-  def versions(options = {})
+    def versions(options = {})
     return [] unless persisted?
 
     wiki.wiki.page_versions(@page.path, options)
-  end
+    end
 
-  def count_versions
+    def count_versions
     return [] unless persisted?
 
     wiki.wiki.count_page_versions(@page.path)
-  end
+    end
 
-  def last_version
+    def last_version
     @last_version ||= versions(limit: 1).first
-  end
+    end
 
-  def last_commit_sha
+    def last_commit_sha
     last_version&.sha
-  end
+    end
 
-  # Returns boolean True or False if this instance
-  # is an old version of the page.
-  def historical?
+    # Returns boolean True or False if this instance
+    # is an old version of the page.
+    def historical?
     return false unless last_commit_sha && version
 
     @page.historical? && last_commit_sha != version.sha
-  end
+    end
 
-  # Returns boolean True or False if this instance
-  # is the latest commit version of the page.
-  def latest?
+    # Returns boolean True or False if this instance
+    # is the latest commit version of the page.
+    def latest?
     !historical?
-  end
+    end
 
-  # Returns boolean True or False if this instance
-  # has been fully created on disk or not.
-  def persisted?
+    # Returns boolean True or False if this instance
+    # has been fully created on disk or not.
+    def persisted?
     @persisted == true
-  end
+    end
 
-  # Creates a new Wiki Page.
-  #
-  # attr - Hash of attributes to set on the new page.
-  #       :title   - The title (optionally including dir) for the new page.
-  #       :content - The raw markup content.
-  #       :format  - Optional symbol representing the
-  #                  content format. Can be any type
-  #                  listed in the ProjectWiki::MARKUPS
-  #                  Hash.
-  #       :message - Optional commit message to set on
-  #                  the new page.
-  #
-  # Returns the String SHA1 of the newly created page
-  # or False if the save was unsuccessful.
-  def create(attrs = {})
+    # Creates a new Wiki Page.
+    #
+    # attr - Hash of attributes to set on the new page.
+    #       :title   - The title (optionally including dir) for the new page.
+    #       :content - The raw markup content.
+    #       :format  - Optional symbol representing the
+    #                  content format. Can be any type
+    #                  listed in the ProjectWiki::MARKUPS
+    #                  Hash.
+    #       :message - Optional commit message to set on
+    #                  the new page.
+    #
+    # Returns the String SHA1 of the newly created page
+    # or False if the save was unsuccessful.
+    def create(attrs = {})
     update_attributes(attrs)
 
     save(page_details: title) do
       wiki.create_page(title, content, format, attrs[:message])
     end
-  end
+    end
 
-  # Updates an existing Wiki Page, creating a new version.
-  #
-  # attrs - Hash of attributes to be updated on the page.
-  #        :content         - The raw markup content to replace the existing.
-  #        :format          - Optional symbol representing the content format.
-  #                           See ProjectWiki::MARKUPS Hash for available formats.
-  #        :message         - Optional commit message to set on the new version.
-  #        :last_commit_sha - Optional last commit sha to validate the page unchanged.
-  #        :title           - The Title (optionally including dir) to replace existing title
-  #
-  # Returns the String SHA1 of the newly created page
-  # or False if the save was unsuccessful.
-  def update(attrs = {})
+    # Updates an existing Wiki Page, creating a new version.
+    #
+    # attrs - Hash of attributes to be updated on the page.
+    #        :content         - The raw markup content to replace the existing.
+    #        :format          - Optional symbol representing the content format.
+    #                           See ProjectWiki::MARKUPS Hash for available formats.
+    #        :message         - Optional commit message to set on the new version.
+    #        :last_commit_sha - Optional last commit sha to validate the page unchanged.
+    #        :title           - The Title (optionally including dir) to replace existing title
+    #
+    # Returns the String SHA1 of the newly created page
+    # or False if the save was unsuccessful.
+    def update(attrs = {})
     last_commit_sha = attrs.delete(:last_commit_sha)
 
     if last_commit_sha && last_commit_sha != self.last_commit_sha
@@ -273,46 +273,46 @@ class WikiPage
         title: title
       )
     end
-  end
+    end
 
-  # Destroys the Wiki Page.
-  #
-  # Returns boolean True or False.
-  def delete
+    # Destroys the Wiki Page.
+    #
+    # Returns boolean True or False.
+    def delete
     if wiki.delete_page(@page)
       true
     else
       false
     end
-  end
+    end
 
-  # Relative path to the partial to be used when rendering collections
-  # of this object.
-  def to_partial_path
+    # Relative path to the partial to be used when rendering collections
+    # of this object.
+    def to_partial_path
     'projects/wikis/wiki_page'
-  end
+    end
 
-  def id
+    def id
     page.version.to_s
-  end
+    end
 
-  def title_changed?
+    def title_changed?
     title.present? && self.class.unhyphenize(@page.url_path) != title
-  end
+    end
 
-  # Updates the current @attributes hash by merging a hash of params
-  def update_attributes(attrs)
+    # Updates the current @attributes hash by merging a hash of params
+    def update_attributes(attrs)
     attrs[:title] = process_title(attrs[:title]) if attrs[:title].present?
 
     attrs.slice!(:content, :format, :message, :title)
 
     @attributes.merge!(attrs)
-  end
+    end
 
-  private
+    private
 
-  # Process and format the title based on the user input.
-  def process_title(title)
+    # Process and format the title based on the user input.
+    def process_title(title)
     return if title.blank?
 
     title = deep_title_squish(title)
@@ -324,23 +324,23 @@ class WikiPage
     end
 
     title
-  end
+    end
 
-  # This method squishes all the filename
-  # i.e: '   foo   /  bar  / page_name' => 'foo/bar/page_name'
-  def deep_title_squish(title)
+    # This method squishes all the filename
+    # i.e: '   foo   /  bar  / page_name' => 'foo/bar/page_name'
+    def deep_title_squish(title)
     components = title.split(File::SEPARATOR).map(&:squish)
 
     File.join(components)
-  end
+    end
 
-  def set_attributes
+    def set_attributes
     attributes[:slug] = @page.url_path
     attributes[:title] = @page.title
     attributes[:format] = @page.format
-  end
+    end
 
-  def save(page_details:)
+    def save(page_details:)
     return unless valid?
 
     unless yield
@@ -354,8 +354,8 @@ class WikiPage
 
     set_attributes
     @persisted = errors.blank?
-  end
-end
+    end
+    end
 
-*/
+    */
 }

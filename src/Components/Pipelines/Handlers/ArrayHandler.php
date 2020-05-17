@@ -4,8 +4,7 @@ class NumberHandler
 {
     public function __invoke($value)
     {
-        if (gettype($value) == 'float')
-        {
+        if (gettype($value) == 'float') {
             return round($value);
         }
         return $value;

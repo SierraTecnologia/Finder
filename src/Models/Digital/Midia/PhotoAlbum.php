@@ -25,14 +25,14 @@ class PhotoAlbum extends Base
     {
         return $this->belongsTo(\Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class), 'user_id');
     }
-	 /**
+    /**
      * Get the post's comments.
      *
      * @return array
      */
     public function photos()
     {
-        return $this->hasMany(Photo::class,'photo_album_id');
+        return $this->hasMany(Photo::class, 'photo_album_id');
     }
 
     /**
@@ -42,6 +42,6 @@ class PhotoAlbum extends Base
      */
     public function language()
     {
-        return $this->belongsTo(Language::class,'language_id');
+        return $this->belongsTo(Language::class, 'language_id');
     }
 }

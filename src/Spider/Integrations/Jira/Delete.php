@@ -54,7 +54,7 @@ class Delete extends Jira
 
             var_dump($ret);
         } catch (JiraException $e) {
-            $this->assertTrue(FALSE, "Change Assignee Failed : " . $e->getMessage());
+            $this->assertTrue(false, "Change Assignee Failed : " . $e->getMessage());
         }
     }
 

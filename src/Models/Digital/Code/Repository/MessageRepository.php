@@ -18,14 +18,12 @@ class MessageRepository extends EntityRepository
             ->leftJoin('m.feed', 'f')
             ->where('f.project = :project')
             ->setParameter('project', $project)
-            ->orderBy('m.id', 'DESC')
-        ;
+            ->orderBy('m.id', 'DESC');
 
         if ($branch) {
             $qb
                 ->andWhere('f.reference = :reference')
-                ->setParameter('reference', 'refs/heads/'.$branch)
-            ;
+                ->setParameter('reference', 'refs/heads/'.$branch);
         }
 
         return new Pager(new DoctrineOrmQueryAdapter($qb->getQuery()), $perPage);
@@ -33,7 +31,11 @@ class MessageRepository extends EntityRepository
 
     public function getPagerForUser(User $user, array $projects, $perPage = 50)
     {
-        $ids = array_map(function($project) { return $project->getId(); }, $projects);
+        $ids = array_map(
+            function ($project) {
+                return $project->getId(); 
+            }, $projects
+        );
 
         if (0 === count($ids)) {
             return new Pager(new ArrayAdapter(array()), $perPage);
@@ -45,8 +47,7 @@ class MessageRepository extends EntityRepository
             ->andWhere('f.project IN (:projects)')
             ->setParameter('user', $user)
             ->setParameter('projects', $ids)
-            ->orderBy('m.publishedAt', 'DESC')
-        ;
+            ->orderBy('m.publishedAt', 'DESC');
 
         return new Pager(new DoctrineOrmQueryAdapter($qb->getQuery()), $perPage);
     }

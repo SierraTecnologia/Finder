@@ -9,8 +9,10 @@ class GetStories extends Instagram
 {
     public function execute()
     {
-        collect($this->executor->getStories())->each(function ($story) {
-            dd($story);
-        });
+        collect($this->executor->getStories())->each(
+            function ($story) {
+                dd($story);
+            }
+        );
     }
 }

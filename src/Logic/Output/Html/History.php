@@ -11,18 +11,21 @@ class History
 {
     /**
      * Cached history data (not persisted yet).
+     *
      * @var array history data.
      */
     protected $cachedData;
 
     /**
      * Directory where history information will be stored.
+     *
      * @var string directory path.
      */
     protected $outputDirectory;
 
     /**
      * Set dependencies.
+     *
      * @param string $outputDirectory target directory path.
      */
     public function __construct($outputDirectory)
@@ -32,7 +35,8 @@ class History
 
     /**
      * Finderend analysis result data to the history.
-     * @param AnalysisResult $result analysis result.
+     *
+     * @param  AnalysisResult $result analysis result.
      * @return void
      */
     public function append(AnalysisResult $result)
@@ -70,6 +74,7 @@ class History
 
     /**
      * Stores history data.
+     *
      * @return boolean true if successfully wrote to the JSON file.
      */
     public function save()
@@ -80,6 +85,7 @@ class History
 
     /**
      * Loads history data from the JSON file (or the cache if already did).
+     *
      * @return array
      */
     public function getData()
@@ -99,6 +105,7 @@ class History
 
     /**
      * Overwrite current data.
+     *
      * @param array $data history data.
      */
     protected function setData(array $data)
@@ -108,6 +115,7 @@ class History
 
     /**
      * History data
+     *
      * @return array
      */
     protected function getHistoryFileContent()
@@ -121,6 +129,7 @@ class History
 
     /**
      * JSON data file path.
+     *
      * @return string file path.
      */
     protected function getHistoryFilePath()

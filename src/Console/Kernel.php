@@ -71,7 +71,7 @@ class Kernel extends ConsoleKernel
 
 
         $schedule->command('import:photoacompanhante')
-        ->hourly();
+            ->hourly();
     }
 
     /**
@@ -81,6 +81,6 @@ class Kernel extends ConsoleKernel
      */
     protected function commands()
     {
-        require base_path('routes/console.php');
+        include base_path('routes/console.php');
     }
 }

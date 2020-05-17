@@ -18,7 +18,7 @@ class Create extends Gitlab
 
     public function projectWithModel(Project $project)
     {
-        # Creating a new project
+        // Creating a new project
         $project = \Gitlab\Model\Project::create(
             $this->_connection,
             $project->name,

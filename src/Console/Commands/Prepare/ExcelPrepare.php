@@ -60,14 +60,16 @@ class ExcelPrepare extends Command
             $fileName = $fileName[count($fileName)-1];
 
             // $collection = (new FastExcel)->configureCsv(';', '#', '\n', 'gbk')->import($file);
-            $users = (new FastExcel)->import($file, function ($line) {
-                dd($line);
-                $class = \Casa\Models\Economic\Gasto::class;
-                // return User::create([
-                //     'name' => $line['Name'],
-                //     'email' => $line['Email']
-                // ]);
-            });
+            $users = (new FastExcel)->import(
+                $file, function ($line) {
+                    dd($line);
+                    $class = \Casa\Models\Economic\Gasto::class;
+                    // return User::create([
+                    //     'name' => $line['Name'],
+                    //     'email' => $line['Email']
+                    // ]);
+                }
+            );
 
             // Imagen::createByMediaFromDisk(
             //     $this->getDisk(),

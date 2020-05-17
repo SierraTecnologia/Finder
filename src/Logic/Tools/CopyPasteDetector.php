@@ -7,6 +7,7 @@ use Sabre\Xml\Reader;
 
 /**
  * Integration of CodeAnalyser with CopyPasteDetector.
+ *
  * @see https://github.com/sebastianbergmann/phpcpd
  */
 class CopyPasteDetector extends AbstractTool
@@ -50,7 +51,8 @@ class CopyPasteDetector extends AbstractTool
 
         foreach ((array) $xmlArray['value'] as $duplicationTag) {
             if ($duplicationTag['name'] != '{}duplication'
-                || empty($duplicationTag['value'])) {
+                || empty($duplicationTag['value'])
+            ) {
                 continue;
             }
 

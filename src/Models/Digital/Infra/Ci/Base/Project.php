@@ -151,14 +151,14 @@ class Project extends Base
         if (!$this->data['branch']) {
             $projectType = $this->getType();
             switch ($projectType) {
-                case 'hg':
-                    $branch = 'default';
-                    break;
-                case 'svn':
-                    $branch = 'trunk';
-                    break;
-                default:
-                    $branch = 'master';
+            case 'hg':
+                $branch = 'default';
+                break;
+            case 'svn':
+                $branch = 'trunk';
+                break;
+            default:
+                $branch = 'master';
             }
 
             return $branch;

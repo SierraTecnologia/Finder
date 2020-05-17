@@ -7,10 +7,11 @@ use Finder\Models\Digital\Infra\Commit;
 /**
  * DeployBusinessAmbiente Class
  *
- * @class  DeployBusinessAmbiente
+ * @class   DeployBusinessAmbiente
  * @package life
  */
-class DeployBusinessAmbiente {
+class DeployBusinessAmbiente
+{
 
     protected $url = false;
     
@@ -22,16 +23,18 @@ class DeployBusinessAmbiente {
     public function getStage()
     {
         host('domain.com')
-        ->stage('production')
-        ->set('branch', 'master')
-        ->set('deploy_path', '/var/www/domain.com');
+            ->stage('production')
+            ->set('branch', 'master')
+            ->set('deploy_path', '/var/www/domain.com');
     }
 
     public function getHost()
     {
-        task('test', function () {
-            writeln('Hello world');
-        });
+        task(
+            'test', function () {
+                writeln('Hello world');
+            }
+        );
     }
 
     public function getTask()
@@ -39,18 +42,24 @@ class DeployBusinessAmbiente {
 
     }
 
-    public function getAllTasks(){
+    public function getAllTasks()
+    {
 
-        task('pwd', function () {
-            $result = run('pwd');
-            writeln("Current dir: $result");
-        });
+        task(
+            'pwd', function () {
+                $result = run('pwd');
+                writeln("Current dir: $result");
+            }
+        );
 
-        task('reload:php-fpm', function () {
-            run('sudo /usr/sbin/service php7-fpm reload');
-        });
+        task(
+            'reload:php-fpm', function () {
+                run('sudo /usr/sbin/service php7-fpm reload');
+            }
+        );
 
-        task('deploy', [
+        task(
+            'deploy', [
             'deploy:prepare',
             'deploy:lock',
             'deploy:release',
@@ -63,7 +72,8 @@ class DeployBusinessAmbiente {
             'deploy:unlock',
             'cleanup',
             'success'
-        ]);
+            ]
+        );
         
         after('success', 'notify');
         after('deploy', 'reload:php-fpm');

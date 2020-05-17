@@ -43,52 +43,59 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
   #videoLowResolutionUrl: ""
   #videoStandardResolutionUrl: 
      *
-     * @param [type] $target
+     * @param  [type] $target
      * @return void
      */
     public function executeForEach($target)
     {
-        collect($this->executor->getMedias($target, 25))->each(function ($media) use ($target) {
-            $new = true;
-            $name = md5($media->getShortCode());
-            // if ($media->getType()=='image') {
-            //     Log::channel('sitec-finder')->info('É imagem');
-            // }
+        collect($this->executor->getMedias($target, 25))->each(
+            function ($media) use ($target) {
+                $new = true;
+                $name = md5($media->getShortCode());
+                // if ($media->getType()=='image') {
+                //     Log::channel('sitec-finder')->info('É imagem');
+                // }
 
 
-            if (!$acaoHumana = AcaoHumana::where([
-                'fingerprint' => $name,
-                ])->first()){
-                    $acaoHumana = AcaoHumana::create([
+                if (!$acaoHumana = AcaoHumana::where(
+                    [
+                    'fingerprint' => $name,
+                    ]
+                )->first()
+                ) {
+                    $acaoHumana = AcaoHumana::create(
+                        [
                         'fingerprint' => $name,
                         'people_slug' => $target
-                        ]);
-                    $new = false;
-            }
-            Log::channel('sitec-finder')->info($name);
+                        ]
+                    );
+                        $new = false;
+                }
+                Log::channel('sitec-finder')->info($name);
 
-            // $accountPost = $this->account->posts()->firstOrCreate(
-            //     [
-            //         'code' => $media->getId()
-            //     ]
-            // );
-            // $acaoHumana->addInfo('caption', $media->getCommentsCount());
-            $acaoHumana->addInfo('posted_at', $media->getCreatedTime());
-            $acaoHumana->addStat('comments', $media->getCommentsCount());
-            $acaoHumana->addStat('links', $media->getLikesCount());
+                // $accountPost = $this->account->posts()->firstOrCreate(
+                //     [
+                //         'code' => $media->getId()
+                //     ]
+                // );
+                // $acaoHumana->addInfo('caption', $media->getCommentsCount());
+                $acaoHumana->addInfo('posted_at', $media->getCreatedTime());
+                $acaoHumana->addStat('comments', $media->getCommentsCount());
+                $acaoHumana->addStat('links', $media->getLikesCount());
 
 
-            $i = Image::createByExternalLink(
-                $media->getImageHighResolutionUrl(),
-                $target,
-                [
+                $i = Image::createByExternalLink(
+                    $media->getImageHighResolutionUrl(),
+                    $target,
+                    [
                     'name' => $name,
                     'fingerprint' => $name,
                     'external' => $media->getImageHighResolutionUrl(),
-                ]
-            );
-            // Importar Imagem
+                    ]
+                );
+                // Importar Imagem
             
-        });
+            }
+        );
     }
 }

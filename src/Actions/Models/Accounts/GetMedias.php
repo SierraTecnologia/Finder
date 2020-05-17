@@ -18,7 +18,7 @@ class GetMedias implements ShouldQueue
      * Handle the user "dayling" event.
      * Every Day
      *
-     * @param  \App\Models\Account  $account
+     * @param  \App\Models\Account $account
      * @return void
      */
     public function dayling(Account $account)

@@ -22,7 +22,8 @@ class SearchFollows
         
     }
 
-    public function rotine() {
+    public function rotine()
+    {
         return $this->cleanFailedTargets();
     }
     
@@ -31,11 +32,13 @@ class SearchFollows
         //@todo Busca alvos que nao seguiram de volta e para de seguir e coloca como naoFuncionou !
     }
 
-    public function run() {
+    public function run()
+    {
         return $this->nextTarget();
     }
 
-    public function nextTarget() {
+    public function nextTarget()
+    {
 
         // @todo Busca proximo homem!
 
@@ -47,14 +50,16 @@ class SearchFollows
     /**
      * Verifica se já foi alvo dessa ação!
      */
-    public function isRepeat($user) {
+    public function isRepeat($user)
+    {
 
     }
 
     /**
      * Verifica se já foi alvo dessa ação!
      */
-    public function init($user) {
+    public function init($user)
+    {
 
     }
 

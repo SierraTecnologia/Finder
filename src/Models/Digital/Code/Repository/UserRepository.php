@@ -23,28 +23,29 @@ class UserRepository extends EntityRepository
             ->select('u')
             ->leftJoin('u.emails', 'e')
             ->where('e.email = :email')
-            ->setParameters(array(
+            ->setParameters(
+                array(
                 'email' => $email
-            ))
+                )
+            )
             ->setMaxResults(1)
             ->getQuery()
-            ->getSingleResult()
-        ;
+            ->getSingleResult();
     }
 
     public function findByProject(Entity\Project $project)
     {
         $em    = $this->getManager();
         $query = $em
-            ->createQuery(<<<SQL
+            ->createQuery(
+                <<<SQL
 SELECT U
   FROM GitonomyCoreBundle:User U
 INNER JOIN U.projectRoles UR
  WHERE UR.project = :projectId
 SQL
             )
-            ->setParameter('projectId', $project->getId())
-        ;
+            ->setParameter('projectId', $project->getId());
 
         return $query->getResult();
     }

@@ -13,13 +13,17 @@ class ArticleImporterStage implements StageInterface
 {
     public function __invoke(/*PipelineComponent */$payload)
     {
-        $payload->executeForEachComponent(function($component) {
-            Article::create([
-                'title' => $component->getTitle(),
-                'content' => $component->getContent(),
-                'fonte' => $component->getFonte(),
-            ]);
-        });
+        $payload->executeForEachComponent(
+            function ($component) {
+                Article::create(
+                    [
+                    'title' => $component->getTitle(),
+                    'content' => $component->getContent(),
+                    'fonte' => $component->getFonte(),
+                    ]
+                );
+            }
+        );
         return $payload;
     }
 }

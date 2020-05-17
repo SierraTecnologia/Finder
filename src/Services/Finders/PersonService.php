@@ -25,18 +25,18 @@ class PersonService extends FinderAbstractService
     public function aboutBody($config = false)
     {
         return $this->mergeWith(
-                $this->getPerson()->pircings()->get(),
-                $this->getPerson()->pintinhas()->get(),
-                $this->getPerson()->tatuages()->get()
+            $this->getPerson()->pircings()->get(),
+            $this->getPerson()->pintinhas()->get(),
+            $this->getPerson()->tatuages()->get()
         );
     }
 
     public function aboutLikes($config = false)
     {
         return $this->mergeWith(
-                $this->getPerson()->pircings()->get(),
-                $this->getPerson()->pintinhas()->get(),
-                $this->getPerson()->tatuages()->get()
+            $this->getPerson()->pircings()->get(),
+            $this->getPerson()->pintinhas()->get(),
+            $this->getPerson()->tatuages()->get()
         );
     }
     
@@ -44,10 +44,10 @@ class PersonService extends FinderAbstractService
     public function aboutPersonagens($config = false)
     {
         return $this->mergeWith(
-                $this->getPerson()->productions()->get(),
-                $this->getPerson()->personagens()->get() 
+            $this->getPerson()->productions()->get(),
+            $this->getPerson()->personagens()->get() 
         );
-}
+    }
     
 
     /**
@@ -56,11 +56,11 @@ class PersonService extends FinderAbstractService
     public function aboutLocals($config = false)
     {
         return $this->mergeWith(
-                $this->getPerson()->accounts()->get(),
-                $this->getPerson()->phones()->get(),
-                $this->getPerson()->emails()->get(),
-                $this->getPerson()->addresses()->get(),
-                $this->getPerson()->sitios()->get()
+            $this->getPerson()->accounts()->get(),
+            $this->getPerson()->phones()->get(),
+            $this->getPerson()->emails()->get(),
+            $this->getPerson()->addresses()->get(),
+            $this->getPerson()->sitios()->get()
         );
     }
     
@@ -71,24 +71,24 @@ class PersonService extends FinderAbstractService
     public function aboutSenhas($config = false)
     {
             return $this->mergeWith(
-                    $this->getPerson()->passwords()->get()
-                );
+                $this->getPerson()->passwords()->get()
+            );
             
     }
 
     public function aboutInfo($config = false)
     {
             return $this->mergeWith(
-                    $this->getPerson()->infos()->get(),
-                    $this->getPerson()->fatos()->get()
-                );
+                $this->getPerson()->infos()->get(),
+                $this->getPerson()->fatos()->get()
+            );
             
     }
     public function aboutMidias($config = false)
     {
         return $this->mergeWith(
-                $this->getPerson()->videos()->get(),
-                $this->getPerson()->imagens()->get()
+            $this->getPerson()->videos()->get(),
+            $this->getPerson()->imagens()->get()
         );
             
     }

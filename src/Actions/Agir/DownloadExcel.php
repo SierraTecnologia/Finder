@@ -44,9 +44,11 @@ class DownloadExcel extends ExportToExcel
      */
     protected function getDownloadUrl(BinaryFileResponse $response): string
     {
-        return url('/nova-vendor/maatwebsite/laravel-nova-excel/download?') . http_build_query([
+        return url('/nova-vendor/maatwebsite/laravel-nova-excel/download?') . http_build_query(
+            [
                 'path'     => $response->getFile()->getPathname(),
                 'filename' => $this->getFilename(),
-            ]);
+            ]
+        );
     }
 }

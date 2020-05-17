@@ -12,7 +12,7 @@ interface ImageProcessor
     /**
      * Open image processing session.
      *
-     * @param string $path
+     * @param  string $path
      * @return ImageProcessor
      */
     public function open(string $path): ImageProcessor;

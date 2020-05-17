@@ -5,10 +5,11 @@ namespace Finder\Components\Worker\Explorer\QueryList;
 /**
  * PreenchedorDeFormulario Class
  *
- * @class  PreenchedorDeFormulario
+ * @class   PreenchedorDeFormulario
  * @package crawler
  */
-class PreenchedorDeFormulario {
+class PreenchedorDeFormulario
+{
 
     public $person = false;
 

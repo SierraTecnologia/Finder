@@ -12,6 +12,7 @@ class Php
 {
     /**
      * List of PHP analys integration classes.
+     *
      * @return string[] array of class names.
      */
     public static function getAnalysisToolsClasses()

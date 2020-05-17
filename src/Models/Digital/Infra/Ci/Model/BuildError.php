@@ -18,7 +18,9 @@ class BuildError extends BaseBuildError
             return null;
         }
 
-        /** @var BuildStore $buildStore */
+        /**
+ * @var BuildStore $buildStore 
+*/
         $buildStore = Factory::getStore('Build');
 
         return $buildStore->getById($buildId);
@@ -32,17 +34,17 @@ class BuildError extends BaseBuildError
     public function getSeverityString()
     {
         switch ($this->getSeverity()) {
-            case self::SEVERITY_CRITICAL:
-                return 'critical';
+        case self::SEVERITY_CRITICAL:
+            return 'critical';
 
-            case self::SEVERITY_HIGH:
-                return 'high';
+        case self::SEVERITY_HIGH:
+            return 'high';
 
-            case self::SEVERITY_NORMAL:
-                return 'normal';
+        case self::SEVERITY_NORMAL:
+            return 'normal';
 
-            case self::SEVERITY_LOW:
-                return 'low';
+        case self::SEVERITY_LOW:
+            return 'low';
         }
     }
 
@@ -56,27 +58,27 @@ class BuildError extends BaseBuildError
     public static function getSeverityName($severity)
     {
         switch ($severity) {
-            case self::SEVERITY_CRITICAL:
-                return 'critical';
+        case self::SEVERITY_CRITICAL:
+            return 'critical';
 
-            case self::SEVERITY_HIGH:
-                return 'high';
+        case self::SEVERITY_HIGH:
+            return 'high';
 
-            case self::SEVERITY_NORMAL:
-                return 'normal';
+        case self::SEVERITY_NORMAL:
+            return 'normal';
 
-            case self::SEVERITY_LOW:
-                return 'low';
+        case self::SEVERITY_LOW:
+            return 'low';
         }
     }
 
     /**
-     * @param string  $plugin
-     * @param string  $file
-     * @param int $lineStart
-     * @param int $lineEnd
-     * @param int $severity
-     * @param string  $message
+     * @param string $plugin
+     * @param string $file
+     * @param int    $lineStart
+     * @param int    $lineEnd
+     * @param int    $severity
+     * @param string $message
      *
      * @return string
      */
@@ -93,17 +95,17 @@ class BuildError extends BaseBuildError
     public function getSeverityClass()
     {
         switch ($this->getSeverity()) {
-            case self::SEVERITY_CRITICAL:
-                return 'danger';
+        case self::SEVERITY_CRITICAL:
+            return 'danger';
 
-            case self::SEVERITY_HIGH:
-                return 'warning';
+        case self::SEVERITY_HIGH:
+            return 'warning';
 
-            case self::SEVERITY_NORMAL:
-                return 'info';
+        case self::SEVERITY_NORMAL:
+            return 'info';
 
-            case self::SEVERITY_LOW:
-                return 'default';
+        case self::SEVERITY_LOW:
+            return 'default';
         }
     }
 }

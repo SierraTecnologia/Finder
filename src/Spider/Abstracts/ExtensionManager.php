@@ -9,6 +9,7 @@ use Support\Helps\CodeFileHelper;
 
 /**
  * Outputs events information to the console.
+ *
  * @see TriggerableInterface
  */
 abstract class ExtensionManager

@@ -5,32 +5,34 @@ use Illuminate\Database\Migrations\Migration;
 class CreateFinderComputersRemetentesTables extends Migration
 {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
         
         
-        Schema::create('computers', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('location');
-            $table->nullableTimestamps();
-            $table->softDeletes();
-        });
-	}
+        Schema::create(
+            'computers', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->string('location');
+                $table->nullableTimestamps();
+                $table->softDeletes();
+            }
+        );
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::drop('computers');
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('computers');
+    }
 
 }

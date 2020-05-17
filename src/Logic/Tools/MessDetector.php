@@ -7,6 +7,7 @@ use Sabre\Xml\Reader;
 
 /**
  * Integration of CodeAnalyser with MessDetector.
+ *
  * @see https://github.com/phpmd/phpmd
  */
 class MessDetector extends AbstractTool

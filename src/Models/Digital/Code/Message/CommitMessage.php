@@ -34,14 +34,16 @@ class CommitMessage extends Message
         $log->setLimit(self::DEFAULT_LIMIT);
         $commits = array();
         foreach ($log as $commit) {
-            array_push($commits, array(
+            array_push(
+                $commits, array(
                 'hash'           => $commit->getHash(),
                 'fixedShortHash' => $commit->getFixedShortHash(),
                 'message'        => $commit->getMessage(),
                 'shortMessage'   => $commit->getShortMessage(),
                 'authorName'     => $commit->getAuthorName(),
                 'authorEmail'    => $commit->getAuthorEmail(),
-            ));
+                )
+            );
         }
 
         $this->setCommits($commits);

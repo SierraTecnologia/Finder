@@ -9,10 +9,11 @@ use Finder\Models\Digital\Infra\UrlLink;
 /**
  * Ping Class
  *
- * @class  Ping
+ * @class   Ping
  * @package life
  */
-class Ping {
+class Ping
+{
 
     protected $url = false;
     

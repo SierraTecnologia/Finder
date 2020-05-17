@@ -73,7 +73,7 @@ class ExportToExcel extends Action implements FromQuery, WithCustomChunkSize, Wi
     /**
      * Execute the action for the given request.
      *
-     * @param  \Laravel\Nova\Http\Requests\ActionRequest $request
+     * @param \Laravel\Nova\Http\Requests\ActionRequest $request
      *
      * @return mixed
      */

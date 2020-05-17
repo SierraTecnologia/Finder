@@ -26,11 +26,13 @@ class Dropbox extends Integration
 
     public function getToken()
     {
-        $dropbox = new \MetzWeb\Dropbox\Dropbox(array(
+        $dropbox = new \MetzWeb\Dropbox\Dropbox(
+            array(
             'apiKey'      => 'YOUR_APP_KEY',
             'apiSecret'   => 'YOUR_APP_SECRET',
             'apiCallback' => 'YOUR_APP_CALLBACK'
-          ));
+            )
+        );
 
           $token = 'USER_ACCESS_TOKEN';
           $dropbox->setAccessToken($token);

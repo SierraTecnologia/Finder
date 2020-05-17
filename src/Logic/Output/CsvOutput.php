@@ -17,13 +17,15 @@ class CsvOutput extends AbstractOutput
         foreach ($result->toArray() as $fileName => $lines) {
             foreach ($lines as $lineNumber => $issues) {
                 foreach ($issues as $issue) {
-                    $writer->insertOne([
+                    $writer->insertOne(
+                        [
                         $fileName,
                         $lineNumber,
                         $issue['tool'],
                         $issue['type'],
                         trim($issue['message']),
-                    ]);
+                        ]
+                    );
                 }
             }
         }

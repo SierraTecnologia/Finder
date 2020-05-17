@@ -11,7 +11,8 @@
 
 namespace Finder\Components\Worker\Analyser\Logging\Plugins;
 
-class Php {
+class Php
+{
 
     public $paths = array();
     public $files = array(
@@ -24,20 +25,21 @@ class Php {
 
         $path = ( SAFE_MODE === true ) ? '' : ini_get('error_log');
 
-        if ( $path !== '' ) {
-            $this->paths[]          = dirname( $path ) . DIRECTORY_SEPARATOR ;
-            $this->files['error'][] = basename( $path );
+        if ($path !== '' ) {
+            $this->paths[]          = dirname($path) . DIRECTORY_SEPARATOR ;
+            $this->files['error'][] = basename($path);
         }
     }
-    function loadSoftware() {
+    function loadSoftware()
+    {
         $path = ( SAFE_MODE === true ) ? '' : ini_get('error_log');
-        if ( $path !== '' ) {
+        if ($path !== '' ) {
             return array(
                 'name'    => __('PHP'),
                 'desc'    => __('PHP'),
-                'home'    => __('http://www.php.net/manual/errorfunc.configuration.php#ini.error-log' ),
-                'notes'   => __('PHP logs defined via the <code>error_log</code> ini parameter.' ) . ' ' .
-                             sprintf( __('Pimp My Log has detected <code>%s</code> on your server.' ) , $path ),
+                'home'    => __('http://www.php.net/manual/errorfunc.configuration.php#ini.error-log'),
+                'notes'   => __('PHP logs defined via the <code>error_log</code> ini parameter.') . ' ' .
+                             sprintf(__('Pimp My Log has detected <code>%s</code> on your server.'), $path),
                 'load'    => true,
             );
         } else {
@@ -53,9 +55,10 @@ class Php {
     }
     
     
-    function getConfig( $type , $file , $software , $counter ) {
+    function getConfig( $type , $file , $software , $counter )
+    {
     
-        $file_json_encoded = json_encode( $file );
+        $file_json_encoded = json_encode($file);
     
         return<<<EOF
         "$software$counter": {

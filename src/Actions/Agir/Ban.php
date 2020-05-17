@@ -32,16 +32,18 @@ class Ban extends Action
      * Perform the action on the given models.
      *
      * @param  \Laravel\Nova\Fields\ActionFields $fields
-     * @param  \Illuminate\Support\Collection $models
+     * @param  \Illuminate\Support\Collection    $models
      * @return mixed
      */
     public function handle(ActionFields $fields, Collection $models)
     {
         foreach ($models as $model) {
-            $model->ban([
+            $model->ban(
+                [
                 'comment' => $fields->get('comment'),
                 'expired_at' => $fields->get('expired_at'),
-            ]);
+                ]
+            );
         }
 
         return Action::message('Models were banned!');

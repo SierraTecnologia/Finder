@@ -23,8 +23,8 @@ class PipelineBase extends PipelineBuilder
     public function getPipeline()
     {
         $pipeline = (new PipelineBase)
-        ->pipe(new TimesTwoStage)
-        ->pipe(new AddOneStage);
+            ->pipe(new TimesTwoStage)
+            ->pipe(new AddOneStage);
 
         // Returns 21
         $pipeline->process(10);

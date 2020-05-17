@@ -16,7 +16,8 @@ class XmlOutput extends AbstractOutput
 
     /**
      * Prepare XML file based on AnalysisResult.
-     * @param AnalysisResult $result analysis result object.
+     *
+     * @param  AnalysisResult $result analysis result object.
      * @return string XML contents.
      */
     protected function getXmlFor(AnalysisResult $result)
@@ -29,7 +30,8 @@ class XmlOutput extends AbstractOutput
 
     /**
      * Prepare XML array for Sabre XML Writer.
-     * @param AnalysisResult $result analysis result object.
+     *
+     * @param  AnalysisResult $result analysis result object.
      * @return array XML following Sabre structure.
      */
     protected function getSabreXmlArrayFor(AnalysisResult $result)

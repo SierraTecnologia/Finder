@@ -14,18 +14,20 @@ class CreateBusinessProjectsTables extends Migration
     public function up()
     {
 
-        Schema::table('project', function (Blueprint $table) {
+        Schema::table(
+            'project', function (Blueprint $table) {
 
-            if (!Schema::hasColumn('project', 'url')) {
-                $table->string('url')->nullable();
+                if (!Schema::hasColumn('project', 'url')) {
+                    $table->string('url')->nullable();
+                }
+                if (!Schema::hasColumn('project', 'repository')) {
+                    $table->string('repository')->nullable();
+                }
+                if (!Schema::hasColumn('project', 'code_language_id')) {
+                    $table->string('code_language_id')->nullable();
+                }
             }
-            if (!Schema::hasColumn('project', 'repository')) {
-                $table->string('repository')->nullable();
-            }
-            if (!Schema::hasColumn('project', 'code_language_id')) {
-                $table->string('code_language_id')->nullable();
-            }
-        });
+        );
     }
 
     /**

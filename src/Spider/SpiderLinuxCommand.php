@@ -13,6 +13,7 @@ use League\Flysystem\Filesystem;
 
 /**
  * Run all script analysers and outputs their result.
+ *
  * @package qa
  */
 class SpiderLinuxCommand
@@ -28,40 +29,46 @@ class SpiderLinuxCommand
 
     /**
      * Composer binaries path.
+     *
      * @var string directory path.
      */
     protected $binariesPath;
 
     /**
      * Analysis target.
+     *
      * @var string[] file or directory path.
      */
     protected $analysedPaths;
 
     /**
      * Ignored paths.
+     *
      * @var string[] comma separated list of directories to ignore.
      */
     protected $ignoredPaths;
 
     /**
      * Output service.
+     *
      * @var AbstractOutput output instance.
      */
     protected $output;
 
     /**
      * Analysis result filter.
+     *
      * @var OutputFilterInterface filter instance.
      */
     protected $resultsFilter;
 
     /**
      * Set dependencies and initialize CLI.
-     * @param AbstractOutput $output Output target.
-     * @param string $binariesPath Composer binaries path.
-     * @param string[] $analysedPaths target file or directory path.
-     * @param string[] $ignoredPaths comma separated list of ignored directories.
+     *
+     * @param AbstractOutput $output        Output target.
+     * @param string         $binariesPath  Composer binaries path.
+     * @param string[]       $analysedPaths target file or directory path.
+     * @param string[]       $ignoredPaths  comma separated list of ignored directories.
      */
     public function __construct(AbstractOutput $output, $binariesPath, $analysedPaths, $ignoredPaths, $project = false)
     {
@@ -89,6 +96,7 @@ class SpiderLinuxCommand
 
     /**
      * Run each configured PHP analysis tool.
+     *
      * @return boolean true if it didn't find code issues.
      */
     public function run()
@@ -123,8 +131,9 @@ class SpiderLinuxCommand
 
     /**
      * Call an output trigger if supported.
-     * @param int $event occurred event.
-     * @param string|null $message optional message.
+     *
+     * @param  int         $event   occurred event.
+     * @param  string|null $message optional message.
      * @return void
      */
     protected function trigger($event, $message = null)
@@ -136,6 +145,7 @@ class SpiderLinuxCommand
 
     /**
      * Get a list of paths to be ignored by the analysis.
+     *
      * @return string[] a list of file and/or directory paths.
      */
     public function getIgnoredPaths()
@@ -145,6 +155,7 @@ class SpiderLinuxCommand
 
     /**
      * Analysis target path.
+     *
      * @return string[] target path.
      */
     public function getAnalysedPaths()
@@ -154,6 +165,7 @@ class SpiderLinuxCommand
 
     /**
      * Add an output filter to delegate to the analysis result object.
+     *
      * @param OutputFilterInterface $filter filter instance.
      */
     public function setResultsFilter(OutputFilterInterface $filter)
@@ -163,7 +175,8 @@ class SpiderLinuxCommand
 
     /**
      * Set target files and/or directories to be analysed.
-     * @param string[] $paths target paths.
+     *
+     * @param  string[] $paths target paths.
      * @return void
      */
     public function setAnalysedPaths(array $paths)
@@ -173,6 +186,7 @@ class SpiderLinuxCommand
 
     /**
      * List of PHP analys integration classes.
+     *
      * @return string[] array of class names.
      */
     protected function getAnalysisToolsClasses()
@@ -182,6 +196,7 @@ class SpiderLinuxCommand
 
     /**
      * Set of PHP analys integration objects.
+     *
      * @return Finder\Logic\Tools\AbstractIntegrationTool[] set of objects.
      */
     protected function getAnalysisTools()
@@ -199,6 +214,7 @@ class SpiderLinuxCommand
 
     /**
      * Create an empty analysis result.
+     *
      * @return AnalysisResult instance.
      */
     protected function createResult()

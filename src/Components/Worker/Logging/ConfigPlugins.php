@@ -16,7 +16,8 @@ use Finder\Components\Worker\Logging\Plugins\Iis;
 use Finder\Components\Worker\Logging\Plugins\Nginx;
 use Finder\Components\Worker\Logging\Plugins\Php;
 
-class ConfigPlugins {
+class ConfigPlugins
+{
 
     public function getSoftwares()
     {
@@ -26,7 +27,7 @@ class ConfigPlugins {
         foreach ( $softwaresList as $sfw ) {
             $sfwInstance = new $sfw;
             $cfg = $sfwInstance->loadSoftware();
-            if ( is_array( $cfg ) ) {
+            if (is_array($cfg) ) {
                 $softwaresAll[ $sfw ] = $cfg;
             }
         }

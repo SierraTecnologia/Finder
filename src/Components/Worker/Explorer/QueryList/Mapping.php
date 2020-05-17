@@ -21,18 +21,24 @@ class Mapping
         $keywords = $ql->find('meta[name=keywords]')->content; //The page keywords
 
         // Loop all the images
-        $ql->find('a')->map(function($a){
-            dd('Mapping A');
-            echo $a->alt;  //Print the alt attribute of the image
+        $ql->find('a')->map(
+            function ($a) {
+                dd('Mapping A');
+                echo $a->alt;  //Print the alt attribute of the image
 
-        });
-        $ql->find('form')->map(function($form){
-            dd('Mapping B');
-            echo $form->alt;  //Print the alt attribute of the image
-            $form->find('input')->map(function ($formItem){
+            }
+        );
+        $ql->find('form')->map(
+            function ($form) {
+                dd('Mapping B');
+                echo $form->alt;  //Print the alt attribute of the image
+                $form->find('input')->map(
+                    function ($formItem) {
 
-            });
-        });
+                    }
+                );
+            }
+        );
     }
 
 }

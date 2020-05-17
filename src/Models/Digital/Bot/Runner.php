@@ -66,7 +66,7 @@ class Runner extends Base
      */
     public function execute()
     {
-        if (!is_null($this->id)){
+        if (!is_null($this->id)) {
             $this->save();
         }
 

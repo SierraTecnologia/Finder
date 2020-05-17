@@ -640,9 +640,12 @@ class Build extends Base
      */
     public function getErrorsTotal()
     {
-        if (null === $this->data['errors_total'] &&
-            !in_array($this->getStatus(), [self::STATUS_PENDING, self::STATUS_RUNNING], true)) {
-            /** @var BuildStore $store */
+        if (null === $this->data['errors_total'] 
+            && !in_array($this->getStatus(), [self::STATUS_PENDING, self::STATUS_RUNNING], true)
+        ) {
+            /**
+ * @var BuildStore $store 
+*/
             $store = Factory::getStore('Build');
 
             $this->setErrorsTotal($store->getErrorsCount($this->getId()));
@@ -681,19 +684,22 @@ class Build extends Base
     public function getErrorsTotalPrevious()
     {
         if (null === $this->data['errors_total_previous']) {
-            /** @var BuildStore $store */
+            /**
+ * @var BuildStore $store 
+*/
             $store = Factory::getStore('Build');
 
             $trend = $store->getBuildErrorsTrend($this->getId(), $this->getProjectId(), $this->getBranch());
 
             if (isset($trend[1])) {
                 $previousBuild = $store->getById($trend[1]['build_id']);
-                if ($previousBuild &&
-                    !in_array(
+                if ($previousBuild 
+                    && !in_array(
                         $previousBuild->getStatus(),
                         [self::STATUS_PENDING, self::STATUS_RUNNING],
                         true
-                    )) {
+                    )
+                ) {
                     $this->setErrorsTotalPrevious((int)$trend[1]['count']);
                     $store->save($this);
                 }
@@ -732,7 +738,9 @@ class Build extends Base
     public function getErrorsNew()
     {
         if (null === $this->data['errors_new']) {
-            /** @var BuildStore $errorStore */
+            /**
+ * @var BuildStore $errorStore 
+*/
             $store = Factory::getStore('Build');
 
             $this->setErrorsNew(

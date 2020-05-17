@@ -42,22 +42,29 @@ class Field extends Base
      *   +"customId": 10033
      * }
      * +"key": "customfield_10033"
-    * }
+     * }
      */
     public static function registerFieldForProject($field, $projectUrl = false)
     {
-        $field =  self::firstOrCreate([
+        $field =  self::firstOrCreate(
+            [
             'name' => $field->name
-        ]);
+            ]
+        );
 
         if ($projectUrl) {
-            if (!$reference = Reference::where([
+            if (!$reference = Reference::where(
+                [
                 'code' => $projectUrl
-            ])->first()) {
-                $reference = Reference::create([
+                ]
+            )->first()
+            ) {
+                $reference = Reference::create(
+                    [
                     'code' => $projectUrl,
                     'name' => $projectUrl,
-                ]);
+                    ]
+                );
             }
             if (!$field->references()->where('reference_id', $reference->id)->first()) {
                 $field->references()->save(

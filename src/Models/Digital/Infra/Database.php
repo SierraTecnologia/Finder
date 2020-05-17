@@ -51,7 +51,8 @@ class Database extends Base
         ],
     );
 
-    public function getApresentationName(){
+    public function getApresentationName()
+    {
         return $this->host;
     }
 

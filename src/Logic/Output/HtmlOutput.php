@@ -15,6 +15,7 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Plates engine used to output HTML.
+     *
      * @var Engine Plates engine instance.
      */
     protected $platesEngine;
@@ -38,7 +39,8 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Create HTML report index page.
-     * @param AnalysisResult $result result data object.
+     *
+     * @param  AnalysisResult $result result data object.
      * @return void
      */
     protected function writeIndexHtml(AnalysisResult $result, History $history)
@@ -71,8 +73,9 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Create HTML report for one file.
-     * @param string $phpFilePath analyzed PHP file path.
-     * @param array $lines lines with their issues.
+     *
+     * @param  string $phpFilePath analyzed PHP file path.
+     * @param  array  $lines       lines with their issues.
      * @return void
      */
     protected function writeFileHtml($phpFilePath, $lines)
@@ -96,8 +99,9 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Render a HTML view within the layout.
-     * @param string $view view file name.
-     * @param array $data variables required by view file.
+     *
+     * @param  string $view view file name.
+     * @param  array  $data variables required by view file.
      * @return string output HTML.
      */
     protected function renderView($view, $data)
@@ -119,6 +123,7 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Configure and return Plates engine.
+     *
      * @return Engine Plates engine instance.
      */
     protected function getPlatesEngine()
@@ -132,6 +137,7 @@ class HtmlOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Get output directory.
+     *
      * @return string output directory path.
      */
     protected function getOutputDirectory()

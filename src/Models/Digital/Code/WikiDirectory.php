@@ -33,23 +33,23 @@ class WikiDirectory extends Base
     ];
     /*# frozen_string_literal: true
 
-class WikiDirectory
-  include ActiveModel::Validations
+    class WikiDirectory
+    include ActiveModel::Validations
 
-  attr_accessor :slug, :pages
+    attr_accessor :slug, :pages
 
-  validates :slug, presence: true
+    validates :slug, presence: true
 
-  def initialize(slug, pages = [])
+    def initialize(slug, pages = [])
     @slug = slug
     @pages = pages
-  end
+    end
 
-  # Relative path to the partial to be used when rendering collections
-  # of this object.
-  def to_partial_path
+    # Relative path to the partial to be used when rendering collections
+    # of this object.
+    def to_partial_path
     'projects/wikis/wiki_directory'
-  end
-end*/
+    end
+    end*/
 
 }

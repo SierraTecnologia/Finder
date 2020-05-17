@@ -27,11 +27,13 @@ class Instagram extends Integration
 
     public function getToken()
     {
-        $instagram = new \MetzWeb\Instagram\Instagram(array(
+        $instagram = new \MetzWeb\Instagram\Instagram(
+            array(
             'apiKey'      => 'YOUR_APP_KEY',
             'apiSecret'   => 'YOUR_APP_SECRET',
             'apiCallback' => 'YOUR_APP_CALLBACK'
-          ));
+            )
+        );
 
           $token = 'USER_ACCESS_TOKEN';
           $instagram->setAccessToken($token);

@@ -47,10 +47,12 @@ class FileRegistrator extends TargetManager
             return $this->file;
         }
 
-        return $this->file = File::create([
+        return $this->file = File::create(
+            [
             'location' => $md5,
             'name' => $this->getTarget()->getFilename()
-        ]);
+            ]
+        );
     }
 
     private function getArray()
@@ -62,12 +64,15 @@ class FileRegistrator extends TargetManager
         ];
 
         if ($this->isStringPath) {
-            return array_merge($array, [
+            return array_merge(
+                $array, [
                 'location' => $target
-            ]);
+                ]
+            );
         }
 
-        return array_merge($array, [
+        return array_merge(
+            $array, [
         
             // dd($target);
             'location' => $this->getLocation(),
@@ -92,6 +97,7 @@ class FileRegistrator extends TargetManager
             // 'file' => $target->getFile(),
             // 'dir' => $target->getDir(),
             // 'link' => $target->getLink(),
-        ]);
+            ]
+        );
     }
 }

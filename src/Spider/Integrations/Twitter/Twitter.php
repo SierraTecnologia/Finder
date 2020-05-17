@@ -32,11 +32,13 @@ class Twitter extends Integration
 
     public function getToken()
     {
-        $instagram = new \MetzWeb\Twitter\Twitter(array(
+        $instagram = new \MetzWeb\Twitter\Twitter(
+            array(
             'apiKey'      => 'YOUR_APP_KEY',
             'apiSecret'   => 'YOUR_APP_SECRET',
             'apiCallback' => 'YOUR_APP_CALLBACK'
-          ));
+            )
+        );
 
           $token = 'USER_ACCESS_TOKEN';
           $instagram->setAccessToken($token);
@@ -56,23 +58,25 @@ class Twitter extends Integration
         $twitter->host = "https://api.twitter.com/1.1/";
         foreach($search->results as $tweet) {
             $status = 'RT @'.$tweet->from_user.' '.$tweet->text;
-            if(strlen($status) > 140) $status = substr($status, 0, 139);
+            if(strlen($status) > 140) { $status = substr($status, 0, 139);
+            }
             $twitter->post('statuses/update', array('status' => $status));
         }
         
     }
 
-        public function callbackFunction() {
-            if (isset($_REQUEST['oauth_verifier'], $_REQUEST['oauth_token']) && $_REQUEST['oauth_token'] == $_SESSION['oauth_token']) {
-                $request_token = [];
-                $request_token['oauth_token'] = $_SESSION['oauth_token'];
-                $request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
-                $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $request_token['oauth_token'], $request_token['oauth_token_secret']);
-                $access_token = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
-                $_SESSION['access_token'] = $access_token;
-                // redirect user back to index page
-                header('Location: ./');
-            }
+    public function callbackFunction()
+    {
+        if (isset($_REQUEST['oauth_verifier'], $_REQUEST['oauth_token']) && $_REQUEST['oauth_token'] == $_SESSION['oauth_token']) {
+            $request_token = [];
+            $request_token['oauth_token'] = $_SESSION['oauth_token'];
+            $request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
+            $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $request_token['oauth_token'], $request_token['oauth_token_secret']);
+            $access_token = $connection->oauth("oauth/access_token", array("oauth_verifier" => $_REQUEST['oauth_verifier']));
+            $_SESSION['access_token'] = $access_token;
+            // redirect user back to index page
+            header('Location: ./');
         }
+    }
 
 }

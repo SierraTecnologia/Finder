@@ -15,10 +15,12 @@ class GoogleSearch
     {
         $data = QueryList::get('https://www.google.co.jp/search?q='.$search)
             // Set the crawl rules
-            ->rules([ 
+            ->rules(
+                [ 
                 'title'=>array('h3','text'),
                 'link'=>array('h3>a','href')
-            ])
+                ]
+            )
             ->query()->getData();
                 /*Array
                 (

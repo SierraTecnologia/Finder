@@ -59,13 +59,15 @@ class GroupMember extends Base
     {
         parent::boot();
 
-        self::creating(function($model){
-            // @todo Transformar em um Evento
-            if ($model->is_active=='') {
-                $model->is_active = 1;
+        self::creating(
+            function ($model) {
+                // @todo Transformar em um Evento
+                if ($model->is_active=='') {
+                    $model->is_active = 1;
+                }
+                $model->token = (string) Hash::make(str_random(8));
             }
-            $model->token = (string) Hash::make(str_random(8));
-        });
+        );
 
     }
 }

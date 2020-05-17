@@ -139,7 +139,7 @@ abstract class Track
         foreach ($this->subTracks() as $relation => $classTrack) {
             $results = $this->model->$relation()->get();
             foreach ($results as $result) {
-                $this->addSubTrack( new $classTrack($result));
+                $this->addSubTrack(new $classTrack($result));
             }
         }
     }

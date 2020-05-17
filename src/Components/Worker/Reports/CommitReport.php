@@ -5,10 +5,11 @@ namespace Finder\Components\Worker\Reports;
 /**
  * CommitReport Class
  *
- * @class  CommitReport
+ * @class   CommitReport
  * @package life
  */
-class CommitReport {
+class CommitReport
+{
 
     protected $url = false;
     
@@ -46,7 +47,6 @@ class CommitReport {
 
 
      /**
-      * 
       *  Relatório de Commits por Dia
       *   filliable_type = Commits
       *   periodo = 

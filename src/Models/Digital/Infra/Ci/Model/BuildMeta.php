@@ -18,7 +18,9 @@ class BuildMeta extends BaseBuildMeta
             return null;
         }
 
-        /** @var BuildStore $buildStore */
+        /**
+ * @var BuildStore $buildStore 
+*/
         $buildStore = Factory::getStore('Build');
 
         return $buildStore->getById($buildId);

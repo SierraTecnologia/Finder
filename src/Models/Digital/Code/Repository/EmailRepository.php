@@ -25,11 +25,12 @@ class EmailRepository extends EntityRepository
             ->leftJoin('email.user', 'user')
             ->where('user.username = :username')
             ->andWhere('email.activationToken = :token')
-            ->setParameters(array(
+            ->setParameters(
+                array(
                 'username' => $username,
                 'token'     => $token,
-            ))
-        ;
+                )
+            );
 
         try {
             return $queryBuilder->getQuery()->getSingleResult();

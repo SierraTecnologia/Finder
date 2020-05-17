@@ -26,7 +26,7 @@ class Project
 
         SshKey::defaultById(4);
 
-        if (!$this->project->repositoryIsCloned()){
+        if (!$this->project->repositoryIsCloned()) {
             $repository = GitManiputor::cloneTo($this->project->getRepositoryPath(), $this->project->getRepository());
             dd('Project', $repository);
         }

@@ -23,10 +23,12 @@ class CollectDados
         
 
         // @todo Fazer
-        $tablesInMysql->map(function($table) {
+        $tablesInMysql->map(
+            function ($table) {
 
 
-        });
+            }
+        );
     }
 
 }

@@ -25,10 +25,12 @@ class FeedRepository extends EntityRepository
     public function findOneOrCreate(Project $project, $reference)
     {
         try {
-            $thread = $this->findOneBy(array(
+            $thread = $this->findOneBy(
+                array(
                 'project'   => $project,
                 'reference' => $reference
-            ));
+                )
+            );
         } catch (\Exception $e) {
             throw $e;
         }

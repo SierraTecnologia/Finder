@@ -7,6 +7,7 @@ use Sabre\Xml\Reader;
 
 /**
  * Integration of CodeAnalyser with CodeSniffer.
+ *
  * @see https://github.com/squizlabs/PHP_CodeSniffer
  */
 class CodeSniffer extends AbstractTool

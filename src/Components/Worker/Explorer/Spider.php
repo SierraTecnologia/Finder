@@ -9,10 +9,11 @@ use Finder\Models\Digital\Internet\UrlLink;
 /**
  * Spider Class
  *
- * @class  Spider
+ * @class   Spider
  * @package crawler
  */
-class Spider {
+class Spider
+{
 
     protected $url = false;
 
@@ -108,7 +109,8 @@ class Spider {
      *
      * @params int $size filesize in bytes
      */
-    public function fileSize($size)  {
+    public function fileSize($size)
+    {
         $filesizename = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
         return $size ? round($size/pow(1024, ($i = floor(log($size, 1024)))), 2) . $filesizename[$i] : '0 Bytes';
     }
@@ -126,12 +128,15 @@ class Spider {
      * @params int $clicks number of clicks from initial page
      * @return bool true on sucess, false on fail
      */
-    protected function saveUrl($urlLink,$clicks = null,$crawl_tag = null) {
-        return Url::create([
+    protected function saveUrl($urlLink,$clicks = null,$crawl_tag = null)
+    {
+        return Url::create(
+            [
             'url' => urldecode($urlLink),
             'clicks' => $clicks,
             'crawl_tag' => $crawl_tag
-        ]);
+            ]
+        );
     }
 
     /**
@@ -141,17 +146,20 @@ class Spider {
      * @params int $to ID of target page
      * @return int|bool LinkID on sucess, false on fail
      */
-    protected function saveLink($from, $to) {
+    protected function saveLink($from, $to)
+    {
         if ($from == $to) {
             return false;
         }
         if ($from->id == $to->id) {
             return false;
         }
-        return UrlLink::create([
+        return UrlLink::create(
+            [
                 'from_bot_internet_url_id' => $from->id,
                 'to_bot_internet_url_id' => $to->id
-        ]);
+            ]
+        );
     }
 
     /**
@@ -163,9 +171,11 @@ class Spider {
      */
     protected function getLinks($pageID,$click = '')
     {
-        $links = UrlLink::where([
+        $links = UrlLink::where(
+            [
             'from'=>$pageID
-        ])->get();
+            ]
+        )->get();
 
         foreach ($links as $link){
             $output[$link->to->id] = $this->getPage($link->to);
@@ -181,10 +191,13 @@ class Spider {
      * @params string $direction Direction to retrieve (either "to" or "from")
      * @return int Number of links
      */
-    protected function countLinks($pageID,$direction) {
-        return UrlLink::where([
+    protected function countLinks($pageID,$direction)
+    {
+        return UrlLink::where(
+            [
             $direction => $pageID
-        ])->count();
+            ]
+        )->count();
     }
 
     /**
@@ -193,7 +206,8 @@ class Spider {
      * @params int $pageId target page
      * @return array Associative array of page data
      */
-    protected function getPage($pageId) {
+    protected function getPage($pageId)
+    {
         return Url::find($pageId);
     }
 
@@ -205,10 +219,12 @@ class Spider {
      */
     protected function uncrawledUrls($crawlTag)
     {
-        return Url::where([
+        return Url::where(
+            [
             'crawled' => 0,
             'crawl_tag' => $crawlTag
-        ])->limit(100)->get();
+            ]
+        )->limit(100)->get();
     }
 
     /**
@@ -217,9 +233,10 @@ class Spider {
      * @params string $link URL to check
      * @return bool true if URL exists, false if not found
      */
-    protected function returnOrCreateUrl($urlLink, $clicks = null,$crawlTag = null) {
+    protected function returnOrCreateUrl($urlLink, $clicks = null,$crawlTag = null)
+    {
         $url = $this->haveUrl($urlLink, $clicks, $crawlTag);
-        if (!$url){
+        if (!$url) {
             return $this->saveUrl($urlLink, $clicks, $crawlTag);
         }
         return $url;
@@ -231,11 +248,15 @@ class Spider {
      * @params string $link URL to check
      * @return bool true if URL exists, false if not found
      */
-    protected function haveUrl($url, $crawlTag = false) {
-        $url = Url::where([
+    protected function haveUrl($url, $crawlTag = false)
+    {
+        $url = Url::where(
+            [
             'url' => $url
-        ])->get();
-        if (!$url || sizeof($url)==0) return false;
-        else return $url->first();
+            ]
+        )->get();
+        if (!$url || sizeof($url)==0) { return false;
+        } else { return $url->first();
+        }
     }
 }

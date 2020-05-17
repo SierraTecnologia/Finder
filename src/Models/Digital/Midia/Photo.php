@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Collection thumbnails
  * @property Post post
  * @property Collection posts
- * @package App\Models
+ * @package  App\Models
  */
 class Photo extends Base
 {
@@ -78,9 +78,11 @@ class Photo extends Base
     {
         parent::boot();
 
-        static::deleting(function (self $photo) {
-            $photo->thumbnails()->detach();
-        });
+        static::deleting(
+            function (self $photo) {
+                $photo->thumbnails()->detach();
+            }
+        );
     }
 
     /**
@@ -149,7 +151,7 @@ class Photo extends Base
      */
     public function album()
     {
-        return $this->belongsTo(PhotoAlbum::class,'photo_album_id');
+        return $this->belongsTo(PhotoAlbum::class, 'photo_album_id');
     }
 
     /**
@@ -159,7 +161,7 @@ class Photo extends Base
      */
     public function language()
     {
-        return $this->belongsTo(Language::class,'language_id');
+        return $this->belongsTo(Language::class, 'language_id');
     }
 
     /**
@@ -187,7 +189,8 @@ class Photo extends Base
      */
     public function toEntity(): PhotoEntity
     {
-        return new PhotoEntity([
+        return new PhotoEntity(
+            [
             'id' => $this->id,
             'created_by_user_id' => $this->created_by_user_id,
             'path' => $this->path,
@@ -197,6 +200,7 @@ class Photo extends Base
             'updated_at' => $this->updated_at ? $this->updated_at->toAtomString() : null,
             'location' => $this->location ? $this->location->toArray() : null,
             'thumbnails' => $this->thumbnails->toArray(),
-        ]);
+            ]
+        );
     }
 }

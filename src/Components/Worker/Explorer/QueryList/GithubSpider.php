@@ -31,12 +31,11 @@ class GithubSpider
 
         // Submit the login form
         $actionUrl = 'https://github.com'.$form->attr('action');
-        $ql->post($actionUrl,$postData);
+        $ql->post($actionUrl, $postData);
         // To determine whether the login is successful
         // echo $ql->getHtml();
         $userName = $ql->find('.header-nav-current-user>.css-truncate-target')->text();
-        if($userName)
-        {
+        if($userName) {
             echo 'Login successful ! Welcome:'.$userName;
         }else{
             echo 'Login failed !';

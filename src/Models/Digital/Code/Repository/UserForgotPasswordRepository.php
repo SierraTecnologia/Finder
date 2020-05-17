@@ -23,10 +23,11 @@ class UserForgotPasswordRepository extends EntityRepository
         $queryBuilder = $this
             ->createQueryBuilder('t')
             ->where('t.user = :user')
-            ->setParameters(array(
+            ->setParameters(
+                array(
                 'user' => $user,
-            ))
-        ;
+                )
+            );
 
         try {
             return $queryBuilder->getQuery()->getSingleResult();

@@ -15,13 +15,14 @@ class Search extends Wikipedia
     
     /**
      * Perform wiki search through MediaWiki action API.
-    *
-    * @param string $what    The search string
-    *
-    * @return json object containing result if successful or
-    *         error message & code if failed.
-    */
-    function wikiSearch($what) {
+     *
+     * @param string $what The search string
+     *
+     * @return json object containing result if successful or
+     *         error message & code if failed.
+     */
+    function wikiSearch($what)
+    {
         // Format: https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&generator=search&utf8=1&exsentences=1&exlimit=max&exintro=1&explaintext=1&gsrnamespace=0&gsrlimit=10&gsrsearch=SEARCH-TEXT
         $url = 'http://en.wikipedia.org/w/api.php';            
         $url .= '?action=query&format=json&prop=extracts&generator=search';

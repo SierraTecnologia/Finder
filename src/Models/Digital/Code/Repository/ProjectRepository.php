@@ -25,8 +25,7 @@ class ProjectRepository extends EntityRepository
             ->select('p')
             ->orderBy('p.name', 'ASC')
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
     public function findByUser(Entity\User $user)
     {
@@ -36,8 +35,7 @@ class ProjectRepository extends EntityRepository
             ->where('ur.user = :user')
             ->setParameter('user', $user)
             ->getQuery()
-            ->execute()
-        ;
+            ->execute();
     }
 
     public function findByUsers($users)
@@ -50,8 +48,7 @@ class ProjectRepository extends EntityRepository
             $qb
                 ->leftJoin('p.userRoles', $alias)
                 ->andWhere($alias.'.user = :'.$parameter)
-                ->setParameter($parameter, $user)
-            ;
+                ->setParameter($parameter, $user);
         }
 
         return $qb->getQuery()->execute();

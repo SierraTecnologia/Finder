@@ -7,6 +7,7 @@ use Finder\Spider\Abstracts\ExtensionManager;
 
 /**
  * Outputs events information to the console.
+ *
  * @see TriggerableInterface
  */
 abstract class IdentificadorManager

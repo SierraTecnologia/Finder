@@ -13,7 +13,7 @@ use Support\Models\Base;
  * @property string path
  * @property int width
  * @property int height
- * @package App\Models
+ * @package  App\Models
  */
 class Thumbnail extends Base
 {
@@ -60,10 +60,12 @@ class Thumbnail extends Base
      */
     public function toEntity(): ThumbnailEntity
     {
-        return new ThumbnailEntity([
+        return new ThumbnailEntity(
+            [
             'path' => $this->path,
             'width' => $this->width,
             'height' => $this->height,
-        ]);
+            ]
+        );
     }
 }

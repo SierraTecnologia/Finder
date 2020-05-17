@@ -75,7 +75,9 @@ class Build extends BaseBuild
             return null;
         }
 
-        /** @var ProjectStore $projectStore */
+        /**
+ * @var ProjectStore $projectStore 
+*/
         $projectStore = Factory::getStore('Project');
 
         return $projectStore->getById($projectId);
@@ -130,16 +132,16 @@ class Build extends BaseBuild
     }
 
     /**
-    * Get link to commit from another source (i.e. Github)
-    */
+     * Get link to commit from another source (i.e. Github)
+     */
     public function getCommitLink()
     {
         return '#';
     }
 
     /**
-    * Get link to branch from another source (i.e. Github)
-    */
+     * Get link to branch from another source (i.e. Github)
+     */
     public function getBranchLink()
     {
         return '#';
@@ -180,8 +182,8 @@ class Build extends BaseBuild
     }
 
     /**
-    * Send status updates to any relevant third parties (i.e. Github)
-    */
+     * Send status updates to any relevant third parties (i.e. Github)
+     */
     public function sendStatusPostback()
     {
         return false;
@@ -384,10 +386,10 @@ class Build extends BaseBuild
      * @param Builder $builder
      * @param string  $plugin
      * @param string  $message
-     * @param int $severity
+     * @param int     $severity
      * @param string  $file
-     * @param int $lineStart
-     * @param int $lineEnd
+     * @param int     $lineStart
+     * @param int     $lineEnd
      */
     public function reportError(
         Builder $builder,
@@ -617,29 +619,29 @@ OUT;
         $parentLink = '<a href="' . APP_URL . 'build/view/' . $parentId . '">#' . $parentId . '</a>';
 
         switch ($this->getSource()) {
-            case Build::SOURCE_WEBHOOK_PUSH:
-                return Lang::get('source_webhook_push');
-            case Build::SOURCE_WEBHOOK_PULL_REQUEST_CREATED:
-                return Lang::get('source_webhook_pull_request_created');
-            case Build::SOURCE_WEBHOOK_PULL_REQUEST_UPDATED:
-                return Lang::get('source_webhook_pull_request_updated');
-            case Build::SOURCE_WEBHOOK_PULL_REQUEST_APPROVED:
-                return Lang::get('source_webhook_pull_request_approved');
-            case Build::SOURCE_WEBHOOK_PULL_REQUEST_MERGED:
-                return Lang::get('source_webhook_pull_request_merged');
-            case Build::SOURCE_MANUAL_WEB:
-                return Lang::get('source_manual_web');
-            case Build::SOURCE_MANUAL_REBUILD_WEB:
-                return Lang::get('source_manual_rebuild_web', $parentLink);
-            case Build::SOURCE_MANUAL_CONSOLE:
-                return Lang::get('source_manual_console');
-            case Build::SOURCE_MANUAL_REBUILD_CONSOLE:
-                return Lang::get('source_manual_rebuild_console', $parentLink);
-            case Build::SOURCE_PERIODICAL:
-                return Lang::get('source_periodical');
-            case Build::SOURCE_UNKNOWN:
-            default:
-                return Lang::get('source_unknown');
+        case Build::SOURCE_WEBHOOK_PUSH:
+            return Lang::get('source_webhook_push');
+        case Build::SOURCE_WEBHOOK_PULL_REQUEST_CREATED:
+            return Lang::get('source_webhook_pull_request_created');
+        case Build::SOURCE_WEBHOOK_PULL_REQUEST_UPDATED:
+            return Lang::get('source_webhook_pull_request_updated');
+        case Build::SOURCE_WEBHOOK_PULL_REQUEST_APPROVED:
+            return Lang::get('source_webhook_pull_request_approved');
+        case Build::SOURCE_WEBHOOK_PULL_REQUEST_MERGED:
+            return Lang::get('source_webhook_pull_request_merged');
+        case Build::SOURCE_MANUAL_WEB:
+            return Lang::get('source_manual_web');
+        case Build::SOURCE_MANUAL_REBUILD_WEB:
+            return Lang::get('source_manual_rebuild_web', $parentLink);
+        case Build::SOURCE_MANUAL_CONSOLE:
+            return Lang::get('source_manual_console');
+        case Build::SOURCE_MANUAL_REBUILD_CONSOLE:
+            return Lang::get('source_manual_rebuild_console', $parentLink);
+        case Build::SOURCE_PERIODICAL:
+            return Lang::get('source_periodical');
+        case Build::SOURCE_UNKNOWN:
+        default:
+            return Lang::get('source_unknown');
         }
     }
 
@@ -666,7 +668,9 @@ OUT;
             $isNew;
 
         if (!isset($this->totalErrorsCount[$key])) {
-            /** @var BuildErrorStore $store */
+            /**
+ * @var BuildErrorStore $store 
+*/
             $store = Factory::getStore('BuildError');
 
             $this->totalErrorsCount[$key] = (int)$store->getErrorTotalForBuild(

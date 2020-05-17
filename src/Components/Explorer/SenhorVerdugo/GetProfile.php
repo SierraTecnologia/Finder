@@ -13,49 +13,54 @@ class GetProfile
 {
     public static function run($profileUrl)
     {
-        QueryList::get($profileUrl)->find('.joms-app--wrapper > .app-box-content > ul')->map(function ($bloco){
+        QueryList::get($profileUrl)->find('.joms-app--wrapper > .app-box-content > ul')->map(
+            function ($bloco) {
             
-            $bloco->children()->map(function ($item){
-                $title = $item->find('h4')->text();
-                if (empty($title)) {
-                    $title = $item->find('h5')->text();
-                }
+                $bloco->children()->map(
+                    function ($item) {
+                        $title = $item->find('h4')->text();
+                        if (empty($title)) {
+                            $title = $item->find('h5')->text();
+                        }
 
-                if ($title == 'Informações pessoais') {
-                    $skils = $item->find('span a')->texts();
+                        if ($title == 'Informações pessoais') {
+                            $skils = $item->find('span a')->texts();
 
-                    $skils[0] = ''; //Preferências
-                    $skils[1] = ''; //Sexo
-                    $skils[2] = ''; //Orientação sexual
-                    $skils[3] = ''; //Idade
+                            $skils[0] = ''; //Preferências
+                            $skils[1] = ''; //Sexo
+                            $skils[2] = ''; //Orientação sexual
+                            $skils[3] = ''; //Idade
 
-                    var_dump($skils);
-                } else if ($title == 'Localização') {
-                    $localizacao = $item->find('span a')->texts();
+                            var_dump($skils);
+                        } else if ($title == 'Localização') {
+                            $localizacao = $item->find('span a')->texts();
 
-                    $localizacao[0] = ''; //Pais
-                    $localizacao[1] = ''; //Estado
+                            $localizacao[0] = ''; //Pais
+                            $localizacao[1] = ''; //Estado
 
-                    var_dump($localizacao);
-                } else if ($title == 'Interesses') {
-                    $interesses = $item->find('span')->texts();
-                    $interesses[0] = ''; //Procurando por:
-                    $interesses[1] = ''; //Detalhes do que eu procuro
-                    $interesses[2] = ''; //Sobre mim
-                    var_dump($interesses);
-                } else if ($title == 'Informações para contato') {
-                    $infos = $item->find('span')->texts();
-                    $infos[0] = ''; //Website
-                    $infos[1] = ''; //Posição no BDSM
-                    var_dump($infos);
-                }
-            });
+                            var_dump($localizacao);
+                        } else if ($title == 'Interesses') {
+                            $interesses = $item->find('span')->texts();
+                            $interesses[0] = ''; //Procurando por:
+                            $interesses[1] = ''; //Detalhes do que eu procuro
+                            $interesses[2] = ''; //Sobre mim
+                            var_dump($interesses);
+                        } else if ($title == 'Informações para contato') {
+                            $infos = $item->find('span')->texts();
+                            $infos[0] = ''; //Website
+                            $infos[1] = ''; //Posição no BDSM
+                            var_dump($infos);
+                        }
+                    }
+                );
 
-        });
+            }
+        );
     }
 
 
-    public function almaDoInput(){
+    public function almaDoInput()
+    {
         // Capturar Tests do BdsmTest.Org
         /**
          * Sou da Zona Oeste de SP, 1,65 cm, solteira.<br />

@@ -24,8 +24,7 @@ class UserSshKeyRepository extends EntityRepository
             ->select('u.username, k.content')
             ->getQuery()
             ->setHydrationMode(Query::HYDRATE_SCALAR)
-            ->execute()
-        ;
+            ->execute();
     }
 
     public function markAllAsInstalled()
@@ -34,7 +33,6 @@ class UserSshKeyRepository extends EntityRepository
             ->update()
             ->set('k.isInstalled', true)
             ->getQuery()
-            ->execute()
-        ;
+            ->execute();
     }
 }

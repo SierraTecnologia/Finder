@@ -25,8 +25,7 @@ class wikigame
         $links = $this->get_links($article_str);
         foreach($links as $thing)
         {
-            if(strpos($thing, ':') == 0)
-            {
+            if(strpos($thing, ':') == 0) {
                 print("'" . $thing . "' inserted.\n");
                 $link = $this->clean_popular_link($thing);
                 $stmt = $this->conn->prepare($sql);
@@ -39,8 +38,7 @@ class wikigame
         $query = 'SHOW TABLES LIKE "popular"';
         $result = $this->conn->query($query)->fetchAll();
         $exists = count($result);
-        if(!$exists)
-        {
+        if(!$exists) {
             printf("Table 'popular' created.\n");
             $sql = "CREATE TABLE popular (
                 id INT(8) AUTO_INCREMENT PRIMARY KEY,
@@ -64,32 +62,26 @@ class wikigame
     }
     public function check($limit, $article, $goal)
     {
-        if(!isset($limit) || !isset($article) || !isset($goal))
-        {
+        if(!isset($limit) || !isset($article) || !isset($goal)) {
             show_error('bad');
         }
-        if($limit <= 0 || $limit > 50)
-        {
+        if($limit <= 0 || $limit > 50) {
             show_error('bad');
         }
         $article = $this->get_quotes_string($article);
-        if($this->check_redirect($article))
-        {
+        if($this->check_redirect($article)) {
             $article = $this->get_redirect_link($article);
             $article = $this->get_quotes_string($article);
         }
-        if($article === 'err_page_missing')
-        {
+        if($article === 'err_page_missing') {
             $this->show_error('err_page_missing');
         }
         $links = $this->get_links($article);
         $final = $this->get_final_links($links, $limit);
-        if(count($final) == 0)
-        {
+        if(count($final) == 0) {
             $this->show_error('err_page_missing');
         }
-        if(!in_array($goal, $links))
-        {
+        if(!in_array($goal, $links)) {
             echo json_encode($final, JSON_UNESCAPED_UNICODE);
         }
         else
@@ -101,34 +93,32 @@ class wikigame
     {
         $articles = array();
         $a_links = array();
-        if(!isset($type) || !isset($limit))
-        {
+        if(!isset($type) || !isset($limit)) {
             $this->show_error('bad');
             return;
         }
-        if($limit <= 0 || $limit > 50)
-        {
+        if($limit <= 0 || $limit > 50) {
             $this->show_error('bad');
             return;
         }
         switch($type)
         {
-            case 'rand_pop':
-                $article_goal = $this->get_random_popular();
-                $article_goal = str_replace(" ", "_", $article_goal);
-                break;
-            case 'rand':
-                $article_goal = $this->get_redirect();
-                $article_goal = str_replace("_", " ", $article_goal);
-                break;
-            case 'specific':
-                $article_goal = $specific;
-                $rep = str_replace(" ", "_", $specific);
-                $article_goal_link = 'https://en.wikipedia.org/wiki/' . $rep;
-                break;
-            default:
-                $this->show_error('bad');
-                return;
+        case 'rand_pop':
+            $article_goal = $this->get_random_popular();
+            $article_goal = str_replace(" ", "_", $article_goal);
+            break;
+        case 'rand':
+            $article_goal = $this->get_redirect();
+            $article_goal = str_replace("_", " ", $article_goal);
+            break;
+        case 'specific':
+            $article_goal = $specific;
+            $rep = str_replace(" ", "_", $specific);
+            $article_goal_link = 'https://en.wikipedia.org/wiki/' . $rep;
+            break;
+        default:
+            $this->show_error('bad');
+            return;
         }
         $start = $this->get_redirect();
         $article_start = str_replace("_", " ", $start);
@@ -143,8 +133,7 @@ class wikigame
         $a_links[] = $link_goal;
         $json[] = $articles;
         $json[] = $a_links;
-        if(!in_array($start, $links))
-        {
+        if(!in_array($start, $links)) {
             $json[] = $final;
         }
         else
@@ -166,19 +155,17 @@ class wikigame
         {
             $fidx = $article_str[$index];
             $sidx = $article_str[$index + 1];
-            if($fidx == '[' && $sidx == '[')
-            {
+            if($fidx == '[' && $sidx == '[') {
                 $link_start_idx = $index + 2;
                 $link_set = true;
             }
-            if($fidx == ']' && $sidx == ']' && $link_set == true)
-            {
+            if($fidx == ']' && $sidx == ']' && $link_set == true) {
                 $link_end_idx = $index;
                 $link_size = $link_end_idx - $link_start_idx;
                 $found_link = substr($article_str, $link_start_idx, $link_size);
-                if(!$this->bad_link_check($found_link) &&
-                    !in_array($found_link, $links))
-                {
+                if(!$this->bad_link_check($found_link) 
+                    && !in_array($found_link, $links)
+                ) {
                     $links[] = $found_link;
                 }
                 $link_set = false;
@@ -193,8 +180,7 @@ class wikigame
         $is_bad = false;
         foreach($bad as $check)
         {
-            if(strpos($found_link, $check) !== false)
-            {
+            if(strpos($found_link, $check) !== false) {
                 $is_bad = true;
                 break;
             }
@@ -203,8 +189,7 @@ class wikigame
     }
     private function fix_link($link)
     {
-        if(strpos($link, "|") !== false)
-        {
+        if(strpos($link, "|") !== false) {
             $line = strpos($link, "|");
             $link = substr($link, 0, $line);
         }
@@ -212,8 +197,7 @@ class wikigame
     }
     private function fix_h($link)
     {
-        if(strpos($link, "#") !== false)
-        {
+        if(strpos($link, "#") !== false) {
             $line = strpos($link, "#");
             $link = substr($link, 0, $line);
         }
@@ -229,8 +213,7 @@ class wikigame
             '&format=json&formatversion=2';
         $data = file_get_contents($url, false, $this->context);
         $wiki = json_decode($data, true);
-        if(isset($wiki['query']['pages'][0]['missing']))
-        {
+        if(isset($wiki['query']['pages'][0]['missing'])) {
             $quotes = 'err_page_missing';
         }
         else
@@ -244,8 +227,7 @@ class wikigame
         $r = array('http' => array('method' => 'HEAD'));
         stream_context_set_default($r);
         $headers = get_headers($url, 1);
-        if($headers !== false && isset($headers['Location']))
-        {
+        if($headers !== false && isset($headers['Location'])) {
             return $headers['Location'];
         }
         return false;
@@ -260,8 +242,7 @@ class wikigame
     private function check_redirect($article)
     {
         $redirect = false;
-        if(strpos($article, "#REDIRECT") !== FALSE)
-        {
+        if(strpos($article, "#REDIRECT") !== false) {
             $redirect = true;
         }
         return $redirect;
@@ -269,8 +250,7 @@ class wikigame
     public function get_redirect_link($article)
     {
         $ret;
-        if(count($this->get_links($article)) == 0)
-        {
+        if(count($this->get_links($article)) == 0) {
             $ret = 'no_links';
         }
         else
@@ -284,13 +264,11 @@ class wikigame
         $final = array();
         $rands = array();
         $link_count = count($links);
-        if($link_count > $limit)
-        {
+        if($link_count > $limit) {
             for($i = 0; $i < $limit; $i++)
             {
                 $rand_val = rand(0, $link_count - 1);
-                if(!in_array($rand_val, $rands))
-                {
+                if(!in_array($rand_val, $rands)) {
                     $rands[] = $rand_val;
                 }
             }
@@ -314,8 +292,7 @@ class wikigame
     }
     private function clean_popular_link($link)
     {
-        if($link[0] == ':')
-        {
+        if($link[0] == ':') {
             $link = str_replace(':', '', $link);
         }
         $link = $this->fix_link($link);

@@ -27,11 +27,13 @@ class Tumblr extends Integration
 
     public function getToken()
     {
-        $instagram = new \MetzWeb\Tumblr\Tumblr(array(
+        $instagram = new \MetzWeb\Tumblr\Tumblr(
+            array(
             'apiKey'      => 'YOUR_APP_KEY',
             'apiSecret'   => 'YOUR_APP_SECRET',
             'apiCallback' => 'YOUR_APP_CALLBACK'
-          ));
+            )
+        );
 
           $token = 'USER_ACCESS_TOKEN';
           $instagram->setAccessToken($token);

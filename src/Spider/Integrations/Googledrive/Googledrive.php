@@ -26,11 +26,13 @@ class Googledrive extends Integration
 
     public function getToken()
     {
-        $instagram = new \MetzWeb\Googledrive\Googledrive(array(
+        $instagram = new \MetzWeb\Googledrive\Googledrive(
+            array(
             'apiKey'      => 'YOUR_APP_KEY',
             'apiSecret'   => 'YOUR_APP_SECRET',
             'apiCallback' => 'YOUR_APP_CALLBACK'
-          ));
+            )
+        );
 
           $token = 'USER_ACCESS_TOKEN';
           $instagram->setAccessToken($token);

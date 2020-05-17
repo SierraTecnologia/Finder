@@ -9,13 +9,15 @@ class DatabaseRender implements StageInterface
 {
     public function __invoke($eloquentClasses)
     {
-        return Cache::remember('sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
-            Log::debug(
-                'Mount Database -> Renderizando'
-            );
-            $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
-            return $renderDatabase;
-        });
+        return Cache::remember(
+            'sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
+                Log::debug(
+                    'Mount Database -> Renderizando'
+                );
+                $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
+                return $renderDatabase;
+            }
+        );
     }
 }
 
@@ -37,28 +39,34 @@ class DatabaseMount implements StageInterface
 
         $this->renderDatabase = $renderDatabaseArray;
         
-        $this->relationships = $eloquentClasses->map(function($eloquentData, $className) use ($renderDatabaseArray) {
+        $this->relationships = $eloquentClasses->map(
+            function ($eloquentData, $className) use ($renderDatabaseArray) {
 
-            foreach ($eloquentData['relations'] as $relation) {
-                if (!isset($relation['origin_table_name']) || empty($relation['origin_table_name'])) {
-                    $relation['origin_table_name'] = $renderDatabaseArray["Leitoras"]["displayClasses"][$relation['origin_table_class']]["tableName"];
+                foreach ($eloquentData['relations'] as $relation) {
+                    if (!isset($relation['origin_table_name']) || empty($relation['origin_table_name'])) {
+                        $relation['origin_table_name'] = $renderDatabaseArray["Leitoras"]["displayClasses"][$relation['origin_table_class']]["tableName"];
+                    }
+                    if (!isset($relation['related_table_name']) || empty($relation['related_table_name'])) {
+                        $relation['related_table_name'] = ArrayExtractor::returnNameIfNotExistInArray(
+                            $relation['related_table_class'],
+                            $renderDatabaseArray,
+                            '["Leitoras"]["displayClasses"][{{index}}]["tableName"]'
+                        );
+                    }
+                    return new Relationship($relation);
                 }
-                if (!isset($relation['related_table_name']) || empty($relation['related_table_name'])) {
-                    $relation['related_table_name'] = ArrayExtractor::returnNameIfNotExistInArray(
-                        $relation['related_table_class'],
-                        $renderDatabaseArray,
-                        '["Leitoras"]["displayClasses"][{{index}}]["tableName"]'
-                    );
-                }
-                return new Relationship($relation);
             }
-        });
+        );
 
-        $this->entitys = $eloquentClasses->reject(function($eloquentData, $className) {
-            return $this->eloquentHasError($className);
-        })->map(function($eloquentData, $className) use ($renderDatabaseArray) {
-            return (new EloquentMount($className, $renderDatabaseArray))->getEntity();
-        });
+        $this->entitys = $eloquentClasses->reject(
+            function ($eloquentData, $className) {
+                return $this->eloquentHasError($className);
+            }
+        )->map(
+            function ($eloquentData, $className) use ($renderDatabaseArray) {
+                return (new EloquentMount($className, $renderDatabaseArray))->getEntity();
+            }
+        );
         //     dd(
         //         $this->entitys,
         //     $this->renderDatabase['AplicationTemp']['tempErrorClasses']

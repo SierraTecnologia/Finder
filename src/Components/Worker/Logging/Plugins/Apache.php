@@ -10,12 +10,13 @@
 
 namespace Finder\Components\Worker\Analyser\Logging\Plugins;
 
-class Apache {
+class Apache
+{
 
         /**
          * All possible paths where log files could be found
          *
-         * @var  array
+         * @var array
          */
         public $paths = array(
             '/var/log/' ,
@@ -40,7 +41,7 @@ class Apache {
          * The order is important because it will be the order of log files for users.
          * eg: I want error log be the first because most users want to see error and not access logs
          *
-         * @var  array
+         * @var array
          */
         public $files = array(
             'error'  => array(
@@ -57,94 +58,96 @@ class Apache {
         );
 
 
-    public function getPaths()
-    {
-        /**
-         * Add sub-directories within specified paths
-         * helps with multiple site environments
-         */
-        foreach ( $paths as $path )
+        public function getPaths()
         {
-            if ( is_dir( $path ) )
+            /**
+             * Add sub-directories within specified paths
+             * helps with multiple site environments
+             */
+            foreach ( $paths as $path )
             {
-                try
-                {
-                    $directory = new RecursiveDirectoryIterator( $path );
-                    $iterator  = new RecursiveIteratorIterator( $directory );
-                    /** @var DirectoryIterator $file */
-                    foreach ( $iterator as $file )
+                if (is_dir($path) ) {
+                    try
                     {
-                        foreach ( $files as $type )
+                        $directory = new RecursiveDirectoryIterator($path);
+                        $iterator  = new RecursiveIteratorIterator($directory);
+                        /**
+ * @var DirectoryIterator $file 
+*/
+                        foreach ( $iterator as $file )
                         {
-                            foreach ( $type as $filename )
+                            foreach ( $files as $type )
                             {
-                                if ( $file->getFilename() === $filename )
+                                foreach ( $type as $filename )
                                 {
-                                    $paths[] = $file->getPath();
-                                    continue 3;
+                                    if ($file->getFilename() === $filename ) {
+                                        $paths[] = $file->getPath();
+                                        continue 3;
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                catch ( Exception $e )
-                {
+                    catch ( Exception $e )
+                    {
+                    }
                 }
             }
+
+            sort($paths);
+
         }
 
-        sort( $paths );
-
-    }
 
 
-
-    function loadSoftware() {
-        return array(
+        function loadSoftware()
+        {
+            return array(
             'name'    => __('Apache'),
             'desc'    => __('Apache Hypertext Transfer Protocol Server'),
             'home'    => __('http://httpd.apache.org'),
             'notes'   => __('All versions 2.x are supported.'),
-            'load'    => ( stripos( $_SERVER["SERVER_SOFTWARE"] , 'Apache' ) !== false )
-        );
-    }
+            'load'    => ( stripos($_SERVER["SERVER_SOFTWARE"], 'Apache') !== false )
+            );
+        }
 
 
-    /*
-    You must escape anti-slash 4 times and escape $ in regex.
-    (Two for PHP and finally two for json)
-    */
+        /*
+        You must escape anti-slash 4 times and escape $ in regex.
+        (Two for PHP and finally two for json)
+        */
 
 
-    function getConfig( $type , $file , $software , $counter ) {
+        function getConfig( $type , $file , $software , $counter )
+        {
 
-        $file_json_encoded = json_encode( $file );
+            $file_json_encoded = json_encode($file);
 
-        /////////////////////////////////////////////////////////
-        // Apache error files are not the same on 2.2 and 2.4 //
-        /////////////////////////////////////////////////////////
-        if ( $type == 'error' ) {
+            /////////////////////////////////////////////////////////
+            // Apache error files are not the same on 2.2 and 2.4 //
+            /////////////////////////////////////////////////////////
+            if ($type == 'error' ) {
 
-            // Write a line of log and try to guess the format
-            $remain = 10;
-            $test   = 0;
-            Log::channel('sitec-finder')->notice( 'Pimp my Log has been successfully configured with Apache' );
-            foreach ( LogParser::getLinesFromBottom( $file , 10 ) as $line ) {
-                $test = @preg_match('|^\[(.*) (.*) (.*) (.*):(.*):(.*)\.(.*) (.*)\] \[(.*):(.*)\] \[pid (.*)\] .*\[client (.*):(.*)\] (.*)(, referer: (.*))*$|U', $line );
-                if ( $test === 1 ) {
-                    break;
+                // Write a line of log and try to guess the format
+                $remain = 10;
+                $test   = 0;
+                Log::channel('sitec-finder')->notice('Pimp my Log has been successfully configured with Apache');
+                foreach ( LogParser::getLinesFromBottom($file, 10) as $line ) {
+                    $test = @preg_match('|^\[(.*) (.*) (.*) (.*):(.*):(.*)\.(.*) (.*)\] \[(.*):(.*)\] \[pid (.*)\] .*\[client (.*):(.*)\] (.*)(, referer: (.*))*$|U', $line);
+                    if ($test === 1 ) {
+                        break;
+                    }
+                    $remain--;
+                    if ($remain<=0) {
+                        break;
+                    }
                 }
-                $remain--;
-                if ($remain<=0) {
-                    break;
-                }
-            }
 
-            /////////////////////
-            // Error 2.4 style //
-            /////////////////////
-            if ( $test === 1 ) {
-                return<<<EOF
+                /////////////////////
+                // Error 2.4 style //
+                /////////////////////
+                if ($test === 1 ) {
+                    return<<<EOF
             "$software$counter": {
                 "display" : "Apache Error #$counter",
                 "path"    : $file_json_encoded,
@@ -183,15 +186,15 @@ class Apache {
             }
     EOF;
 
-            }
+                }
 
 
-            /////////////////////
-            // Error 2.2 style //
-            /////////////////////
-            else {
+                /////////////////////
+                // Error 2.2 style //
+                /////////////////////
+                else {
 
-                return<<<EOF
+                    return<<<EOF
             "$software$counter": {
                 "display" : "Apache Error #$counter",
                 "path"    : $file_json_encoded,
@@ -223,15 +226,15 @@ class Apache {
             }
     EOF;
 
+                }
             }
-        }
 
-        ////////////////
-        // Access log //
-        ////////////////
-        else if ( $type == 'access' ) {
+            ////////////////
+            // Access log //
+            ////////////////
+            else if ($type == 'access' ) {
 
-            return<<<EOF
+                return<<<EOF
             "$software$counter": {
                 "display" : "Apache Access #$counter",
                 "path"    : $file_json_encoded,
@@ -272,7 +275,7 @@ class Apache {
             }
     EOF;
 
+            }
         }
-    }
 
 }

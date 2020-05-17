@@ -10,12 +10,13 @@
 
 namespace Finder\Components\Worker\Analyser\Logging\Plugins;
 
-class Nginx {
+class Nginx
+{
 
     /**
      * All possible paths where log files could be found
      *
-     * @var  array
+     * @var array
      */
     public $paths = array(
         '/var/log/nginx/',
@@ -30,7 +31,7 @@ class Nginx {
      * The order is important because it will be the order of log files for users.
      * eg: I want error log be the first because most users want to see error and not access logs
      *
-     * @var  array
+     * @var array
      */
     public $files = array(
         'error' => array(
@@ -43,25 +44,27 @@ class Nginx {
         ),
     );
 
-    function loadSoftware() {
+    function loadSoftware()
+    {
         return array(
             'name'    => __('NGINX'),
             'desc'    => __('The high performance reverse proxy, load balancer, edge cache, origin server'),
             'home'    => __('http://nginx.com'),
             'notes'   => __('Default log formats are supported'),
-            'load'    => ( stripos( $_SERVER["SERVER_SOFTWARE"] , 'nginx' ) !== false )
+            'load'    => ( stripos($_SERVER["SERVER_SOFTWARE"], 'nginx') !== false )
         );
     }
 
 
-    function getConfig( $type , $file , $software , $counter ) {
+    function getConfig( $type , $file , $software , $counter )
+    {
 
-        $file_json_encoded = json_encode( $file );
+        $file_json_encoded = json_encode($file);
 
         /////////////////////////////////////////////////////////
         // nginx error files are not the same on 2.2 and 2.4 //
         /////////////////////////////////////////////////////////
-        if ( $type == 'error' ) {
+        if ($type == 'error' ) {
 
             return<<<EOF
             "$software$counter": {
@@ -106,7 +109,7 @@ class Nginx {
         ////////////////
         // Access log //
         ////////////////
-        else if ( $type == 'access' ) {
+        else if ($type == 'access' ) {
 
             return<<<EOF
             "$software$counter": {

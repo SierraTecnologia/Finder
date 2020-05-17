@@ -22,7 +22,8 @@ class Sentry extends Integration
         //HTTP/1.1
         //Authorization: Bearer <token>
         return $this->get($this->url.'/api/0/projects/');
-        /** Resposta
+        /**
+ * Resposta
          * [
          *  {
          *      "avatar": {

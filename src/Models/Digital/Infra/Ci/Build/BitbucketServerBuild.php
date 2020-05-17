@@ -152,8 +152,8 @@ class BitbucketServerBuild extends GitBuild
      * Create request patch with diff
      *
      * @param Builder $builder
-     * @param string $cloneTo
-     * @param string $targetBranch
+     * @param string  $cloneTo
+     * @param string  $targetBranch
      */
     protected function getPullRequestDiff(Builder $builder, $cloneTo, $targetBranch)
     {

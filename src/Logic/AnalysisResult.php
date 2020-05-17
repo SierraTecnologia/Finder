@@ -10,23 +10,26 @@ class AnalysisResult
 {
     /**
      * Result data.
+     *
      * @var array analysis result data.
      */
     protected $data = [];
 
     /**
      * Analysis result filter.
+     *
      * @var OutputFilterInterface filter instance.
      */
     protected $filter;
 
     /**
      * Register an issue.
-     * @param string $fileName File name.
-     * @param integer $line  Line number.
-     * @param string $toolName Analysis tool name.
-     * @param string $issueType Issue type.
-     * @param string $message Issue description.
+     *
+     * @param  string  $fileName  File name.
+     * @param  integer $line      Line number.
+     * @param  string  $toolName  Analysis tool name.
+     * @param  string  $issueType Issue type.
+     * @param  string  $message   Issue description.
      * @return void
      */
     public function addIssue($fileName, $line, $toolName, $issueType, $message)
@@ -48,6 +51,7 @@ class AnalysisResult
 
     /**
      * Check if there are any code issues.
+     *
      * @return boolean true if there are issues.
      */
     public function hasIssues()
@@ -68,6 +72,7 @@ class AnalysisResult
      *     ]
      * ]
      * </code>
+     *
      * @return array result daya.
      */
     public function toArray()
@@ -90,7 +95,8 @@ class AnalysisResult
 
     /**
      * Merge the data of another result into this one.
-     * @param AnalysisResult $other another analysis result object.
+     *
+     * @param  AnalysisResult $other another analysis result object.
      * @return AnalysisResult returns itself.
      */
     public function mergeWith(AnalysisResult $other)
@@ -113,6 +119,7 @@ class AnalysisResult
 
     /**
      * Add an output filter to delegate to the analysis result object.
+     *
      * @param OutputFilterInterface $filter filter instance.
      */
     public function setResultsFilter(OutputFilterInterface $filter)

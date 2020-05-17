@@ -49,11 +49,13 @@ class Domain extends Base
 
     public function getRootPage()
     {
-        if (!$url = $this->urls()->first()){
-            $url = Url::create([
+        if (!$url = $this->urls()->first()) {
+            $url = Url::create(
+                [
                 'infra_domain_id' => $this->id,
                 'url' => $this->url.'/',
-            ]);
+                ]
+            );
         }
         return $url;
     }

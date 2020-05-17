@@ -6,10 +6,11 @@ namespace Finder\Components\Worker\Reports;
 /**
  * Report Class
  *
- * @class  Report
+ * @class   Report
  * @package life
  */
-class Report {
+class Report
+{
 
     protected $url = false;
     
@@ -42,7 +43,6 @@ class Report {
 
 
      /**
-      * 
       *  Relatório de Commits por Dia
       *   filliable_type = Commits
       *   periodo = 

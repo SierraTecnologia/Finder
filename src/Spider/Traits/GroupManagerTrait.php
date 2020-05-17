@@ -5,6 +5,7 @@ use Support\Helps\DebugHelper;
 
 /**
  * Outputs events information to the console.
+ *
  * @see TriggerableInterface
  */
 trait GroupManagerTrait

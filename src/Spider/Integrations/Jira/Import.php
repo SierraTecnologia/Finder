@@ -63,12 +63,14 @@ class Import extends Jira
             foreach ($prjs as $p) {
                 // Log::channel('sitec-finder')->info(print_r($p, true));
                 // Project Key:USS, Id:10021, Name:User Shipping Service, projectCategory: Desenvolvimento
-                if (!$projModel = ProjectModel::where('projectPathKey', $p->key)->first()){
-                    if (!$projModel && !$projModel = ProjectModel::where('projectPath', $p->name)->first()){
-                        $projModel = ProjectModel::create([
+                if (!$projModel = ProjectModel::where('projectPathKey', $p->key)->first()) {
+                    if (!$projModel && !$projModel = ProjectModel::where('projectPath', $p->name)->first()) {
+                        $projModel = ProjectModel::create(
+                            [
                             'name' => $p->name,
                             'projectPathKey' => $p->key,
-                        ]);
+                            ]
+                        );
                     } else {
                         $projModel->projectPathKey = $p->key;
                         $projModel->save();
@@ -79,8 +81,8 @@ class Import extends Jira
                 $this->getIssuesFromProject($projModel);
                 // echo sprintf("Project Key:%s, Id:%s, Name:%s, projectCategory: %s\n",
                 //     $p->key, $p->id, $p->name, $p->projectCategory['name']
-                // );			
-            }			
+                // );            
+            }            
         } catch (JiraException $e) {
             $this->setError("Error Occured! " . $e->getMessage());
         }
@@ -91,17 +93,19 @@ class Import extends Jira
         $chunkNumber = 10;
         $object = $this;
         // Trata os Outros Dados dos Usuários                                                                                                                                                    
-        Issue::chunk($chunkNumber, function($issues) use ($command, $object, $chunkNumber) {                                                                                                                               
-            foreach ($issues as $issue) {                                                                                                                                                          
-                if ($command) {                                                                                                                                                                  
-                    $command->returnOutput()->progressAdvance($chunkNumber);                                                                                                                                 
+        Issue::chunk(
+            $chunkNumber, function ($issues) use ($command, $object, $chunkNumber) {                                                                                                                               
+                foreach ($issues as $issue) {                                                                                                                                                          
+                    if ($command) {                                                                                                                                                                  
+                        $command->returnOutput()->progressAdvance($chunkNumber);                                                                                                                                 
+                    }
+                    // $object->issueTimeTracking($issue->key_name); // @todo Retirar Depois
+                    // $object->issueWorklog($issue->key_name);
+                    $object->comment($issue->key_name);
+                    $object->getIssueRemoteLink($issue->key_name);
                 }
-                // $object->issueTimeTracking($issue->key_name); // @todo Retirar Depois
-                // $object->issueWorklog($issue->key_name);
-                $object->comment($issue->key_name);
-                $object->getIssueRemoteLink($issue->key_name);
             }
-        });
+        );
     }
 
     public function getIssuesFromProject($project)
@@ -111,16 +115,18 @@ class Import extends Jira
         $jql = 'project='.$project->getSlug();
         $paginate = $this->getPaginate(1);
         $result = $this->searchIssue($jql, $paginate);
-        if (!empty($result->issues)){
+        if (!empty($result->issues)) {
             foreach ($result->issues as $issue) {
                 var_dump($issue);
                 if (!$issueInstance = Issue::where(['key_name' => $issue->key])->first()) {       
-                    $issueInstance = Issue::create([
+                    $issueInstance = Issue::create(
+                        [
                         'key_name' => $issue->key,
                         'url' => $issue->self,
                         // 'sumary' => '', @todo fazer aqui 
-                    ]);
-                    if (!empty($issue->fields)){
+                        ]
+                    );
+                    if (!empty($issue->fields)) {
                         $issueInstance->setField($issue->fields);
                     }
                 }
@@ -154,13 +160,14 @@ class Import extends Jira
         
             $p = $proj->get($project->getSlug());
             
-            var_dump($p);			
+            var_dump($p);            
         } catch (JiraException $e) {
             $this->setError("Error Occured! " . $e->getMessage());
         }
     }
 
-    public function issueTimeTracking($issueKey = 'TEST-961'){
+    public function issueTimeTracking($issueKey = 'TEST-961')
+    {
 
         try {
             $issueService = new IssueService($this->getConfig($this->_token));
@@ -183,7 +190,8 @@ class Import extends Jira
         }
     }
 
-    public function issueWorklog($issueKey = 'TEST-961'){
+    public function issueWorklog($issueKey = 'TEST-961')
+    {
 
         try {
             $issueService = new IssueService($this->getConfig($this->_token));
@@ -210,9 +218,11 @@ class Import extends Jira
             $rets = $ils->getIssueLinkTypes();
             foreach($rets as $ret) {
                 var_dump($ret);
-                CodeIssueLink::firstOrCreate([
+                CodeIssueLink::firstOrCreate(
+                    [
                     'name' => $ret->name
-                ]);
+                    ]
+                );
             }
             
         } catch (JiraException $e) {
@@ -228,9 +238,11 @@ class Import extends Jira
             $rils = $issueService->getRemoteIssueLink($issueKey);
             foreach($rils as $ril) {
                 var_dump($ril);
-                CodeIssueLink::firstOrCreate([
+                CodeIssueLink::firstOrCreate(
+                    [
                     'name' => $ril->name
-                ]);
+                    ]
+                );
             }
         } catch (JiraException $e) {
             $this->setError($e->getMessage());
@@ -275,7 +287,7 @@ class Import extends Jira
                     
             $issue = $issueService->get($issueKey, $queryParam);
             
-            var_dump($issue->fields);	
+            var_dump($issue->fields);    
         } catch (JiraException $e) {
             $this->setError("Error Occured! " . $e->getMessage());
         }
@@ -290,16 +302,21 @@ class Import extends Jira
         
             foreach ($vers as $v) {
                 // $v is  JiraRestApi\Issue\Version
-                if (!Release::where([
+                if (!Release::where(
+                    [
                         'name' => $v->name,
                         'code_project_id' => $projInstance->id
-                    ])->first()){
-                    Release::create([
+                    ]
+                )->first()
+                ) {
+                    Release::create(
+                        [
                         'name' => $v->name,
                         // 'start' => $v->startDate,
                         'release' => $v->releaseDate,
                         'code_project_id' => $projInstance->id
-                    ]);
+                        ]
+                    );
                 }
             }
         } catch (JiraException $e) {

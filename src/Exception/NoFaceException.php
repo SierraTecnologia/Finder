@@ -8,6 +8,7 @@ namespace Finder\Exception;
 
 use Exception;
 
-class NoFaceException extends Exception {
+class NoFaceException extends Exception
+{
 
 }

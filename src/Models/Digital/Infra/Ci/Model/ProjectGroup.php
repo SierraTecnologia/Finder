@@ -13,7 +13,9 @@ class ProjectGroup extends BaseProjectGroup
      */
     public function getGroupProjects()
     {
-        /** @var ProjectStore $projectStore */
+        /**
+ * @var ProjectStore $projectStore 
+*/
         $projectStore = Factory::getStore('Project');
 
         return $projectStore->getByGroupId($this->getId(), false);

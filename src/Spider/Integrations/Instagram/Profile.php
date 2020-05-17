@@ -34,37 +34,37 @@ class Profile extends Instagram
 
             $data = [];
 
-            if (isset($decodedInfo->user->hd_profile_pic_url_info->url)){
+            if (isset($decodedInfo->user->hd_profile_pic_url_info->url)) {
                 $data['profilePic'] = $decodedInfo->user->hd_profile_pic_url_info->url;
             } else {
                 $data['profilePic'] = $decodedInfo->user->profile_pic_url;
             }
 
-            if (isset($decodedInfo->user->username)){
+            if (isset($decodedInfo->user->username)) {
                 $data['username'] = $decodedInfo->user->username;
             } 
 
-            if (isset($decodedInfo->user->follower_count)){
+            if (isset($decodedInfo->user->follower_count)) {
                 $data['follower'] = $decodedInfo->user->follower_count;
             } 
 
-            if (isset($decodedInfo->user->following_count)){
+            if (isset($decodedInfo->user->following_count)) {
                 $data['following'] = $decodedInfo->user->following_count;
             } 
 
-            if (isset($decodedInfo->user->full_name)){
+            if (isset($decodedInfo->user->full_name)) {
                 $data['full_name'] = $decodedInfo->user->full_name;
             } 
 
-            if (isset($decodedInfo->user->is_private)){
+            if (isset($decodedInfo->user->is_private)) {
                 $data['isPrivate'] = $decodedInfo->user->is_private;
             } 
 
-            if (isset($decodedInfo->user->is_verified)){
+            if (isset($decodedInfo->user->is_verified)) {
                 $data['isVerified'] = $decodedInfo->user->is_verified;
             } 
 
-            if (isset($decodedInfo->user->biography)){
+            if (isset($decodedInfo->user->biography)) {
                 $data['bio'] = $decodedInfo->user->biography;
             }
             

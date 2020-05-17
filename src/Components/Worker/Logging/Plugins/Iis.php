@@ -10,13 +10,14 @@
 
 namespace Finder\Components\Worker\Analyser\Logging\Plugins;
 
-class Iis {
+class Iis
+{
 
 
     /**
      * All possible paths where log files could be found
      *
-     * @var  array
+     * @var array
      */
     public $paths = array(
         'C:\\inetpub\\logs\\LogFiles\\W3SVC*\\',
@@ -33,7 +34,7 @@ class Iis {
      * The order is important because it will be the order of log files for users.
      * eg: I want error log be the first because most users want to see error and not access logs
      *
-     * @var  array
+     * @var array
      */
     public $files = array(
         'access' => array(
@@ -41,38 +42,40 @@ class Iis {
         ),
     );
 
-    function loadSoftware() {
+    function loadSoftware()
+    {
         return array(
             'name'    => __('IIS'),
             'desc'    => __('A flexible & easy-to-manage web server...'),
             'home'    => __('http://www.iis.net'),
             'notes'   => __('NCSA, IIS and W3C log formats are supported'),
-            'load'    => ( stripos( $_SERVER["SERVER_SOFTWARE"] , 'iis' ) !== false )
+            'load'    => ( stripos($_SERVER["SERVER_SOFTWARE"], 'iis') !== false )
             );
     }
 
 
-    function getConfig( $type , $file , $software , $counter ) {
+    function getConfig( $type , $file , $software , $counter )
+    {
 
-        $file_json_encoded = json_encode( $file );
+        $file_json_encoded = json_encode($file);
 
         // Type W3C
         //
         $ufields = array();
-        $handle  = @fopen( $file , "r" );
-        if ( $handle ) {
-            while ( ! feof( $handle ) ) {
+        $handle  = @fopen($file, "r");
+        if ($handle ) {
+            while ( ! feof($handle) ) {
                 $buffer = fgets($handle);
-                if ( substr( $buffer , 0 , 9 ) == '#Fields: ' ) {
-                    $ufields = explode( ' ' , substr( $buffer , 9 ) );
-                    if ( count( $ufields ) > 0 )	{
+                if (substr($buffer, 0, 9) == '#Fields: ' ) {
+                    $ufields = explode(' ', substr($buffer, 9));
+                    if (count($ufields) > 0 ) {
                         break;
                     }
                 }
             }
             fclose($handle);
         }
-        if ( count( $ufields ) > 0 ) {
+        if (count($ufields) > 0 ) {
             $regex = array();
             $types = array();
             $match = array(
@@ -107,24 +110,24 @@ class Iis {
                 'date'            => 'Date',
                 'time'            => 'Date',
                 's-sitename'      => 'Site',
-    //			's-computername'  => 0,
-    //			's-ip'            => 0,
+            //            's-computername'  => 0,
+            //            's-ip'            => 0,
                 'cs-method'       => 'CMD',
                 'cs-uri-stem'     => 'URL',
                 'cs-uri-query'    => 'QS',
-    //			's-port'          => 0,
+            //            's-port'          => 0,
                 'cs-username'     => 'User',
                 'c-ip'            => 'IP',
-    //			'cs-version'      => 0,
+            //            'cs-version'      => 0,
                 'cs(User-Agent)'  => 'UA',
-    //			'cs(Cookie)'      => 0,
+            //            'cs(Cookie)'      => 0,
                 'cs(Referer)'     => 'Referer',
-    //			'cs-host'         => 0,
+            //            'cs-host'         => 0,
                 'sc-status'       => 'Code',
-    //			'sc-substatus'    => 0,
-    //			'sc-win32-status' => 0,
+            //            'sc-substatus'    => 0,
+            //            'sc-win32-status' => 0,
                 'sc-bytes'        => 'Size',
-    //			'cs-bytes'        => 0,
+            //            'cs-bytes'        => 0,
                 'time-taken'      => 'ms',
             );
 
@@ -133,13 +136,13 @@ class Iis {
             foreach ( $ufields as $field ) {
                 $regex[] = '(.*)';
                 $field   = trim($field);
-                if ( isset( $fields[ $field ] ) ) {
+                if (isset($fields[ $field ]) ) {
                     $thismatch = $fields[ $field ];
 
-                    if ( array_key_exists( $thismatch , $match ) ) {
-                        if ( $match[ $thismatch ] === false ) {
+                    if (array_key_exists($thismatch, $match) ) {
+                        if ($match[ $thismatch ] === false ) {
                             $match[ $thismatch ] = $position;
-                        } else if ( is_array( $match[ $thismatch ] ) ) {
+                        } else if (is_array($match[ $thismatch ]) ) {
                             $match[ $thismatch ][] = $position;
                             $match[ $thismatch ][] = ' ';
                         } else {
@@ -151,12 +154,12 @@ class Iis {
                 $position++;
             }
 
-            $match = array_filter( $match );
-            $regex = '|^' . implode( ' ' , $regex ) . '$|U';
+            $match = array_filter($match);
+            $regex = '|^' . implode(' ', $regex) . '$|U';
 
-            $regex_json_encoded = json_encode( $regex );
-            $match_json_encoded = json_encode( $match );
-            $types_json_encoded = json_encode( $types );
+            $regex_json_encoded = json_encode($regex);
+            $match_json_encoded = json_encode($match);
+            $types_json_encoded = json_encode($types);
 
             return<<<EOF
             "$software$counter": {
@@ -183,13 +186,13 @@ class Iis {
 
         // Type IIS
         //
-        $handle    = @fopen( $file , 'r' );
+        $handle    = @fopen($file, 'r');
         $remain    = 10;
         $test      = 0;
-        if ( $handle ) {
-            while ( ( $buffer = fgets( $handle , 4096 ) ) !== false ) {
-                $test = @preg_match('|^(.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*),(.*)$|U', $buffer );
-                if ( $test === 1 ) {
+        if ($handle ) {
+            while ( ( $buffer = fgets($handle, 4096) ) !== false ) {
+                $test = @preg_match('|^(.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*), (.*),(.*)$|U', $buffer);
+                if ($test === 1 ) {
                     break;
                 }
                 $remain--;
@@ -199,7 +202,7 @@ class Iis {
             }
             fclose($handle);
         }
-        if ( $test === 1 ) {
+        if ($test === 1 ) {
             return<<<EOF
             "$software$counter": {
                 "display" : "IIS Access #$counter",

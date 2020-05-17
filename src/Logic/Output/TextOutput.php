@@ -36,7 +36,8 @@ class TextOutput extends AbstractOutput implements TriggerableInterface
 
     /**
      * Count number of issues for a given file
-     * @param array[] $file
+     *
+     * @param  array[] $file
      * @return integer number of issues in all lines
      */
     private function countIssues($file)

@@ -64,7 +64,7 @@ class Integration
 
         
         var_dump($errorMessage);
-        throw new \Exception($errorMessage) ;
+        throw new \Exception($errorMessage);
     }
 
     public function getError()
@@ -93,11 +93,13 @@ class Integration
      */
     public static function getCodeForPrimaryKey()
     {
-        $integration = IntegrationModel::createIfNotExistAndReturn([
+        $integration = IntegrationModel::createIfNotExistAndReturn(
+            [
             'id' => static::$ID,
             'name' => ClasserExtractor::getClassName($modelName),
             'code' => static::class,
-        ]);
+            ]
+        );
         return $integration->id;
     }
     
@@ -106,34 +108,39 @@ class Integration
         $realPath = __DIR__.'/';
         
         collect(scandir($realPath))
-            ->each(function ($item) use ($realPath) {
-                if (in_array($item, ['.', '..'])) return;
-                if (is_dir($realPath . $item)) {
-                    $modelName = __NAMESPACE__.'\\'.$item.'\\'.$item;
-                   
-                    IntegrationModel::createIfNotExistAndReturn([
-                        'id' =>  call_user_func(array($modelName, 'getPrimary')),
-                        'name' => ClasserExtractor::getClassName($modelName),
-                        'code' => $modelName,
-                    ]);
-                }
-
-                if (is_file($realPath . $item) && $item!=='Integration.php') {
-                    Log::channel('sitec-finder')->warning(
-                        ErrorHelper::tratarMensagem(
-                            'Não deveria ter arquivo nessa pasta: '.$realPath . $item
-                        )
-                    );
-
-                    //@todo Remover
-                    try {
-                        throw new Exception;
-                    } catch(Exception $e) {
-                        dd($e->getTrace());
+            ->each(
+                function ($item) use ($realPath) {
+                    if (in_array($item, ['.', '..'])) { return;
                     }
+                    if (is_dir($realPath . $item)) {
+                        $modelName = __NAMESPACE__.'\\'.$item.'\\'.$item;
+                   
+                        IntegrationModel::createIfNotExistAndReturn(
+                            [
+                            'id' =>  call_user_func(array($modelName, 'getPrimary')),
+                            'name' => ClasserExtractor::getClassName($modelName),
+                            'code' => $modelName,
+                            ]
+                        );
+                    }
+
+                    if (is_file($realPath . $item) && $item!=='Integration.php') {
+                        Log::channel('sitec-finder')->warning(
+                            ErrorHelper::tratarMensagem(
+                                'Não deveria ter arquivo nessa pasta: '.$realPath . $item
+                            )
+                        );
+
+                        //@todo Remover
+                        try {
+                            throw new Exception;
+                        } catch(Exception $e) {
+                            dd($e->getTrace());
+                        }
                     
+                    }
                 }
-            });
+            );
     }
 
 }

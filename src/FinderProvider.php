@@ -141,11 +141,13 @@ class FinderProvider extends ServiceProvider
         /**
          * Finder Routes
          */
-        Route::group([
+        Route::group(
+            [
             'namespace' => '\Finder\Http\Controllers',
-        ], function ($router) {
-            require __DIR__.'/Routes/web.php';
-        });
+            ], function ($router) {
+                include __DIR__.'/Routes/web.php';
+            }
+        );
     }
 
     /**
@@ -165,13 +167,17 @@ class FinderProvider extends ServiceProvider
         // Register Migrations
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        $this->app->singleton('finder', function () {
-            return new Finder();
-        });
+        $this->app->singleton(
+            'finder', function () {
+                return new Finder();
+            }
+        );
 
-        $this->app->bind('FileService', function ($app) {                                                                                                                                                                                                                      
-            return new FileService();
-        });
+        $this->app->bind(
+            'FileService', function ($app) {                                                                                                                                                                                                                      
+                return new FileService();
+            }
+        );
         
         /*
         |--------------------------------------------------------------------------
@@ -181,16 +187,19 @@ class FinderProvider extends ServiceProvider
         /**
          * Singleton Finder
          */
-        $this->app->singleton(FinderService::class, function($app)
-        {
-            Log::channel('sitec-finder')->info('Singleton Finder');
-            return new FinderService(\Illuminate\Support\Facades\Config::get('sitec.finder'));
-        });
+        $this->app->singleton(
+            FinderService::class, function ($app) {
+                Log::channel('sitec-finder')->info('Singleton Finder');
+                return new FinderService(\Illuminate\Support\Facades\Config::get('sitec.finder'));
+            }
+        );
 
         // Register commands
-        $this->registerCommandFolders([
+        $this->registerCommandFolders(
+            [
             base_path('vendor/sierratecnologia/finder/src/Console/Commands') => '\Finder\Console\Commands',
-        ]);
+            ]
+        );
     }
 
     /**
@@ -213,11 +222,13 @@ class FinderProvider extends ServiceProvider
     public function registerDirectories()
     {
         // Publish config files
-        $this->publishes([
+        $this->publishes(
+            [
             // Paths
             $this->getPublishesPath('config/sitec') => config_path('sitec'),
             $this->getPublishesPath('config/medialibrary.php') => config_path('medialibrary.php'),
-        ], ['config',  'sitec', 'sitec-config']);
+            ], ['config',  'sitec', 'sitec-config']
+        );
 
         // // Publish finder css and js to public directory
         // $this->publishes([
@@ -234,18 +245,22 @@ class FinderProvider extends ServiceProvider
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
         $this->loadViewsFrom($viewsPath, 'finder');
-        $this->publishes([
+        $this->publishes(
+            [
             $viewsPath => base_path('resources/views/vendor/finder'),
-        ], ['views',  'sitec', 'sitec-views']);
+            ], ['views',  'sitec', 'sitec-views']
+        );
 
     }
     
     private function loadTranslations()
     {
         // Publish lanaguage files
-        $this->publishes([
+        $this->publishes(
+            [
             $this->getResourcesPath('lang') => resource_path('lang/vendor/finder')
-        ], ['lang',  'sitec', 'sitec-lang', 'translations']);
+            ], ['lang',  'sitec', 'sitec-lang', 'translations']
+        );
 
         // Load translations
         $this->loadTranslationsFrom($this->getResourcesPath('lang'), 'finder');
@@ -257,11 +272,13 @@ class FinderProvider extends ServiceProvider
      */
     private function loadLogger()
     {
-        Config::set('logging.channels.sitec-finder', [
+        Config::set(
+            'logging.channels.sitec-finder', [
             'driver' => 'single',
             'path' => storage_path('logs/sitec-finder.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
-        ]);
+            ]
+        );
     }
 
 }

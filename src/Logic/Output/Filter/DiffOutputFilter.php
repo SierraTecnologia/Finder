@@ -13,19 +13,22 @@ class DiffOutputFilter implements OutputFilterInterface
 {
     /**
      * Root path to which the diff file paths are relative.
+     *
      * @var string root path.
      */
     protected $root;
 
     /**
      * An array of Diff objects.
+     *
      * @var SebastianBergmann\Diff\Diff[] array of diff objects.
      */
     protected $diffs;
 
     /**
      * Constructor.
-     * @param string $root root path.
+     *
+     * @param string                        $root  root path.
      * @param SebastianBergmann\Diff\Diff[] $diffs array of diff objects.
      */
     public function __construct($root, array $diffs)
@@ -60,6 +63,7 @@ class DiffOutputFilter implements OutputFilterInterface
 
     /**
      * Files touched by the diff and that received at least one new line of code.
+     *
      * @return string[] files paths.
      */
     public function getFilesWithAddedCode()
@@ -73,6 +77,7 @@ class DiffOutputFilter implements OutputFilterInterface
 
     /**
      * Gets the list of files and lines touched by the diff.
+     *
      * @return array where the key is the file path and its values the lines.
      */
     protected function getTouchedFilesAndLines()
@@ -102,6 +107,7 @@ class DiffOutputFilter implements OutputFilterInterface
 
     /**
      * Search for diffs where at least one line of code was added.
+     *
      * @return SebastianBergmann\Diff\Diff[] diffs adding code.
      */
     protected function getDiffsWithAddedCode()

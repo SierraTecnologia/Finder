@@ -59,8 +59,8 @@ class GitlabBuild extends GitBuild
     }
 
     /**
-    * Get the URL to be used to clone this remote repository.
-    */
+     * Get the URL to be used to clone this remote repository.
+     */
     protected function getCloneUrl()
     {
         if (is_null($this->getProject())) {

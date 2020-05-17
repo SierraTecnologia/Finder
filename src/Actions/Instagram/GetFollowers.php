@@ -23,11 +23,13 @@ class GetFollowers extends Instagram
         /**
          * Associa cada seguidor a conta
          */
-        $account = Account::create([
+        $account = Account::create(
+            [
             'username' => 'ricardosierra',
             'integration_id' => \Finder\Spider\Integrations\Instagram\Instagram::$ID,
             // 'likes' => '43 pessoas curtiram'
-        ]);
+            ]
+        );
         $account->relations()->attach($account, ['relation_type' => 'followers']);
     }
 }

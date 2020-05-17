@@ -85,64 +85,66 @@ class Project extends Base
     {
         parent::boot();
 
-        self::creating(function($model){
-            // todo Observer 
-            $model->dateCreated = time();
-            $model->dateModified = time();
+        self::creating(
+            function ($model) {
+                // todo Observer 
+                $model->dateCreated = time();
+                $model->dateModified = time();
 
-            if (empty($model->status)){
-                $model->status = '0';
-            }
+                if (empty($model->status)) {
+                    $model->status = '0';
+                }
 
-            if (empty($model->viewPolicy)){
-                $model->viewPolicy = 'public';
-            }
-            if (empty($model->editPolicy)){
-                $model->editPolicy = 'public';
-            }
-            if (empty($model->joinPolicy)){
-                $model->joinPolicy = 'public';
-            }
-            if (empty($model->icon)){
-                $model->icon = 'money';
-            }
-            if (empty($model->color)){
-                $model->color = 'blue';
-            }
-            if (empty($model->mailKey)){
-                $model->mailKey = 'sierra.csi@gmail.com';
-            }
+                if (empty($model->viewPolicy)) {
+                    $model->viewPolicy = 'public';
+                }
+                if (empty($model->editPolicy)) {
+                    $model->editPolicy = 'public';
+                }
+                if (empty($model->joinPolicy)) {
+                    $model->joinPolicy = 'public';
+                }
+                if (empty($model->icon)) {
+                    $model->icon = 'money';
+                }
+                if (empty($model->color)) {
+                    $model->color = 'blue';
+                }
+                if (empty($model->mailKey)) {
+                    $model->mailKey = 'sierra.csi@gmail.com';
+                }
 
-            if (empty($model->hasWorkboard)){
-                $model->hasWorkboard = '0';
-            }
-            if (empty($model->hasMilestones)){
-                $model->hasMilestones = '0';
-            }
-            if (empty($model->hasSubprojects)){
-                $model->hasSubprojects = '0';
-            }
-            if (empty($model->properties)){
-                $model->properties = $model->name;
-            }
-            if (empty($model->subtype)){
-                $model->subtype = $model->name;
-            }
+                if (empty($model->hasWorkboard)) {
+                    $model->hasWorkboard = '0';
+                }
+                if (empty($model->hasMilestones)) {
+                    $model->hasMilestones = '0';
+                }
+                if (empty($model->hasSubprojects)) {
+                    $model->hasSubprojects = '0';
+                }
+                if (empty($model->properties)) {
+                    $model->properties = $model->name;
+                }
+                if (empty($model->subtype)) {
+                    $model->subtype = $model->name;
+                }
 
-            if (empty($model->projectPath)){
-                $model->projectPath = $model->name;
-            }
-            if (empty($model->projectDepth)){
-                $model->projectDepth = 1;
-            }
-            if (empty($model->projectPathKey)){
-                $model->projectPathKey = substr($model->name, 0, 4);
-            }
+                if (empty($model->projectPath)) {
+                    $model->projectPath = $model->name;
+                }
+                if (empty($model->projectDepth)) {
+                    $model->projectDepth = 1;
+                }
+                if (empty($model->projectPathKey)) {
+                    $model->projectPathKey = substr($model->name, 0, 4);
+                }
 
 
-            $model->phid = General::generateToken();
-            $model->authorPHID = 1;
-        });
+                $model->phid = General::generateToken();
+                $model->authorPHID = 1;
+            }
+        );
     }
 
     public function getUsers()

@@ -14,8 +14,8 @@ class Update extends SenhorVerdugo
             $workLog = new Worklog();
 
             $workLog->setComment('I did edit previous worklog here.')
-                    ->setStarted("2016-05-29 13:15:34")
-                    ->setTimeSpent('3d 4h 5m');
+                ->setStarted("2016-05-29 13:15:34")
+                ->setTimeSpent('3d 4h 5m');
 
             $issueService = new IssueService();
 
@@ -37,7 +37,7 @@ class Update extends SenhorVerdugo
     {
         $issueKey = "TEST-879";
 
-        try {			
+        try {            
             $transition = new Transition();
             $transition->setTransitionName('Resolved');
             $transition->setCommentBody('performing the transition via REST API.');
@@ -46,7 +46,7 @@ class Update extends SenhorVerdugo
 
             $issueService->transition($issueKey, $transition);
         } catch (SenhorVerdugoException $e) {
-            $this->assertTrue(FALSE, "add Comment Failed : " . $e->getMessage());
+            $this->assertTrue(false, "add Comment Failed : " . $e->getMessage());
         }
     }
 
@@ -85,7 +85,7 @@ class Update extends SenhorVerdugo
 
             var_dump($ret);
         } catch (SenhorVerdugoException $e) {
-            $this->assertTrue(FALSE, "Change Assignee Failed : " . $e->getMessage());
+            $this->assertTrue(false, "Change Assignee Failed : " . $e->getMessage());
         }
     }
 
@@ -93,18 +93,17 @@ class Update extends SenhorVerdugo
     {
         $issueKey = "TEST-879";
 
-        try {			
+        try {            
             $issueField = new IssueField(true);
         
             $issueField->setAssigneeName("admin")
-                        ->setPriorityName("Blocker")
-                        ->setIssueType("Task")
-                        ->addLabel("test-label-first")
-                        ->addLabel("test-label-second")
-                        ->addVersion("1.0.1")
-                        ->addVersion("1.0.2")
-                        ->setDescription("This is a shorthand for a set operation on the summary field")
-            ;
+                ->setPriorityName("Blocker")
+                ->setIssueType("Task")
+                ->addLabel("test-label-first")
+                ->addLabel("test-label-second")
+                ->addVersion("1.0.1")
+                ->addVersion("1.0.2")
+                ->setDescription("This is a shorthand for a set operation on the summary field");
         
             // optionally set some query params
             $editParams = [
@@ -118,7 +117,7 @@ class Update extends SenhorVerdugo
         
             var_dump($ret);
         } catch (SenhorVerdugoException $e) {
-            $this->assertTrue(FALSE, "update Failed : " . $e->getMessage());
+            $this->assertTrue(false, "update Failed : " . $e->getMessage());
         }
     }
 
@@ -133,8 +132,7 @@ class Update extends SenhorVerdugo
                 ->setDescription('Updated Example Project description')
                 ->setLead('new-leader')
                 ->setUrl('http://new.example.com')
-                ->setAssigneeType('UNASSIGNED')
-            ;
+                ->setAssigneeType('UNASSIGNED');
 
             $proj = new ProjectService();
 

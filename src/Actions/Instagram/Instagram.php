@@ -35,7 +35,8 @@ class Instagram
         return $this;
     }
 
-    private function getCache($cache) {
+    private function getCache($cache)
+    {
 
         if (!$cache) {
             return '';
@@ -46,9 +47,11 @@ class Instagram
 
     public function execute()
     {
-        collect($this->targets)->each(function($target) {
-            $this->executeForEach($target);
-        });
+        collect($this->targets)->each(
+            function ($target) {
+                $this->executeForEach($target);
+            }
+        );
 
         return $this;
     }

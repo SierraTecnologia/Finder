@@ -8,7 +8,7 @@
  * Licensed under the GPLv3 license.
  */
 ?><?php
-include_once 'global.inc.php';
+require_once 'global.inc.php';
 list( $badges , $files , $tz ) = config_load();
 
 /*
@@ -17,7 +17,7 @@ list( $badges , $files , $tz ) = config_load();
 |--------------------------------------------------------------------------
 |
 */
-$current_user = Sentinel::attempt( $files );
+$current_user = Sentinel::attempt($files);
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +25,9 @@ $current_user = Sentinel::attempt( $files );
 |--------------------------------------------------------------------------
 |
 */
-if (( ! isset( $_POST['file'] ) ) ||
-    ( ! isset( $_POST['max'] ) ) ||
-    ( ! isset( $_POST['ldv'] ) )
+if (( ! isset($_POST['file']) ) 
+    || ( ! isset($_POST['max']) ) 
+    || ( ! isset($_POST['ldv']) )
 ) {
     die();
 }
@@ -108,37 +108,37 @@ $old_lastline        = @$_POST['lastline'];
 
 header('Content-type: application/json');
 
-if ( ! csrf_verify() ) {
-    $return['error'] = __( 'Please refresh the page.' );
-    echo json_encode( $return );
+if (! csrf_verify() ) {
+    $return['error'] = __('Please refresh the page.');
+    echo json_encode($return);
     die();
 }
 
-if ( ! isset( $files[$file_id] ) ) {
-    $return['error'] = sprintf( __( 'File ID <code>%s</code> does not exist, please review your configuration file and stop playing!' ) , $file_id );
-    echo json_encode( $return );
+if (! isset($files[$file_id]) ) {
+    $return['error'] = sprintf(__('File ID <code>%s</code> does not exist, please review your configuration file and stop playing!'), $file_id);
+    echo json_encode($return);
     die();
 }
 
 $file_path = @$files[$file_id]['path'];
-if ( ! file_exists( $file_path ) ) {
-    $return['error'] = sprintf( __( 'File <code>%s</code> for file ID <code>%s</code> does not exist, please review your configuration file.' ) , $file_path , $file_id );
-    echo json_encode( $return );
+if (! file_exists($file_path) ) {
+    $return['error'] = sprintf(__('File <code>%s</code> for file ID <code>%s</code> does not exist, please review your configuration file.'), $file_path, $file_id);
+    echo json_encode($return);
     die();
 }
 
-$errors = config_check( $files );
-if ( is_array( $errors ) ) {
-    $return['error'] = __( 'Configuration file has changed and is buggy now. Please refresh the page.' );
-    echo json_encode( $return );
+$errors = config_check($files);
+if (is_array($errors) ) {
+    $return['error'] = __('Configuration file has changed and is buggy now. Please refresh the page.');
+    echo json_encode($return);
     die();
 }
 
 $regex     = $files[ $file_id ][ 'format' ][ 'regex' ];
 $match     = $files[ $file_id ][ 'format' ][ 'match' ];
 $types     = $files[ $file_id ][ 'format' ][ 'types' ];
-$multiline = ( isset( $files[ $file_id ][ 'format' ][ 'multiline' ] ) ) ? $files[ $file_id ][ 'format' ][ 'multiline' ] : '';
-$exclude   = ( isset( $files[ $file_id ][ 'format' ][ 'exclude' ]   ) ) ? $files[ $file_id ][ 'format' ][ 'exclude' ] : array();
+$multiline = ( isset($files[ $file_id ][ 'format' ][ 'multiline' ]) ) ? $files[ $file_id ][ 'format' ][ 'multiline' ] : '';
+$exclude   = ( isset($files[ $file_id ][ 'format' ][ 'exclude' ]) ) ? $files[ $file_id ][ 'format' ][ 'exclude' ] : array();
 
 /*
 |--------------------------------------------------------------------------
@@ -147,10 +147,10 @@ $exclude   = ( isset( $files[ $file_id ][ 'format' ][ 'exclude' ]   ) ) ? $files
 |
 */
 $now = new DateTime();
-if ( ! is_null( $tz ) ) {
-    $now->setTimezone( new DateTimeZone( $tz ) );
+if (! is_null($tz) ) {
+    $now->setTimezone(new DateTimeZone($tz));
 }
-$now = $now->format( 'Y/m/d H:i:s' );
+$now = $now->format('Y/m/d H:i:s');
 
 /*
 |--------------------------------------------------------------------------
@@ -161,7 +161,7 @@ $now = $now->format( 'Y/m/d H:i:s' );
 | If not set, just begin at the end of the file
 |
 */
-if ( isset( $_POST['sp'] ) ) {
+if (isset($_POST['sp']) ) {
     $start_offset = (int)$_POST['sp'] - 1;
     $start_from   = SEEK_SET;
     $load_more    = true;
@@ -178,7 +178,7 @@ else {
 |--------------------------------------------------------------------------
 |
 */
-$new_file_size = filesize( $file_path ); // Must be the nearest of fseek !
+$new_file_size = filesize($file_path); // Must be the nearest of fseek !
 $full          = false;
 if ($reset === 1) {
     $full          = true;
@@ -189,7 +189,7 @@ else {
     if ($data_to_parse < 0) { // Log file has been rotated, read all. It is not possible on apache because server is restarted gracefully but perhaps user has done something...
         $data_to_parse    = $new_file_size;
         $full             = true;
-        $return['notice'] = '<strong>'. $now . '</strong> : ' . sprintf( __('Log file has been rotated (previous size was %s and new one is %s)') , human_filesize($old_file_size) , human_filesize($new_file_size) );
+        $return['notice'] = '<strong>'. $now . '</strong> : ' . sprintf(__('Log file has been rotated (previous size was %s and new one is %s)'), human_filesize($old_file_size), human_filesize($new_file_size));
     }
     if ($old_file_size === 0) {
         $full = true;
@@ -202,7 +202,7 @@ else {
 |--------------------------------------------------------------------------
 |
 */
-$logs = LogParser::getNewLines( $regex , $match , $types , $tz , $max , $exclude , $file_path , $start_offset , $start_from , $load_more , $old_lastline , $multiline ,  $search , $data_to_parse , $full , MAX_SEARCH_LOG_TIME );
+$logs = LogParser::getNewLines($regex, $match, $types, $tz, $max, $exclude, $file_path, $start_offset, $start_from, $load_more, $old_lastline, $multiline,  $search, $data_to_parse, $full, MAX_SEARCH_LOG_TIME);
 
 /*
 |--------------------------------------------------------------------------
@@ -210,15 +210,15 @@ $logs = LogParser::getNewLines( $regex , $match , $types , $tz , $max , $exclude
 |--------------------------------------------------------------------------
 |
 */
-if ( ! is_array( $logs ) ) {
+if (! is_array($logs) ) {
     switch ( $logs ) {
-        case '1':
-            $return['error'] = sprintf( __( 'File <code>%s</code> for file ID <code>%s</code> does not exist anymore...' ) , $file_path , $file_id );
-            break;
+    case '1':
+        $return['error'] = sprintf(__('File <code>%s</code> for file ID <code>%s</code> does not exist anymore...'), $file_path, $file_id);
+        break;
 
-        default:
-            $return['error'] = sprintf( __( 'Unknown error %s' ) , $logs );
-            break;
+    default:
+        $return['error'] = sprintf(__('Unknown error %s'), $logs);
+        break;
     }
 }
 
@@ -230,11 +230,11 @@ if ( ! is_array( $logs ) ) {
 */
 else {
 
-    $return = array_merge( $return , $logs );
+    $return = array_merge($return, $logs);
     $ln     = $return['count'];
     $filem  = $return['filemodif'];
 
-    if ( @$logs['notice'] === 1 ) {
+    if (@$logs['notice'] === 1 ) {
         $return[ 'notice' ] = '<strong>'. $now . '</strong> &gt; ' . __('Log file has been rotated');
     }
 
@@ -245,9 +245,9 @@ else {
     |--------------------------------------------------------------------------
     |
     */
-    if ( $logs[ 'found' ] === true ) {
+    if ($logs[ 'found' ] === true ) {
         foreach ( $match as $k => $v ) {
-            $return['headers'][ $k ] = __( $k );
+            $return['headers'][ $k ] = __($k);
         }
     }
 
@@ -257,8 +257,8 @@ else {
     |--------------------------------------------------------------------------
     |
     */
-    if ( $load_more === true ) {
-        unset( $return['lastline']    );
+    if ($load_more === true ) {
+        unset($return['lastline']);
     } else {
         $return['newfilesize'] = $new_file_size;
     }
@@ -269,42 +269,43 @@ else {
     |--------------------------------------------------------------------------
     |
     */
-    $return['footer']   = sprintf( __( '%s in <code>%sms</code> with <code>%s</code> of logs, <code>%s</code> skipped line(s), <code>%s</code> unreadable line(s).<br/>File <code>%s</code> was last modified on <code>%s</code> at <code>%s</code>, size is <code>%s</code>%s' )
-        , ( $load_more === false )
+    $return['footer']   = sprintf(
+        __('%s in <code>%sms</code> with <code>%s</code> of logs, <code>%s</code> skipped line(s), <code>%s</code> unreadable line(s).<br/>File <code>%s</code> was last modified on <code>%s</code> at <code>%s</code>, size is <code>%s</code>%s'),
+        ( $load_more === false )
             ? (
                 ( $ln > 1 )
-                ? sprintf( __('%s new logs found') , $ln )
+                ? sprintf(__('%s new logs found'), $ln)
                 : (
                     ( $ln === 0 )
-                        ? __( 'no new log found')
-                        : __( '1 new log found')
+                        ? __('no new log found')
+                        : __('1 new log found')
                 )
             )
             : (
                 ( $ln > 1 )
-                ? sprintf( __('%s old logs found') , $ln )
+                ? sprintf(__('%s old logs found'), $ln)
                 : (
                     ( $ln === 0 )
-                        ? __( 'no old log found')
-                        : __( '1 olg log found')
+                        ? __('no old log found')
+                        : __('1 olg log found')
                 )
-            )
-        , $return['duration']
-        , human_filesize( $return['bytes'] )
-        , $return['skiplines']
-        , $return['errorlines']
-        , $file_path
-        , $filem
-        , $tz
-        , human_filesize( $new_file_size )
-        , ( isset( $files[ $file_id ][ 'format' ][ 'type' ] ) )
-            ? ', ' . sprintf( __('log type is <code>%s</code>') , $files[ $file_id ][ 'format' ][ 'type' ] )
+            ),
+        $return['duration'],
+        human_filesize($return['bytes']),
+        $return['skiplines'],
+        $return['errorlines'],
+        $file_path,
+        $filem,
+        $tz,
+        human_filesize($new_file_size),
+        ( isset($files[ $file_id ][ 'format' ][ 'type' ]) )
+            ? ', ' . sprintf(__('log type is <code>%s</code>'), $files[ $file_id ][ 'format' ][ 'type' ])
             : ''
     );
 
 }
 
-echo json_encode( $return );
+echo json_encode($return);
 
 die();
 

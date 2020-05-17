@@ -69,8 +69,7 @@ class Message
         $this
             ->setFeed($feed)
             ->setUser($user)
-            ->setPublishedAt($publishedAt)
-        ;
+            ->setPublishedAt($publishedAt);
     }
 
     public function getId()

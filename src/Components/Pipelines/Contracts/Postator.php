@@ -2,4 +2,6 @@
 
 namespace Finder\Components\Pipelines\Contracts;
 
-interface Postator{}
+interface Postator
+{
+}

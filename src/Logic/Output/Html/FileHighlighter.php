@@ -8,20 +8,23 @@ class FileHighlighter
 {
     /**
      * Analyzed file.
+     *
      * @var string file path;
      */
     protected $filePath;
 
     /**
      * Lines of code with quality issues.
+     *
      * @var array lines with respective issues.
      */
     protected $linesWithIssues;
 
     /**
      * Set dependencies.
-     * @param string $filePath analyzed file path.
-     * @param array $linesWithIssues lines with respective issues.
+     *
+     * @param string $filePath        analyzed file path.
+     * @param array  $linesWithIssues lines with respective issues.
      */
     public function __construct($filePath, array $linesWithIssues)
     {
@@ -31,6 +34,7 @@ class FileHighlighter
 
     /**
      * Highlight PHP file showing issues and line numbers.
+     *
      * @return string HTML.
      */
     public function getHtml()
@@ -58,6 +62,7 @@ class FileHighlighter
 
     /**
      * Ammount of characters of the number of the last line of code.
+     *
      * @return integer padding length.
      */
     protected function getLineNumberPaddingLength()
@@ -69,6 +74,7 @@ class FileHighlighter
 
     /**
      * Split all formatted PHP lines of code into an array.
+     *
      * @return string[] HTML splitted into an array.
      */
     protected function getFormattedPHPFileLines()
@@ -79,7 +85,8 @@ class FileHighlighter
 
     /**
      * Create MaterialDesign tooltip showing issues for a given line of code.
-     * @param integer $lineNumber line number.
+     *
+     * @param  integer $lineNumber line number.
      * @return string HTML.
      */
     protected function getIssuesTooltip($lineNumber)

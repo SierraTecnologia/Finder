@@ -66,13 +66,15 @@ class Imagen extends ArchiveTrait
      */
     public function getUrlAttribute()
     {
-        return $this->remember('url', function () {
-            if ($this->isLocalFile()) {
-                return url(str_replace('public/', 'storage/', $this->location));
-            }
+        return $this->remember(
+            'url', function () {
+                if ($this->isLocalFile()) {
+                    return url(str_replace('public/', 'storage/', $this->location));
+                }
 
-            return FileService::fileAsPublicAsset($this->location);
-        });
+                return FileService::fileAsPublicAsset($this->location);
+            }
+        );
     }
 
     /**
@@ -84,15 +86,17 @@ class Imagen extends ArchiveTrait
      */
     public function getJsUrlAttribute()
     {
-        return $this->remember('js_url', function () {
-            if ($this->isLocalFile()) {
-                $file = url(str_replace('public/', 'storage/', $this->location));
-            } else {
-                $file = FileService::fileAsPublicAsset($this->location);
-            }
+        return $this->remember(
+            'js_url', function () {
+                if ($this->isLocalFile()) {
+                    $file = url(str_replace('public/', 'storage/', $this->location));
+                } else {
+                    $file = FileService::fileAsPublicAsset($this->location);
+                }
 
-            return str_replace(url('/'), '', $file);
-        });
+                return str_replace(url('/'), '', $file);
+            }
+        );
     }
 
     /**
@@ -104,17 +108,19 @@ class Imagen extends ArchiveTrait
      */
     public function getDataUrlAttribute()
     {
-        return $this->remember('data_url', function () {
-            if ($this->isLocalFile()) {
-                $imagePath = storage_path('app/'.$this->location);
-            } else {
-                $imagePath = Storage::disk(\Illuminate\Support\Facades\Config::get('facilitador.storage.disk', \Illuminate\Support\Facades\Config::get('filesystems.default', 'local')))->url($this->location);
+        return $this->remember(
+            'data_url', function () {
+                if ($this->isLocalFile()) {
+                    $imagePath = storage_path('app/'.$this->location);
+                } else {
+                    $imagePath = Storage::disk(\Illuminate\Support\Facades\Config::get('facilitador.storage.disk', \Illuminate\Support\Facades\Config::get('filesystems.default', 'local')))->url($this->location);
+                }
+
+                $image = InterventionImage::make($imagePath)->resize(800, null);
+
+                return (string) $image->encode('data-url');
             }
-
-            $image = InterventionImage::make($imagePath)->resize(800, null);
-
-            return (string) $image->encode('data-url');
-        });
+        );
     }
 
     public function remember($attribute, $closure)

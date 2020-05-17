@@ -45,11 +45,11 @@ class ActionController extends Controller
 
     public function executeAction($modelId, $actionCod)
     {
-        if (!$action = Action::getActionByCode($actionCod)){
+        if (!$action = Action::getActionByCode($actionCod)) {
             abort(404, 'Action not Found.');
         }
         $modelClass = $action->classAfetada;
-        if (!$model = $modelClass::find($modelId)){
+        if (!$model = $modelClass::find($modelId)) {
             abort(404, 'Model not Found.');
         }
 
@@ -76,29 +76,33 @@ class ActionController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-      $request->validate([
-        'gateway_name'=>'required',
-        'gateway_price'=> 'required|integer',
-        'gateway_qty' => 'required|integer'
-      ]);
-      $gateway = new Action([
-        'gateway_name' => $request->get('gateway_name'),
-        'gateway_price'=> $request->get('gateway_price'),
-        'gateway_qty'=> $request->get('gateway_qty')
-      ]);
-      $gateway->save();
-      return redirect('/actions')->with('success', 'Stock has been added');
+        $request->validate(
+            [
+            'gateway_name'=>'required',
+            'gateway_price'=> 'required|integer',
+            'gateway_qty' => 'required|integer'
+            ]
+        );
+        $gateway = new Action(
+            [
+            'gateway_name' => $request->get('gateway_name'),
+            'gateway_price'=> $request->get('gateway_price'),
+            'gateway_qty'=> $request->get('gateway_qty')
+            ]
+        );
+        $gateway->save();
+        return redirect('/actions')->with('success', 'Stock has been added');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -110,7 +114,7 @@ class ActionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -123,17 +127,19 @@ class ActionController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int                      $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
+        $request->validate(
+            [
             'gateway_name'=>'required',
             'gateway_price'=> 'required|integer',
             'gateway_qty' => 'required|integer'
-        ]);
+            ]
+        );
 
         $gateway = Action::findOrFail($id);
         $gateway->gateway_name = $request->get('gateway_name');
@@ -147,7 +153,7 @@ class ActionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -130,33 +130,36 @@ class GithubBuild extends GitBuild
         }
 
         switch ($this->getStatus()) {
-            case 0:
-            case 1:
-                $status = 'pending';
-                $description = 'PHP Censor build running.';
-                break;
-            case 2:
-                $status = 'success';
-                $description = 'PHP Censor build passed.';
-                break;
-            case 3:
-                $status = 'failure';
-                $description = 'PHP Censor build failed.';
-                break;
-            default:
-                $status = 'error';
-                $description = 'PHP Censor build failed to complete.';
-                break;
+        case 0:
+        case 1:
+            $status = 'pending';
+            $description = 'PHP Censor build running.';
+            break;
+        case 2:
+            $status = 'success';
+            $description = 'PHP Censor build passed.';
+            break;
+        case 3:
+            $status = 'failure';
+            $description = 'PHP Censor build failed.';
+            break;
+        default:
+            $status = 'error';
+            $description = 'PHP Censor build failed to complete.';
+            break;
         }
 
         $phpCensorUrl = Config::getInstance()->get('php-censor.url');
 
         $url    = '/repos/' . $project->getReference() . '/statuses/' . $this->getCommitId();
-        $client = new Client([
+        $client = new Client(
+            [
             'base_uri'    => 'https://api.' . $this->getDomain(),
             'http_errors' => false,
-        ]);
-        $response = $client->post($url, [
+            ]
+        );
+        $response = $client->post(
+            $url, [
             'headers' => [
                 'Authorization' => 'token ' . $token,
                 'Content-Type'  => 'application/x-www-form-urlencoded'
@@ -167,7 +170,8 @@ class GithubBuild extends GitBuild
                 'description' => $description,
                 'context'     => 'PHP Censor',
             ]
-        ]);
+            ]
+        );
 
         $status = (int)$response->getStatusCode();
 
@@ -336,7 +340,7 @@ class GithubBuild extends GitBuild
      *
      * @param Builder $builder
      * @param string  $file
-     * @param int $line
+     * @param int     $line
      *
      * @return int|null
      */

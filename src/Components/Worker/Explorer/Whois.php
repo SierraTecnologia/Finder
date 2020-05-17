@@ -9,10 +9,11 @@ use Finder\Models\Digital\Infra\DomainLink;
 /**
  * Spider Class
  *
- * @class  Spider
+ * @class   Spider
  * @package crawler
  */
-class Whois {
+class Whois
+{
 
     protected $domain = false;
 

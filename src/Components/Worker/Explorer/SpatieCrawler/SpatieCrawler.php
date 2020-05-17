@@ -14,11 +14,12 @@ abstract class SpatieCrawler
     {
         return Crawler::create()->ignoreRobots()->setConcurrency(1)
         // Stop in 5 urls
-        ->setMaximumCrawlCount(5)
+            ->setMaximumCrawlCount(5)
         // Maxim REsponse e Delay 
-        ->setMaximumResponseSize(1024 * 1024 * 3)->setDelayBetweenRequests(150);
+            ->setMaximumResponseSize(1024 * 1024 * 3)->setDelayBetweenRequests(150);
     }
-    public function execute($url){
+    public function execute($url)
+    {
 
         $this->crawler = $this->getCrawler()
             ->setCrawlObserver(CrawlObserver)
@@ -28,11 +29,13 @@ abstract class SpatieCrawler
     public function executeMultipleObservers()
     {
         $this->crawler = $this->getCrawler()
-            ->setCrawlObservers([
+            ->setCrawlObservers(
+                [
                 CrawlObserver,
                 CrawlObserver,
                 // ...
-            ])
+                ]
+            )
             ->startCrawling($url);
 
             //or
@@ -53,11 +56,15 @@ abstract class SpatieCrawler
     {
         $domCrawler = new DomCrawler($html);
     
-        return collect($domCrawler->filterXpath('//a')
-            ->extract(['href']))
-            ->map(function ($url) {
-                return Url::create($url);
-            });
+        return collect(
+            $domCrawler->filterXpath('//a')
+                ->extract(['href'])
+        )
+            ->map(
+                function ($url) {
+                    return Url::create($url);
+                }
+            );
     }
 
     protected function normalizeUrl(Url $url)
@@ -83,17 +90,25 @@ abstract class SpatieCrawler
         $allLinks = $this->getAllLinks($html);
 
         collect($allLinks)
-            ->filter(function (Url $url) {
-                return !$url->isEmailUrl();
-            })
-            ->map(function (Url $url) {
-                return $this->normalizeUrl($url);
-            })
-            ->filter(function (Url $url) {
-                return $this->crawlProfile->shouldCrawl($url);
-            })
-            ->each(function (Url $url) {
-                $this->crawlUrl($url);
-            });
+            ->filter(
+                function (Url $url) {
+                    return !$url->isEmailUrl();
+                }
+            )
+            ->map(
+                function (Url $url) {
+                    return $this->normalizeUrl($url);
+                }
+            )
+            ->filter(
+                function (Url $url) {
+                    return $this->crawlProfile->shouldCrawl($url);
+                }
+            )
+            ->each(
+                function (Url $url) {
+                    $this->crawlUrl($url);
+                }
+            );
     }
 }

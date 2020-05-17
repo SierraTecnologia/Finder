@@ -111,23 +111,23 @@ class BitbucketBuild extends GitBuild
         }
 
         switch ($this->getStatus()) {
-            case 0:
-            case 1:
-                $status = 'INPROGRESS';
-                $description = 'PHP Censor build running.';
-                break;
-            case 2:
-                $status = 'SUCCESSFUL';
-                $description = 'PHP Censor build passed.';
-                break;
-            case 3:
-                $status = 'FAILED';
-                $description = 'PHP Censor build failed.';
-                break;
-            default:
-                $status = 'STOPPED';
-                $description = 'PHP Censor build failed to complete.';
-                break;
+        case 0:
+        case 1:
+            $status = 'INPROGRESS';
+            $description = 'PHP Censor build running.';
+            break;
+        case 2:
+            $status = 'SUCCESSFUL';
+            $description = 'PHP Censor build passed.';
+            break;
+        case 3:
+            $status = 'FAILED';
+            $description = 'PHP Censor build failed.';
+            break;
+        default:
+            $status = 'STOPPED';
+            $description = 'PHP Censor build failed to complete.';
+            break;
         }
 
         $phpCensorUrl = Config::getInstance()->get('php-censor.url');
@@ -140,11 +140,14 @@ class BitbucketBuild extends GitBuild
             $this->getCommitId()
         );
 
-        $client = new Client([
+        $client = new Client(
+            [
             'base_uri'    => 'https://api.bitbucket.org',
             'http_errors' => false,
-        ]);
-        $response = $client->post($url, [
+            ]
+        );
+        $response = $client->post(
+            $url, [
             'auth'    => [$username, $appPassword],
             'headers' => [
                 'Content-Type' => 'application/json',
@@ -156,7 +159,8 @@ class BitbucketBuild extends GitBuild
                 'name'        => 'PHP Censor Build #' . $this->getId(),
                 'description' => $description,
             ],
-        ]);
+            ]
+        );
 
         $status = (int)$response->getStatusCode();
 
@@ -309,7 +313,7 @@ class BitbucketBuild extends GitBuild
      *
      * @param Builder $builder
      * @param string  $file
-     * @param int $line
+     * @param int     $line
      *
      * @return int|null
      */

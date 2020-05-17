@@ -32,14 +32,15 @@ class Create extends Jira
         }
     }
 
-    public function issueWorklog($issueKey = 'TEST-961'){
+    public function issueWorklog($issueKey = 'TEST-961')
+    {
 
         try {
             $workLog = new Worklog();
         
             $workLog->setComment('I did some work here.')
-                    ->setStarted("2016-05-28 12:35:54")
-                    ->setTimeSpent('1d 2h 3m');
+                ->setStarted("2016-05-28 12:35:54")
+                ->setTimeSpent('1d 2h 3m');
         
             $issueService = new IssueService();
         
@@ -62,7 +63,7 @@ class Create extends Jira
 
             $il->setInwardIssue('TEST-258')
                 ->setOutwardIssue('TEST-249')
-                ->setLinkTypeName('Relates' )
+                ->setLinkTypeName('Relates')
                 ->setComment('Linked related issue via REST API.');
                     
             $ils = new IssueLinkService();
@@ -87,8 +88,7 @@ class Create extends Jira
             $ril->setUrl('http://www.mycompany.com/support?id=1')
                 ->setTitle('Remote Link Title')
                 ->setRelationship('causes')
-                ->setSummary('Crazy customer support issue')
-            ;
+                ->setSummary('Crazy customer support issue');
 
             $rils = $issueService->createOrUpdateRemoteIssueLink($issueKey, $ril);
 
@@ -103,7 +103,7 @@ class Create extends Jira
     {
         $issueKey = "TEST-879";
 
-        try {			
+        try {            
             $comment = new Comment();
 
             $body = "<<<COMMENT
@@ -135,7 +135,8 @@ class Create extends Jira
             $issueService = new IssueService();
         
             // multiple file upload support.
-            $ret = $issueService->addAttachments($issueKey, 
+            $ret = $issueService->addAttachments(
+                $issueKey, 
                 ['screen_capture.png', 'bug-description.pdf', 'README.md']
             );
         
@@ -153,18 +154,18 @@ class Create extends Jira
             $issueFieldOne = new IssueField();
 
             $issueFieldOne->setProjectKey("TEST")
-                        ->setSummary("something's wrong")
-                        ->setPriorityName("Critical")
-                        ->setIssueType("Bug")
-                        ->setDescription("Full description for issue");
+                ->setSummary("something's wrong")
+                ->setPriorityName("Critical")
+                ->setIssueType("Bug")
+                ->setDescription("Full description for issue");
 
             $issueFieldTwo = new IssueField();
 
             $issueFieldTwo->setProjectKey("TEST")
-                        ->setSummary("something else is wrong")
-                        ->setPriorityName("Critical")
-                        ->setIssueType("Bug")
-                        ->setDescription("Full description for second issue");
+                ->setSummary("something else is wrong")
+                ->setPriorityName("Critical")
+                ->setIssueType("Bug")
+                ->setDescription("Full description for second issue");
             
             $issueService = new IssueService();
 
@@ -183,17 +184,16 @@ class Create extends Jira
             $issueField = new IssueField();
         
             $issueField->setProjectKey("TEST")
-                        ->setSummary("something's wrong")
-                        ->setAssigneeName("lesstif")
-                        ->setPriorityName("Critical")
-                        ->setIssueType("Bug")
-                        ->setDescription("Full description for issue")
-                        ->addVersion(["1.0.1", "1.0.3"])
-                        ->addComponents(['Component-1', 'Component-2'])
+                ->setSummary("something's wrong")
+                ->setAssigneeName("lesstif")
+                ->setPriorityName("Critical")
+                ->setIssueType("Bug")
+                ->setDescription("Full description for issue")
+                ->addVersion(["1.0.1", "1.0.3"])
+                ->addComponents(['Component-1', 'Component-2'])
                         // set issue security if you need.
-                        ->setSecurityId(10001 /* security scheme id */)
-                        ->setDueDate('2019-06-19')
-                    ;
+                ->setSecurityId(10001 /* security scheme id */)
+                ->setDueDate('2019-06-19');
             
             $issueService = new IssueService();
         
@@ -213,9 +213,9 @@ class Create extends Jira
             $field = new Field();
             
             $field->setName("New custom field")
-                    ->setDescription("Custom field for picking groups")
-                    ->setType("com.atlassian.jira.plugin.system.customfieldtypes:grouppicker")
-                    ->setSearcherKey("com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher");
+                ->setDescription("Custom field for picking groups")
+                ->setType("com.atlassian.jira.plugin.system.customfieldtypes:grouppicker")
+                ->setSearcherKey("com.atlassian.jira.plugin.system.customfieldtypes:grouppickersearcher");
 
             $fieldService = new FieldService();
 
@@ -245,8 +245,7 @@ class Create extends Jira
                 ->setIssueSecurityScheme(10000)
                 ->setPermissionScheme(10100)
                 ->setNotificationScheme(10100)
-                ->setCategoryId(10100)
-            ;
+                ->setCategoryId(10100);
         
             $proj = new ProjectService();
         
@@ -267,12 +266,14 @@ class Create extends Jira
             $us = new UserService();
         
             // create new user
-            $user = $us->create([
+            $user = $us->create(
+                [
                     'name'=>'charlie',
                     'password' => 'abracadabra',
                     'emailAddress' => 'charlie@atlassian.com',
                     'displayName' => 'Charlie of Atlassian',
-                ]);
+                ]
+            );
         
             var_dump($user);
         } catch (JiraException $e) {

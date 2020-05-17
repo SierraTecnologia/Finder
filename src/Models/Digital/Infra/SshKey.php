@@ -81,7 +81,7 @@ class SshKey extends Base
 
     /** 
      * Retorna a chave Publica
-    */
+     */
     public function getPublicKey()
     {
         if (!empty($this->public_key)) {
@@ -94,7 +94,7 @@ class SshKey extends Base
 
     /** 
      * Retorna a chave Privada
-    */
+     */
     public function getPrivateKey()
     {
         if (!empty($this->private_key)) {
@@ -123,7 +123,7 @@ class SshKey extends Base
     public function verifySignature($plaintext, $signature)
     {
         $rsa = $this->getPublicKey();
-        if ($rsa->verify($plaintext, $signature)){
+        if ($rsa->verify($plaintext, $signature)) {
             return true;
         }
         
@@ -159,7 +159,7 @@ class SshKey extends Base
     {
         $rsa = new Crypt_RSA();
 
-        if ($hasPassword){
+        if ($hasPassword) {
             $rsa->setPassword($hasPassword);
         }
 
@@ -173,7 +173,8 @@ class SshKey extends Base
         //define('CRYPT_RSA_EXPONENT', 65537);
         //define('CRYPT_RSA_SMALLEST_PRIME', 64); // makes it so multi-prime RSA is used
         extract($rsa->createKey()); // == $rsa->createKey(1024) where 1024 is the key size
-        /**Values of $privatekey and $publickey:
+        /**
+* Values of $privatekey and $publickey:
             $privatekey:
 
             -----BEGIN RSA PRIVATE KEY-----
@@ -197,7 +198,6 @@ class SshKey extends Base
             FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
             3j+skZ6UtW+5u09lHNsj6tQ51s1SPrCBkedbNf0Tp0GbMJDyR4e9T04ZZwIDAQAB
             -----END PUBLIC KEY-----
-
  */
     }
 }

@@ -30,16 +30,16 @@ class Delete extends SenhorVerdugo
     {
         $issueKey = "TEST-879";
 
-try {
-    $commentId = 12345;
+        try {
+            $commentId = 12345;
 
-    $issueService = new IssueService();
+            $issueService = new IssueService();
 
-    $ret = $issueService->deleteComment($issueKey, $commentId);
+            $ret = $issueService->deleteComment($issueKey, $commentId);
 
-} catch (SenhorVerdugoException $e) {
-    $this->assertTrue(false, 'Delete comment Failed : '.$e->getMessage());
-}
+        } catch (SenhorVerdugoException $e) {
+            $this->assertTrue(false, 'Delete comment Failed : '.$e->getMessage());
+        }
 
     }
 
@@ -57,7 +57,7 @@ try {
 
             var_dump($ret);
         } catch (SenhorVerdugoException $e) {
-            $this->assertTrue(FALSE, "Change Assignee Failed : " . $e->getMessage());
+            $this->assertTrue(false, "Change Assignee Failed : " . $e->getMessage());
         }
     }
 

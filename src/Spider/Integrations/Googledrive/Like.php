@@ -17,9 +17,9 @@ class Like extends Googledrive
     {
         $result = $this->getConnection()->likeMedia($component->getReference());
         if ($result->meta->code === 200) {
-          echo 'Success! The image was added to your likes.';
+            echo 'Success! The image was added to your likes.';
         } else {
-          echo 'Something went wrong :(';
+            echo 'Something went wrong :(';
         }
     }
 
