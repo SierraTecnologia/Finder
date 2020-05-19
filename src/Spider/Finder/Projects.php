@@ -6,7 +6,7 @@ use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
-use Finder\Spider\Abstracts\Spider;
+use Finder\Contracts\Spider\Spider;
 
 /**
  * Run all script analysers and outputs their result.

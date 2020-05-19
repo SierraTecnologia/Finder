@@ -1,7 +1,7 @@
 <?php
 namespace Finder\Spider\Track;
 
-use Finder\Spider\Abstracts\Track;
+use Finder\Contracts\Spider\Track;
 
 
 /**

@@ -1,9 +1,9 @@
 <?php
-namespace Finder\Spider\Abstracts;
+namespace Finder\Contracts\Spider;
 
 use Finder\Spider\Traits\IdentificadorManagerTrait;
 use Support\Helps\DebugHelper;
-use Finder\Spider\Abstracts\ExtensionManager;
+use Finder\Contracts\Spider\ExtensionManager;
 
 /**
  * Outputs events information to the console.

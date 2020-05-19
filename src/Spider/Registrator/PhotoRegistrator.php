@@ -1,7 +1,7 @@
 <?php
 namespace Finder\Spider\Registrator;
 
-use Finder\Spider\Abstracts\TargetManager;
+use Finder\Contracts\Spider\TargetManager;
 
 use Finder\Models\Digital\Midia\File;
 use Finder\Models\Digital\Midia\Imagen;

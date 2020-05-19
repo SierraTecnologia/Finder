@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Spider\Abstracts;
+namespace Finder\Contracts\Spider;
 
 use Tracking\Abstracts\MetricManager;
 
