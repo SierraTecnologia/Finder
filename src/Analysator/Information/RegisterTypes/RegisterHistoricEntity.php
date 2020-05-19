@@ -3,8 +3,7 @@
  * Uma informação em determinado Tempo (log)
  */
 
-namespace Finder\Analysator\RegisterTypes;
-
+namespace Finder\Analysator\Information\RegisterTypes;
 
 class RegisterHistoricEntity extends AbstractRegisterType
 {

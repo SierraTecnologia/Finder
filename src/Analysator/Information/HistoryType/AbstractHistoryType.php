@@ -3,7 +3,7 @@
  * 
  */
 
-namespace Finder\Analysator\HistoryType;
+namespace Finder\Analysator\Information\HistoryType;
 
 use Support\Contracts\Categorizador\AbstractCategorizador;
 

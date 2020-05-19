@@ -3,7 +3,7 @@
  * Informacoes que estao sempre mudando (Temperatura por exemplo)
  */
 
-namespace Finder\Analysator\HistoryType;
+namespace Finder\Analysator\Information\Group;
 
 
 class GroupSocietyEntity extends EloquentGroup

@@ -6,14 +6,12 @@
 namespace Finder\Analysator\Information\Group;
 
 
-class GroupFinanceEntity extends EloquentGroup
+class GroupAuditEntity extends EloquentGroup
 {
-    public static $name = 'Finance';
+    public static $name = 'Audit';
 
     public static $examples = [
-        'bank',
-        'gasto',
-        'renda'
+        'log', 'logger', 'registro', 'data'
     ];
 
 

@@ -3,7 +3,7 @@
  * Informação Imutavel (Categorias, gostos, etc..)
  */
 
-namespace Finder\Analysator\RegisterTypes;
+namespace Finder\Analysator\Information\RegisterTypes;
 
 
 class RegisterTestimonialEntity extends AbstractRegisterType

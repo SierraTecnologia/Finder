@@ -3,7 +3,7 @@
  * 
  */
 
-namespace Finder\Analysator\RegisterTypes;
+namespace Finder\Analysator\Information\RegisterTypes;
 
 use Support\Contracts\Categorizador\AbstractCategorizador;
 

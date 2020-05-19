@@ -3,7 +3,7 @@
  * Um sistema que evolui. (Religiao, Empresas, Predios, Pessoas)
  */
 
-namespace Finder\Analysator\RegisterTypes;
+namespace Finder\Analysator\Information\RegisterTypes;
 
 
 class RegisterOrganismEntity extends AbstractRegisterType
