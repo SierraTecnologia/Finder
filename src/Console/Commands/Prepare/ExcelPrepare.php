@@ -17,7 +17,7 @@ class ExcelPrepare extends Command
      *
      * @var string
      */
-    protected $signature = 'prepare:photos';
+    protected $signature = 'sitec:prepare:excell';
 
     /**
      * The console command description.

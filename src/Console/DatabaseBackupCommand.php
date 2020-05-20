@@ -14,7 +14,7 @@ class DatabaseBackupCommand extends Command
      *
      * @var string
      */
-    protected $name = 'db:backup';
+    protected $name = 'sitec:db:backup';
 
     /**
      * The console command description.

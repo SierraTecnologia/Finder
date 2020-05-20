@@ -15,7 +15,7 @@ class PhotosPrepare extends Command
      *
      * @var string
      */
-    protected $signature = 'prepare:photos';
+    protected $signature = 'sitec:prepare:photos';
 
     /**
      * The console command description.

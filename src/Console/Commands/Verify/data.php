@@ -1,23 +1,21 @@
 <?php
 
-namespace Finder\Console\Commands\Spider;
+namespace Finder\Console\Commands\Verify;
 
 use Finder\Actions\Instagram\GetMidias;
-use Finder\Actions\Instagram\GetStories;
-use Finder\Actions\Instagram\GetFollowers;
 use Population\Models\Identity\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;
 
-class InstagramGetAll extends Command
+class Data extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'sitec:spider:getall';
+    protected $signature = 'sitec:verify:data';
 
     /**
      * The console command description.
@@ -34,12 +32,16 @@ class InstagramGetAll extends Command
     public function handle()
     {
 
-        // $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
+        $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
         
-        $account = Account::where('username', 'ricardorsierra')->first();
+        $account = Account::where('username', 'ricardosierra')->first();
 
-        (new GetMidias($account))->prepare('avilafmaria')->execute();
-        // (new GetStories($account))->prepare('jean_grey380')->execute();
-        // (new GetFollowers($account))->prepare('jean_grey380')->execute();
+        $accounts = Account::all();
+
+
+
+        (new GetMidias($account))->prepare('carollnovais')->execute();
+        (new GetStories($account))->prepare('carollnovais')->execute();
+        (new GetFollowers($account))->prepare('carollnovais')->execute();
     }
 }

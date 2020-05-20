@@ -14,7 +14,7 @@ class GettextCommand extends Command
      *
      * @var string
      */
-    protected $name = 'gettext';
+    protected $name = 'sitec:gettext';
 
     /**
      * The console command description.

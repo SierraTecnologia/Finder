@@ -15,7 +15,7 @@ class Export extends Command
      *
      * @var string
      */
-    protected $signature = 'prepare:export';
+    protected $signature = 'sitec:prepare:export';
 
     /**
      * The console command description.

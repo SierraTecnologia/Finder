@@ -18,7 +18,7 @@ class TokensSync extends Command
      *
      * @var string
      */
-    protected $signature = 'sync:tokens';
+    protected $signature = 'sitec:sync:tokens';
 
     /**
      * The console command description.

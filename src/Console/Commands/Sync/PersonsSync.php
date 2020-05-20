@@ -13,7 +13,7 @@ class PersonsSync extends Command
      *
      * @var string
      */
-    protected $signature = 'sync:persons';
+    protected $signature = 'sitec:sync:persons';
 
     /**
      * The console command description.
