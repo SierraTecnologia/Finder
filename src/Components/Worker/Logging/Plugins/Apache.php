@@ -46,7 +46,7 @@ class Apache
         public $files = array(
             'error'  => array(
                 'error.log' ,
-                'Log::channel('sitec-finder')->notice' ,
+                'error.notice' ,
                 'apache_error.log' ,
             ) ,
             'access' => array(

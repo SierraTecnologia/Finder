@@ -42,6 +42,8 @@ class FinderProvider extends ServiceProvider
         \SierraTecnologia\Crypto\CryptoProvider::class,
         \Intervention\Image\ImageServiceProvider::class,
         \Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+
+        
     ];
 
     /**
