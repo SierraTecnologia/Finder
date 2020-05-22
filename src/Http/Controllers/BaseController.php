@@ -24,9 +24,9 @@ use Illuminate\Http\Request;
  *   )
  * )
  * This class should be parent class for other API controllers
- * Class FinderBaseController
+ * Class BaseController
  */
-class FinderBaseController extends Controller
+class BaseController extends Controller
 {
     public function sendResponse($result, $message)
     {

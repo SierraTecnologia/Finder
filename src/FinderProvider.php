@@ -220,15 +220,16 @@ class FinderProvider extends ServiceProvider
             ]
         );
 
-        /**
-         * Helpers
-         */
-        if (!function_exists('finder_asset')) {
-            function finder_asset($path, $secure = null)
-            {
-                return route('finder.assets').'?path='.urlencode($path);
-            }
-        }
+        // /**
+        //  * Helpers
+        //  */
+        // Aqui noa funciona
+        // if (!function_exists('finder_asset')) {
+        //     function finder_asset($path, $secure = null)
+        //     {
+        //         return route('finder.assets').'?path='.urlencode($path);
+        //     }
+        // }
     }
 
     /**
