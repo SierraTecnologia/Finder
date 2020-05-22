@@ -50,9 +50,16 @@ class FinderProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Ferramentas' => [
+        'Finder' => [
             [
                 'text'        => 'Procurar',
+                'icon'        => 'fas fa-fw fa-search',
+                'icon_color'  => 'blue',
+                'label_color' => 'success',
+                // 'access' => \App\Models\Role::$ADMIN
+            ],
+            [
+                'text'        => 'Track',
                 'icon'        => 'fas fa-fw fa-search',
                 'icon_color'  => 'blue',
                 'label_color' => 'success',
@@ -64,6 +71,42 @@ class FinderProvider extends ServiceProvider
                 'icon_color'  => 'red',
                 'label_color' => 'success',
                 // 'nivel' => \App\Models\Role::$GOOD,
+            ],
+            'Procurar' => [
+                [
+                    'text'        => 'Finder Home',
+                    'route'       => 'finder.home',
+                    'icon'        => 'fas fa-fw fa-ship',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Finder Midias',
+                    'route'       => 'finder.medias',
+                    'icon'        => 'fas fa-fw fa-gavel',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Finder Pessoas',
+                    'route'       => 'finder.persons',
+                    'icon'        => 'fas fa-fw fa-group',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+            ],
+            'Track' => [
+                [
+                    'text'        => 'Persons',
+                    'route'       => 'finder.track.person',
+                    'icon'        => 'fas fa-fw fa-coffee',
+                    'icon_color'  => 'red',
+                    'label_color' => 'success',
+                    // 'nivel' => \App\Models\Role::$GOOD,
+                ],
             ],
             'Bots' => [
                 [
@@ -81,32 +124,6 @@ class FinderProvider extends ServiceProvider
                     'icon_color'  => 'red',
                     'label_color' => 'success',
                     // 'nivel' => \App\Models\Role::$GOOD,
-                ],
-            ],
-            'Procurar' => [
-                [
-                    'text'        => 'Finder Home',
-                    'route'       => 'finder.home',
-                    'icon'        => 'fas fa-fw fa-ship',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    // 'access' => \App\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Finder Index',
-                    'route'       => 'finder.finder',
-                    'icon'        => 'fas fa-fw fa-gavel',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    // 'access' => \App\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Finder Pessoas',
-                    'route'       => 'finder.persons',
-                    'icon'        => 'fas fa-fw fa-group',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    // 'access' => \App\Models\Role::$ADMIN
                 ],
             ],
         ],
@@ -202,6 +219,16 @@ class FinderProvider extends ServiceProvider
             base_path('vendor/sierratecnologia/finder/src/Console/Commands') => '\Finder\Console\Commands',
             ]
         );
+
+        /**
+         * Helpers
+         */
+        if (!function_exists('finder_asset')) {
+            function finder_asset($path, $secure = null)
+            {
+                return route('finder.assets').'?path='.urlencode($path);
+            }
+        }
     }
 
     /**
