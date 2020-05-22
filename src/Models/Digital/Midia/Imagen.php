@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Cache;
 use Log;
 use Intervention\Image\ImageManagerStatic as InterventionImage;
 use Storage;
+use Spatie\MediaLibrary\Exceptions\FileCannotBeAdded\FileIsTooBig;
 
 class Imagen extends ArchiveTrait
 {
@@ -184,8 +185,15 @@ class Imagen extends ArchiveTrait
         } else {
             $person = $target;
         }
-        $link = storage_path('app/'.$link);
-        // return $person->addMediaFromDisk($disk, $link)->toMediaCollection('images');
-        return $person->addMedia($link)->toMediaCollection('images');
+        
+        try {
+            $link = storage_path('app/'.$link);
+            // return $person->addMediaFromDisk($disk, $link)->toMediaCollection('images');
+            return $person->addMedia($link)->toMediaCollection('images');
+        } catch (FileIsTooBig $th) {
+            Log::warning(
+                $th->getMessage()
+            );
+        }
     }
 }

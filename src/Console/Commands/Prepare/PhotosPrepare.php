@@ -8,6 +8,8 @@ use Finder\Spider\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
 use Finder\Models\Digital\Midia\Imagen;
 
+use Support\Utils\Modificators\StringModificator;
+
 class PhotosPrepare extends Command
 {
     /**
@@ -22,7 +24,14 @@ class PhotosPrepare extends Command
      *
      * @var string
      */
-    protected $description = 'Importar a porra toda !';
+    protected $description = 'Importar todas as fotos !';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $folder = 'midia';
 
     /**
      * Create a new command instance.
@@ -41,15 +50,43 @@ class PhotosPrepare extends Command
      */
     public function handle()
     {
-        $folder = 'midia';
+        $this->midiaFinder($this->folder);
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function midiaFinder($folder)
+    {
         
+        // $files = Storage::allFiles($folder);
         // dd(Storage::files($folder));
         // dd(Storage::allFiles($folder));
         $directorys = Storage::directories($folder);
 
+        // dd(
+        //     Person::all(),
+        //     $directorys
+        // );
+
         foreach ($directorys as $directory) {
             $directoryName = explode('/', $directory);
-            $person = Person::createIfNotExistAndReturn($directoryName[count($directoryName)-1]);
+            $personName = StringModificator::cleanCodeSlug($directoryName[count($directoryName)-1]);
+
+            if ($personName=='git') {
+                continue;
+            }
+
+            // dd(
+            //     $directoryName,
+            //     $personName,
+            //     StringModificator::cleanCodeSlug($personName)
+            // );
+
+            $person = Person::createIfNotExistAndReturn($personName);
+            $this->info('[Importing] Importando fotos de usuário '.$person->name);
             $this->importFromFolder($person, $directory);
         }
     }
@@ -66,7 +103,7 @@ class PhotosPrepare extends Command
     /**
      * Tirardaqui @todo
      */
-    public function importFromFolder($target, $folder)
+    public function importFromFolder(Person $target, string $folder)
     {
         $files = Storage::allFiles($folder);
         // dd('oi', $files);

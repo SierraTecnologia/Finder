@@ -616,7 +616,7 @@ OUT;
     public function getSourceHumanize()
     {
         $parentId   = $this->getParentId();
-        $parentLink = '<a href="' . APP_URL . 'build/view/' . $parentId . '">#' . $parentId . '</a>';
+        $parentLink = '<a href="' . config('app.url') . 'build/view/' . $parentId . '">#' . $parentId . '</a>';
 
         switch ($this->getSource()) {
         case Build::SOURCE_WEBHOOK_PUSH:
