@@ -17,6 +17,7 @@ use Support\Models\Base;
  */
 class Thumbnail extends Base
 {
+    public static $classeBuilder = ThumbnailBuilder::class;
     /**
      * @inheritdoc
      */

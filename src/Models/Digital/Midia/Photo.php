@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Photo extends Base
 {
     use SoftDeletes;
+    public static $classeBuilder = PhotoBuilder::class;
 
     protected $dates = ['deleted_at'];
 
