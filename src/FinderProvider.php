@@ -50,80 +50,82 @@ class FinderProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Finder' => [
-            [
-                'text'        => 'Procurar',
-                'icon'        => 'fas fa-fw fa-search',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Track',
-                'icon'        => 'fas fa-fw fa-search',
-                'icon_color'  => 'blue',
-                'label_color' => 'success',
-                // 'access' => \App\Models\Role::$ADMIN
-            ],
-            [
-                'text'        => 'Bots',
-                'icon'        => 'fas fa-fw fa-industry',
-                'icon_color'  => 'red',
-                'label_color' => 'success',
-                // 'nivel' => \App\Models\Role::$GOOD,
-            ],
-            'Procurar' => [
+        'Painel' => [
+            'Finder' => [
                 [
-                    'text'        => 'Finder Home',
-                    'route'       => 'finder.home',
-                    'icon'        => 'fas fa-fw fa-ship',
+                    'text'        => 'Procurar',
+                    'icon'        => 'fas fa-fw fa-search',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
                 [
-                    'text'        => 'Finder Midias',
-                    'route'       => 'finder.medias',
-                    'icon'        => 'fas fa-fw fa-gavel',
+                    'text'        => 'Track',
+                    'icon'        => 'fas fa-fw fa-search',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
                 [
-                    'text'        => 'Finder Pessoas',
-                    'route'       => 'finder.persons',
-                    'icon'        => 'fas fa-fw fa-group',
-                    'icon_color'  => 'blue',
-                    'label_color' => 'success',
-                    // 'access' => \App\Models\Role::$ADMIN
-                ],
-            ],
-            'Track' => [
-                [
-                    'text'        => 'Persons',
-                    'route'       => 'finder.track.person',
-                    'icon'        => 'fas fa-fw fa-coffee',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    // 'nivel' => \App\Models\Role::$GOOD,
-                ],
-            ],
-            'Bots' => [
-                [
-                    'text'        => 'Runners',
-                    'url'         => 'runners',
+                    'text'        => 'Bots',
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'red',
                     'label_color' => 'success',
                     // 'nivel' => \App\Models\Role::$GOOD,
                 ],
-                [
-                    'text'        => 'Actions',
-                    'route'       => 'finder.action.actions.index',
-                    'icon'        => 'fas fa-fw fa-coffee',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    // 'nivel' => \App\Models\Role::$GOOD,
+                'Procurar' => [
+                    [
+                        'text'        => 'Finder Home',
+                        'route'       => 'finder.home',
+                        'icon'        => 'fas fa-fw fa-ship',
+                        'icon_color'  => 'blue',
+                        'label_color' => 'success',
+                        // 'access' => \App\Models\Role::$ADMIN
+                    ],
+                    [
+                        'text'        => 'Finder Midias',
+                        'route'       => 'finder.medias',
+                        'icon'        => 'fas fa-fw fa-gavel',
+                        'icon_color'  => 'blue',
+                        'label_color' => 'success',
+                        // 'access' => \App\Models\Role::$ADMIN
+                    ],
+                    [
+                        'text'        => 'Finder Pessoas',
+                        'route'       => 'finder.persons',
+                        'icon'        => 'fas fa-fw fa-group',
+                        'icon_color'  => 'blue',
+                        'label_color' => 'success',
+                        // 'access' => \App\Models\Role::$ADMIN
+                    ],
+                ],
+                'Track' => [
+                    [
+                        'text'        => 'Persons',
+                        'route'       => 'finder.track.person',
+                        'icon'        => 'fas fa-fw fa-coffee',
+                        'icon_color'  => 'red',
+                        'label_color' => 'success',
+                        // 'nivel' => \App\Models\Role::$GOOD,
+                    ],
+                ],
+                'Bots' => [
+                    [
+                        'text'        => 'Runners',
+                        'url'         => 'runners',
+                        'icon'        => 'fas fa-fw fa-industry',
+                        'icon_color'  => 'red',
+                        'label_color' => 'success',
+                        // 'nivel' => \App\Models\Role::$GOOD,
+                    ],
+                    [
+                        'text'        => 'Actions',
+                        'route'       => 'finder.action.actions.index',
+                        'icon'        => 'fas fa-fw fa-coffee',
+                        'icon_color'  => 'red',
+                        'label_color' => 'success',
+                        // 'nivel' => \App\Models\Role::$GOOD,
+                    ],
                 ],
             ],
         ],
