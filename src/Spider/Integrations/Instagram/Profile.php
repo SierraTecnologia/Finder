@@ -5,7 +5,7 @@ namespace Finder\Spider\Integrations\Instagram;
 use Log;
 use App\Models\User;
 use Exception;
-use Support\Traits\Debugger\ErrorHelper;
+use Support\Utils\Debugger\ErrorHelper;
 
 class Profile extends Instagram
 {
