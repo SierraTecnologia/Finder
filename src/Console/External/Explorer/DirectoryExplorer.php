@@ -284,14 +284,14 @@ class DirectoryExplorer
     public function getAnalyser()
     {
         $paths = $this->getAnalysedPaths();
-        $pipeline = \Finder\Pipelines\Finder\Directory::pipeline();
+        // $pipeline = \Finder\Pipelines\Finder\Directory::pipeline();
         foreach ($paths as $path) {
-            // $spider = new \Finder\Spider\Directory($path);
-            // dd($spider->run());
-            $spider = new \Finder\Pipelines\Finder\Directory($path);
-            $pipeline->process(
-                \Finder\Entitys\DirectoryEntity::make($path)
-            );
+            $spider = new \Finder\Spider\Directory($path);
+            dd($spider->run());
+            // $spider = new \Finder\Pipelines\Finder\Directory($path);
+            // $pipeline->process(
+            //     \Finder\Entitys\DirectoryEntity::make($path)
+            // );
         }
         
         if (null === $this->analyser) {

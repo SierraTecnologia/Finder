@@ -1,39 +1,106 @@
 <?php
 
-namespace Casa\Pipelines\Finder;
+namespace Finder\Pipelines\Finder;
 
 use League\Pipeline\Pipeline;
 use League\Pipeline\StageInterface;
 
-class Directory
+use Symfony\Component\Finder\Finder;
+use Support\Helps\DebugHelper;
+use Support\Contracts\Runners\Stage as StageBase;
+use Finder\Pipelines\Builders\DirectoryBuilder;
+use Finder\Pipelines\Builders\ProjectBuilder;
+
+class Directory extends StageBase
 {
-    public static function pipeline()
+    protected $finder = false;
+
+    // Have
+    protected $files = [];
+    protected $directorys = [];
+
+
+    public function __invoke($payload)
     {
-        
+        // find all files in the current directory
+        $targetPath = $payload->getTargetPath();
+        $this->info('Analisando Pasta: '.$targetPath);
 
-        return (new Pipeline)
-            ->pipe(new DatabaseRender)
-            ->pipe(new DatabaseMount);
+        $finder = $this->getFinder($targetPath);
+        // check if there are any search results
+        if (!$finder->hasResults()) {
+            $this->info('No Results: '.$targetPath);
+            return $payload;
+        }
 
-        // // Returns 21
-        // $entitys = $pipeline->process(10);
+        /**
+         * Mappers
+         */
+        foreach ($finder as $file) {
+            if ($file->getType() == 'file') {
+                $payload->files[$file->getBasename()] = $file;
+            } else {
+                $payload->directorys[$file->getBasename()] = $file;
+            }
+        }
+
+        /**
+         * Caso seja Projeto
+         */
+        if($payload->isProject()) {
+            $pipeline = ProjectBuilder::getPipelineWithOutput($this->getOutput());
+            // Process Pipeline
+            return $pipeline(
+                \Finder\Entitys\ProjectEntity::make($payload)
+            );
+        }
+
+        /**
+         * Sub Pipelines
+         */
+        $pipeline = DirectoryBuilder::getPipelineWithOutput($this->getOutput());
+        foreach ($payload->directorys as $directory) {
+            $pipeline->process(
+                \Finder\Entitys\DirectoryEntity::make($directory->getRealPath())
+            );
+        }
+        return $payload;
+
+
+    }
 
 
 
-        // // Re-usable Pipelines
-        // // Because the PipelineInterface is an extension of the StageInterface pipelines can be re-used as stages. This creates a highly composable model to create complex execution patterns while keeping the cognitive load low.
+    public function getTargetPath()
+    {
+    }
 
-        // // For example, if we'd want to compose a pipeline to process API calls, we'd create something along these lines:
 
-        // $processApiRequest = (new Pipeline)
-        //     ->pipe(new ExecuteHttpRequest) // 2
-        //     ->pipe(new ParseJsonResponse); // 3
-            
-        // $pipeline = (new Pipeline)
-        //     ->pipe(new ConvertToPsr7Request) // 1
-        //     ->pipe($processApiRequest) // (2,3)
-        //     ->pipe(new ConvertToResponseDto); // 4 
-            
-        // $pipeline->process(new DeleteBlogPost($postId));
+
+    public function getFinder($targetPath, $fast = true)
+    {
+        $finder = false;
+        try {
+            if (!$finder) {
+                $finder = new Finder();
+                $finder->ignoreUnreadableDirs();
+                if ($fast) {
+                    if (file_exists($targetPath.'gitignore')) {
+                        // excludes files/directories matching the .gitignore patterns
+                        $finder->ignoreVCSIgnored(true);
+                    }
+                }
+                // Ignorar Recursividade
+                $finder->depth('== 0');
+                // Buscar Pastas e Arquivos
+                $finder->in($targetPath);
+            }
+        } catch (\Symfony\Component\Finder\Exception\DirectoryNotFoundException $e) {
+            DebugHelper::warning('Diretório não existe: '. $e->getMessage());
+        } catch (Exception $e) {
+            DebugHelper::warning('Exceção capturada: '. $e->getMessage());
+        }
+
+        return $finder;
     }
 }

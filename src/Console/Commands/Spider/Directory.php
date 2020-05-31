@@ -10,6 +10,8 @@ use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;
 
+use Finder\Pipelines\Builders\DirectoryBuilder;
+
 class Directory extends Command
 {
     /**
@@ -33,13 +35,17 @@ class Directory extends Command
      */
     public function handle()
     {
-        $pipeline = \Finder\Pipelines\Finder\Directory::pipeline();
 
         $paths = [
-            '/sierra'
+            // '/sierra/Dev/Fodasse/bitcoin'
+            '/sierra/Dev'
+            // '/sierra/Driver'
         ];
+        $pipeline = DirectoryBuilder::getPipelineWithOutput($this);
+
         foreach ($paths as $path) {
-            $pipeline->process(
+            // Process Pipeline
+            $pipeline(
                 \Finder\Entitys\DirectoryEntity::make($path)
             );
         }
