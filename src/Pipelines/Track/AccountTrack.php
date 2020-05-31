@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Spider\Track;
+namespace Finder\Pipelines\Track;
 
 use Finder\Contracts\Spider\Track;
 
