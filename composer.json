@@ -44,7 +44,7 @@
         "spatie/laravel-medialibrary": "^7.9.0",
         "league/climate": ">=3.4",
         "sierratecnologia/crypto": "dev-master",
-        "raiym/instagram-php-scraper": "^0.8.35",
+        "raiym/instagram-php-scraper": "^0.9.10",
         "spatie/crawler": "*",
         "jaeger/querylist": "^4.1",
         "friendsofphp/php-cs-fixer": "*",
