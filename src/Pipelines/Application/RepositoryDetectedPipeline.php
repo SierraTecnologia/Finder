@@ -5,18 +5,38 @@ namespace Support\Pipelines\Application;
 use League\Pipeline\Pipeline;
 use League\Pipeline\StageInterface;
 
-class DatabaseRender implements StageInterface
+class RepositoryDetectedPipeline implements StageInterface
 {
-    public function run($eloquentClasses)
-    {
+        public function __invoke($eloquentClasses)
+        {
+
+
+
+
+
+
+
+
+            return Cache::remember('sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
+                Log::debug(
+                    'Mount Database -> Renderizando'
+                );
+                $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
+                return $renderDatabase;
+            });
+        }
+        public static function getPipeline()
+        {
+            return (new Pipeline)
+                 ->pipe(new static);
+        }
+        public static function make($eloquentClasses)
+        {
         
 
-        $tables = (new Pipeline)
-            ->pipe(new DatabaseRender)
-            ->pipe(new DatabaseMount);
 
         // Returns 21
-        $entitys = $pipeline->process(10);
+        $entitys = $pipeline->process($eloquentClasses);
 
 
 

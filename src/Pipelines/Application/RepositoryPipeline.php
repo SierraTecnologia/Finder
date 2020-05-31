@@ -5,8 +5,12 @@ namespace Support\Pipelines\Application;
 use League\Pipeline\Pipeline;
 use League\Pipeline\StageInterface;
 
-class DatabasePipeline
+class RepositoryPipeline
 {
+
+    /**
+     * Repositorio Detectado
+     */
     public function run($eloquentClasses)
     {
         
