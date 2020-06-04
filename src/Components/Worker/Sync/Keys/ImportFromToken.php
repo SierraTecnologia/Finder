@@ -24,9 +24,10 @@ class ImportFromToken
 
     public function execute()
     {
-        if (!$this->token->account->status) {
+        if (!$this->token->account || !$this->token->account->status) {
             return false;
         }
+        // dd($this->token->account);
         Log::channel('sitec-finder')->info('Tratando Token .. '.print_r($this->token, true));
 
         if ($this->token->account->integration_id == Sentry::getCodeForPrimaryKey()) {
