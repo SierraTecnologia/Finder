@@ -7,7 +7,15 @@ use App\Models\User;
 
 class Import extends Gitlab
 {
-    public function projects()
+    public function bundle($output = false)
+    {
+        dd(
+            $this->_connection->api('projects')->all()
+        );
+        $this->projects($output);
+    }
+    
+    public function projects($output)
     {
         $project = $client->api('projects')->create(
             'My Project', array(

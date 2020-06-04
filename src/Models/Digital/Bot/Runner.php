@@ -16,8 +16,9 @@ use Informate\Traits\ComplexRelationamentTrait;
 use Support\Models\Base;
 use Finder\Actions\Action;
 use Log;
+use Finder\Contracts\Action\RunnerInterface;
 
-class Runner extends Base
+class Runner extends Base implements RunnerInterface
 {
     use ComplexRelationamentTrait;
 

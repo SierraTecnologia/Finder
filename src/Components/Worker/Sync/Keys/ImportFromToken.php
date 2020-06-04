@@ -11,8 +11,9 @@ use Finder\Spider\Integrations\Sentry\Sentry;
 use Finder\Spider\Integrations\Jira\Jira;
 use Finder\Spider\Integrations\Gitlab\Gitlab;
 use Log;
+use Finder\Contracts\Action\ActionInterface;
 
-class ImportFromToken
+class ImportFromToken implements ActionInterface
 {
 
     protected $token = false;
@@ -33,7 +34,7 @@ class ImportFromToken
         if ($this->token->account->integration_id == Sentry::getCodeForPrimaryKey()) {
             // (new \Finder\Spider\Integrations\Sentry\Import($this->token))->bundle();
         } else if ($this->token->account->integration_id == Jira::getCodeForPrimaryKey()) {
-            (new \Finder\Spider\Integrations\Jira\Import($this->token))->bundle();
+            // (new \Finder\Spider\Integrations\Jira\Import($this->token))->bundle();
         } else if ($this->token->account->integration_id == Gitlab::getCodeForPrimaryKey()) {
             (new \Finder\Spider\Integrations\Gitlab\Import($this->token))->bundle();
         }

@@ -27,15 +27,15 @@ use JiraRestApi\Field\FieldService;
 
 class Import extends Jira
 {
-    public function bundle($command = false)
+    public function bundle($output = false)
     {
         Log::channel('sitec-finder')->info('Importando Jira...');
-        $this->getFields($command);
-        $this->getProjects($command);
-        $this->getInfoFromIssues($command);
+        $this->getFields($output);
+        $this->getProjects($output);
+        $this->getInfoFromIssues($output);
     }
 
-    public function getFields($command = false)
+    public function getFields($output = false)
     {
         try {
             $fieldService = new FieldService($this->getConfig($this->_token));
@@ -51,7 +51,7 @@ class Import extends Jira
         }
     }
 
-    public function getProjects($command = false)
+    public function getProjects($output = false)
     {
         Log::channel('sitec-finder')->info('Importando Projetos do Jira...');
         try {
@@ -69,6 +69,8 @@ class Import extends Jira
                             [
                             'name' => $p->name,
                             'projectPathKey' => $p->key,
+                            // 'created_at' => $p->created,
+                            // 'updated_at' => $p->updated
                             ]
                         );
                     } else {
@@ -88,16 +90,16 @@ class Import extends Jira
         }
     }
 
-    public function getInfoFromIssues($command = false)
+    public function getInfoFromIssues($output = false)
     {
         $chunkNumber = 10;
         $object = $this;
         // Trata os Outros Dados dos Usuários                                                                                                                                                    
         Issue::chunk(
-            $chunkNumber, function ($issues) use ($command, $object, $chunkNumber) {                                                                                                                               
+            $chunkNumber, function ($issues) use ($output, $object, $chunkNumber) {                                                                                                                               
                 foreach ($issues as $issue) {                                                                                                                                                          
-                    if ($command) {                                                                                                                                                                  
-                        $command->returnOutput()->progressAdvance($chunkNumber);                                                                                                                                 
+                    if ($output) {                                                                                                                                                                  
+                        $output->returnOutput()->progressAdvance($chunkNumber);                                                                                                                                 
                     }
                     // $object->issueTimeTracking($issue->key_name); // @todo Retirar Depois
                     // $object->issueWorklog($issue->key_name);
@@ -117,17 +119,18 @@ class Import extends Jira
         $result = $this->searchIssue($jql, $paginate);
         if (!empty($result->issues)) {
             foreach ($result->issues as $issue) {
-                var_dump($issue);
                 if (!$issueInstance = Issue::where(['key_name' => $issue->key])->first()) {       
                     $issueInstance = Issue::create(
                         [
                         'key_name' => $issue->key,
                         'url' => $issue->self,
+                        // 'created_at' => $issue->created,
+                        // 'updated_at' => $issue->updated
                         // 'sumary' => '', @todo fazer aqui 
                         ]
                     );
                     if (!empty($issue->fields)) {
-                        $issueInstance->setField($issue->fields);
+                        $issueInstance->setField($issue->fields, $issue->key);
                     }
                 }
             }
@@ -256,7 +259,12 @@ class Import extends Jira
             $issueService = new IssueService($this->getConfig($this->_token));
         
             $comments = $issueService->getComments($issueKey);
-            Comment::registerComents($comments, $this->_token->account->customize_url);
+            Comment::registerComents(
+                $comments,
+                $issueKey,
+                Issue::class,
+                $this->_token->account->customize_url
+            );
         
         
         } catch (JiraException $e) {
@@ -314,7 +322,9 @@ class Import extends Jira
                         'name' => $v->name,
                         // 'start' => $v->startDate,
                         'release' => $v->releaseDate,
-                        'code_project_id' => $projInstance->id
+                        'code_project_id' => $projInstance->id,
+                        'created_at' => $v->created,
+                        'updated_at' => $v->updated
                         ]
                     );
                 }

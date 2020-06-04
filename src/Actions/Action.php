@@ -6,8 +6,9 @@
 namespace Finder\Actions;
 
 use Log;
+use Finder\Contracts\Action\ActionInterface;
 
-class Action
+class Action implements ActionInterface
 {
 
     protected $allActions = [];

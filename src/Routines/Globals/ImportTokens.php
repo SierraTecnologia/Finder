@@ -27,9 +27,9 @@ class ImportTokens extends ActionCollection
         $this->othersTargets = count($tokens);
         
         foreach ($tokens as $token) {
-            $importRoutine = new ImportRoutine();
+            $importRoutine = new ImportRoutine($this->output);
             $importRoutine->prepareTargets($token);
-            $this->newAction($importRoutine);
+            $this->newActionCollection($importRoutine);
         }
         return parent::prepare();
     }

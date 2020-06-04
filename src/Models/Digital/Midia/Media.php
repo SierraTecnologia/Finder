@@ -12,7 +12,7 @@ class Media extends \Spatie\MediaLibrary\Models\Media
 
     // protected $guarded = [];
 
-    // public $rules = [
+    // public static $rules = [
     //     'location' => 'required',
     // ];
 }

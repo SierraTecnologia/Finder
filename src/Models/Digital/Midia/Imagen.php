@@ -28,7 +28,7 @@ class Imagen extends ArchiveTrait
         'data_url',
     ];
 
-    public $rules = [
+    public static $rules = [
         'location' => 'mimes:jpeg,jpg,bmp,png,gif',
     ];
 

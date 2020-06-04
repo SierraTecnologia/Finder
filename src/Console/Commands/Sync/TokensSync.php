@@ -45,6 +45,6 @@ class TokensSync extends Command
     public function handle()
     {
         // (new \Finder\Routines\Globals\BackupAll)->run();
-        (new \Finder\Routines\Globals\ImportTokens)->run();
+        (new \Finder\Routines\Globals\ImportTokens)->run($this);
     }
 }

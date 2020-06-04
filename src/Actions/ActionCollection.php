@@ -8,8 +8,10 @@ namespace Finder\Actions;
 use Finder\Models\Digital\Bot\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
+use Finder\Contracts\Action\RunnerInterface;
+use Finder\Contracts\Action\ActionInterface;
 
-class ActionCollection implements \Finder\Contracts\Action\Robot
+class ActionCollection implements RunnerInterface
 {
     /**
      * Array de Array de Actions, o Indice seria o Stage. 
@@ -36,8 +38,9 @@ class ActionCollection implements \Finder\Contracts\Action\Robot
     protected $isPrepared = false;
 
     protected $isComplete = false;
+    protected $output = false;
 
-    protected function completeRunner($runner)
+    protected function completeRunner(RunnerInterface $runner)
     {
         $this->executedActions = $this->executedActions+1;
         Log::channel('sitec-finder')->notice('Runner Completada. Concluido:'.$this->getPorcDone());
@@ -66,9 +69,9 @@ class ActionCollection implements \Finder\Contracts\Action\Robot
         $totalActionsCount = 0;
         foreach($this->getActionToExecute() as $indice=>$action) {
             if ($action instanceof ActionCollection) {
-                $this->runners[$this->actualStage] = $action->prepare();
+                $this->runners[$this->actualStage][] = $action->prepare();
             } else {
-                $this->runners[$this->actualStage] = (new Runner())->usingAction($action)->usingTarget($this->getActor($this->actionsActors[$this->actualStage][$indice]))->prepare();
+                $this->runners[$this->actualStage][] = (new Runner())->usingAction($action)->usingTarget($this->getActor($this->actionsActors[$this->actualStage][$indice]))->prepare();
             }
             $totalActionsCount = $totalActionsCount + 1;
         }
@@ -79,8 +82,8 @@ class ActionCollection implements \Finder\Contracts\Action\Robot
 
     public function execute()
     {
-        foreach($this->runners as $indice=>$runner) {
-            $this->runners[$indice]->execute();
+        foreach($this->getRunners() as $runner) {
+            $runner->execute();
             $this->completeRunner($runner);
         }
     }
@@ -90,11 +93,12 @@ class ActionCollection implements \Finder\Contracts\Action\Robot
         return $this;
     }
 
-    public function run()
+    public function run($output = false)
     {
+        $this->output = $output;
         $this->prepare();
         $this->execute();
-        $this->done();
+        return $this->done();
     }
 
     public function totalStages()
@@ -128,7 +132,7 @@ class ActionCollection implements \Finder\Contracts\Action\Robot
     public function getTotalActionsCount()
     {
         $totalActionsCount = 0;
-        foreach($this->actionsToExecute as $action) {
+        foreach($this->getActionToExecute() as $action) {
             $sumInCount = 1;
             if (method_exists($action, 'getTotalActionsCount')) {
                 $sumInCount = $action->getTotalActionsCount();
@@ -150,15 +154,16 @@ class ActionCollection implements \Finder\Contracts\Action\Robot
         return Single::divide(Single::multiply([$this->executedActions], 100), $this->getTotalActionsCount())[0];
     }
 
-    public function newAction($action, int $stage = 0, int $actorNumber = 0)
+    public function newAction(ActionInterface $action, int $stage = 0, int $actorNumber = 0)
     {
         $this->actionsToExecute[$stage][] = $action;
         $this->actionsActors[$stage][] = $actorNumber;
     }
 
-    public function includeCollection(ActionCollection $collection, $stage, $action)
+    public function newActionCollection(ActionCollection $collection, int $stage = 0, int $actorNumber = 0)
     {
-        // @todo Fazer
+        $this->actionsToExecute[$stage][] = $collection;
+        $this->actionsActors[$stage][] = $actorNumber;
     }
 
     public function getActionsToExecute()

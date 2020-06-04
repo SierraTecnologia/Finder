@@ -7,8 +7,9 @@ namespace Finder\Components\Worker\Sync\Database;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Finder\Models\Digital\Infra\DatabaseCollection;
+use Finder\Contracts\Action\ActionInterface;
 
-class BackupCollection
+class BackupCollection implements ActionInterface
 {
 
     protected $collection = false;

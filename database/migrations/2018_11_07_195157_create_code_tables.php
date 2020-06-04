@@ -53,10 +53,20 @@ class CreateCodeTables extends Migration
                 $table->timestamps();
             }
         );
+        Schema::create(
+            'code_status', function (Blueprint $table) {
+                $table->increments('id');
+                $table->string('name');
+                $table->string('type')->nullable();
+                $table->integer('status')->default(1);
+                $table->timestamps();
+            }
+        );
 
         Schema::create(
             'code_fields', function (Blueprint $table) {
                 $table->increments('id');
+                $table->string('code');
                 $table->string('name');
                 $table->timestamps();
             }
@@ -66,7 +76,7 @@ class CreateCodeTables extends Migration
             'code_issue_fields', function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('value');
-                $table->string('code_field_id')->nullable();
+                $table->string('code_field_code')->nullable();
                 $table->string('code_issue_id')->nullable();
                 $table->timestamps();
             }
