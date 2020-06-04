@@ -8,10 +8,11 @@ use SiObjects\Entitys\Components\Pipeline as PipelineComponent;
 
 use Finder\Routines\Contracts\Registrator;
 use Finder\Routines\Contracts\Notificator;
+use Support\Contracts\Runners\Stage as StageBase;
 
-class ArticleImporterStage implements StageInterface
+class ArticleCreateStage implements StageInterface
 {
-    public function __invoke(/*PipelineComponent */$payload)
+    public function __invoke(/*PipelineComponent*/ $payload)
     {
         $payload->executeForEachComponent(
             function ($component) {

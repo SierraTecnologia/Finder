@@ -21,6 +21,7 @@ use SiObjects\Components\Comment;
 use SiObjects\Components\Post;
 use SiObjects\Components\Profile;
 use SiObjects\Components\Relation;
+use League\Pipeline\Pipeline as PipelineBase;
 
 class Pipeline extends PipelineBase
 {
