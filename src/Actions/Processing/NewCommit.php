@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Processing;
+namespace Finder\Actions\Processing;
 
 use App\Board;
 

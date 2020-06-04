@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Explorer;
+namespace Finder\Actions\Worker\Explorer;
 
 use Finder\Models\Digital\Infra\Domain;
 use Finder\Models\Digital\Infra\SubDomain;

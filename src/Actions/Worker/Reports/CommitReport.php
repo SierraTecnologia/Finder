@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Reports;
+namespace Finder\Actions\Worker\Reports;
 
 /**
  * CommitReport Class

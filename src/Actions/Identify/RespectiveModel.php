@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Pipelines\Identify;
+namespace Finder\Actions\Identify;
 
 use League\Pipeline\Pipeline;
 use League\Pipeline\StageInterface;

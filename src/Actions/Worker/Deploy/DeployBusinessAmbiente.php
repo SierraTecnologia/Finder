@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Deploy;
+namespace Finder\Actions\Worker\Deploy;
 
 use Finder\Models\Digital\Infra\Commit;
 

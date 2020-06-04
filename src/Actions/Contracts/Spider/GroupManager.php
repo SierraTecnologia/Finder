@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Contracts\Spider;
+namespace Finder\Actions\Contracts\Spider;
 
 use Finder\Spider\Traits\GroupManagerTrait;
 use Support\Helps\DebugHelper;

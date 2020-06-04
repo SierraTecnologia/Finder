@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Pipelines\Stats;
+namespace Finder\Actions\Stats;
 
 use Log;
 use App\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Pipelines\Finder;
+namespace Finder\Actions\Finder;
 
 use League\Pipeline\Pipeline;
 use League\Pipeline\StageInterface;
@@ -8,8 +8,8 @@ use League\Pipeline\StageInterface;
 use Symfony\Component\Finder\Finder;
 use Support\Helps\DebugHelper;
 use Support\Contracts\Runners\Stage as StageBase;
-use Finder\Pipelines\Builders\DirectoryBuilder;
-use Finder\Pipelines\Builders\ProjectBuilder;
+use Finder\Actions\Builders\DirectoryBuilder;
+use Finder\Actions\Builders\ProjectBuilder;
 
 class Directory extends StageBase
 {

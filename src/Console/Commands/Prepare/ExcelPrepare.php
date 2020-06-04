@@ -4,13 +4,13 @@ namespace Finder\Console\Commands\Prepare;
 
 use Illuminate\Console\Command;
 use Population\Models\Identity\Actors\Person;
-use Finder\Pipelines\Track\PersonTrack;
+use Finder\Actions\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
 use Finder\Models\Digital\Midia\Imagen;
 
 use Rap2hpoutre\FastExcel\FastExcel;
 
-use Finder\Pipelines\Identify\RespectiveModel;
+use Finder\Actions\Identify\RespectiveModel;
 
 use Support\Utils\Extratores\FileExtractor;
 use Support\Utils\Extratores\StringExtractor;

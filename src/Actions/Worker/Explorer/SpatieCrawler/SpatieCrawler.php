@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Explorer\SpatieCrawler;
+namespace Finder\Actions\Worker\Explorer\SpatieCrawler;
 
 /**
  * https://github.com/spatie/crawler

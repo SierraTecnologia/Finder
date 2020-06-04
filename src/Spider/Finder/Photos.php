@@ -6,7 +6,7 @@ use Finder\Logic\Output\Filter\OutputFilterInterface;
 use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
-use Finder\Contracts\Spider\Spider;
+use Finder\Actions\Contracts\Spider\Spider;
 
 use Support\Helps\DebugHelper;
 

@@ -1,7 +1,7 @@
 <?php
-namespace Finder\Pipelines\Track;
+namespace Finder\Actions\Track;
 
-use Finder\Contracts\Spider\Track;
+use Finder\Actions\Contracts\Spider\Track;
 
 /**
  * Run all script analysers and outputs their result.

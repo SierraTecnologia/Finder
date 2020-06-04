@@ -2,7 +2,7 @@
 namespace Finder\Spider\Traits;
 
 use Support\Helps\DebugHelper;
-use Finder\Contracts\Spider\ExtensionManager;
+use Finder\Actions\Contracts\Spider\ExtensionManager;
 
 /**
  * Outputs events information to the console.

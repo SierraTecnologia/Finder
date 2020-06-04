@@ -10,7 +10,7 @@ use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;
 
-use Finder\Pipelines\Builders\DirectoryBuilder;
+use Finder\Actions\Builders\DirectoryBuilder;
 
 class Directory extends Command
 {

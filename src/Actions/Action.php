@@ -6,7 +6,7 @@
 namespace Finder\Actions;
 
 use Log;
-use Finder\Contracts\Action\ActionInterface;
+use Finder\Actions\Contracts\ActionInterface;
 
 class Action implements ActionInterface
 {
@@ -129,7 +129,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'scanDomain',
             \Finder\Models\Digital\Infra\Domain::class, // Ou Url
-            \Finder\Components\Worker\Explorer\Spider::class,
+            \Finder\Actions\Worker\Explorer\Spider::class,
             self::$spider
         );
 
@@ -139,7 +139,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'whoisDomain',
             \Finder\Models\Digital\Infra\Domain::class, // Ou Url
-            \Finder\Components\Worker\Explorer\Whois::class,
+            \Finder\Actions\Worker\Explorer\Whois::class,
             self::$spider
         );
 
@@ -154,7 +154,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'backupDatabase',
             \Finder\Models\Digital\Infra\DatabaseCollection::class,
-            \Finder\Components\Worker\Sync\Keys\BackupCollection::class,
+            \Finder\Actions\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
 
@@ -164,7 +164,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'searchLog',
             \Finder\Models\Digital\Infra\Computer::class,
-            \Finder\Components\Worker\Logging\Logging::class,
+            \Finder\Actions\Worker\Logging\Logging::class,
             self::$routine
         );
 
@@ -180,7 +180,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'analyseComit',
             \Finder\Models\Digital\Code\Commit::class,
-            \Finder\Components\Worker\Analyser\Analyser::class,
+            \Finder\Actions\Worker\Analyser\Analyser::class,
             self::$hook
         );
 
@@ -190,7 +190,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'deployCommit',
             \Finder\Models\Digital\Code\Commit::class,
-            \Finder\Components\Worker\Deploy\Deploy::class,
+            \Finder\Actions\Worker\Deploy\Deploy::class,
             self::$hook
         );
 
@@ -204,7 +204,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'importIntegrationToken',
             \Population\Models\Components\Integrations\Token::class,
-            \Finder\Components\Worker\Sync\Keys\ImportFromToken::class,
+            \Finder\Actions\Worker\Sync\Keys\ImportFromToken::class,
             self::$routine
         );
 
@@ -214,7 +214,7 @@ class Action implements ActionInterface
         $actions[] = self::insertAction(
             'syncProject',
             \Finder\Models\Digital\Code\Project::class,
-            \Finder\Components\Worker\Sync\Project::class,
+            \Finder\Actions\Worker\Sync\Project::class,
             self::$hook
         );
 

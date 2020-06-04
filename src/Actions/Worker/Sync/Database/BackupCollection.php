@@ -3,11 +3,11 @@
  * 
  */
 
-namespace Finder\Components\Worker\Sync\Database;
+namespace Finder\Actions\Worker\Sync\Database;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Finder\Models\Digital\Infra\DatabaseCollection;
-use Finder\Contracts\Action\ActionInterface;
+use Finder\Actions\Contracts\ActionInterface;
 
 class BackupCollection implements ActionInterface
 {

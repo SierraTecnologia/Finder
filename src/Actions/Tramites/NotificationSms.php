@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Components\Pipelines;
+namespace Finder\Actions\Tramites;
 
 use Log;
 use App\Models\User;

@@ -1,5 +1,5 @@
 <?php
-namespace Finder\Contracts\Spider;
+namespace Finder\Actions\Contracts\Spider;
 
 use Finder\Logic\Output\AbstractOutput;
 use Finder\Logic\Output\Filter\OutputFilterInterface;

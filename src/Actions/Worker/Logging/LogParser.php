@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Analyser\Logging;
+namespace Finder\Actions\Worker\Analyser\Logging;
 
 class LogParser
 {

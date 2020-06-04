@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Life;
+namespace Finder\Actions\Worker\Life;
 
 use Finder\Models\Digital\Infra\Domain;
 use Finder\Models\Digital\Infra\Url;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Explorer;
+namespace Finder\Actions\Worker\Explorer;
 
 /**
  * Crawler Class

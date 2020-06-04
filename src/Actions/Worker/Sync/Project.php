@@ -3,7 +3,7 @@
  * 
  */
 
-namespace Finder\Components\Worker\Sync;
+namespace Finder\Actions\Worker\Sync;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Finder\Models\Digital\Infra\Token;

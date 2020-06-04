@@ -1,8 +1,8 @@
 <?php
 
-namespace Finder\Contracts\Action;
+namespace Finder\Actions\Contracts;
 
-interface Component
+interface RunnerInterface
 {
     public function prepare();
     public function execute();

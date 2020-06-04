@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Pipelines\Readables;
+namespace Finder\Actions\Readables;
 
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;

@@ -9,7 +9,7 @@ use Finder\Routines\Database\SpiderRoutine;
 
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
-use Finder\Components\Worker\Sync\Database\SpiderCollection;
+use Finder\Actions\Worker\Sync\Database\SpiderCollection;
 
 use Finder\Models\Digital\Infra\Domain;
 

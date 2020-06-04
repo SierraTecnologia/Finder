@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Pipelines\Contracts;
+namespace Finder\Actions\Contracts;
 
 interface Photator
 {

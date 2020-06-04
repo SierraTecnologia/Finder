@@ -3,7 +3,7 @@
  * 
  */
 
-namespace Finder\Components\Pipelines;
+namespace Finder\Actions\Tramites;
 
 use League\Pipeline\Pipeline as PipelineBase;
 use League\Pipeline\StageInterface;

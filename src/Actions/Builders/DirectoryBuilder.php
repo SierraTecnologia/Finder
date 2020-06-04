@@ -1,13 +1,13 @@
 <?php
 
-namespace Finder\Pipelines\Builders;
+namespace Finder\Actions\Builders;
 
 use League\Pipeline\Pipeline;
 use League\Pipeline\StageInterface;
 
 use Support\Contracts\Runners\PipelineBuilder;
 
-use Finder\Pipelines\Finder\Directory;
+use Finder\Actions\Finder\Directory;
 
 class DirectoryBuilder extends PipelineBuilder
 {

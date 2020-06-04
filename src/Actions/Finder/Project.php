@@ -1,9 +1,9 @@
 <?php
 
-namespace Finder\Pipelines\Finder;
+namespace Finder\Actions\Finder;
 
 use Support\Contracts\Runners\Stage as StageBase;
-use Finder\Pipelines\Builders\RepositoryBuilder;
+use Finder\Actions\Builders\RepositoryBuilder;
 
 class Project extends StageBase
 {

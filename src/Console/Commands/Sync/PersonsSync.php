@@ -4,7 +4,7 @@ namespace Finder\Console\Commands\Sync;
 
 use Illuminate\Console\Command;
 use Population\Models\Identity\Actors\Person;
-use Finder\Pipelines\Track\PersonTrack;
+use Finder\Actions\Track\PersonTrack;
 
 class PersonsSync extends Command
 {

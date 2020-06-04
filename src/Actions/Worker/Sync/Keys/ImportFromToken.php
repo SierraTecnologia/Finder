@@ -3,7 +3,7 @@
  * 
  */
 
-namespace Finder\Components\Worker\Sync\Keys;
+namespace Finder\Actions\Worker\Sync\Keys;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Population\Models\Components\Integrations\Token;
@@ -11,7 +11,7 @@ use Finder\Spider\Integrations\Sentry\Sentry;
 use Finder\Spider\Integrations\Jira\Jira;
 use Finder\Spider\Integrations\Gitlab\Gitlab;
 use Log;
-use Finder\Contracts\Action\ActionInterface;
+use Finder\Actions\Contracts\ActionInterface;
 
 class ImportFromToken implements ActionInterface
 {

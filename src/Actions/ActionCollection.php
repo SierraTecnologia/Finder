@@ -8,8 +8,8 @@ namespace Finder\Actions;
 use Finder\Models\Digital\Bot\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
-use Finder\Contracts\Action\RunnerInterface;
-use Finder\Contracts\Action\ActionInterface;
+use Finder\Actions\Contracts\RunnerInterface;
+use Finder\Actions\Contracts\ActionInterface;
 
 class ActionCollection implements RunnerInterface
 {

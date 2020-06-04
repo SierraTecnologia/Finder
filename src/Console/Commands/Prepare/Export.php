@@ -4,7 +4,7 @@ namespace Finder\Console\Commands\Prepare;
 
 use Illuminate\Console\Command;
 use Population\Models\Identity\Actors\Person;
-use Finder\Pipelines\Track\PersonTrack;
+use Finder\Actions\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
 use Finder\Models\Digital\Midia\Imagen;
 

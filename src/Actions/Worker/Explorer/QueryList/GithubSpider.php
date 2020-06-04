@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Explorer\QueryList;
+namespace Finder\Actions\Worker\Explorer\QueryList;
 
 class GithubSpider
 {

@@ -9,12 +9,12 @@
  */
 
 
-namespace Finder\Components\Worker\Analyser\Logging;
+namespace Finder\Actions\Worker\Analyser\Logging;
 
-use Finder\Components\Worker\Logging\Plugins\Apache;
-use Finder\Components\Worker\Logging\Plugins\Iis;
-use Finder\Components\Worker\Logging\Plugins\Nginx;
-use Finder\Components\Worker\Logging\Plugins\Php;
+use Finder\Actions\Worker\Logging\Plugins\Apache;
+use Finder\Actions\Worker\Logging\Plugins\Iis;
+use Finder\Actions\Worker\Logging\Plugins\Nginx;
+use Finder\Actions\Worker\Logging\Plugins\Php;
 
 class ConfigPlugins
 {

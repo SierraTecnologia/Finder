@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Explorer\Dusk;
+namespace Finder\Actions\Worker\Explorer\Dusk;
 
 use Laravel\Dusk\Browser;
 

@@ -9,7 +9,7 @@ use Finder\Routines\Database\BackupRoutine;
 
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
-use Finder\Components\Worker\Sync\Database\BackupCollection;
+use Finder\Actions\Worker\Sync\Database\BackupCollection;
 
 use Finder\Models\Digital\Infra\Database;
 use Finder\Models\Digital\Infra\DatabaseCollection;
