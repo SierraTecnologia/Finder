@@ -9,7 +9,7 @@ use Finder\Models\Digital\Bot\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
 use Finder\Contracts\Action\RunnerInterface;
-use Finder\Contracts\Action\ActionInterface;
+use Support\Contracts\Runners\ActionInterface;
 
 class ActionCollection implements RunnerInterface
 {

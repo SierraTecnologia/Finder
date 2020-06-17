@@ -88,4 +88,9 @@ class Runner extends Base implements RunnerInterface
         return $this->execute();
     }
 
+    public function done()
+    {
+        return $this;
+    }
+
 }

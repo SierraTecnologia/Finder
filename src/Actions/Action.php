@@ -6,9 +6,10 @@
 namespace Finder\Actions;
 
 use Log;
-use Finder\Contracts\Action\ActionInterface;
+use Support\Contracts\Runners\ActionInterface;
+use Support\Contracts\Runners\Action as ActionBase;
 
-class Action implements ActionInterface
+class Action extends ActionBase
 {
 
     protected $allActions = [];

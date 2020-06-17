@@ -11,7 +11,7 @@ use Finder\Spider\Integrations\Sentry\Sentry;
 use Finder\Spider\Integrations\Jira\Jira;
 use Finder\Spider\Integrations\Gitlab\Gitlab;
 use Log;
-use Finder\Contracts\Action\ActionInterface;
+use Support\Contracts\Runners\ActionInterface;
 
 class ImportFromToken implements ActionInterface
 {

@@ -33,15 +33,12 @@ class FinderProvider extends ServiceProvider
 
     public static $providers = [
 
-        \Tracking\TrackingProvider::class,
+        \Artista\ArtistaProvider::class,
 
         /**
          * Externos
          */
-        // \CipeMotion\Medialibrary\ServiceProvider::class,
         \SierraTecnologia\Crypto\CryptoProvider::class,
-        \Intervention\Image\ImageServiceProvider::class,
-        \Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
 
         
     ];
