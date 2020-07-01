@@ -3,7 +3,7 @@
 namespace Finder\Console\Commands\Tools\PhotoApp;
 
 use App\Models\Photo;
-use Finder\Components\Services\Image\Contracts\ImageProcessor;
+use Finder\Services\Image\Contracts\ImageProcessor;
 use Illuminate\Console\Command;
 use Illuminate\Support\Collection;
 use Throwable;

@@ -9,7 +9,7 @@
  */
 
 
-namespace Finder\Components\Worker\Analyser\Logging;
+namespace Finder\Components\Worker\Logging;
 
 use Finder\Components\Worker\Logging\Plugins\Apache;
 use Finder\Components\Worker\Logging\Plugins\Iis;

@@ -9,7 +9,7 @@
  */
 
 
-namespace Finder\Components\Worker\Analyser\Logging\Plugins;
+namespace Finder\Components\Worker\Logging\Plugins;
 
 class Php
 {

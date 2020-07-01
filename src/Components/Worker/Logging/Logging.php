@@ -1,6 +1,6 @@
 <?php
 
-namespace Finder\Components\Worker\Analyser\Logging;
+namespace Finder\Components\Worker\Logging;
 
 class Logging
 {

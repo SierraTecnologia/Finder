@@ -1,8 +1,8 @@
 <?php
 
-namespace Finder\Components\Services\Image;
+namespace Finder\Services\Image;
 
-use Finder\Components\Services\Image\Contracts\ImageProcessor;
+use Finder\Services\Image\Contracts\ImageProcessor;
 use Illuminate\Contracts\Filesystem\Factory as Storage;
 use Illuminate\Contracts\Validation\Factory as ValidatorFactory;
 use Illuminate\Validation\Rule;
@@ -17,7 +17,7 @@ use InvalidArgumentException;
 /**
  * Class ImagineImageProcessor.
  *
- * @package Finder\Components\Services\Image
+ * @package Finder\Services\Image
  */
 class ImagineImageProcessor implements ImageProcessor
 {

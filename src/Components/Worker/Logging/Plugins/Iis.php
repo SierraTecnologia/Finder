@@ -8,7 +8,7 @@
  * Licensed under the GPLv3 license.
  */
 
-namespace Finder\Components\Worker\Analyser\Logging\Plugins;
+namespace Finder\Components\Worker\Logging\Plugins;
 
 class Iis
 {
