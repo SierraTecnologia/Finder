@@ -4,7 +4,7 @@ namespace Finder\Console\Commands\Verify;
 
 use Finder\Actions\Instagram\GetMidias;
 use Population\Models\Identity\Digital\Account;
-use App\Models\Negocios\Business;
+use Siravel\Models\Negocios\Business;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;
