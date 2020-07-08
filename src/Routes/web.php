@@ -11,13 +11,7 @@ Route::group(
                         /**
                          * 
                          */
-                        Route::get('assets', ['uses' => 'BaseController@assets', 'as' => 'assets']);
-
-                        /**
-                         * 
-                         */
                         Route::get('home', 'HomeController@index')->name('home');
-                        Route::get('medias', 'HomeController@medias')->name('medias');
                         Route::get('persons', 'HomeController@persons')->name('persons');
 
                         /**
