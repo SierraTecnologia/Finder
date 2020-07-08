@@ -20,7 +20,7 @@ use Finder\Facades\Finder as FinderFacade;
 use Illuminate\Contracts\Events\Dispatcher;
 use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
 
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 
 class FinderProvider extends ServiceProvider
 {

@@ -11,7 +11,7 @@ use Config;
 use CryptoService;
 use Stalker\Models\File;
 use Finder\Repositories\CmsRepository;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 
 
 class FileRepository extends CmsRepository

@@ -11,7 +11,7 @@ use Config;
 use CryptoService;
 use Stalker\Models\Imagen as Image;
 use Population\Models\Tag;
-use Finder\Services\Midia\FileService;
+use Stalker\Services\Midia\FileService;
 
 
 class ImageRepository extends CmsRepository
