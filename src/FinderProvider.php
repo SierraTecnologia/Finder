@@ -33,7 +33,7 @@ class FinderProvider extends ServiceProvider
 
     public static $providers = [
 
-        \Artista\ArtistaProvider::class,
+        \Stalker\ArtistaProvider::class,
 
         /**
          * Externos

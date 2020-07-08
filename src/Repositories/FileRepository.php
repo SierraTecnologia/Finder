@@ -9,7 +9,7 @@ namespace Finder\Repositories;
 use Auth;
 use Config;
 use CryptoService;
-use Artista\Models\File;
+use Stalker\Models\File;
 use Finder\Repositories\CmsRepository;
 use Finder\Services\Midia\FileService;
 

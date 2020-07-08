@@ -61,7 +61,7 @@
         "predis/predis": "*",
         "sebastian/diff": "*",
         "sebastian/phpcpd": "*",
-        "sierratecnologia/artista": "dev-master",
+        "sierratecnologia/stalker": "dev-master",
         "phpoffice/phppresentation": "*",
         "phpoffice/phpspreadsheet": "*",
         "phpoffice/phpword": "*"

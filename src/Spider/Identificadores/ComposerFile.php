@@ -7,7 +7,7 @@ use Finder\Logic\Output\TriggerableInterface;
 
 use Symfony\Component\Finder\Finder;
 use Finder\Contracts\Spider\Spider;
-use Artista\Models\File;
+use Stalker\Models\File;
 use Finder\Models\Digital\Internet\ComputerFile;
 
 use Finder\Contracts\Spider\IdentificadorManager;

@@ -3,7 +3,7 @@ namespace Finder\Spider\Registrator;
 
 use Finder\Contracts\Spider\TargetManager;
 
-use Artista\Models\Project;
+use Stalker\Models\Project;
 
 /**
  * Run all script analysers and outputs their result.

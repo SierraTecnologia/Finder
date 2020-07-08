@@ -3,7 +3,7 @@
 namespace Finder\Spider\Integrations\Zoho;
 
 use Log;
-// use Artista\Models\Video;
+// use Stalker\Models\Video;
 use App\Models\User;
 use Finder\Spider\Integrations\Integration;
 
