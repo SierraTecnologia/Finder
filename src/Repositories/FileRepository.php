@@ -1,11 +1,15 @@
 <?php
+/**
+ * Alterar esse repositorio pois ja existe
+ * @todo
+ */
 
 namespace Finder\Repositories;
 
 use Auth;
 use Config;
 use CryptoService;
-use Finder\Models\Digital\Midia\File;
+use Artista\Models\File;
 use Finder\Repositories\CmsRepository;
 use Finder\Services\Midia\FileService;
 

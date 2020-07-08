@@ -5,7 +5,7 @@ namespace Finder\Http\Controllers;
 use Finder\Services\FinderService;
 use Illuminate\Support\Facades\Schema;
 use Population\Repositories\PersonRepository;
-use Finder\Models\Digital\Midia\Media;
+use Artista\Models\Media;
 
 class HomeController extends Controller
 {

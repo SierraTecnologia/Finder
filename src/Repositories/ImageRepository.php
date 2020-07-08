@@ -1,11 +1,15 @@
 <?php
+/**
+ * Alterar esse repositorio pois ja existe
+ * @todo
+ */
 
 namespace Finder\Repositories;
 
 use Cms;
 use Config;
 use CryptoService;
-use Finder\Models\Digital\Midia\Imagen as Image;
+use Artista\Models\Imagen as Image;
 use Population\Models\Tag;
 use Finder\Services\Midia\FileService;
 

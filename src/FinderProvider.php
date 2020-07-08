@@ -161,7 +161,10 @@ class FinderProvider extends ServiceProvider
          */
         Route::group(
             [
-            'namespace' => '\Finder\Http\Controllers',
+                'namespace' => '\Finder\Http\Controllers',
+                'prefix' => \Illuminate\Support\Facades\Config::get('application.routes.main'),
+                'as' => 'rica.',
+                // 'middleware' => 'rica',
             ], function ($router) {
                 include __DIR__.'/Routes/web.php';
             }
@@ -173,7 +176,6 @@ class FinderProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom($this->getPublishesPath('config/medialibrary.php'), 'medialibrary');
         $this->mergeConfigFrom($this->getPublishesPath('config/sitec/finder.php'), 'sitec.finder');
         
 
@@ -188,12 +190,6 @@ class FinderProvider extends ServiceProvider
         $this->app->singleton(
             'finder', function () {
                 return new Finder();
-            }
-        );
-
-        $this->app->bind(
-            'FileService', function ($app) {                                                                                                                                                                                                                      
-                return new FileService();
             }
         );
         
@@ -255,7 +251,6 @@ class FinderProvider extends ServiceProvider
             [
             // Paths
             $this->getPublishesPath('config/sitec') => config_path('sitec'),
-            $this->getPublishesPath('config/medialibrary.php') => config_path('medialibrary.php'),
             ], ['config',  'sitec', 'sitec-config']
         );
 

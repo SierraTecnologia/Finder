@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Population\Models\Identity\Actors\Person;
 use Finder\Pipelines\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
-use Finder\Models\Digital\Midia\Imagen;
+use Artista\Models\Imagen;
 
 class Export extends Command
 {

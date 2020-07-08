@@ -3,7 +3,7 @@
 namespace Finder\Spider\Integrations\SnapChat;
 
 use Log;
-// use Finder\Models\Digital\Midia\Video;
+// use Artista\Models\Video;
 use App\Models\User;
 use Finder\Spider\Integrations\Integration;
 

@@ -3,7 +3,7 @@ namespace Finder\Spider\Registrator;
 
 use Finder\Contracts\Spider\TargetManager;
 
-use Finder\Models\Digital\Midia\File;
+use Artista\Models\File;
 use Finder\Models\Digital\Internet\ComputerFile;
 
 /**
