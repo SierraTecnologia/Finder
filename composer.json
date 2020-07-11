@@ -65,6 +65,7 @@
         "sebastian/diff": "*",
         "sebastian/phpcpd": "*",
         "sierratecnologia/stalker": "dev-master",
+        "sierratecnologia/casa": "dev-master",
         "phpoffice/phppresentation": "*",
         "phpoffice/phpspreadsheet": "*",
         "phpoffice/phpword": "*"

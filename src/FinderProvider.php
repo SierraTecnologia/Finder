@@ -34,6 +34,7 @@ class FinderProvider extends ServiceProvider
     public static $providers = [
 
         \Stalker\StalkerProvider::class,
+        \Casa\CasaProvider::class,
 
         /**
          * Externos
