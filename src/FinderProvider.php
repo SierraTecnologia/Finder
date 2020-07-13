@@ -49,12 +49,20 @@ class FinderProvider extends ServiceProvider
      */
     public static $menuItens = [
         'Painel' => [
+            [
+                'text' => 'Finder',
+                'icon' => 'fas fa-fw fa-search',
+                'icon_color' => "blue",
+                'label_color' => "success",
+                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            ],
             'Finder' => [
                 [
                     'text'        => 'Procurar',
                     'icon'        => 'fas fa-fw fa-search',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
                 [
@@ -62,6 +70,7 @@ class FinderProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-search',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
                 [
@@ -69,6 +78,7 @@ class FinderProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-industry',
                     'icon_color'  => 'red',
                     'label_color' => 'success',
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'nivel' => \App\Models\Role::$GOOD,
                 ],
                 'Procurar' => [
@@ -78,6 +88,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-ship',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
+                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \App\Models\Role::$ADMIN
                     ],
                     [
@@ -86,6 +97,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-gavel',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
+                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \App\Models\Role::$ADMIN
                     ],
                     [
@@ -94,6 +106,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-group',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
+                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \App\Models\Role::$ADMIN
                     ],
                 ],
@@ -104,6 +117,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',
+                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'nivel' => \App\Models\Role::$GOOD,
                     ],
                 ],
@@ -114,6 +128,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-industry',
                         'icon_color'  => 'red',
                         'label_color' => 'success',
+                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'nivel' => \App\Models\Role::$GOOD,
                     ],
                     [
@@ -122,6 +137,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',
+                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'nivel' => \App\Models\Role::$GOOD,
                     ],
                 ],
