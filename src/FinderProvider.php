@@ -84,7 +84,7 @@ class FinderProvider extends ServiceProvider
                 'Procurar' => [
                     [
                         'text'        => 'Finder Home',
-                        'route'       => 'finder.home',
+                        'route'       => 'rica.finder.home',
                         'icon'        => 'fas fa-fw fa-ship',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
@@ -93,7 +93,7 @@ class FinderProvider extends ServiceProvider
                     ],
                     [
                         'text'        => 'Finder Midias',
-                        'route'       => 'finder.medias',
+                        'route'       => 'rica.finder.medias',
                         'icon'        => 'fas fa-fw fa-gavel',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
@@ -102,7 +102,7 @@ class FinderProvider extends ServiceProvider
                     ],
                     [
                         'text'        => 'Finder Pessoas',
-                        'route'       => 'finder.persons',
+                        'route'       => 'rica.finder.persons',
                         'icon'        => 'fas fa-fw fa-group',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
@@ -113,7 +113,7 @@ class FinderProvider extends ServiceProvider
                 'Track' => [
                     [
                         'text'        => 'Persons',
-                        'route'       => 'finder.track.person',
+                        'route'       => 'rica.finder.track.person',
                         'icon'        => 'fas fa-fw fa-coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',
@@ -133,7 +133,7 @@ class FinderProvider extends ServiceProvider
                     ],
                     [
                         'text'        => 'Actions',
-                        'route'       => 'finder.action.actions.index',
+                        'route'       => 'rica.finder.action.actions.index',
                         'icon'        => 'fas fa-fw fa-coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',
@@ -239,7 +239,7 @@ class FinderProvider extends ServiceProvider
         // if (!function_exists('finder_asset')) {
         //     function finder_asset($path, $secure = null)
         //     {
-        //         return route('finder.assets').'?path='.urlencode($path);
+        //         return route('rica.finder.assets').'?path='.urlencode($path);
         //     }
         // }
     }
