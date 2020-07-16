@@ -92,15 +92,6 @@ class FinderProvider extends ServiceProvider
                         // 'access' => \App\Models\Role::$ADMIN
                     ],
                     [
-                        'text'        => 'Finder Midias',
-                        'route'       => 'rica.finder.medias',
-                        'icon'        => 'fas fa-fw fa-gavel',
-                        'icon_color'  => 'blue',
-                        'label_color' => 'success',
-                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'access' => \App\Models\Role::$ADMIN
-                    ],
-                    [
                         'text'        => 'Finder Pessoas',
                         'route'       => 'rica.finder.persons',
                         'icon'        => 'fas fa-fw fa-group',
