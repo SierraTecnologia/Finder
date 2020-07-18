@@ -2,7 +2,7 @@
 
 namespace Finder\Models\Digital\Internet;
 
-use Informate\Traits\ArchiveTrait;
+use Support\Traits\Models\ArchiveTrait;
 
 use Carbon\Carbon;
 use Config;

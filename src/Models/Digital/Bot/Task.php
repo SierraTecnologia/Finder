@@ -12,7 +12,7 @@
 
 namespace Finder\Models\Digital\Bot;
 
-use Informate\Traits\ComplexRelationamentTrait;
+use Support\Traits\Models\ComplexRelationamentTrait;
 use Support\Models\Base;
 
 class Task extends Base

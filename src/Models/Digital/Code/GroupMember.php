@@ -8,7 +8,7 @@ namespace Finder\Models\Digital\Code;
 use Support\Models\Base; //use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Hash;
-use Informate\Traits\EloquentGetTableNameTrait;
+use Support\Traits\Models\EloquentGetTableNameTrait;
 
 class GroupMember extends Base
 {
