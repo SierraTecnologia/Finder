@@ -12,8 +12,6 @@
 
 namespace Finder\Models\Digital\Code;
 
-use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 use Support\Models\Base;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -23,7 +21,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Alexandre Salomé <alexandre.salome@gmail.com
  * @author Julien DIDIER <julien@jdidier.net>
  */
-class User extends Base implements UserInterface
+class User extends Base
 {
 
     protected $organizationPerspective = true;
@@ -83,7 +81,7 @@ class User extends Base implements UserInterface
     /**
      * @inheritdoc
      */
-    public function setPassword($raw, PasswordEncoderInterface $encoder = null)
+    public function setPassword($raw, $encoder = null)
     {
         $this->salt = md5(uniqid().microtime());
 
