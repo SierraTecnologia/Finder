@@ -5,10 +5,10 @@
 
 namespace Finder\Components\Worker\Sync;
 
-use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
+use Fabrica\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Fabrica\Models\Infra\Token;
 use Fabrica\Models\Infra\SshKey;
-use SiUtils\Tools\Programs\Git\Admin as GitManiputor;
+use Fabrica\Tools\Programs\Git\Admin as GitManiputor;
 use Fabrica\Models\Code\Project as ProjectModel;
 class Project
 {

@@ -12,7 +12,7 @@
 
 namespace Finder\Models\Digital\Bot;
 
-use Support\Traits\Models\ComplexRelationamentTrait;
+use Muleta\Traits\Models\ComplexRelationamentTrait;
 use Support\Models\Base;
 use Finder\Actions\Action;
 use Log;

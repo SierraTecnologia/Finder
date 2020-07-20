@@ -1,8 +1,25 @@
 {
     "name": "sierratecnologia/finder",
     "description": "Finder de Arquivos",
+    "type": "library",
+    "keywords": [
+        "sierratecnologia",
+        "finder"
+    ],
     "license": "MIT",
+    "homepage": "https://sierratecnologia.com/packages/finder/",
+    "support": {
+        "email": "help@sierratecnologia.com.br",
+        "issues": "https://github.com/sierratecnologia/finder/issues",
+        "source": "https://github.com/sierratecnologia/finder",
+        "docs": "https://github.com/sierratecnologia/finder/blob/master/README.md"
+    },
     "authors": [
+        {
+            "name": "SierraTecnologia",
+            "homepage": "https://sierratecnologia.com.br",
+            "email": "help@sierratecnologia.com.br"
+        },
         {
             "name": "Ricardo Rebello Sierra",
             "email": "contato@ricardosierra.com.br"

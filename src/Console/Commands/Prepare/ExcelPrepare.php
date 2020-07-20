@@ -12,9 +12,9 @@ use Rap2hpoutre\FastExcel\FastExcel;
 
 use Finder\Pipelines\Identify\RespectiveModel;
 
-use Support\Utils\Extratores\FileExtractor;
-use Support\Utils\Extratores\StringExtractor;
-use Support\Utils\Modificators\StringModificator;
+use Muleta\Utils\Extratores\FileExtractor;
+use Muleta\Utils\Extratores\StringExtractor;
+use Muleta\Utils\Modificators\StringModificator;
 
 class ExcelPrepare extends Command
 {

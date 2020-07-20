@@ -8,7 +8,7 @@ use Finder\Pipelines\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
 use Stalker\Models\Imagen;
 
-use Support\Utils\Modificators\StringModificator;
+use Muleta\Utils\Modificators\StringModificator;
 
 class PhotosPrepare extends Command
 {
