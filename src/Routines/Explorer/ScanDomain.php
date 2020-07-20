@@ -8,7 +8,7 @@ namespace Finder\Routines\Explorer;
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 
-use Finder\Models\Digital\Infra\Domain;
+use Fabrica\Models\Infra\Domain;
 
 class ScanDomain extends ActionCollection
 {

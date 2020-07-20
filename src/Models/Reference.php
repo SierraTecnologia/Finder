@@ -3,9 +3,9 @@
 namespace Finder\Models;
 
 use Support\Models\Base;
-use Finder\Models\Digital\Code\Issue;
-use Finder\Models\Digital\Code\Field;
-use Finder\Models\Digital\Code\Project;
+use Fabrica\Models\Code\Issue;
+use Fabrica\Models\Code\Field;
+use Fabrica\Models\Code\Project;
 
 class Reference extends Base
 {

@@ -11,8 +11,8 @@ use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 use Finder\Components\Worker\Sync\Database\BackupCollection;
 
-use Finder\Models\Digital\Infra\Database;
-use Finder\Models\Digital\Infra\DatabaseCollection;
+use Fabrica\Models\Infra\Database;
+use Fabrica\Models\Infra\DatabaseCollection;
 
 class BackupAll extends ActionCollection
 {

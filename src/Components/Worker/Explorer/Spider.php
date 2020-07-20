@@ -2,7 +2,7 @@
 
 namespace Finder\Components\Worker\Explorer;
 
-use Finder\Models\Digital\Infra\Domain;
+use Fabrica\Models\Infra\Domain;
 use Finder\Models\Digital\Internet\Url;
 use Finder\Models\Digital\Internet\UrlLink;
 

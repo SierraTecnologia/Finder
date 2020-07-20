@@ -127,7 +127,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'scanDomain',
-            \Finder\Models\Digital\Infra\Domain::class, // Ou Url
+            \Fabrica\Models\Infra\Domain::class, // Ou Url
             \App\Boards\Worker\Explorer\Spider::class,
             self::$spider
         );
@@ -137,7 +137,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'whoisDomain',
-            \Finder\Models\Digital\Infra\Domain::class, // Ou Url
+            \Fabrica\Models\Infra\Domain::class, // Ou Url
             \App\Boards\Worker\Explorer\Whois::class,
             self::$spider
         );
@@ -152,7 +152,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'backupDatabase',
-            \Finder\Models\Digital\Infra\DatabaseCollection::class,
+            \Fabrica\Models\Infra\DatabaseCollection::class,
             \App\Boards\Worker\Sync\Keys\BackupCollection::class,
             self::$routine
         );
@@ -162,7 +162,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'searchLog',
-            \Finder\Models\Digital\Infra\Computer::class,
+            \Fabrica\Models\Infra\Computer::class,
             \App\Boards\Worker\Logging\Logging::class,
             self::$routine
         );
@@ -178,7 +178,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'analyseComit',
-            \Finder\Models\Digital\Code\Commit::class,
+            \Fabrica\Models\Code\Commit::class,
             \App\Boards\Worker\Analyser\Analyser::class,
             self::$hook
         );
@@ -188,7 +188,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'deployCommit',
-            \Finder\Models\Digital\Code\Commit::class,
+            \Fabrica\Models\Code\Commit::class,
             \App\Boards\Worker\Deploy\Deploy::class,
             self::$hook
         );
@@ -212,7 +212,7 @@ class Board
          */
         $Boards[] = self::insertBoard(
             'syncProject',
-            \Finder\Models\Digital\Code\Project::class,
+            \Fabrica\Models\Code\Project::class,
             \App\Boards\Worker\Sync\Project::class,
             self::$hook
         );

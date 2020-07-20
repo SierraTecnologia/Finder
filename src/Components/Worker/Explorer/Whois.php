@@ -2,9 +2,9 @@
 
 namespace Finder\Components\Worker\Explorer;
 
-use Finder\Models\Digital\Infra\Domain;
-use Finder\Models\Digital\Infra\SubDomain;
-use Finder\Models\Digital\Infra\DomainLink;
+use Fabrica\Models\Infra\Domain;
+use Fabrica\Models\Infra\SubDomain;
+use Fabrica\Models\Infra\DomainLink;
 
 /**
  * Spider Class

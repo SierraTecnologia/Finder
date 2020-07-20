@@ -44,6 +44,6 @@ class Url extends Base
 
     public function domain()
     {
-        return $this->belongsTo('Finder\Models\Digital\Infra\Domain', 'infra_domain_id', 'id');
+        return $this->belongsTo('Fabrica\Models\Infra\Domain', 'infra_domain_id', 'id');
     }
 }
