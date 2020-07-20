@@ -51,6 +51,7 @@ class CreateDinamicTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project');
+        Schema::dropIfExists('referenceables');
+        Schema::dropIfExists('references');
     }
 }

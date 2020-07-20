@@ -26,7 +26,7 @@ class GetFollowers extends Instagram
         $account = Account::create(
             [
             'username' => 'ricardosierra',
-            'integration_id' => \Finder\Spider\Integrations\Instagram\Instagram::$ID,
+            'integration_id' => \Integrations\Connectors\Connector\Instagram\Instagram::$ID,
             // 'likes' => '43 pessoas curtiram'
             ]
         );

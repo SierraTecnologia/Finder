@@ -4,8 +4,8 @@ namespace Finder\Components\Pipelines;
 
 use Log;
 use App\Models\User;
-use Finder\Spider\Integrations\Instagram\Instagram;
-use Finder\Spider\Integrations\Instagram\Facebook;
+use Integrations\Connectors\Connector\Instagram\Instagram;
+use Integrations\Connectors\Connector\Instagram\Facebook;
 
 
 use Finder\Actions\PublishPost;

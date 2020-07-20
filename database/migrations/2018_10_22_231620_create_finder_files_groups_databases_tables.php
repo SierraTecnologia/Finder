@@ -23,7 +23,7 @@ class CreateFinderFilesGroupsDatabasesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('thumbnails');
+        
     }
 
 }

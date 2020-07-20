@@ -174,7 +174,7 @@ class FinderProvider extends ServiceProvider
                 'as' => 'rica.',
                 // 'middleware' => 'rica',
             ], function ($router) {
-                include __DIR__.'/Routes/web.php';
+                include __DIR__.'/../routes/web.php';
             }
         );
     }
