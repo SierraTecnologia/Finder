@@ -6,7 +6,7 @@
 namespace Finder\Components\Worker\Sync\Keys;
 
 use SiUtils\Tools\Databases\Mysql\Mysql as MysqlTool;
-use Population\Models\Components\Integrations\Token;
+use Integrations\Models\Token;
 use Integrations\Connectors\Connector\Sentry\Sentry;
 use Integrations\Connectors\Connector\Jira\Jira;
 use Integrations\Connectors\Connector\Gitlab\Gitlab;

@@ -9,7 +9,7 @@ use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 use Finder\Components\Worker\Sync\Database\ImportCollection;
 
-use Population\Models\Components\Integrations\Token;
+use Integrations\Models\Token;
 
 class ImportRoutine extends ActionCollection
 {

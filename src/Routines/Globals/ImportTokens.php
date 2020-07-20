@@ -9,8 +9,8 @@ use Finder\Routines\Tokens\ImportRoutine;
 
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
-use Population\Models\Components\Integrations\Token;
-use Population\Models\Components\Integrations\TokenAccess;
+use Integrations\Models\Token;
+use Integrations\Models\TokenAccess;
 
 class ImportTokens extends ActionCollection
 {
