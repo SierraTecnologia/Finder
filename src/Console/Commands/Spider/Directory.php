@@ -5,7 +5,7 @@ namespace Finder\Console\Commands\Spider;
 use Finder\Actions\Instagram\GetMidias;
 use Finder\Actions\Instagram\GetStories;
 use Finder\Actions\Instagram\GetFollowers;
-use Population\Models\Identity\Digital\Account;
+use Telefonica\Models\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;
@@ -46,7 +46,7 @@ class Directory extends Command
         foreach ($paths as $path) {
             // Process Pipeline
             $pipeline(
-                \Finder\Entitys\DirectoryEntity::make($path)
+                \Fabrica\Entitys\DirectoryEntity::make($path)
             );
         }
         

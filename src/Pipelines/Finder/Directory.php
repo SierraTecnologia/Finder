@@ -51,7 +51,7 @@ class Directory extends StageBase
             $pipeline = ProjectBuilder::getPipelineWithOutput($this->getOutput());
             // Process Pipeline
             return $pipeline(
-                \Finder\Entitys\ProjectEntity::make($payload)
+                \Fabrica\Entitys\ProjectEntity::make($payload)
             );
         }
 
@@ -61,7 +61,7 @@ class Directory extends StageBase
         $pipeline = DirectoryBuilder::getPipelineWithOutput($this->getOutput());
         foreach ($payload->directorys as $directory) {
             $pipeline->process(
-                \Finder\Entitys\DirectoryEntity::make($directory->getRealPath())
+                \Fabrica\Entitys\DirectoryEntity::make($directory->getRealPath())
             );
         }
         return $payload;

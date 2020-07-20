@@ -290,7 +290,7 @@ class DirectoryExplorer
             dd($spider->run());
             // $spider = new \Finder\Pipelines\Finder\Directory($path);
             // $pipeline->process(
-            //     \Finder\Entitys\DirectoryEntity::make($path)
+            //     \Fabrica\Entitys\DirectoryEntity::make($path)
             // );
         }
         

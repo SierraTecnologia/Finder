@@ -3,7 +3,7 @@
 namespace Finder\Console\Commands\Prepare;
 
 use Illuminate\Console\Command;
-use Population\Models\Identity\Actors\Person;
+use Telefonica\Models\Actors\Person;
 use Finder\Pipelines\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
 use Stalker\Models\Imagen;

@@ -3,7 +3,7 @@
 namespace Finder\Console\Commands\Verify;
 
 use Finder\Actions\Instagram\GetMidias;
-use Population\Models\Identity\Digital\Account;
+use Telefonica\Models\Digital\Account;
 use Siravel\Models\Negocios\Business;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

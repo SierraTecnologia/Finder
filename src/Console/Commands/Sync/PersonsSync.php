@@ -3,7 +3,7 @@
 namespace Finder\Console\Commands\Sync;
 
 use Illuminate\Console\Command;
-use Population\Models\Identity\Actors\Person;
+use Telefonica\Models\Actors\Person;
 use Finder\Pipelines\Track\PersonTrack;
 
 class PersonsSync extends Command

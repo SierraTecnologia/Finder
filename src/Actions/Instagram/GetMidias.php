@@ -6,7 +6,7 @@ use Casa\Models\Calendar\AcaoHumana;
 use Illuminate\Support\Facades\Facade;
 use Log;
 use Stalker\Models\Imagen as Image;
-use Population\Models\Identity\Digital\Account;
+use Telefonica\Models\Digital\Account;
 
 class GetMidias extends Instagram
 {
