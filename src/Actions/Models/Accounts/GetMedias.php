@@ -23,7 +23,7 @@ class GetMedias implements ShouldQueue
      */
     public function dayling(Account $account)
     {
-        if ($account->integration_id == \Integrations\Connectors\Connector\Instagram\Instagram::$ID) {
+        if ($account->integration_id == \Integrations\Connectors\Instagram\Instagram::$ID) {
             (new GetMidias($account))->prepare($account->username)->execute();
         }
 

@@ -28,7 +28,7 @@
     "require": {
         "php": "^7.3.0",
         "laravel/framework": "^6.0|^7.0|^8.0",
-        "symfony/finder": "^5.0|^4.0",
+        "symfony/finder": "*",
         "guzzlehttp/guzzle": "^6.3",
         "nicmart/string-template": "v0.1.0",
         "fideloper/proxy": ">=4.0",

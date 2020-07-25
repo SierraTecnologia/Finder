@@ -4,8 +4,8 @@ namespace Finder\Components\View;
 
 use Log;
 use App\Models\User;
-use Integrations\Connectors\Connector\Instagram\Instagram;
-use Integrations\Connectors\Connector\Instagram\Facebook;
+use Integrations\Connectors\Instagram\Instagram;
+use Integrations\Connectors\Instagram\Facebook;
 
 
 use Finder\Actions\PublishPost;

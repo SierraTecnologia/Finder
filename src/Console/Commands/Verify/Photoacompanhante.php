@@ -4,7 +4,7 @@ namespace Finder\Console\Commands\Verify;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
-use Integrations\Connectors\Connector\PhotoAcompanhante\Import;
+use Integrations\Connectors\PhotoAcompanhante\Import;
 
 class Photoacompanhante extends Command
 {

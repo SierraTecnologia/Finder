@@ -8,8 +8,8 @@ class Apoio
     public function plataforms()
     {
         return [
-            Integrations\Connectors\Connector\Coursera\Coursera::class,
-            Integrations\Connectors\Connector\Youtube\Youtube::class,
+            Integrations\Connectors\Coursera\Coursera::class,
+            Integrations\Connectors\Youtube\Youtube::class,
         ];
     }
 

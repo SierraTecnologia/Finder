@@ -7,9 +7,9 @@ namespace Finder\Components\Worker\Sync\Keys;
 
 use Fabrica\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Integrations\Models\Token;
-use Integrations\Connectors\Connector\Sentry\Sentry;
-use Integrations\Connectors\Connector\Jira\Jira;
-use Integrations\Connectors\Connector\Gitlab\Gitlab;
+use Integrations\Connectors\Sentry\Sentry;
+use Integrations\Connectors\Jira\Jira;
+use Integrations\Connectors\Gitlab\Gitlab;
 use Log;
 use Support\Contracts\Runners\ActionInterface;
 
@@ -32,11 +32,11 @@ class ImportFromToken implements ActionInterface
         Log::channel('sitec-finder')->info('Tratando Token .. '.print_r($this->token, true));
 
         if ($this->token->account->integration_id == Sentry::getCodeForPrimaryKey()) {
-            // (new \Integrations\Connectors\Connector\Sentry\Import($this->token))->bundle();
+            // (new \Integrations\Connectors\Sentry\Import($this->token))->bundle();
         } else if ($this->token->account->integration_id == Jira::getCodeForPrimaryKey()) {
-            // (new \Integrations\Connectors\Connector\Jira\Import($this->token))->bundle();
+            // (new \Integrations\Connectors\Jira\Import($this->token))->bundle();
         } else if ($this->token->account->integration_id == Gitlab::getCodeForPrimaryKey()) {
-            (new \Integrations\Connectors\Connector\Gitlab\Import($this->token))->bundle();
+            (new \Integrations\Connectors\Gitlab\Import($this->token))->bundle();
         }
 
         return true;
