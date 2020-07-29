@@ -24,7 +24,7 @@ class ImportTokens extends ActionCollection
         // Import de Todos os Bancos de Dados
         $tokens = Token::all();
         $this->othersTargets = count($tokens);
-        $this->info('Add '.count($tokens).' tokens');
+        $this->info('Importando '.count($tokens).' tokens');
         
         foreach ($tokens as $token) {
             $importRoutine = ImportRoutine::makeWithOutput($this->output);

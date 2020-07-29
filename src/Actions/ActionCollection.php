@@ -44,7 +44,7 @@ class ActionCollection implements RunnerInterface
     protected function completeRunner(RunnerInterface $runner)
     {
         $this->executedActions = $this->executedActions+1;
-        Log::channel('sitec-finder')->notice('Runner Completada. Concluido:'.$this->getPorcDone());
+        $this->notice('Runner Completada. Concluido:'.$this->getPorcDone());
     }
 
     public function getActionToExecute()

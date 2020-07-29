@@ -211,7 +211,7 @@ class FinderProvider extends ServiceProvider
          */
         $this->app->singleton(
             FinderService::class, function ($app) {
-                Log::channel('sitec-finder')->info('Singleton Finder');
+                \Log::channel('sitec-finder')->info('Singleton Finder');
                 return new FinderService(\Illuminate\Support\Facades\Config::get('sitec.finder'));
             }
         );

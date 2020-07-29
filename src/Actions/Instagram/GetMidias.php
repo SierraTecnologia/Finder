@@ -53,7 +53,7 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
                 $new = true;
                 $name = md5($media->getShortCode());
                 // if ($media->getType()=='image') {
-                //     Log::channel('sitec-finder')->info('É imagem');
+                //     $this->info('É imagem');
                 // }
 
 
@@ -71,7 +71,7 @@ _nc_ht=instagram.fsdu5-1.fna.fbcdn.net&_nc_cat=103"
                     );
                         $new = false;
                 }
-                Log::channel('sitec-finder')->info($name);
+                $this->info($name);
 
                 // $accountPost = $this->account->posts()->firstOrCreate(
                 //     [

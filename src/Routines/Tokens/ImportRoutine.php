@@ -8,7 +8,7 @@ namespace Finder\Routines\Tokens;
 use Finder\Actions\Action;
 use Finder\Actions\ActionCollection;
 use Finder\Components\Worker\Sync\Database\ImportCollection;
-
+use Fabrica\Tasks\ImportFromToken;
 use Integrations\Models\Token;
 
 class ImportRoutine extends ActionCollection
@@ -70,7 +70,7 @@ class ImportRoutine extends ActionCollection
     public function prepareAction()
     {
         $stage = 0;
-        $action = Fabrica\Tasks\ImportFromToken::returnTask($this->output);
+        $action = ImportFromToken::returnTask($this->output);
         //Action::getActionByCode('importIntegrationToken');
 
         $this->newAction($action, $stage, 0);

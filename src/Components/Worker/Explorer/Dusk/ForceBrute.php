@@ -19,7 +19,7 @@ class OpenSite extends Page
      */
     public function assert(Browser $browser)
     {
-        \Log::channel('sitec-finder')->info('Attempting to pay utility bill.');
+        $this->info('Attempting to pay utility bill.');
         $day = \Carbon\Carbon::now()->day;
         // They always post the bill on the 18th.
         if($day > 18 && $day < 28) {

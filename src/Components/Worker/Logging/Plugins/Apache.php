@@ -131,7 +131,7 @@ class Apache
                 // Write a line of log and try to guess the format
                 $remain = 10;
                 $test   = 0;
-                Log::channel('sitec-finder')->notice('Pimp my Log has been successfully configured with Apache');
+                $this->notice('Pimp my Log has been successfully configured with Apache');
                 foreach ( LogParser::getLinesFromBottom($file, 10) as $line ) {
                     $test = @preg_match('|^\[(.*) (.*) (.*) (.*):(.*):(.*)\.(.*) (.*)\] \[(.*):(.*)\] \[pid (.*)\] .*\[client (.*):(.*)\] (.*)(, referer: (.*))*$|U', $line);
                     if ($test === 1 ) {
