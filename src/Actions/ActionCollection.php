@@ -5,14 +5,16 @@
 
 namespace Finder\Actions;
 
-use Finder\Models\Digital\Bot\Runner;
+use Operador\Models\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
 use Finder\Contracts\Action\RunnerInterface;
-use Support\Contracts\Runners\ActionInterface;
+use Operador\Contracts\ActionInterface;
+use Support\Contracts\Output\OutputableTrait;
 
 class ActionCollection implements RunnerInterface
 {
+    use OutputableTrait;
     /**
      * Array de Array de Actions, o Indice seria o Stage. 
      * 
@@ -38,7 +40,6 @@ class ActionCollection implements RunnerInterface
     protected $isPrepared = false;
 
     protected $isComplete = false;
-    protected $output = false;
 
     protected function completeRunner(RunnerInterface $runner)
     {
@@ -71,7 +72,7 @@ class ActionCollection implements RunnerInterface
             if ($action instanceof ActionCollection) {
                 $this->runners[$this->actualStage][] = $action->prepare();
             } else {
-                $this->runners[$this->actualStage][] = (new Runner())->usingAction($action)->usingTarget($this->getActor($this->actionsActors[$this->actualStage][$indice]))->prepare();
+                $this->runners[$this->actualStage][] = (Runner::makeWithOutput($this->output))->usingAction($action)->usingTarget($this->getActor($this->actionsActors[$this->actualStage][$indice]))->prepare();
             }
             $totalActionsCount = $totalActionsCount + 1;
         }
@@ -83,6 +84,7 @@ class ActionCollection implements RunnerInterface
     public function execute()
     {
         foreach($this->getRunners() as $runner) {
+            $this->info('Executando');
             $runner->execute();
             $this->completeRunner($runner);
         }
@@ -93,9 +95,8 @@ class ActionCollection implements RunnerInterface
         return $this;
     }
 
-    public function run($output = false)
+    public function run()
     {
-        $this->output = $output;
         $this->prepare();
         $this->execute();
         return $this->done();

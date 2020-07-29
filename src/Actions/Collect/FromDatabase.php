@@ -5,7 +5,7 @@
 
 namespace Finder\Actions\Collect;
 
-use Finder\Models\Digital\Bot\Runner;
+use Operador\Models\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
 

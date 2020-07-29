@@ -2,7 +2,7 @@
 
 namespace Finder\Pipelines\Finder;
 
-use Support\Contracts\Runners\Stage as StageBase;
+use Operador\Contracts\Stage as StageBase;
 
 class Repository extends StageBase
 {

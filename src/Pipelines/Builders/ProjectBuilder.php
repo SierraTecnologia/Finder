@@ -3,9 +3,9 @@
 namespace Finder\Pipelines\Builders;
 
 use League\Pipeline\Pipeline;
-use League\Pipeline\StageInterface;
+use Operador\Contracts\StageInterface;
 
-use Support\Contracts\Runners\PipelineBuilder;
+use Operador\Contracts\PipelineBuilder;
 
 use Finder\Pipelines\Finder\Project;
 

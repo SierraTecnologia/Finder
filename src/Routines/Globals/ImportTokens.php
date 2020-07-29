@@ -14,7 +14,6 @@ use Integrations\Models\TokenAccess;
 
 class ImportTokens extends ActionCollection
 {
-
     /**
      * Avisa se precisa de Alvos Externos ou nao e descreve eles
      */
@@ -25,9 +24,10 @@ class ImportTokens extends ActionCollection
         // Import de Todos os Bancos de Dados
         $tokens = Token::all();
         $this->othersTargets = count($tokens);
+        $this->info('Add '.count($tokens).' tokens');
         
         foreach ($tokens as $token) {
-            $importRoutine = new ImportRoutine($this->output);
+            $importRoutine = ImportRoutine::makeWithOutput($this->output);
             $importRoutine->prepareTargets($token);
             $this->newActionCollection($importRoutine);
         }

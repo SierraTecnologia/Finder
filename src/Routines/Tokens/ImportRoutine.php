@@ -62,10 +62,17 @@ class ImportRoutine extends ActionCollection
         return true;
     }
     
+    /**
+     * Mudar Essa porra Toda
+     *
+     * @return void
+     */
     public function prepareAction()
     {
         $stage = 0;
-        $action = Action::getActionByCode('importIntegrationToken');
+        $action = Fabrica\Tasks\ImportFromToken::returnTask($this->output);
+        //Action::getActionByCode('importIntegrationToken');
+
         $this->newAction($action, $stage, 0);
     }
 

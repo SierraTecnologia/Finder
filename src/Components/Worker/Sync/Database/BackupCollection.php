@@ -7,7 +7,7 @@ namespace Finder\Components\Worker\Sync\Database;
 
 use Fabrica\Tools\Databases\Mysql\Mysql as MysqlTool;
 use Fabrica\Models\Infra\DatabaseCollection;
-use Support\Contracts\Runners\ActionInterface;
+use Operador\Contracts\ActionInterface;
 
 class BackupCollection implements ActionInterface
 {

@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ * @todo Copiado de Action. Refatorar
  */
 
 namespace Finder\Components\View\Boards;

@@ -3,7 +3,7 @@
 namespace Support\Pipelines\Application;
 
 use League\Pipeline\Pipeline;
-use League\Pipeline\StageInterface;
+use Operador\Contracts\StageInterface;
 
 class FolderFound implements StageInterface
 {

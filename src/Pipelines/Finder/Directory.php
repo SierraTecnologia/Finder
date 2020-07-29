@@ -3,11 +3,11 @@
 namespace Finder\Pipelines\Finder;
 
 use League\Pipeline\Pipeline;
-use League\Pipeline\StageInterface;
+use Operador\Contracts\StageInterface;
 
 use Symfony\Component\Finder\Finder;
 use Support\Helps\DebugHelper;
-use Support\Contracts\Runners\Stage as StageBase;
+use Operador\Contracts\Stage as StageBase;
 use Finder\Pipelines\Builders\DirectoryBuilder;
 use Finder\Pipelines\Builders\ProjectBuilder;
 
