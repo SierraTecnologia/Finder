@@ -95,7 +95,7 @@
                   @foreach ($persons as $person)
                       <li>
                           <img src="{!! $person->getProfileUrl(128, 128) !!}" alt="User Image">
-                          <a class="users-list-name" href="{{ route('finder.track.person', [$person->getIdentificador()]) }}">{!! $person->name !!}</a>
+                          <a class="users-list-name" href="{{ route('rica.finder.track.person', [$person->getIdentificador()]) }}">{!! $person->name !!}</a>
                           <span class="users-list-date">Today</span>
                       </li>
                   @endforeach

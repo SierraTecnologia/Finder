@@ -4,7 +4,7 @@ namespace Finder\Http\Controllers\Track;
 
 use Finder\Services\FinderService;
 use Illuminate\Support\Facades\Schema;
-use Population\Repositories\PersonRepository;
+use Telefonica\Repositories\PersonRepository;
 
 class PersonController extends Controller
 {

@@ -8,7 +8,7 @@ namespace Finder\Actions;
 use Operador\Models\Runner;
 use Log;
 use MathPHP\Functions\Map\Single;
-use Finder\Contracts\Action\RunnerInterface;
+use Operador\Contracts\RunnerInterface;
 use Operador\Contracts\ActionInterface;
 use Support\Contracts\Output\OutputableTrait;
 

@@ -48,7 +48,7 @@ class FinderProvider extends ServiceProvider
      * Rotas do Menu
      */
     public static $menuItens = [
-        'Painel' => [
+        'Operações|150' => [
             [
                 'text' => 'Finder',
                 'icon' => 'fas fa-fw fa-search',
@@ -72,14 +72,6 @@ class FinderProvider extends ServiceProvider
                     'label_color' => 'success',
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \App\Models\Role::$ADMIN
-                ],
-                [
-                    'text'        => 'Bots',
-                    'icon'        => 'fas fa-fw fa-industry',
-                    'icon_color'  => 'red',
-                    'label_color' => 'success',
-                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'nivel' => \App\Models\Role::$GOOD,
                 ],
                 'Procurar' => [
                     [
@@ -105,26 +97,6 @@ class FinderProvider extends ServiceProvider
                     [
                         'text'        => 'Persons',
                         'route'       => 'rica.finder.track.person',
-                        'icon'        => 'fas fa-fw fa-coffee',
-                        'icon_color'  => 'red',
-                        'label_color' => 'success',
-                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'nivel' => \App\Models\Role::$GOOD,
-                    ],
-                ],
-                'Bots' => [
-                    [
-                        'text'        => 'Runners',
-                        'url'         => 'runners',
-                        'icon'        => 'fas fa-fw fa-industry',
-                        'icon_color'  => 'red',
-                        'label_color' => 'success',
-                        'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'nivel' => \App\Models\Role::$GOOD,
-                    ],
-                    [
-                        'text'        => 'Actions',
-                        'route'       => 'rica.finder.action.actions.index',
                         'icon'        => 'fas fa-fw fa-coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',

@@ -58,7 +58,7 @@ class Export extends Command
  * Export a Model to .xlsx file:
 
 use Rap2hpoutre\FastExcel\FastExcel;
-use App\User;
+use App\Models\User;
 
 // Load users
 $users = User::all();

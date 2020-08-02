@@ -4,7 +4,7 @@ namespace Finder\Http\Controllers;
 
 use Finder\Services\FinderService;
 use Illuminate\Support\Facades\Schema;
-use Population\Repositories\PersonRepository;
+use Telefonica\Repositories\PersonRepository;
 use Stalker\Models\Media;
 
 class HomeController extends Controller
