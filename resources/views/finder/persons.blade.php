@@ -18,18 +18,18 @@
         <!-- Left col -->
         <div class="col-md-8">
           <!-- MAP & BOX PANE -->
-          <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Visitors Report</h3>
+          <div class="box card box-success">
+            <div class="box-header card-header with-border">
+              <h3 class="box-title card-title">Visitors Report</h3>
 
-              <div class="box-tools pull-right">
+              <div class="box-tools card-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
               </div>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
+            <!-- /.box-header card-header -->
+            <div class="box-body card-body no-padding">
               <div class="row">
                 <div class="col-md-9 col-sm-8">
                   <div class="pad">
@@ -64,7 +64,7 @@
               </div>
               <!-- /.row -->
             </div>
-            <!-- /.box-body -->
+            <!-- /.box-body card-body -->
           </div>
           <!-- /.box -->
         </div>
@@ -77,11 +77,11 @@
 
         <div class="col-md-4">
             <!-- USERS LIST -->
-            <div class="box box-danger">
-            <div class="box-header with-border">
-                <h3 class="box-title">Latest Members</h3>
+            <div class="box card box-danger card-danger">
+            <div class="box-header card-header with-border">
+                <h3 class="box-title card-title">Latest Members</h3>
 
-                <div class="box-tools pull-right">
+                <div class="box-tools card-tools pull-right">
                 <span class="label label-danger">8 New Members</span>
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -89,8 +89,8 @@
                 </button>
                 </div>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body no-padding">
+            <!-- /.box-header card-header -->
+            <div class="box-body card-body no-padding">
                 <ul class="users-list clearfix">
                   @foreach ($persons as $person)
                       <li>
@@ -102,11 +102,11 @@
                 </ul>
                 <!-- /.users-list -->
             </div>
-            <!-- /.box-body -->
-            <div class="box-footer text-center">
+            <!-- /.box-body card-body -->
+            <div class="box-footer card-footer text-center">
                 <a href="javascript:void(0)" class="uppercase">View All Users</a>
             </div>
-            <!-- /.box-footer -->
+            <!-- /.box-footer card-footer -->
             </div>
             <!--/.box -->
         </div>

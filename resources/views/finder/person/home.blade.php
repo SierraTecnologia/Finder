@@ -10,8 +10,8 @@
         <div class="col-md-3">
 
           <!-- Profile Image -->
-          <div class="box box-primary">
-            <div class="box-body box-profile">
+          <div class="box card box-primary">
+            <div class="box-body card-body box-profile">
               <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
 
               <h3 class="profile-username text-center">Nina Mcintire</h3>
@@ -32,17 +32,17 @@
 
               <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
             </div>
-            <!-- /.box-body -->
+            <!-- /.box-body card-body -->
           </div>
           <!-- /.box -->
 
           <!-- About Me Box -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">About Me</h3>
+          <div class="box card box-primary">
+            <div class="box-header card-header with-border">
+              <h3 class="box-title card-title">About Me</h3>
             </div>
-            <!-- /.box-header -->
-            <div class="box-body">
+            <!-- /.box-header card-header -->
+            <div class="box-body card-body">
               <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
@@ -73,7 +73,7 @@
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
             </div>
-            <!-- /.box-body -->
+            <!-- /.box-body card-body -->
           </div>
           <!-- /.box -->
         </div>
