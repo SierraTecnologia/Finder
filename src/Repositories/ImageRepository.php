@@ -10,7 +10,7 @@ use Cms;
 use Config;
 use CryptoService;
 use Stalker\Models\Imagen as Image;
-use Population\Models\Tag;
+use Informate\Models\Tag;
 use Stalker\Services\Midia\FileService;
 
 
