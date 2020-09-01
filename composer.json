@@ -26,7 +26,7 @@
         }
     ],
     "require": {
-        "php": "^7.3.0",
+        "php": "^7.4",
         "laravel/framework": "^6.0|^7.0|^8.0",
         "symfony/finder": "*",
         "guzzlehttp/guzzle": "^6.3",
