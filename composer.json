@@ -27,7 +27,7 @@
     ],
     "require": {
         "php": "^7.4",
-        "laravel/framework": "^6.0|^7.0|^8.0",
+        "laravel/framework": "^7.0",
         "symfony/finder": "*",
         "guzzlehttp/guzzle": "^6.3",
         "nicmart/string-template": "v0.1.0",
