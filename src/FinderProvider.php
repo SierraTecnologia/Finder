@@ -2,29 +2,32 @@
 
 namespace Finder;
 
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
-use Finder\Services\FinderService;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\View;
-
-use Log;
 use App;
 use Config;
-use Route;
-use Illuminate\Routing\Router;
-
-use Muleta\Traits\Providers\ConsoleTools;
-
 use Finder\Facades\Finder as FinderFacade;
+use Finder\Services\FinderService;
 use Illuminate\Contracts\Events\Dispatcher;
+
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
+
 use JeroenNoten\LaravelAdminLte\Events\BuildingMenu;
+
+use Log;
+use Muleta\Traits\Providers\ConsoleTools;
+use Route;
 
 use Stalker\Services\Midia\FileService;
 
 class FinderProvider extends ServiceProvider
 {
     use ConsoleTools;
+
+    public $packageName = 'finder';
+    const pathVendor = 'sierratecnologia/finder';
 
     public static $aliasProviders = [
         'Finder' => \Finder\Facades\Finder::class,
@@ -54,6 +57,7 @@ class FinderProvider extends ServiceProvider
                 'icon' => 'fas fa-fw fa-search',
                 'icon_color' => "blue",
                 'label_color' => "success",
+                'section' => "master",
                 'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
             ],
             'Finder' => [
@@ -62,6 +66,7 @@ class FinderProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-search',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
@@ -70,6 +75,7 @@ class FinderProvider extends ServiceProvider
                     'icon'        => 'fas fa-fw fa-search',
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
+                    'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
@@ -80,6 +86,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-ship',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
+                        'section' => "master",
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \App\Models\Role::$ADMIN
                     ],
@@ -89,6 +96,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-group',
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
+                        'section' => "master",
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \App\Models\Role::$ADMIN
                     ],
@@ -100,6 +108,7 @@ class FinderProvider extends ServiceProvider
                         'icon'        => 'fas fa-fw fa-coffee',
                         'icon_color'  => 'red',
                         'label_color' => 'success',
+                        'section' => "master",
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'nivel' => \App\Models\Role::$GOOD,
                     ],
@@ -137,18 +146,9 @@ class FinderProvider extends ServiceProvider
         }
 
         /**
-         * Finder Routes
+         * Stalker Routes
          */
-        Route::group(
-            [
-                'namespace' => '\Finder\Http\Controllers',
-                'prefix' => \Illuminate\Support\Facades\Config::get('application.routes.main'),
-                'as' => 'rica.',
-                // 'middleware' => 'rica',
-            ], function ($router) {
-                include __DIR__.'/../routes/web.php';
-            }
-        );
+        $this->loadRoutesForRiCa(__DIR__.'/../routes');
     }
 
     /**
@@ -241,7 +241,6 @@ class FinderProvider extends ServiceProvider
 
         $this->loadViews();
         $this->loadTranslations();
-
     }
 
     private function loadViews()
@@ -254,7 +253,6 @@ class FinderProvider extends ServiceProvider
             $viewsPath => base_path('resources/views/vendor/finder'),
             ], ['views',  'sitec', 'sitec-views']
         );
-
     }
     
     private function loadTranslations()
@@ -272,7 +270,7 @@ class FinderProvider extends ServiceProvider
 
 
     /**
-     * 
+     *
      */
     private function loadLogger()
     {
@@ -284,5 +282,4 @@ class FinderProvider extends ServiceProvider
             ]
         );
     }
-
 }
