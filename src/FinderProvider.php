@@ -79,6 +79,26 @@ class FinderProvider extends ServiceProvider
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \App\Models\Role::$ADMIN
                 ],
+                [
+                    'text'        => 'Url',
+                    'route'       => 'master.finder.url.index',
+                    'icon'        => 'fas fa-fw fa-ship',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    'section'     => "master",
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
+                [
+                    'text'        => 'Computer Files',
+                    'route'       => 'master.finder.files.index',
+                    'icon'        => 'fas fa-fw fa-ship',
+                    'icon_color'  => 'blue',
+                    'label_color' => 'success',
+                    'section'   => "master",
+                    'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                    // 'access' => \App\Models\Role::$ADMIN
+                ],
                 'Procurar' => [
                     [
                         'text'        => 'Finder Home',
@@ -146,7 +166,7 @@ class FinderProvider extends ServiceProvider
         }
 
         /**
-         * Stalker Routes
+         * Finder Routes
          */
         $this->loadRoutesForRiCa(__DIR__.'/../routes');
     }

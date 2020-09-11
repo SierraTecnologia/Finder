@@ -17,10 +17,9 @@ use Support\Models\Base;
 
 class Url extends Base
 {
-
     protected $organizationPerspective = true;
 
-    protected $table = 'bot_internet_urls';     
+    protected $table = 'bot_internet_urls';
 
     /**
      * The attributes that are mass assignable.
@@ -30,6 +29,37 @@ class Url extends Base
     protected $fillable = [
         'url',
         'infra_domain_id',
+    ];
+    public $formFields = [
+        [
+            'name' => 'url',
+            'label' => 'url',
+            'type' => 'text'
+        ],
+        [
+            'name' => 'infra_domain_id',
+            'label' => 'Issue',
+            'type' => 'select',
+            'relationship' => 'issue'
+        ],
+    ];
+
+    public $indexFields = [
+        'url',
+        'infra_domain_id'
+    ];
+
+    public $validationRules = [
+        'url'       => 'required',
+        'infra_domain_id' => 'required|int',
+    ];
+
+    public $validationMessages = [
+        'url.required' => "Url é obrigatório."
+    ];
+
+    public $validationAttributes = [
+        'url' => 'url'
     ];
 
     public function linksFrom()

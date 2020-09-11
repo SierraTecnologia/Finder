@@ -2,15 +2,15 @@
 
 namespace Finder\Models\Digital\Internet;
 
-use Muleta\Traits\Models\ArchiveTrait;
-
 use Carbon\Carbon;
+
 use Config;
-use FileService;
 use Exception;
+use FileService;
 use Illuminate\Support\Facades\Cache;
-use Log;
 use Intervention\Image\ImageManagerStatic as InterventionImage;
+use Log;
+use Muleta\Traits\Models\ArchiveTrait;
 use Storage;
 
 class ComputerFile extends ArchiveTrait
@@ -53,4 +53,44 @@ class ComputerFile extends ArchiveTrait
         
     ];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'infra_computer_id',
+    ];
+    public $formFields = [
+        [
+            'name' => 'name',
+            'label' => 'name',
+            'type' => 'text'
+        ],
+        [
+            'name' => 'infra_computer_id',
+            'label' => 'Computer',
+            'type' => 'select',
+            'relationship' => 'computer'
+        ],
+    ];
+
+    public $indexFields = [
+        'url',
+        'infra_computer_id'
+    ];
+
+    public $validationRules = [
+        'url'       => 'required',
+        'infra_computer_id' => 'required|int',
+    ];
+
+    public $validationMessages = [
+        'url.required' => "Url é obrigatório."
+    ];
+
+    public $validationAttributes = [
+        'url' => 'url'
+    ];
 }
