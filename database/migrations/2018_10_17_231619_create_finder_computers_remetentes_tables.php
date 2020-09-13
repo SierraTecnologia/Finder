@@ -32,7 +32,7 @@ class CreateFinderComputersRemetentesTables extends Migration
      */
     public function down()
     {
-        Schema::drop('computers');
+        Schema::dropIfExists('computers');
     }
 
 }
