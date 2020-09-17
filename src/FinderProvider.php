@@ -189,7 +189,7 @@ class FinderProvider extends ServiceProvider
 
         $this->app->singleton(
             'finder', function () {
-                return new Finder();
+                return new FinderFacade();
             }
         );
         
