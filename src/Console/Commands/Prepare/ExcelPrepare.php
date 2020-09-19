@@ -72,26 +72,26 @@ class ExcelPrepare extends Command
 
             $collection = (new FastExcel)->configureCsv(';', '#', '\n', 'gbk') //, 'gbk'
             // $collections = (new FastExcel)
-            ->import(
-                storage_path('app/'.$file),
-                function ($line) use ($fileName, $assuntosDaPasta) {
-                    $modelClass = RespectiveModel::run(
-                        $assuntosDaPasta,
-                        $fileName
-                    );
+                ->import(
+                    storage_path('app/'.$file),
+                    function ($line) use ($fileName, $assuntosDaPasta) {
+                        $modelClass = RespectiveModel::run(
+                            $assuntosDaPasta,
+                            $fileName
+                        );
 
-                    if (!$modelClass) {
-                        $this->info('Ignorando importação de '.$fileName);
-                        return ;
+                        if (!$modelClass) {
+                            $this->info('Ignorando importação de '.$fileName);
+                            return ;
+                        }
+
+                        $this->info('Importing '.$fileName.' p/ classe '.$modelClass);
+                        return call_user_func(
+                            $modelClass.'::importFromArray',
+                            $line
+                        );
                     }
-
-                    $this->info('Importing '.$fileName.' p/ classe '.$modelClass);
-                    return call_user_func(
-                        $modelClass.'::importFromArray',
-                        $line
-                    );
-                }
-            );
+                );
 
             // Imagen::createByMediaFromDisk(
             //     $this->getDisk(),

@@ -9,13 +9,15 @@ class FolderFound implements StageInterface
 {
     public function __invoke($eloquentClasses)
     {
-        return Cache::remember('sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
-            Log::debug(
-                'Mount Database -> Renderizando'
-            );
-            $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
-            return $renderDatabase;
-        });
+        return Cache::remember(
+            'sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
+                Log::debug(
+                    'Mount Database -> Renderizando'
+                );
+                $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
+                return $renderDatabase;
+            }
+        );
     }
 }
 

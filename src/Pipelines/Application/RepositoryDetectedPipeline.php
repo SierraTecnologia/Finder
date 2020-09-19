@@ -7,8 +7,8 @@ use Operador\Contracts\StageInterface;
 
 class RepositoryDetectedPipeline implements StageInterface
 {
-        public function __invoke($eloquentClasses)
-        {
+    public function __invoke($eloquentClasses)
+    {
 
 
 
@@ -17,21 +17,23 @@ class RepositoryDetectedPipeline implements StageInterface
 
 
 
-            return Cache::remember('sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
-                Log::debug(
-                    'Mount Database -> Renderizando'
-                );
-                $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
-                return $renderDatabase;
-            });
-        }
-        public static function getPipeline()
-        {
-            return (new Pipeline)
-                 ->pipe(new static);
-        }
-        public static function make($eloquentClasses)
-        {
+        return Cache::remember(
+            'sitec_support_render_database_'.md5(implode('|', $eloquentClasses->values()->all())), 30, function () use ($eloquentClasses) {
+                    Log::debug(
+                        'Mount Database -> Renderizando'
+                    );
+                    $renderDatabase = (new \Support\Components\Database\Render\Database($eloquentClasses));
+                    return $renderDatabase;
+            }
+        );
+    }
+    public static function getPipeline()
+    {
+        return (new Pipeline)
+             ->pipe(new static);
+    }
+    public static function make($eloquentClasses)
+    {
         
 
 
