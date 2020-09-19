@@ -1,3 +1,3 @@
 <?php
 
-Route::resource('/computerfiles', 'ComputerFilesController');
+Route::resource('/computerfiles', 'ComputerFileController');
