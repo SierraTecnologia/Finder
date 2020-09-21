@@ -2,7 +2,7 @@
 
 namespace Finder\Models;
 
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 use Fabrica\Models\Code\Issue;
 use Fabrica\Models\Code\Field;
 use Fabrica\Models\Code\Project;

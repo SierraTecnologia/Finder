@@ -13,7 +13,7 @@
 namespace Finder\Models\Digital\Internet;
 
 use Muleta\Traits\Models\ComplexRelationamentTrait;
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 
 class Url extends Base
 {

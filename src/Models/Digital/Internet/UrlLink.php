@@ -12,7 +12,7 @@
 
 namespace Finder\Models\Digital\Internet;
 
-use Support\Models\Base;
+use Pedreiro\Models\Base;
 
 class UrlLink extends Base
 {
