@@ -97,16 +97,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.154.2",
+            "version": "3.154.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "57be3873ea9a32ccd8467c38d325544c2c064f69"
+                "reference": "83a1382930359e4d4f4c9187239f059d5b282520"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/57be3873ea9a32ccd8467c38d325544c2c064f69",
-                "reference": "57be3873ea9a32ccd8467c38d325544c2c064f69",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/83a1382930359e4d4f4c9187239f059d5b282520",
+                "reference": "83a1382930359e4d4f4c9187239f059d5b282520",
                 "shasum": ""
             },
             "require": {
@@ -178,7 +178,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-09-14T19:50:15+00:00"
+            "time": "2020-09-18T18:16:42+00:00"
         },
         {
             "name": "brick/math",
@@ -1164,6 +1164,117 @@
             "time": "2020-09-09T14:53:57+00:00"
         },
         {
+            "name": "ctf0/media-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ctf0/Laravel-Media-Manager.git",
+                "reference": "283acbaf03bbebea3698d8db8b9b81020f1fdc43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ctf0/Laravel-Media-Manager/zipball/283acbaf03bbebea3698d8db8b9b81020f1fdc43",
+                "reference": "283acbaf03bbebea3698d8db8b9b81020f1fdc43",
+                "shasum": ""
+            },
+            "require": {
+                "ctf0/package-changelog": "*",
+                "illuminate/support": ">=6.0 <9.0",
+                "jhofm/flysystem-iterator": "^2.2",
+                "maennchen/zipstream-php": ">=1.0",
+                "php": "~7.0"
+            },
+            "suggest": {
+                "league/flysystem-cached-adapter": "Required to use the Flysystem cache (~1.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ctf0\\MediaManager\\MediaManagerServiceProvider"
+                    ]
+                },
+                "changeLog": "logs"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ctf0\\MediaManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muah",
+                    "email": "muah003@gmail.com"
+                }
+            ],
+            "description": "A Media Manager Built With Vuejs & Laravel",
+            "homepage": "https://github.com/ctf0/Laravel-Media-Manager",
+            "keywords": [
+                "ctf0",
+                "gui",
+                "laravel",
+                "manager",
+                "media",
+                "mediamanager"
+            ],
+            "time": "2020-09-09T18:05:45+00:00"
+        },
+        {
+            "name": "ctf0/package-changelog",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ctf0/PackageChangeLog.git",
+                "reference": "bc53f9faa3fef48da4504e2f4080e837d9edc689"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ctf0/PackageChangeLog/zipball/bc53f9faa3fef48da4504e2f4080e837d9edc689",
+                "reference": "bc53f9faa3fef48da4504e2f4080e837d9edc689",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0",
+                "php": "~7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ctf0\\PackageChangeLog\\PackageChangeLogServiceProvider"
+                    ]
+                },
+                "changeLog": "logs"
+            },
+            "autoload": {
+                "psr-4": {
+                    "ctf0\\PackageChangeLog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Muah",
+                    "email": "muah003@gmail.com"
+                }
+            ],
+            "description": "show package changeLog on install/update",
+            "homepage": "https://github.com/ctf0/PackageChangeLog",
+            "keywords": [
+                "ctf0",
+                "laravel",
+                "package-changelog"
+            ],
+            "time": "2020-03-04T13:09:26+00:00"
+        },
+        {
             "name": "defuse/php-encryption",
             "version": "v2.2.1",
             "source": {
@@ -1572,30 +1683,30 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.10.4",
+            "version": "2.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "47433196b6390d14409a33885ee42b6208160643"
+                "reference": "0d4e1a8b29dd987704842f0465aded378f441dca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/47433196b6390d14409a33885ee42b6208160643",
-                "reference": "47433196b6390d14409a33885ee42b6208160643",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d4e1a8b29dd987704842f0465aded378f441dca",
+                "reference": "0d4e1a8b29dd987704842f0465aded378f441dca",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.0",
                 "doctrine/event-manager": "^1.0",
                 "ext-pdo": "*",
-                "php": "^7.2"
+                "php": "^7.3"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^8.1",
                 "jetbrains/phpstorm-stubs": "^2019.1",
                 "nikic/php-parser": "^4.4",
                 "phpstan/phpstan": "^0.12.40",
-                "phpunit/phpunit": "^8.5.5",
+                "phpunit/phpunit": "^9.3",
                 "psalm/plugin-phpunit": "^0.10.0",
                 "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
                 "vimeo/psalm": "^3.14.2"
@@ -1609,8 +1720,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.10.x-dev",
-                    "dev-develop": "3.0.x-dev"
+                    "dev-master": "4.0.x-dev"
                 }
             },
             "autoload": {
@@ -1677,7 +1787,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-12T21:20:41+00:00"
+            "time": "2020-09-20T23:24:53+00:00"
         },
         {
             "name": "doctrine/event-manager",
@@ -2060,16 +2170,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.20",
+            "version": "2.1.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "f46887bc48db66c7f38f668eb7d6ae54583617ff"
+                "reference": "563d0cdde5d862235ffe24a158497f4d490191b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/f46887bc48db66c7f38f668eb7d6ae54583617ff",
-                "reference": "f46887bc48db66c7f38f668eb7d6ae54583617ff",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/563d0cdde5d862235ffe24a158497f4d490191b5",
+                "reference": "563d0cdde5d862235ffe24a158497f4d490191b5",
                 "shasum": ""
             },
             "require": {
@@ -2114,7 +2224,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-09-06T13:44:32+00:00"
+            "time": "2020-09-19T14:37:56+00:00"
         },
         {
             "name": "fgrosse/phpasn1",
@@ -2697,16 +2807,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client.git",
-                "reference": "e748d1d5a51166754f13809d35f1fa162cbec530"
+                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/e748d1d5a51166754f13809d35f1fa162cbec530",
-                "reference": "e748d1d5a51166754f13809d35f1fa162cbec530",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client/zipball/9df720d72c59456b5466e3f66e1e78cfe422a5ba",
+                "reference": "9df720d72c59456b5466e3f66e1e78cfe422a5ba",
                 "shasum": ""
             },
             "require": {
@@ -2755,20 +2865,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-08T16:38:08+00:00"
+            "time": "2020-09-18T20:02:04+00:00"
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.146",
+            "version": "v0.147",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-api-php-client-services.git",
-                "reference": "029e20e81508cee6dc652529514eeeb1cf56ce54"
+                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/029e20e81508cee6dc652529514eeeb1cf56ce54",
-                "reference": "029e20e81508cee6dc652529514eeeb1cf56ce54",
+                "url": "https://api.github.com/repos/googleapis/google-api-php-client-services/zipball/8624bd004cfccb33b760ae7650d0b750168cd7f7",
+                "reference": "8624bd004cfccb33b760ae7650d0b750168cd7f7",
                 "shasum": ""
             },
             "require": {
@@ -2792,20 +2902,20 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-09-12T00:24:59+00:00"
+            "time": "2020-09-20T00:24:43+00:00"
         },
         {
             "name": "google/auth",
-            "version": "v1.12.0",
+            "version": "v1.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-auth-library-php.git",
-                "reference": "74cad289014f7ef747618480f6b59f6303357f34"
+                "reference": "173191f5defd1d9ae8bdfc28da31b63eb73dd34e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/74cad289014f7ef747618480f6b59f6303357f34",
-                "reference": "74cad289014f7ef747618480f6b59f6303357f34",
+                "url": "https://api.github.com/repos/googleapis/google-auth-library-php/zipball/173191f5defd1d9ae8bdfc28da31b63eb73dd34e",
+                "reference": "173191f5defd1d9ae8bdfc28da31b63eb73dd34e",
                 "shasum": ""
             },
             "require": {
@@ -2844,7 +2954,7 @@
                 "google",
                 "oauth2"
             ],
-            "time": "2020-09-08T16:33:56+00:00"
+            "time": "2020-09-18T20:03:05+00:00"
         },
         {
             "name": "google/common-protos",
@@ -2887,23 +2997,23 @@
         },
         {
             "name": "google/gax",
-            "version": "1.3.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/gax-php.git",
-                "reference": "6aea9c90c32aed665d4bbf4b3b681e31ef564811"
+                "reference": "63ea951e70557bb851bf6b487d65698410a6aa96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/6aea9c90c32aed665d4bbf4b3b681e31ef564811",
-                "reference": "6aea9c90c32aed665d4bbf4b3b681e31ef564811",
+                "url": "https://api.github.com/repos/googleapis/gax-php/zipball/63ea951e70557bb851bf6b487d65698410a6aa96",
+                "reference": "63ea951e70557bb851bf6b487d65698410a6aa96",
                 "shasum": ""
             },
             "require": {
                 "google/auth": "^1.2.0",
                 "google/common-protos": "^1.0",
                 "google/grpc-gcp": "^0.1.0",
-                "google/protobuf": "^3.7.1",
+                "google/protobuf": "^3.12.2",
                 "grpc/grpc": "^1.13",
                 "guzzlehttp/promises": "^1.3",
                 "guzzlehttp/psr7": "^1.2",
@@ -2933,7 +3043,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2020-06-08T19:53:28+00:00"
+            "time": "2020-09-16T17:29:29+00:00"
         },
         {
             "name": "google/grpc-gcp",
@@ -2978,19 +3088,20 @@
         },
         {
             "name": "google/photos-library",
-            "version": "v1.6.2",
+            "version": "v1.6.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/php-photoslibrary.git",
-                "reference": "a8b73e0fc8e04655b40ecdf5790025730038a233"
+                "reference": "44a43756785f6fe2a08caf17b11ade8803e33c1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/php-photoslibrary/zipball/a8b73e0fc8e04655b40ecdf5790025730038a233",
-                "reference": "a8b73e0fc8e04655b40ecdf5790025730038a233",
+                "url": "https://api.github.com/repos/google/php-photoslibrary/zipball/44a43756785f6fe2a08caf17b11ade8803e33c1c",
+                "reference": "44a43756785f6fe2a08caf17b11ade8803e33c1c",
                 "shasum": ""
             },
             "require": {
+                "ext-bcmath": "*",
                 "google/gax": "^1.0.2",
                 "google/protobuf": "^3.7.1",
                 "php": "^5.5 || ^7.0"
@@ -3001,8 +3112,10 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "": "src/",
-                    "Google\\Photos\\Library\\Tests\\": "tests"
+                    "Google\\Photos\\Library\\V1\\": "src/Google/Photos/Library/V1/",
+                    "Google\\Photos\\Types\\": "src/Google/Photos/Types/",
+                    "GPBMetadata\\Google\\Photos\\Library\\V1\\": "src/GPBMetadata/Google/Photos/Library/V1/",
+                    "GPBMetadata\\Google\\Photos\\Types\\": "src/GPBMetadata/Google/Photos/Types/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3015,7 +3128,7 @@
                 "google",
                 "google photos"
             ],
-            "time": "2020-08-11T01:22:21+00:00"
+            "time": "2020-09-16T06:22:38+00:00"
         },
         {
             "name": "google/protobuf",
@@ -3541,6 +3654,48 @@
             "time": "2020-09-10T18:34:02+00:00"
         },
         {
+            "name": "jhofm/flysystem-iterator",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jhofm/flysystem-iterator.git",
+                "reference": "93aa7613f1bda960c5d9e8e7ae0b98257be1153d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jhofm/flysystem-iterator/zipball/93aa7613f1bda960c5d9e8e7ae0b98257be1153d",
+                "reference": "93aa7613f1bda960c5d9e8e7ae0b98257be1153d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "league/flysystem": "^1.0",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "league/flysystem-memory": "^1.0",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jhofm\\FlysystemIterator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes Hofmann",
+                    "email": "hofmann.johannes@gmail.com"
+                }
+            ],
+            "description": "Iterator plugin for league/flysystem",
+            "time": "2019-12-09T19:25:07+00:00"
+        },
+        {
             "name": "jmikola/geojson",
             "version": "1.0.2",
             "source": {
@@ -3640,16 +3795,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.2.0",
+            "version": "v8.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "846d4dad13ed8cb535bf4058d53b2770647f9301"
+                "reference": "5a748eecae35fd453e0b1e4d4b6f4fadf0d3e7ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/846d4dad13ed8cb535bf4058d53b2770647f9301",
-                "reference": "846d4dad13ed8cb535bf4058d53b2770647f9301",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5a748eecae35fd453e0b1e4d4b6f4fadf0d3e7ac",
+                "reference": "5a748eecae35fd453e0b1e4d4b6f4fadf0d3e7ac",
                 "shasum": ""
             },
             "require": {
@@ -3679,7 +3834,7 @@
                 "symfony/routing": "^5.1",
                 "symfony/var-dumper": "^5.1",
                 "tijsverkoyen/css-to-inline-styles": "^2.2.2",
-                "vlucas/phpdotenv": "^5.0",
+                "vlucas/phpdotenv": "^5.2",
                 "voku/portable-ascii": "^1.4.8"
             },
             "conflict": {
@@ -3799,34 +3954,34 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-09-14T13:36:13+00:00"
+            "time": "2020-09-18T21:27:11+00:00"
         },
         {
             "name": "laravel/passport",
-            "version": "v10.0.0",
+            "version": "v10.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/passport.git",
-                "reference": "71d1a70a920f991e4f459f4896b9a32fefb3f5d5"
+                "reference": "4e53f1b237a9e51ac10f0b30c6ebedd68f6848ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/passport/zipball/71d1a70a920f991e4f459f4896b9a32fefb3f5d5",
-                "reference": "71d1a70a920f991e4f459f4896b9a32fefb3f5d5",
+                "url": "https://api.github.com/repos/laravel/passport/zipball/4e53f1b237a9e51ac10f0b30c6ebedd68f6848ab",
+                "reference": "4e53f1b237a9e51ac10f0b30c6ebedd68f6848ab",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "firebase/php-jwt": "^5.0",
-                "illuminate/auth": "^8.0",
-                "illuminate/console": "^8.0",
-                "illuminate/container": "^8.0",
-                "illuminate/contracts": "^8.0",
-                "illuminate/cookie": "^8.0",
-                "illuminate/database": "^8.0",
-                "illuminate/encryption": "^8.0",
-                "illuminate/http": "^8.0",
-                "illuminate/support": "^8.0",
+                "illuminate/auth": "^8.2",
+                "illuminate/console": "^8.2",
+                "illuminate/container": "^8.2",
+                "illuminate/contracts": "^8.2",
+                "illuminate/cookie": "^8.2",
+                "illuminate/database": "^8.2",
+                "illuminate/encryption": "^8.2",
+                "illuminate/http": "^8.2",
+                "illuminate/support": "^8.2",
                 "league/oauth2-server": "^8.1",
                 "nyholm/psr7": "^1.3",
                 "php": "^7.3",
@@ -3871,7 +4026,7 @@
                 "oauth",
                 "passport"
             ],
-            "time": "2020-09-08T15:27:48+00:00"
+            "time": "2020-09-15T16:41:42+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -5947,16 +6102,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "2.39.2",
+            "version": "2.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "326efde1bc09077a26cb77f6e2e32e13f06c27f2"
+                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/326efde1bc09077a26cb77f6e2e32e13f06c27f2",
-                "reference": "326efde1bc09077a26cb77f6e2e32e13f06c27f2",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/6c7646154181013ecd55e80c201b9fd873c6ee5d",
+                "reference": "6c7646154181013ecd55e80c201b9fd873c6ee5d",
                 "shasum": ""
             },
             "require": {
@@ -6032,7 +6187,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-10T12:16:42+00:00"
+            "time": "2020-09-11T19:00:58+00:00"
         },
         {
             "name": "netresearch/jsonmapper",
@@ -6123,20 +6278,20 @@
         },
         {
             "name": "nyholm/psr7",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nyholm/psr7.git",
-                "reference": "c17f4f73985f62054a331cbc4ffdf9868c4ef256"
+                "reference": "21b71a31eab5c0c2caf967b9c0fd97020254ed75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/c17f4f73985f62054a331cbc4ffdf9868c4ef256",
-                "reference": "c17f4f73985f62054a331cbc4ffdf9868c4ef256",
+                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/21b71a31eab5c0c2caf967b9c0fd97020254ed75",
+                "reference": "21b71a31eab5c0c2caf967b9c0fd97020254ed75",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1",
+                "php": ">=7.1",
                 "php-http/message-factory": "^1.0",
                 "psr/http-factory": "^1.0",
                 "psr/http-message": "^1.0"
@@ -6192,7 +6347,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-05-23T11:29:07+00:00"
+            "time": "2020-06-13T15:59:10+00:00"
         },
         {
             "name": "opis/closure",
@@ -7605,7 +7760,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Tramite",
-                "reference": "23b8e3ed3aac82320df24f206b877645f9acd339"
+                "reference": "45c7622967461c51250497a11148014b51c129a1"
             },
             "require": {
                 "php": "^7.4"
@@ -8116,16 +8271,16 @@
         },
         {
             "name": "raiym/instagram-php-scraper",
-            "version": "v0.9.13",
+            "version": "v0.9.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/postaddictme/instagram-php-scraper.git",
-                "reference": "23f4cffbe8c8402ede840fee8d9c6bb8377947b2"
+                "reference": "1d7abb5e68c036675bf8a85aaab2fb85dc58a4ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/postaddictme/instagram-php-scraper/zipball/23f4cffbe8c8402ede840fee8d9c6bb8377947b2",
-                "reference": "23f4cffbe8c8402ede840fee8d9c6bb8377947b2",
+                "url": "https://api.github.com/repos/postaddictme/instagram-php-scraper/zipball/1d7abb5e68c036675bf8a85aaab2fb85dc58a4ac",
+                "reference": "1d7abb5e68c036675bf8a85aaab2fb85dc58a4ac",
                 "shasum": ""
             },
             "require": {
@@ -8161,7 +8316,7 @@
                 "instagram",
                 "scraper"
             ],
-            "time": "2020-08-18T11:05:19+00:00"
+            "time": "2020-09-15T11:39:02+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -8530,7 +8685,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Translation",
-                "reference": "658c4b758d0b713007d25be1da8c75f43f20c972"
+                "reference": "f74011ab2c34b9902261221d963c004ce0eb2560"
             },
             "archive": {
                 "exclude": [
@@ -8616,6 +8771,101 @@
                 "source": "https://github.com/ricardosierra/translation",
                 "docs": "https://github.com/ricardosierra/translation/blob/master/README.md"
             },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
+            "name": "ricasolucoes/atlassian",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../Atlassian",
+                "reference": "b40ee6c624823d3fad6a5296c5cf098e34b1bc1e"
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "league/flysystem": "^1.0",
+                "lesstif/php-jira-rest-client": "^2.0",
+                "php": "^7.1"
+            },
+            "require-dev": {
+                "barryvdh/laravel-debugbar": "^3.2",
+                "barryvdh/laravel-ide-helper": "^2.6",
+                "codedungeon/phpunit-result-printer": ">=0.27.0",
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "fzaninotto/faker": "^1.4",
+                "laravel/browser-kit-testing": "^6.0",
+                "laravel/dusk": "^6.2",
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0",
+                "psalm/plugin-laravel": "^1.2",
+                "squizlabs/php_codesniffer": "^3.4",
+                "vimeo/psalm": "^3.11"
+            },
+            "suggest": {
+                "netresearch/jsonmapper": "^3.0",
+                "vlucas/phpdotenv": "^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Atlassian\\AtlassianProvider"
+                    ],
+                    "aliases": {
+                        "Atlassian": "Atlassian\\Facades\\Atlassian"
+                    },
+                    "dont-discover": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Atlassian\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "psalm": [
+                    "vendor/bin/psalm"
+                ],
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ],
+                "format": [
+                    "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "RiCa Soluções",
+                    "email": "contato@ricasolucoes.com.br",
+                    "homepage": "https://ricasolucoes.com.br"
+                }
+            ],
+            "description": "PHP ATLASSIAN INTEGRATION - JIRA and Confluence Rest Client API for PHP Users.",
+            "homepage": "https://github.com/ricasolucoes/atlassian",
+            "keywords": [
+                "confluence",
+                "jira",
+                "jira-php",
+                "jira-rest",
+                "rest"
+            ],
             "transport-options": {
                 "symlink": true,
                 "relative": true
@@ -8883,7 +9133,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Bancario",
-                "reference": "176d21a37f40299c18b9c208dee5e99637ad3ed5"
+                "reference": "0ce6c689a58a53c5b1806ffbde0718dc41de1a27"
             },
             "require": {
                 "php": "^7.4",
@@ -8966,7 +9216,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Casa",
-                "reference": "a9c9b4e1009fd694ef1d29db86c3be89cae49743"
+                "reference": "815f89cc5baaf819d8061b310400822366bfe3ad"
             },
             "require": {
                 "php": "^7.4",
@@ -9039,7 +9289,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Crypto",
-                "reference": "8c5f9274c70040165278ebb150f2e09bb32e7871"
+                "reference": "104c38d7544b4c74d71e163466c1cb09c82b1c7d"
             },
             "require": {
                 "defuse/php-encryption": "^2.2",
@@ -9109,12 +9359,13 @@
             "dist": {
                 "type": "path",
                 "url": "../Fabrica",
-                "reference": "e278a7f6040ba1add1f0a3052ae186cfd3e7b065"
+                "reference": "154efdf84b2a6fe91bc0ed66c159544be87ba6b3"
             },
             "require": {
                 "deployer/deployer": "^6.8",
                 "gitonomy/gitlib": "^1.2",
                 "guzzlehttp/guzzle": "^6.0 || ^7.0",
+                "lorisleiva/laravel-actions": "^1.1",
                 "php": "^7.4",
                 "sierratecnologia/integrations": "dev-master",
                 "sierratecnologia/muleta": "dev-master",
@@ -9193,12 +9444,85 @@
             }
         },
         {
+            "name": "sierratecnologia/former",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../former",
+                "reference": "f6e0479bea6034d359b44f3733c67e18b9df48e2"
+            },
+            "require": {
+                "anahkiasen/html-object": ">=1.4",
+                "illuminate/config": "^7.0 || ^8.0",
+                "illuminate/container": "^7.0 || ^8.0",
+                "illuminate/http": "^7.0 || ^8.0",
+                "illuminate/routing": "^7.0 || ^8.0",
+                "illuminate/support": "^7.0 || ^8.0",
+                "illuminate/translation": "^7.0 || ^8.0",
+                "illuminate/view": "^7.0 || ^8.0",
+                "php": "^7.4"
+            },
+            "replace": {
+                "anahkiasen/former": "*",
+                "weotch/former": "*"
+            },
+            "require-dev": {
+                "illuminate/database": "^7.0 || ^8.0",
+                "mockery/mockery": ">=0.9.1",
+                "phpunit/phpunit": ">=4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Former\\FormerServiceProvider"
+                    ],
+                    "aliases": {
+                        "Former": "Former\\Facades\\Former"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Former\\": [
+                        "src/Former",
+                        "tests"
+                    ],
+                    "Laravel\\": "src/Laravel"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Fabre",
+                    "email": "ehtnam6@gmail.com"
+                }
+            ],
+            "description": "A powerful form builder",
+            "homepage": "http://formers.github.io/former/",
+            "keywords": [
+                "bootstrap",
+                "form",
+                "foundation",
+                "laravel"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "sierratecnologia/integrations",
             "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "../Integrations",
-                "reference": "94fb7a3681294b818b0b480b14a398b09a31611a"
+                "reference": "f935e4bbe03cfca1bf7befb24b07298c5b5ec8ba"
             },
             "require": {
                 "aws/aws-sdk-php": "^3.0",
@@ -9212,10 +9536,10 @@
                 "league/flysystem-aws-s3-v3": "*",
                 "league/pipeline": "*",
                 "league/plates": "^3.1|^4.0",
-                "lesstif/php-jira-rest-client": "*",
                 "m4tthumphrey/php-gitlab-api": "*",
                 "php": "^7.4",
                 "raiym/instagram-php-scraper": ">=0.9.10",
+                "ricasolucoes/atlassian": "dev-master",
                 "sabre/xml": "*",
                 "sierratecnologia/muleta": "dev-master",
                 "srmklive/flysystem-dropbox-v2": "*",
@@ -9275,7 +9599,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Locaravel",
-                "reference": "0379ff3d224a3e69a6cf965e08e2561262ddd4ab"
+                "reference": "365daa50f459dbfaeba9b94f3af6988ce3a4af1e"
             },
             "require": {
                 "doctrine/dbal": "^2.0",
@@ -9361,12 +9685,94 @@
             }
         },
         {
+            "name": "sierratecnologia/media-manager",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../MediaManager",
+                "reference": "0f5eddedde19a06d88cd22b5968a9463527986c6"
+            },
+            "require": {
+                "ctf0/media-manager": "dev-master",
+                "fideloper/proxy": ">=4.0",
+                "google/photos-library": ">=1.4",
+                "intervention/image": ">=2.4",
+                "intervention/imagecache": ">=2.3",
+                "laravel/framework": "^7.0 || ^8.0",
+                "league/flysystem": "*",
+                "league/flysystem-cached-adapter": "*",
+                "league/flysystem-sftp": "*",
+                "league/flysystem-ziparchive": "*",
+                "league/mime-type-detection": ">=1.1",
+                "league/pipeline": "*",
+                "nao-pon/flysystem-google-drive": "~1.1",
+                "php": "^7.4",
+                "sierratecnologia/muleta": "dev-master",
+                "spatie/laravel-medialibrary": "^8.0",
+                "srmklive/flysystem-dropbox-v2": "*"
+            },
+            "suggest": {
+                "cipemotion/medialibrary": "*"
+            },
+            "bin": [
+                "bin/media-manager"
+            ],
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MediaManager\\MediaManagerProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MediaManager\\": "src/"
+                }
+            },
+            "scripts": {
+                "post-install-cmd": [],
+                "post-update-cmd": [],
+                "post-create-project-cmd": []
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SierraTecnologia",
+                    "homepage": "https://sierratecnologia.com.br",
+                    "email": "help@sierratecnologia.com.br"
+                },
+                {
+                    "name": "Ricardo Rebello Sierra",
+                    "email": "contato@ricardosierra.com.br"
+                }
+            ],
+            "description": "MediaManager de Arquivos",
+            "homepage": "https://sierratecnologia.com/packages/media-manager/",
+            "keywords": [
+                "media-manager",
+                "sierratecnologia"
+            ],
+            "support": {
+                "email": "help@sierratecnologia.com.br",
+                "issues": "https://github.com/sierratecnologia/media-manager/issues",
+                "source": "https://github.com/sierratecnologia/media-manager",
+                "docs": "https://github.com/sierratecnologia/media-manager/blob/master/README.md"
+            },
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
+        },
+        {
             "name": "sierratecnologia/muleta",
             "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "../Muleta",
-                "reference": "81730ce55b58a7bdb28bbe04396f0521feda190e"
+                "reference": "8589b755a5949aa4e0e0e948662f2480e9da14eb"
             },
             "require": {
                 "php": "^7.4",
@@ -9448,7 +9854,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Operador",
-                "reference": "d6fbe8d28a7c006bfbc75eaf5694d8745b4b86f5"
+                "reference": "f161660e7565b56369df23edd4ef6c0b96785b1f"
             },
             "require": {
                 "php": "^7.4",
@@ -9513,7 +9919,7 @@
             "dist": {
                 "type": "path",
                 "url": "../PaymentLaravel",
-                "reference": "504a875f079064de3388b57b09134ae673a0f66c"
+                "reference": "96622f7f75afef74616e0d6d5cd5a64e95bf5007"
             },
             "require": {
                 "dompdf/dompdf": ">=0.8.0",
@@ -9589,7 +9995,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Payment",
-                "reference": "3d939de819af93a7592cf8c3502b822b68f97533"
+                "reference": "55e40688c5839d23af5fd04c0673b3a9475aa772"
             },
             "require": {
                 "ext-curl": "*",
@@ -9647,11 +10053,13 @@
             "dist": {
                 "type": "path",
                 "url": "../Pedreiro",
-                "reference": "c20320e982828c11a09ea785fb5a114e5e7bf5bb"
+                "reference": "a3d11db39e7ae326e79cf72d18fe8eb8660224ac"
             },
             "require": {
                 "anahkiasen/html-object": "^1.4",
                 "php": "^7.4",
+                "sierratecnologia/former": "dev-master",
+                "sierratecnologia/media-manager": "dev-master",
                 "spatie/laravel-validation-rules": "^2.6"
             },
             "require-dev": {
@@ -9675,7 +10083,13 @@
             "autoload": {
                 "psr-4": {
                     "Pedreiro\\": "src"
-                }
+                },
+                "files": [
+                    "utils/funcs/load-laravel.php",
+                    "utils/funcs/helpers.php",
+                    "utils/funcs/helperSlugify.php",
+                    "utils/funcs/Reflection.php"
+                ]
             },
             "autoload-dev": {
                 "psr-4": {
@@ -9724,7 +10138,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Stalker",
-                "reference": "17860f08f5a8157e9b782b78f1171d9e07b6efde"
+                "reference": "8b564676f1f0219aa9d24b1b9d8ff47891d17e07"
             },
             "require": {
                 "fideloper/proxy": ">=4.0",
@@ -9805,7 +10219,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Telefonica",
-                "reference": "32b2ff075554ac7deedf5bf737de6e12a89d29b4"
+                "reference": "6a74f50ea45319df9246ab900cf2f0f1376de357"
             },
             "require": {
                 "php": "^7.4",
@@ -9867,7 +10281,7 @@
             "dist": {
                 "type": "path",
                 "url": "../Transmissor",
-                "reference": "985d241820439d182d7bb61584da368bf70b8a24"
+                "reference": "308f15ec218cce04d35b2f2ca89c00a0e23f5f49"
             },
             "require": {
                 "cmgmyr/messenger": "dev-master",
@@ -10124,16 +10538,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.7.1",
+            "version": "8.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "316bdc11fbca573415b99eaed9830bdeb383ad44"
+                "reference": "a2fc872e3daa9b8a3473eaf02d86a8ad0112fe1b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/316bdc11fbca573415b99eaed9830bdeb383ad44",
-                "reference": "316bdc11fbca573415b99eaed9830bdeb383ad44",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/a2fc872e3daa9b8a3473eaf02d86a8ad0112fe1b",
+                "reference": "a2fc872e3daa9b8a3473eaf02d86a8ad0112fe1b",
                 "shasum": ""
             },
             "require": {
@@ -10159,7 +10573,7 @@
                 "doctrine/dbal": "^2.5.2",
                 "ext-pdo_sqlite": "*",
                 "ext-zip": "*",
-                "guzzlehttp/guzzle": "^6.3",
+                "guzzlehttp/guzzle": "^6.3|^7.0",
                 "league/flysystem-aws-s3-v3": "^1.0.23",
                 "mockery/mockery": "^1.3",
                 "orchestra/testbench": "^4.0|^5.0|^6.0",
@@ -10220,7 +10634,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-08T17:55:03+00:00"
+            "time": "2020-09-20T21:17:45+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
