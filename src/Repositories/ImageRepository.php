@@ -12,7 +12,7 @@ use Config;
 use CryptoService;
 use Stalker\Models\Imagen as Image;
 use Informate\Models\Tag;
-use Stalker\Services\Midia\FileService;
+use Stalker\Services\FileService;
 
 
 class ImageRepository extends CmsRepository

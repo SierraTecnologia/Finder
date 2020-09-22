@@ -20,7 +20,7 @@ use Log;
 use Muleta\Traits\Providers\ConsoleTools;
 use Route;
 
-use Stalker\Services\Midia\FileService;
+use Stalker\Services\FileService;
 
 class FinderProvider extends ServiceProvider
 {
