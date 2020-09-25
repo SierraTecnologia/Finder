@@ -17,7 +17,7 @@ class PersonController extends Controller
         $this->service = $service;
     }
 
-    public function index()
+    public function index(Request $request)
     {
         return view('finder::finder.person.home');
     }

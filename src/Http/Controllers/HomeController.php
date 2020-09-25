@@ -18,7 +18,7 @@ class HomeController extends Controller
         $this->service = $service;
     }
 
-    public function index()
+    public function index(Request $request)
     {
 
         // dd($results);
