@@ -78,7 +78,7 @@ if (isset($_POST['s']) ) {
             . '<br/>'
             . '<a href="javascript:process_authentication_yes()" class="btn btn-primary">' . __('Create an admin account') . '</a>'
             . '&nbsp;&nbsp;'
-            . '<a href="javascript:process_authentication_no()" class="btn btn-default">' . __('No') . '</a>';
+            . '<a href="javascript:process_authentication_no()" class="btn btn-secondary">' . __('No') . '</a>';
 
             break;
 
@@ -440,7 +440,7 @@ $lemma = array(
                 echo sprintf(__('Suhosin extension is loaded, according to its configuration, Pimp My Log could not run normally... More information %shere%s.'), '<a href="' . SUHOSIN_URL . '">', '</a>');
                 echo '</strong></div>';
             }
-            ?><div id="error"></div><div id="user"></div><br><p id="buttons"><a id="next" class="btn btn-primary" href="#" style="display:none"><?php _e('Continue');?></a> &nbsp; <a id="reload" class="btn btn-default" href="javascript:location.reload();" style="display:none"><?php _e('Reload');?></a>&nbsp;</p></div><div class="jumbotron" id="congratulations" style="display:none"><div class="container"><h1><?php _e("Congratulations!"); ?></h1><p><?php
+            ?><div id="error"></div><div id="user"></div><br><p id="buttons"><a id="next" class="btn btn-primary" href="#" style="display:none"><?php _e('Continue');?></a> &nbsp; <a id="reload" class="btn btn-secondary" href="javascript:location.reload();" style="display:none"><?php _e('Reload');?></a>&nbsp;</p></div><div class="jumbotron" id="congratulations" style="display:none"><div class="container"><h1><?php _e("Congratulations!"); ?></h1><p><?php
                 echo '<br/>';
                 _e('Your <em>Pimp my Log</em> instance is ready to use.');
                 echo '<br/>';

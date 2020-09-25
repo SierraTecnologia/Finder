@@ -10,9 +10,9 @@
         <div class="col-md-3">
 
           <!-- Profile Image -->
-          <div class="box card box-primary">
-            <div class="box-body card-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+          <div class="box panel card box-primary panel-primary card-primary">
+            <div class="box-body panel-body card-body box-profile">
+              <img class="profile-user-img img-fluid rounded-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
 
               <h3 class="profile-username text-center">Nina Mcintire</h3>
 
@@ -20,29 +20,29 @@
 
               <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
-                  <b>Followers</b> <a class="pull-right">1,322</a>
+                  <b>Followers</b> <a class="float-right">1,322</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Following</b> <a class="pull-right">543</a>
+                  <b>Following</b> <a class="float-right">543</a>
                 </li>
                 <li class="list-group-item">
-                  <b>Friends</b> <a class="pull-right">13,287</a>
+                  <b>Friends</b> <a class="float-right">13,287</a>
                 </li>
               </ul>
 
               <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
             </div>
-            <!-- /.box-body card-body -->
+            <!-- /.box-body panel-body card-body -->
           </div>
           <!-- /.box -->
 
           <!-- About Me Box -->
-          <div class="box card box-primary">
-            <div class="box-header card-header with-border">
-              <h3 class="box-title card-title">About Me</h3>
+          <div class="box panel card box-primary panel-primary card-primary">
+            <div class="box-header panel-header card-header with-border">
+              <h3 class="box-title panel-title card-title">About Me</h3>
             </div>
-            <!-- /.box-header card-header -->
-            <div class="box-body card-body">
+            <!-- /.box-header panel-header card-header -->
+            <div class="box-body panel-body card-body">
               <strong><i class="fa fa-book margin-r-5"></i> Education</strong>
 
               <p class="text-muted">
@@ -73,7 +73,7 @@
 
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
             </div>
-            <!-- /.box-body card-body -->
+            <!-- /.box-body panel-body card-body -->
           </div>
           <!-- /.box -->
         </div>
@@ -90,10 +90,10 @@
                 <!-- Post -->
                 <div class="post">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                    <img class="rounded-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
                         <span class="username">
                           <a href="#">Jonathan Burke Jr.</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                          <a href="#" class="float-right btn-box-tool"><i class="fa fa-times"></i></a>
                         </span>
                     <span class="description">Shared publicly - 7:30 PM today</span>
                   </div>
@@ -109,7 +109,7 @@
                     <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
                     <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
                     </li>
-                    <li class="pull-right">
+                    <li class="float-right">
                       <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
                         (5)</a></li>
                   </ul>
@@ -121,10 +121,10 @@
                 <!-- Post -->
                 <div class="post clearfix">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
+                    <img class="rounded-circle img-bordered-sm" src="../../dist/img/user7-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Sarah Ross</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                          <a href="#" class="float-right btn-box-tool"><i class="fa fa-times"></i></a>
                         </span>
                     <span class="description">Sent you a message - 3 days ago</span>
                   </div>
@@ -143,7 +143,7 @@
                         <input class="form-control input-sm" placeholder="Response">
                       </div>
                       <div class="col-sm-3">
-                        <button type="submit" class="btn btn-danger pull-right btn-block btn-sm">Send</button>
+                        <button type="submit" class="btn btn-danger float-right btn-block btn-sm">Send</button>
                       </div>
                     </div>
                   </form>
@@ -153,31 +153,31 @@
                 <!-- Post -->
                 <div class="post">
                   <div class="user-block">
-                    <img class="img-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
+                    <img class="rounded-circle img-bordered-sm" src="../../dist/img/user6-128x128.jpg" alt="User Image">
                         <span class="username">
                           <a href="#">Adam Jones</a>
-                          <a href="#" class="pull-right btn-box-tool"><i class="fa fa-times"></i></a>
+                          <a href="#" class="float-right btn-box-tool"><i class="fa fa-times"></i></a>
                         </span>
                     <span class="description">Posted 5 photos - 5 days ago</span>
                   </div>
                   <!-- /.user-block -->
                   <div class="row margin-bottom">
                     <div class="col-sm-6">
-                      <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                      <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-6">
                       <div class="row">
                         <div class="col-sm-6">
-                          <img class="img-responsive" src="../../dist/img/photo2.png" alt="Photo">
+                          <img class="img-fluid" src="../../dist/img/photo2.png" alt="Photo">
                           <br>
-                          <img class="img-responsive" src="../../dist/img/photo3.jpg" alt="Photo">
+                          <img class="img-fluid" src="../../dist/img/photo3.jpg" alt="Photo">
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
-                          <img class="img-responsive" src="../../dist/img/photo4.jpg" alt="Photo">
+                          <img class="img-fluid" src="../../dist/img/photo4.jpg" alt="Photo">
                           <br>
-                          <img class="img-responsive" src="../../dist/img/photo1.png" alt="Photo">
+                          <img class="img-fluid" src="../../dist/img/photo1.png" alt="Photo">
                         </div>
                         <!-- /.col -->
                       </div>
@@ -191,7 +191,7 @@
                     <li><a href="#" class="link-black text-sm"><i class="fa fa-share margin-r-5"></i> Share</a></li>
                     <li><a href="#" class="link-black text-sm"><i class="fa fa-thumbs-o-up margin-r-5"></i> Like</a>
                     </li>
-                    <li class="pull-right">
+                    <li class="float-right">
                       <a href="#" class="link-black text-sm"><i class="fa fa-comments-o margin-r-5"></i> Comments
                         (5)</a></li>
                   </ul>

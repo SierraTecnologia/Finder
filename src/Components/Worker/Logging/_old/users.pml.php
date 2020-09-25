@@ -448,11 +448,11 @@ case 'anonymous_list':
 
         if (Sentinel::isLogAnonymous($file_id) ) {
             $e  = 'active btn-success';
-            $d  = 'btn-default';
+            $d  = 'btn-secondary';
             $ec = ' checked="checked"';
             $dc = '';
         } else {
-            $e  = 'btn-default';
+            $e  = 'btn-secondary';
             $d  = 'active btn-danger';
             $ec = '';
             $dc = ' checked="checked"';
