@@ -15,7 +15,7 @@ class NewSubscriptions extends Value
      */
     public function calculate(Request $request)
     {
-        return $this->count($request, \Illuminate\Support\Facades\Config::get('sitec.core.models.user', \App\Models\User::class));
+        return $this->count($request, \Illuminate\Support\Facades\Config::get('application.directorys.models.users', \App\Models\User::class));
     }
 
     /**
