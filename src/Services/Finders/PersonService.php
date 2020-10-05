@@ -5,12 +5,13 @@
 
 namespace Finder\Services\Finders;
 
+use Illuminate\Support\Collection;
+
 /**
- * 
+ *
  */
 class PersonService extends FinderAbstractService
 {
-
     protected $config;
 
     protected $modelServices = false;
@@ -45,7 +46,7 @@ class PersonService extends FinderAbstractService
     {
         return $this->mergeWith(
             $this->getPerson()->productions()->get(),
-            $this->getPerson()->personagens()->get() 
+            $this->getPerson()->personagens()->get()
         );
     }
     
@@ -70,19 +71,17 @@ class PersonService extends FinderAbstractService
 
     public function aboutSenhas($config = false)
     {
-            return $this->mergeWith(
-                $this->getPerson()->passwords()->get()
-            );
-            
+        return $this->mergeWith(
+            $this->getPerson()->passwords()->get()
+        );
     }
 
     public function aboutInfo($config = false)
     {
-            return $this->mergeWith(
-                $this->getPerson()->infos()->get(),
-                $this->getPerson()->fatos()->get()
-            );
-            
+        return $this->mergeWith(
+            $this->getPerson()->infos()->get(),
+            $this->getPerson()->fatos()->get()
+        );
     }
     public function aboutMidias($config = false)
     {
@@ -90,8 +89,5 @@ class PersonService extends FinderAbstractService
             $this->getPerson()->videos()->get(),
             $this->getPerson()->imagens()->get()
         );
-            
     }
-
-
 }
