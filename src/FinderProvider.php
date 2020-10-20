@@ -299,7 +299,7 @@ class FinderProvider extends ServiceProvider
         Config::set(
             'logging.channels.sitec-finder', [
             'driver' => 'single',
-            'path' => storage_path('logs'.DIRECTORY_SEPARACTOR.'sitec-finder.log'),
+            'path' => storage_path('logs'.DIRECTORY_SEPARATOR.'sitec-finder.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
             ]
         );
