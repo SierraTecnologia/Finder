@@ -170,7 +170,7 @@ class FinderProvider extends ServiceProvider
         /**
          * Finder Routes
          */
-        $this->loadRoutesForRiCa(__DIR__.'/../routes');
+        $this->loadRoutesForRiCa(__DIR__.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'routes');
     }
 
     /**
@@ -252,7 +252,7 @@ class FinderProvider extends ServiceProvider
         $this->publishes(
             [
             // Paths
-            $this->getPublishesPath('config/sitec') => config_path('sitec'),
+            $this->getPublishesPath('config'.DIRECTORY_SEPARATOR.'sitec') => config_path('sitec'),
             ], ['config',  'sitec', 'sitec-config']
         );
 
@@ -272,7 +272,7 @@ class FinderProvider extends ServiceProvider
         $this->loadViewsFrom($viewsPath, 'finder');
         $this->publishes(
             [
-            $viewsPath => base_path('resources/views/vendor/finder'),
+            $viewsPath => base_path('resources'.DIRECTORY_SEPARATOR.'views'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'finder'),
             ], ['views',  'sitec', 'sitec-views']
         );
     }
@@ -282,7 +282,7 @@ class FinderProvider extends ServiceProvider
         // Publish lanaguage files
         $this->publishes(
             [
-            $this->getResourcesPath('lang') => resource_path('lang/vendor/finder')
+            $this->getResourcesPath('lang') => resource_path('lang'.DIRECTORY_SEPARATOR.'vendor'.DIRECTORY_SEPARATOR.'finder')
             ], ['lang',  'sitec', 'sitec-lang', 'translations']
         );
 
@@ -299,7 +299,7 @@ class FinderProvider extends ServiceProvider
         Config::set(
             'logging.channels.sitec-finder', [
             'driver' => 'single',
-            'path' => storage_path('logs/sitec-finder.log'),
+            'path' => storage_path('logs'.DIRECTORY_SEPARACTOR.'sitec-finder.log'),
             'level' => env('APP_LOG_LEVEL', 'debug'),
             ]
         );
