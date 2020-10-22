@@ -50,7 +50,7 @@
         "league/pipeline": "^1.0",
         "league/climate": ">=3.4",
         "sierratecnologia/crypto": "^0.4.0",
-        "privatejustice/tramite": "dev-master",
+        "privatejustice/tramite": "^0.4.0",
         "friendsofphp/php-cs-fixer": "*",
         "symfony/dom-crawler": "*",
         "cache/filesystem-adapter": ">=1.0",
