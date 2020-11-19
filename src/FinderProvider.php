@@ -68,7 +68,7 @@ class FinderProvider extends ServiceProvider
                     'label_color' => 'success',
                     'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
                     'text'        => 'Track',
@@ -77,7 +77,7 @@ class FinderProvider extends ServiceProvider
                     'label_color' => 'success',
                     'section' => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
                     'text'        => 'Url',
@@ -87,7 +87,7 @@ class FinderProvider extends ServiceProvider
                     'label_color' => 'success',
                     'section'     => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 [
                     'text'        => 'Computer Files',
@@ -97,7 +97,7 @@ class FinderProvider extends ServiceProvider
                     'label_color' => 'success',
                     'section'   => "master",
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                    // 'access' => \App\Models\Role::$ADMIN
+                    // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
                 'Procurar' => [
                     [
@@ -108,7 +108,7 @@ class FinderProvider extends ServiceProvider
                         'label_color' => 'success',
                         'section' => "master",
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'access' => \App\Models\Role::$ADMIN
+                        // 'access' => \Porteiro\Models\Role::$ADMIN
                     ],
                     [
                         'text'        => 'Finder Pessoas',
@@ -118,7 +118,7 @@ class FinderProvider extends ServiceProvider
                         'label_color' => 'success',
                         'section' => "master",
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'access' => \App\Models\Role::$ADMIN
+                        // 'access' => \Porteiro\Models\Role::$ADMIN
                     ],
                 ],
                 'Track' => [
@@ -130,7 +130,7 @@ class FinderProvider extends ServiceProvider
                         'label_color' => 'success',
                         'section' => "master",
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
-                        // 'nivel' => \App\Models\Role::$GOOD,
+                        // 'nivel' => \Porteiro\Models\Role::$GOOD,
                     ],
                 ],
             ],
