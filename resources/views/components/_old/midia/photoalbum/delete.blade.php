@@ -1,4 +1,4 @@
-@extends('admin.layouts.modal')
+@extends('pedreiro::layouts.adminlte.modal')
 @section('content')
 	{!! Form::model($photoalbum, array('url' => url('admin/photoalbum') . '/' . $photoalbum->id, 'method' => 'delete', 'class' => 'bf', 'files'=> true)) !!}
 	<div class="form-group">
