@@ -10,7 +10,7 @@ use Log;
 use MathPHP\Functions\Map\Single;
 use Operador\Contracts\RunnerInterface;
 use Operador\Contracts\ActionInterface;
-use Support\Contracts\Output\OutputableTrait;
+use Muleta\Contracts\Output\OutputableTrait;
 
 class ActionCollection implements RunnerInterface
 {

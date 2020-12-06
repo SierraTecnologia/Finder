@@ -11,7 +11,7 @@
             {!! trans("admin/photoalbum.photoalbum") !!}
             <div class="float-right">
                 <div class="float-right">
-                    <a href="{!! url('admin/photoalbum/create') !!}"
+                    <a href="{!! url('admin/albums/create') !!}"
                        class="btn btn-sm  btn-primary iframe"><span
                                 class="glyphicon glyphicon-plus-sign"></span> {{ trans("admin/modal.new") }}</a>
                 </div>
