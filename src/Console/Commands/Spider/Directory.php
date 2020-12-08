@@ -46,7 +46,7 @@ class Directory extends Command
         foreach ($paths as $path) {
             // Process Pipeline
             $pipeline(
-                \Fabrica\Entitys\DirectoryEntity::make($path)
+                \Fabrica\Entities\DirectoryEntity::make($path)
             );
         }
         

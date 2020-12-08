@@ -1,13 +1,16 @@
 <?php
+/**
+ * @todo 
+ */
 
-namespace Finder\Http\Resources\Entitys;
+namespace Finder\Http\Resources\Entities;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 /**
  * Class PaginatedResource.
  *
- * @package Finder\Http\Resources\Entitys
+ * @package Finder\Http\Resources\Entities
  */
 class PaginatedResource extends ResourceCollection
 {
