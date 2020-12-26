@@ -60,6 +60,7 @@ class Directory extends StageBase
          */
         $pipeline = DirectoryBuilder::getPipelineWithOutput($this->getOutput());
         foreach ($payload->directorys as $directory) {
+            $this->info('Process Pasta: '.$directory->getRealPath());
             $pipeline->process(
                 \Fabrica\Entities\DirectoryEntity::make($directory->getRealPath())
             );
