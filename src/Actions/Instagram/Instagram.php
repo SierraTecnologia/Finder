@@ -3,8 +3,10 @@
 namespace Finder\Actions\Instagram;
 
 use Illuminate\Support\Facades\Facade;
+use Phpfastcache\Helper\Psr16Adapter;
+use Integrations\Connectors\Connector;
 
-class Instagram
+class Instagram extends Connector
 {
     protected $targets = [];
     protected $executor = false;
@@ -15,9 +17,13 @@ class Instagram
         $this->account = $instagram;
         $this->userName = $this->account->getUser();
         // dd($instagram, $this->userName, $this->account->getPassword());
-        ($this->executor = \InstagramScraper\Instagram::withCredentials(
-            $this->userName, $this->account->getPassword(), $this->getCache($cache)
-        ))->login();
+        // ($this->executor = \InstagramScraper\Instagram::withCredentials(
+        //     new \GuzzleHttp\Client(),
+        //     $this->userName,
+        //     $this->account->getPassword(),
+        //     $this->getCache($cache)
+        // ))->login();
+        $this->executor =  new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
     }
 
     public function getSlug()
