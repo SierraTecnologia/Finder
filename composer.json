@@ -61,7 +61,8 @@
         "phpoffice/phppresentation": "*",
         "phpoffice/phpspreadsheet": "*",
         "phpoffice/phpword": "*",
-        "lorisleiva/laravel-actions": "^1.1"
+        "lorisleiva/laravel-actions": "^1.1",
+        "halaxa/json-machine": "^0.5.0"
     },
     "suggest": {
         "spatie/crawler": "*",
