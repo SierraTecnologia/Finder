@@ -14,7 +14,7 @@ class PersonService extends FinderAbstractService
 {
     protected $config;
 
-    protected $modelServices = false;
+    protected $personEntity = false;
 
     public function __construct($config = false)
     {
