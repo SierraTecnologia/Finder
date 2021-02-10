@@ -93,5 +93,8 @@
                 "Finder\\FinderProvider"
             ]
         }
+    },
+    "require-dev": {
+        "phpro/grumphp": "^1.3"
     }
 }
