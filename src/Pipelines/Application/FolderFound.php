@@ -1,6 +1,7 @@
 <?php
+// @todo
 
-namespace Support\Pipelines\Application;
+namespace Finder\Pipelines\Application;
 
 use League\Pipeline\Pipeline;
 use Operador\Contracts\StageInterface;
