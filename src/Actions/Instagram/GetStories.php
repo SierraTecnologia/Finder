@@ -11,7 +11,7 @@ class GetStories extends Instagram
     {
         collect($this->executor->getStories())->each(
             function ($story) {
-                dd($story);
+                dd('GetStory', $story);
             }
         );
     }

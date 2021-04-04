@@ -53,7 +53,7 @@ class StorageAndNotImported extends Command
     {
         $ical = new iCalEasyReader();
         $lines = $ical->load( file_get_contents( 'sierra.csi@gmail.com.ics' ) );
-        dd( $lines );
+        dd('FinderStorage', $lines );
         
 
         // // Import Data Files

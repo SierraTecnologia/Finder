@@ -287,7 +287,7 @@ class DirectoryExplorer
         // $pipeline = \Finder\Pipelines\Finder\Directory::pipeline();
         foreach ($paths as $path) {
             $spider = new \Finder\Spider\Directory($path);
-            dd($spider->run());
+            dd('GetAnaliser',$spider->run());
             // $spider = new \Finder\Pipelines\Finder\Directory($path);
             // $pipeline->process(
             //     \Fabrica\Entities\DirectoryEntity::make($path)

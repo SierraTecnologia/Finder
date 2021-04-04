@@ -42,7 +42,7 @@ class Photos extends Spider
             DebugHelper::info("Endereço Completo: ".$file->getRealPath());
             DebugHelper::info("Nome: ".$file->getRelativePathname());
 
-            dd('oi');
+            dd('PhotosFinderoi');
 
 
 

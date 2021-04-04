@@ -53,7 +53,7 @@ class IcsReader extends Command
             storage_path( 'app/import/agenda-pessoal.ics' )
         );
         $lines = $ical->load( storage_path( 'app/import/agenda-pessoal.ics' ) );
-        dd( $lines );
+        dd('IcsReader', $lines );
         
 
         // // Import Data Files

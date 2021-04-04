@@ -19,7 +19,7 @@ class PostRoutine
     public function run()
     {
         $result = (PostCreator::getPipelines())->process(new PostComponent());
-        dd($result);
+        dd('PostRoutine', $result);
 
 
         

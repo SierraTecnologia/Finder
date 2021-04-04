@@ -15,7 +15,7 @@ class GetFollowers extends Instagram
         $account = $this->executor->getAccount($target);
         sleep(1);
         $followers = $this->executor->getFollowers($account->getId(), 1000, 100, true); // Get 1000 followers of 'kevin', 100 a time with random delay between requests
-        dd($followers);
+        dd('GetFollowes', $followers);
         echo '<pre>' . json_encode($followers, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . '</pre>';
 
 
