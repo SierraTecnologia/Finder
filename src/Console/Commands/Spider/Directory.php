@@ -2,9 +2,9 @@
 
 namespace Finder\Console\Commands\Spider;
 
-use Finder\Actions\Instagram\GetMidias;
-use Finder\Actions\Instagram\GetStories;
-use Finder\Actions\Instagram\GetFollowers;
+use Operador\Actions\Instagram\GetMidias;
+use Operador\Actions\Instagram\GetStories;
+use Operador\Actions\Instagram\GetFollowers;
 use Telefonica\Models\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

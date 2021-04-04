@@ -2,7 +2,7 @@
 
 namespace Finder\Console\Commands\Verify;
 
-use Finder\Actions\Instagram\GetMidias;
+use Operador\Actions\Instagram\GetMidias;
 use Telefonica\Models\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
