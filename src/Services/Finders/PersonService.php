@@ -6,6 +6,7 @@
 namespace Finder\Services\Finders;
 
 use Illuminate\Support\Collection;
+use Telefonica\Models\Actors\Person;
 
 /**
  *
