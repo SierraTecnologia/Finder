@@ -6,6 +6,7 @@ use Finder\Contracts\Spider\TargetManager;
 use Stalker\Models\File;
 use Stalker\Models\Imagen;
 use Finder\Models\Digital\Internet\ComputerFile;
+use Telefonica\Models\Actors\Person;
 
 /**
  * Run all script analysers and outputs their result.

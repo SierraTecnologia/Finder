@@ -1,4 +1,4 @@
-@extends('admin.layouts.modal')
+@extends('pedreiro::layouts.adminlte.modal')
 {{-- Content --}}
 @section('content')
         <!-- Tabs -->
@@ -8,9 +8,9 @@
 </ul>
 <!-- ./ tabs -->
 @if (isset($photoalbum))
-{!! Form::model($photoalbum, array('url' => url('admin/photoalbum') . '/' . $photoalbum->id, 'method' => 'put', 'class' => 'bf', 'files'=> true)) !!}
+{!! Form::model($photoalbum, array('url' => url('admin/albums') . '/' . $photoalbum->id, 'method' => 'put', 'class' => 'bf', 'files'=> true)) !!}
 @else
-{!! Form::open(array('url' => url('admin/photoalbum'), 'method' => 'post', 'class' => 'bf', 'files'=> true)) !!}
+{!! Form::open(array('url' => url('admin/albums'), 'method' => 'post', 'class' => 'bf', 'files'=> true)) !!}
 @endif
         <!-- Tabs Content -->
 <div class="tab-content">
@@ -19,7 +19,7 @@
         <div class="form-group  {{ $errors->has('language_code') ? 'has-error' : '' }}">
             {!! Form::label('language_code', trans("admin/admin.language"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::select('language_code', $languages, @isset($articlecategory)? $articlecategory->language_code : 'default', array('class' => 'form-control')) !!}
+                {!! Form::select('language_code', $languages, isset($articlecategory)? $articlecategory->language_code : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('language_code', ':message') }}</span>
             </div>
         </div>

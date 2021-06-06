@@ -4,7 +4,7 @@
     @endif
     <div class="raw-m-hide float-right raw-m-hide">
         {!! Form::open(['url' => 'admin/files/search']) !!}
-        <input class="form-control header-input float-right @if (isset($createBtn)) raw-margin-right-24 @endif" name="term" placeholder="Search">
+        <input class="form-control header-input float-right @if (isset($createBtn)) raw-margin-right-24 @endif" name="term" placeholder="{{ __('pedreiro::default.search') }}">
         {!! Form::close() !!}
     </div>
     <h1 class="page-header">{!! trans('features.files') !!}</h1>

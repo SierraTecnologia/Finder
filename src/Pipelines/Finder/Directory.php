@@ -8,6 +8,7 @@ use Operador\Contracts\StageInterface;
 use Symfony\Component\Finder\Finder;
 use Support\Helps\DebugHelper;
 use Operador\Contracts\Stage as StageBase;
+use Finder\Pipelines\Builders\FileBuilder;
 use Finder\Pipelines\Builders\DirectoryBuilder;
 use Finder\Pipelines\Builders\ProjectBuilder;
 
@@ -45,27 +46,36 @@ class Directory extends StageBase
         }
 
         /**
+         * Sub Pipelines
+         */
+        $pipeline = DirectoryBuilder::getPipelineWithOutput($this->getOutput());
+        foreach ($payload->directorys as $directory) {
+            $this->info('Process Sub Pasta: '.$directory->getRealPath());
+            $pipeline->process(
+                \Fabrica\Entities\DirectoryEntity::make($directory)
+            );
+        }
+        $pipeline = FileBuilder::getPipelineWithOutput($this->getOutput());
+        foreach ($payload->files as $file) {
+            $this->info('Process Sub File: '.$file->getRealPath());
+            $pipeline->process(
+                \Fabrica\Entities\FileEntity::make($file)
+            );
+        }
+
+
+        /**
          * Caso seja Projeto
          */
         if($payload->isProject()) {
             $pipeline = ProjectBuilder::getPipelineWithOutput($this->getOutput());
             // Process Pipeline
             return $pipeline(
-                \Fabrica\Entitys\ProjectEntity::make($payload)
+                \Fabrica\Entities\ProjectEntity::make($payload)
             );
         }
 
-        /**
-         * Sub Pipelines
-         */
-        $pipeline = DirectoryBuilder::getPipelineWithOutput($this->getOutput());
-        foreach ($payload->directorys as $directory) {
-            $pipeline->process(
-                \Fabrica\Entitys\DirectoryEntity::make($directory->getRealPath())
-            );
-        }
         return $payload;
-
 
     }
 

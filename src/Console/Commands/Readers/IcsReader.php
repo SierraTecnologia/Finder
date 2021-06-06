@@ -1,9 +1,6 @@
 <?php
-/**
- * @todo Nao funfa
- */
 
-namespace Finder\Console\Commands\Verify;
+namespace Finder\Console\Commands\Readers;
 
 use File;
 use Illuminate\Console\Command;
@@ -15,7 +12,7 @@ use Muleta\Utils\Extratores\FileExtractor;
 use Support\Components\Coders\Parser\ParseClass;
 use Finder\Readers\iCalEasyReader;
 
-class StorageAndNotImported extends Command
+class IcsReader extends Command
 {
 
     /**
@@ -23,14 +20,14 @@ class StorageAndNotImported extends Command
      *
      * @var string
      */
-    protected $name = 'verify:photos';
+    protected $name = 'reader:ics';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Compiles Blade templates into PHP for GNU gettext to be able to parse them';
+    protected $description = ' aa';
 
     /**
      * Call fire function
@@ -52,8 +49,11 @@ class StorageAndNotImported extends Command
     public function handle(Filesystem $filesystem)
     {
         $ical = new iCalEasyReader();
-        $lines = $ical->load( file_get_contents( 'sierra.csi@gmail.com.ics' ) );
-        dd('FinderStorage', $lines );
+        \Log::warning(
+            storage_path( 'app/import/agenda-pessoal.ics' )
+        );
+        $lines = $ical->load( storage_path( 'app/import/agenda-pessoal.ics' ) );
+        dd('IcsReader', $lines );
         
 
         // // Import Data Files
@@ -86,6 +86,6 @@ class StorageAndNotImported extends Command
         // // (new \Operador\Routines\Globals\BackupAll)->run();
         // (new \Operador\Routines\Globals\ImportTokens)->run();
         
-        // (new \Operador\Routines\Globals\SpiderAllDomains)->run();
+        // (new \Finder\Routines\Globals\SpiderAllDomains)->run();
     }
 }

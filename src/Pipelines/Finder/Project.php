@@ -24,7 +24,7 @@ class Project extends StageBase
             $pipeline = RepositoryBuilder::getPipelineWithOutput($this->getOutput());
             // Process Pipeline
             return $pipeline(
-                \Fabrica\Entitys\RepositoryEntity::make($payload)
+                \Fabrica\Entities\RepositoryEntity::make($payload)
             );
         }
 

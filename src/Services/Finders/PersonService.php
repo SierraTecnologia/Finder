@@ -6,6 +6,7 @@
 namespace Finder\Services\Finders;
 
 use Illuminate\Support\Collection;
+use Telefonica\Models\Actors\Person;
 
 /**
  *
@@ -14,7 +15,7 @@ class PersonService extends FinderAbstractService
 {
     protected $config;
 
-    protected $modelServices = false;
+    protected $personEntity = false;
 
     public function __construct($config = false)
     {

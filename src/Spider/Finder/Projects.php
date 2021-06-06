@@ -25,7 +25,7 @@ class Projects extends Spider
         foreach ($finder as $file) {
             var_dump($file);
         }
-        dd($finder);
+        dd('ProjectsSpider', $finder);
     }
 
 

@@ -15,7 +15,7 @@
     <div class="row">
         {!! Form::model($files, ['route' => ['cms.files.update', $files->id], 'files' => true, 'method' => 'patch', 'class' => 'edit']) !!}
 
-            {!! FormMaker::fromObject($files, Config::get('cms.forms.file-edit')) !!}
+            {!! FormMaker::fromObject($files, Config::get('siravel.forms.file-edit')) !!}
 
             <div class="form-group text-right">
                 <a href="{!! URL::to('admin/files') !!}" class="btn btn-secondary raw-left">{!! trans('features.cancel') !!}</a>

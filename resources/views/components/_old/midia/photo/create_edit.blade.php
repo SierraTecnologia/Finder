@@ -1,4 +1,4 @@
-@extends('admin.layouts.modal')
+@extends('pedreiro::layouts.adminlte.modal')
 {{-- Content --}}
 @section('content')
         <!-- Tabs -->
@@ -19,7 +19,7 @@
         <div class="form-group  {{ $errors->has('language_code') ? 'has-error' : '' }}">
             {!! Form::label('language_code', trans("admin/admin.language"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::select('language_code', $languages, @isset($photo)? $photo->language_code : 'default', array('class' => 'form-control')) !!}
+                {!! Form::select('language_code', $languages, isset($photo)? $photo->language_code : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('language_code', ':message') }}</span>
             </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="form-group  {{ $errors->has('photo_album_id') ? 'has-error' : '' }}">
             {!! Form::label('photo_album_id', trans("admin/photo.album"), array('class' => 'control-label')) !!}
             <div class="controls">
-                {!! Form::select('photo_album_id', $photoalbums, @isset($photo)? $photo->photo_album_id : 'default', array('class' => 'form-control')) !!}
+                {!! Form::select('photo_album_id', $photoalbums, isset($photo)? $photo->photo_album_id : 'default', array('class' => 'form-control')) !!}
                 <span class="help-block">{{ $errors->first('photo_album_id', ':message') }}</span>
             </div>
         </div>
@@ -41,9 +41,9 @@
             {!! Form::label('slider', trans("admin/photo.slider"), array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::label('slider', trans("admin/admin.yes"), array('class' => 'control-label')) !!}
-                {!! Form::radio('slider', '1', @isset($photo)? $photo->photo_album_id : 'false') !!}
+                {!! Form::radio('slider', '1', isset($photo)? $photo->photo_album_id : 'false') !!}
                 {!! Form::label('slider', trans("admin/admin.no"), array('class' => 'control-label')) !!}
-                {!! Form::radio('slider', '0', @isset($photo)? $photo->photo_album_id : 'true') !!}
+                {!! Form::radio('slider', '0', isset($photo)? $photo->photo_album_id : 'true') !!}
                 <span class="help-block">{{ $errors->first('slider', ':message') }}</span>
             </div>
         </div>
@@ -51,9 +51,9 @@
             {!! Form::label('album_cover', trans("admin/photo.album_cover"), array('class' => 'control-label')) !!}
             <div class="controls">
                 {!! Form::label('album_cover', trans("admin/admin.yes"), array('class' => 'control-label')) !!}
-                {!! Form::radio('album_cover', '1', @isset($photo)? $photo->photo_album_id : 'false') !!}
+                {!! Form::radio('album_cover', '1', isset($photo)? $photo->photo_album_id : 'false') !!}
                 {!! Form::label('album_cover', trans("admin/admin.no"), array('class' => 'control-label')) !!}
-                {!! Form::radio('album_cover', '0', @isset($photo)? $photo->photo_album_id : 'true') !!}
+                {!! Form::radio('album_cover', '0', isset($photo)? $photo->photo_album_id : 'true') !!}
                 <span class="help-block">{{ $errors->first('album_cover', ':message') }}</span>
             </div>
         </div>

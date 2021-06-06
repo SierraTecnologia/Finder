@@ -38,6 +38,8 @@ class FinderProvider extends ServiceProvider
 
         \Stalker\StalkerProvider::class,
         \Casa\CasaProvider::class,
+        \Operador\OperadorProvider::class,
+        \Integrations\IntegrationsProvider::class,
 
         /**
          * Externos
@@ -58,7 +60,21 @@ class FinderProvider extends ServiceProvider
                 'icon_color' => "blue",
                 'label_color' => "success",
                 'section' => "master",
+                'feature' => 'finder',
+                'order' => 1800,
+                'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                 'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+            ],
+            [
+                'text'        => 'Actions',
+                'route'       => 'rica.finder.action.actions.index',
+                'icon'        => 'fas fa-fw fa-coffee',
+                'icon_color'  => 'red',
+                'label_color' => 'success',
+                'section' => "master",
+                'feature' => 'operador',
+                'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
+                // 'nivel' => \Porteiro\Models\Role::$GOOD,
             ],
             'Finder' => [
                 [
@@ -67,6 +83,9 @@ class FinderProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "master",
+                    'feature' => 'finder',
+                    'order' => 1800,
+                    'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
@@ -76,6 +95,9 @@ class FinderProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section' => "master",
+                    'feature' => 'finder',
+                    'order' => 1800,
+                    'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
@@ -86,6 +108,9 @@ class FinderProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section'     => "master",
+                    'feature' => 'finder',
+                    'order' => 1800,
+                    'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
@@ -96,6 +121,9 @@ class FinderProvider extends ServiceProvider
                     'icon_color'  => 'blue',
                     'label_color' => 'success',
                     'section'   => "master",
+                    'feature' => 'finder',
+                    'order' => 1800,
+                    'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                     'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                     // 'access' => \Porteiro\Models\Role::$ADMIN
                 ],
@@ -107,6 +135,9 @@ class FinderProvider extends ServiceProvider
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
                         'section' => "master",
+                        'feature' => 'finder',
+                        'order' => 1800,
+                        'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \Porteiro\Models\Role::$ADMIN
                     ],
@@ -117,6 +148,9 @@ class FinderProvider extends ServiceProvider
                         'icon_color'  => 'blue',
                         'label_color' => 'success',
                         'section' => "master",
+                        'feature' => 'finder',
+                        'order' => 1800,
+                        'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'access' => \Porteiro\Models\Role::$ADMIN
                     ],
@@ -129,6 +163,9 @@ class FinderProvider extends ServiceProvider
                         'icon_color'  => 'red',
                         'label_color' => 'success',
                         'section' => "master",
+                        'feature' => 'finder',
+                        'order' => 1800,
+                        'dev_status'  => 2, // 0 (Desabilitado), 1 (Ativo), 2 (Em Dev)
                         'level'       => 3, // 0 (Public), 1, 2 (Admin) , 3 (Root)
                         // 'nivel' => \Porteiro\Models\Role::$GOOD,
                     ],

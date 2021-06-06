@@ -10,7 +10,7 @@ use Population\Models\Company;
 use Population\Models\User;
 use SendGrid;
 use Finder\Http\Controllers\Api\Controller;
-use Finder\Routines\Globals\ImportTokens;
+use Operador\Routines\Globals\ImportTokens;
 
 class TokensSync extends Command
 {
@@ -45,7 +45,7 @@ class TokensSync extends Command
      */
     public function handle()
     {
-        // (new \Finder\Routines\Globals\BackupAll)->run();
+        // (new \Operador\Routines\Globals\BackupAll)->run();
         $importTokens = ImportTokens::makeWithOutput($this);
         $importTokens->run($this);
     }

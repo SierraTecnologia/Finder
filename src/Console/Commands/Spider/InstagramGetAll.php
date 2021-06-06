@@ -2,9 +2,9 @@
 
 namespace Finder\Console\Commands\Spider;
 
-use Finder\Actions\Instagram\GetMidias;
-use Finder\Actions\Instagram\GetStories;
-use Finder\Actions\Instagram\GetFollowers;
+use Operador\Actions\Instagram\GetMidias;
+use Operador\Actions\Instagram\GetStories;
+use Operador\Actions\Instagram\GetFollowers;
 use Telefonica\Models\Digital\Account;
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
@@ -38,7 +38,8 @@ class InstagramGetAll extends Command
         
         $account = Account::where('username', 'ricardorsierra')->first();
 
-        (new GetMidias($account))->prepare('avilafmaria')->execute();
+        // (new GetMidias($account))->prepare('avilafmaria')->execute();
+        (new GetMidias($account))->prepare('isabel.vicsf')->execute();
         // (new GetStories($account))->prepare('jean_grey380')->execute();
         // (new GetFollowers($account))->prepare('jean_grey380')->execute();
     }

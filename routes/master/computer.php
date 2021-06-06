@@ -1,3 +1,5 @@
 <?php
 
-Route::resource('/computerfiles', 'ComputerFileController');
+Route::resource('/computerfiles', 'ComputerFileController')->parameters([
+    'computerfiles' => 'id'
+]);

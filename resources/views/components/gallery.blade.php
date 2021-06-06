@@ -18,18 +18,18 @@
 
 
     <div id="galleryfile">
-    <gallery 
-    :images="images" 
-    :index="index" 
-    :options="{youTubeVideoIdProperty: 'youtube', youTubePlayerVars: undefined, youTubeClickToPlay: true}"
-    @close="index = null"
-    ></gallery>
-    <div
-        class="image"
-        v-for="image, imageIndex in images"
-        @click="index = imageIndex"
-        :style="{ backgroundImage: 'url(' + image.poster + ')', width: '300px', height: '200px' }"
-    ></div>
+      <gallery 
+      :images="images" 
+      :index="index" 
+      :options="{youTubeVideoIdProperty: 'youtube', youTubePlayerVars: undefined, youTubeClickToPlay: true}"
+      @close="index = null"
+      ></gallery>
+      <div
+          class="image"
+          v-for="image, imageIndex in images"
+          @click="index = imageIndex"
+          :style="{ backgroundImage: 'url(' + image.poster + ')', width: '300px', height: '200px' }"
+      ></div>
     </div>
 @stop
 
