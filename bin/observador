@@ -20,8 +20,8 @@ foreach ($composerAutoload as $autoload) {
 
 $loadLaravel = new \Muleta\Helps\LoadLaravel(
     [
-        __DIR__.'/../vendor/sierratecnologia/informate/src/Migrations/',
-        __DIR__.'/../vendor/sierratecnologia/population/src/Migrations/',
+        __DIR__.'/../vendor/sierratecnologia/informate/database/migrations/',
+        __DIR__.'/../vendor/sierratecnologia/population/database/migrations/',
         __DIR__.'/../database/migrations/',
     ]
 );
