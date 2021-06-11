@@ -41,7 +41,9 @@ class Directory extends StageBase
             if ($file->getType() == 'file') {
                 $payload->files[$file->getBasename()] = $file;
             } else {
-                $payload->directorys[$file->getBasename()] = $file;
+                if (!in_array($file->getBasename(), ['vendor', 'node_modules', 'tests'])) {
+                    $payload->directorys[$file->getBasename()] = $file;
+                }
             }
         }
 

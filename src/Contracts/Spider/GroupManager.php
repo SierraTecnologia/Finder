@@ -2,7 +2,7 @@
 namespace Finder\Contracts\Spider;
 
 use Finder\Spider\Traits\GroupManagerTrait;
-use Support\Helps\DebugHelper;
+use Muleta\Helps\DebugHelper;
 
 /**
  * Outputs events information to the console.

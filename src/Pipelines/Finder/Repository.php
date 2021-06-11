@@ -20,7 +20,8 @@ class Repository extends StageBase
         //     $payload->commits
         // });
 
-        (new Collection($p->getRevisions()))->map(function ($revision) use ($p) {
+        (new Collection($p->getRevisions()))->map(function ($revision) use ($p, $payload) {
+            // \Log::info($revision);
             if (!$commit = Commit::where('code', $revision['sha1'])->first()) {
                 $commit = Commit::create([
                     'code' => $revision['sha1'],
@@ -29,6 +30,7 @@ class Repository extends StageBase
                     'message' => $revision['message'],
                 ]);
             }
+            // dd($payload);
             $payload->commits()->attach($commit);
         });
 

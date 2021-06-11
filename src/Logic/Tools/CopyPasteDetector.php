@@ -2,7 +2,7 @@
 namespace Finder\Logic\Tools;
 
 use Finder\Logic\AnalysisResult;
-use Support\Helps\ArrayHelper;
+use Muleta\Helps\ArrayHelper;
 use Sabre\Xml\Reader;
 
 /**

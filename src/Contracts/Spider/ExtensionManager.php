@@ -4,8 +4,8 @@ namespace Finder\Contracts\Spider;
 use Tracking\Abstracts\MetricManager;
 
 use Finder\Spider\Traits\ExtensionManagerTrait;
-use Support\Helps\DebugHelper;
-use Support\Helps\CodeFileHelper;
+use Muleta\Helps\DebugHelper;
+use Muleta\Helps\CodeFileHelper;
 
 /**
  * Outputs events information to the console.
