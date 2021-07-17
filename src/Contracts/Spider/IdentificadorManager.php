@@ -2,7 +2,7 @@
 namespace Finder\Contracts\Spider;
 
 use Finder\Spider\Traits\IdentificadorManagerTrait;
-use Support\Helps\DebugHelper;
+use Muleta\Helps\DebugHelper;
 use Finder\Contracts\Spider\ExtensionManager;
 
 /**

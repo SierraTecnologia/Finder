@@ -8,7 +8,7 @@ use Finder\Logic\Output\TriggerableInterface;
 use Symfony\Component\Finder\Finder;
 use Finder\Contracts\Spider\Spider;
 
-use Support\Helps\DebugHelper;
+use Muleta\Helps\DebugHelper;
 
 /**
  * Run all script analysers and outputs their result.

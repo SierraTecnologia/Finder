@@ -12,7 +12,7 @@ use Finder\Spider\Directory;
 use Finder\Spider\Registrator\FileRegistrator;
 use Finder\Spider\Metrics\FileMetric;
 
-use Support\Helps\DebugHelper;
+use Muleta\Helps\DebugHelper;
 
 /**
  * Run all script analysers and outputs their result.

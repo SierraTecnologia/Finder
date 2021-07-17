@@ -86,6 +86,6 @@ class IcsReader extends Command
         // // (new \Operador\Routines\Globals\BackupAll)->run();
         // (new \Operador\Routines\Globals\ImportTokens)->run();
         
-        // (new \Finder\Routines\Globals\SpiderAllDomains)->run();
+        // (new \Operador\Routines\Globals\SpiderAllDomains)->run();
     }
 }
