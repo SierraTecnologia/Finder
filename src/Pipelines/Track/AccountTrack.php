@@ -9,6 +9,9 @@ use Finder\Contracts\Spider\Track;
 class AccountTrack extends Track
 {
 
+    /**
+     * @return true
+     */
     public function run()
     {
         // Caso Seja Instagram

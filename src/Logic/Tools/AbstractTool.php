@@ -75,10 +75,11 @@ abstract class AbstractTool
     /**
      * Creates and execute tool command, returning output results.
      *
-     * @param  string[] $targetPaths file/directory paths to be analysed.
-     * @return string CLI JSON output.
+     * @param string[] $targetPaths file/directory paths to be analysed.
+     *
+     * @return void
      */
-    public function run($targetPaths)
+    public function run($targetPaths): void
     {
         $this->executeCommand($targetPaths);
         $this->processResults();

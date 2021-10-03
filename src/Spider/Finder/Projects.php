@@ -14,7 +14,7 @@ use Finder\Contracts\Spider\Spider;
 class Projects extends Spider
 {
 
-    public function analyse()
+    public function analyse(): void
     {
         $finder = new Finder();
         // find all files in the current directory

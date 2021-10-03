@@ -11,7 +11,10 @@ use Finder\Pipelines\Finder\Directory;
 
 class DirectoryBuilder extends PipelineBuilder
 {
-    public static function getPipelineWithOutput($output)
+    /**
+     * @param self $output
+     */
+    public static function getPipelineWithOutput(self $output)
     {
         $builder = self::makeWithOutput($output);
         $builder

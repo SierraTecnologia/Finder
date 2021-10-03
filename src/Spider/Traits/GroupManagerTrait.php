@@ -12,7 +12,7 @@ trait GroupManagerTrait
 {
     protected $group = false;
 
-    protected function setGroup($group)
+    protected function setGroup($group): void
     {
         $this->group = $group;
     }
@@ -24,8 +24,10 @@ trait GroupManagerTrait
 
     /**
      * Lógica
+     *
+     * @return true
      */
-    protected function run()
+    protected function run(): bool
     {
         DebugHelper::debug('Run GroupManager !');
         

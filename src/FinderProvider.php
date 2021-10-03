@@ -176,8 +176,10 @@ class FinderProvider extends ServiceProvider
 
     /**
      * Alias the services in the boot.
+     *
+     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         
         // Register configs, migrations, etc
@@ -302,7 +304,7 @@ class FinderProvider extends ServiceProvider
         $this->loadTranslations();
     }
 
-    private function loadViews()
+    private function loadViews(): void
     {
         // View namespace
         $viewsPath = $this->getResourcesPath('views');
@@ -314,7 +316,7 @@ class FinderProvider extends ServiceProvider
         );
     }
     
-    private function loadTranslations()
+    private function loadTranslations(): void
     {
         // Publish lanaguage files
         $this->publishes(
@@ -329,9 +331,9 @@ class FinderProvider extends ServiceProvider
 
 
     /**
-     *
+     * @return void
      */
-    private function loadLogger()
+    private function loadLogger(): void
     {
         Config::set(
             'logging.channels.sitec-finder', [

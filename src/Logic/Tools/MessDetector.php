@@ -22,8 +22,10 @@ class MessDetector extends AbstractTool
 
     /**
      * @inheritdoc
+     *
+     * @return string
      */
-    public function getIgnoredArgument()
+    public function getIgnoredArgument(): string
     {
         if (!empty($this->ignoredPaths)) {
             return '--exclude ' . implode(',', $this->ignoredPaths) . ' ';

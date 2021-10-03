@@ -40,7 +40,7 @@ abstract class Spider extends TargetManager
         return $this->metrics;
     }
 
-    public function setMetric($metricClass = false)
+    public function setMetric($metricClass = false): void
     {
         if (!$metricClass) {
             $metricClass = new FileMetric($this->getTarget(), $this->getParent());
@@ -48,12 +48,15 @@ abstract class Spider extends TargetManager
         $this->metrics = $metricClass;
     }
 
-    public function run()
+    public function run(): void
     {
         $this->analyse();
     }
 
-    public function followChildrens($finder)
+    /**
+     * @return true
+     */
+    public function followChildrens($finder): bool
     {
         // check if there are any search results
         if (!$finder->hasResults()) {

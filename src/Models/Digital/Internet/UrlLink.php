@@ -30,12 +30,12 @@ class UrlLink extends Base
         'to_bot_internet_url_id',
     ];
 
-    public function from()
+    public function from(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo('Finder\Models\Digital\Internet\Url', 'from_bot_internet_url_id', 'id');
     }
 
-    public function to()
+    public function to(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo('Finder\Models\Digital\Internet\Url', 'to_bot_internet_url_id', 'id');
     }

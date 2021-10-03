@@ -15,7 +15,7 @@ use Muleta\Helps\DebugHelper;
  */
 class File extends Spider
 {
-    public function analyse()
+    public function analyse(): void
     {
         $absoluteFilePath = $this->getTargetPath();
         $fileNameWithExtension = $this->target->getRelativePathname();

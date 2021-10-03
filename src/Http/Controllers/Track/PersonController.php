@@ -17,6 +17,9 @@ class PersonController extends Controller
         $this->service = $service;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function index(Request $request)
     {
         return view('finder::finder.person.home');

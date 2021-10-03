@@ -46,9 +46,9 @@ class PhotosPrepare extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $this->midiaFinder($this->folder);
     }
@@ -56,9 +56,9 @@ class PhotosPrepare extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function midiaFinder($folder)
+    public function midiaFinder(string $folder): void
     {
         
         // $files = Storage::allFiles($folder);
@@ -102,8 +102,10 @@ class PhotosPrepare extends Command
 
     /**
      * Tirardaqui @todo
+     *
+     * @return void
      */
-    public function importFromFolder(Person $target, string $folder)
+    public function importFromFolder(Person $target, string $folder): void
     {
         $files = Storage::allFiles($folder);
         // dd('oi', $files);

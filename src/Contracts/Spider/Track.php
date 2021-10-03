@@ -36,7 +36,7 @@ abstract class Track
         return $this->parent;
     }
 
-    public function setParent($parent)
+    public function setParent($parent): void
     {
         $this->parent = $parent;
     }
@@ -46,16 +46,16 @@ abstract class Track
         return $this->model;
     }
 
-    protected function setModel($model)
+    protected function setModel($model): void
     {
         $this->model = $model;
     }
 
 
     /**
-     * 
+     * @return void
      */
-    public function addSubTrack(Track $track)
+    public function addSubTrack(Track $track): void
     {
         $this->subTracks[] = $track;
     }
@@ -66,9 +66,9 @@ abstract class Track
 
 
     /**
-     * 
+     * @return bool
      */
-    public function addInformateArray($array)
+    public function addInformateArray($array): bool
     {
         if (!is_array($array)) {
             return false;
@@ -79,7 +79,10 @@ abstract class Track
         }
         return true;
     }
-    public function addInformate($name, $valor)
+    /**
+     * @param (int|string) $name
+     */
+    public function addInformate($name, $valor): void
     {
         $this->informate[$name] = $valor;
     }
@@ -93,9 +96,11 @@ abstract class Track
     }
 
     /**
-     *  Passa informacao pro pai
+     * Passa informacao pro pai
+     *
+     * @return void
      */
-    public function saveInformate($array)
+    public function saveInformate($array): void
     {
         foreach ($array as $informate) {
             if ($informateInfo = $this->getInformate($informate[0])) {
@@ -107,9 +112,9 @@ abstract class Track
 
 
     /**
-     * 
+     * @return static
      */
-    public function exec()
+    public function exec(): self
     {
         // Carrega oq Precisa
         $this->loadSubTracks();
@@ -132,9 +137,9 @@ abstract class Track
 
 
     /**
-     * 
+     * @return void
      */
-    public function loadSubTracks()
+    public function loadSubTracks(): void
     {
         foreach ($this->subTracks() as $relation => $classTrack) {
             $results = $this->model->$relation()->get();
@@ -148,9 +153,11 @@ abstract class Track
 
     /**
      * Reescrever
+     *
+     * @return array
+     *
+     * @psalm-return array<empty, empty>
      */
-
-
     public function subTracks()
     {
         return [
@@ -158,6 +165,9 @@ abstract class Track
         ];
     }
 
+    /**
+     * @return true
+     */
     public function run()
     {
         return true;

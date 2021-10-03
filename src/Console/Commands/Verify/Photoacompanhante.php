@@ -35,9 +35,9 @@ class Photoacompanhante extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function fire()
+    public function fire(): void
     {
         $this->comment(PHP_EOL.Inspiring::quote().PHP_EOL);
 

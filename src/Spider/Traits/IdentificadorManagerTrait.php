@@ -13,7 +13,7 @@ trait IdentificadorManagerTrait
 {
     protected $extension = false;
 
-    protected function setExtension(ExtensionManager $extension)
+    protected function setExtension(ExtensionManager $extension): void
     {
         $this->extension = $extension;
     }
@@ -35,8 +35,10 @@ trait IdentificadorManagerTrait
 
     /**
      * Lógica
+     *
+     * @return void
      */
-    protected function run()
+    protected function run(): void
     {
         DebugHelper::debug('Run Identificador '.$this->getFile());
         if ($this->identify()) {
@@ -45,12 +47,12 @@ trait IdentificadorManagerTrait
         }
     }
 
-    protected function doCollect()
+    protected function doCollect(): void
     {
         $this->collectData();
     }
 
-    public function collectData()
+    public function collectData(): void
     {
         // @todo Fazer Aqui
         $this->collectDataEstrutura();

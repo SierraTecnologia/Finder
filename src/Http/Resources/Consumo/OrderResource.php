@@ -33,6 +33,9 @@ class OrderResource extends JsonResource
         ];
     }
 
+    /**
+     * @return string
+     */
     protected function getStatusName($statusCode)
     {
         // @todo Descobrir todos os códigos
