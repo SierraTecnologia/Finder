@@ -10,6 +10,11 @@ use Finder\Contracts\Spider\Track;
 class PersonTrack extends Track
 {
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{accounts: AccountTrack::class}
+     */
     public function subTracks()
     {
         return [
@@ -18,7 +23,12 @@ class PersonTrack extends Track
     }
 
 
-    public function collectInformateFromSubTracks()
+    /**
+     * @return (\Closure|string)[][]
+     *
+     * @psalm-return array{0: array{0: 'profilePic', 1: \Closure(mixed):void}}
+     */
+    public function collectInformateFromSubTracks(): array
     {
         return [
             [

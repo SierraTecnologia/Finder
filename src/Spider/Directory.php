@@ -17,7 +17,7 @@ class Directory extends Spider
 {
     protected $finder = false;
 
-    public function analyse()
+    public function analyse(): void
     {
         // find all files in the current directory
         DebugHelper::debug('Analisando Pasta: '.$this->getTargetPath());

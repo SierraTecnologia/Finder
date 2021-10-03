@@ -22,8 +22,10 @@ class CodeSniffer extends AbstractTool
 
     /**
      * @inheritdoc
+     *
+     * @return string
      */
-    public function getIgnoredArgument()
+    public function getIgnoredArgument(): string
     {
         if (!empty($this->ignoredPaths)) {
             return '--ignore=' . implode(',', $this->ignoredPaths) . ' ';

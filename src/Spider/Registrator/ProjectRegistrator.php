@@ -20,12 +20,12 @@ class ProjectRegistrator extends TargetManager
         }
     }
 
-    protected function getArray()
+    protected function getArray(): void
     {
         
     }
 
-    public function registerAndReturnProject()
+    public function registerAndReturnProject(): void
     {
 
     }

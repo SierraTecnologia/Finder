@@ -13,8 +13,10 @@ class RepositoryPipeline
 
     /**
      * Repositorio Detectado
+     *
+     * @return void
      */
-    public function run($eloquentClasses)
+    public function run($eloquentClasses): void
     {
         
 
@@ -32,7 +34,7 @@ class RepositoryPipeline
 
 
     }
-    public function runTwo($eloquentClasses)
+    public function runTwo($eloquentClasses): void
     {
         
 

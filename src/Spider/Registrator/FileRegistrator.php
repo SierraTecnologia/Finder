@@ -55,7 +55,12 @@ class FileRegistrator extends TargetManager
         );
     }
 
-    private function getArray()
+    /**
+     * @return array
+     *
+     * @psalm-return array{file_id: mixed, location: mixed, path?: mixed, filename?: mixed, basename?: mixed, pathname?: mixed, extension?: mixed, realPath?: mixed, aTime?: mixed, mTime?: mixed, cTime?: mixed, inode?: mixed, size?: mixed, perms?: mixed, owner?: mixed, group?: mixed, type?: mixed, writable?: mixed, readable?: mixed, executable?: mixed}
+     */
+    private function getArray(): array
     {
         $target = $this->getTarget();
 

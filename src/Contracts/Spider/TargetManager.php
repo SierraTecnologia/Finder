@@ -40,7 +40,7 @@ abstract class TargetManager
         return $this->parent;
     }
 
-    public function setParent($parent)
+    public function setParent($parent): void
     {
         $this->parent = $parent;
     }
@@ -50,7 +50,7 @@ abstract class TargetManager
         return $this->target;
     }
 
-    protected function setTarget($target)
+    protected function setTarget($target): void
     {
         if (is_string($target)) {
             $this->isStringPath = true;
@@ -78,7 +78,7 @@ abstract class TargetManager
         return self::clearUrl($this->getTarget()->getRealPath());
     }
 
-    protected static function clearUrl($url)
+    protected static function clearUrl($url): string
     {
         return str_replace('./', '', $url);
     }

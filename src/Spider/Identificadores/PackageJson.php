@@ -27,8 +27,10 @@ class PackageJson extends IdentificadorManager
 
     /**
      * If is Composer Package
+     *
+     * @return bool
      */
-    public function identify()
+    public function identify(): bool
     {
         if ($this->getFile()->getFilename()!=='package.json') {
             return false;
@@ -37,7 +39,12 @@ class PackageJson extends IdentificadorManager
         return true;
     }
 
-    public function collectDataEstrutura()
+    /**
+     * @return string[]
+     *
+     * @psalm-return array{0: 'author'}
+     */
+    public function collectDataEstrutura(): array
     {
         return [
             "author",

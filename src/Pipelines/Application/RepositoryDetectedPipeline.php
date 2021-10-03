@@ -29,12 +29,15 @@ class RepositoryDetectedPipeline implements StageInterface
             }
         );
     }
-    public static function getPipeline()
+    /**
+     * @return Pipeline
+     */
+    public static function getPipeline(): self
     {
         return (new Pipeline)
              ->pipe(new static);
     }
-    public static function make($eloquentClasses)
+    public static function make($eloquentClasses): void
     {
         
 

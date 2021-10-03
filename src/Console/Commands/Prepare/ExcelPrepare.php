@@ -52,17 +52,19 @@ class ExcelPrepare extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $this->importFromFolder($this->folder);
     }
 
     /**
      * Tirardaqui
+     *
+     * @return void
      */
-    public function importFromFolder($folder)
+    public function importFromFolder(string $folder): void
     {
         $files = Storage::allFiles($folder);
         foreach ($files as $file) {

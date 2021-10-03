@@ -29,8 +29,10 @@ class Reference extends Base
 
     /**
      * Get all of the issues that are assigned this reference.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function issues()
+    public function issues(): self
     {
         return $this->morphedByMany(Issue::class)->withPivot('identify');
     }
@@ -38,16 +40,20 @@ class Reference extends Base
 
     /**
      * Get all of the fields that are assigned this reference.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function fields()
+    public function fields(): self
     {
         return $this->morphedByMany(Field::class)->withPivot('identify');
     }
 
     /**
      * Get all of the projects that are assigned this reference.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
      */
-    public function projects()
+    public function projects(): self
     {
         return $this->morphedByMany(Project::class)->withPivot('identify');
     }

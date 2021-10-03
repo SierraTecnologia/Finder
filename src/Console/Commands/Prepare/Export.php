@@ -37,9 +37,9 @@ class Export extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $folder = 'import';
         $this->export($folder);
@@ -47,8 +47,12 @@ class Export extends Command
 
     /**
      * Tirardaqui
+     *
+     * @param string $folder
+     *
+     * @return void
      */
-    public function export($folder)
+    public function export(string $folder): void
     {
         
     }

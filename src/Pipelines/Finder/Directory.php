@@ -83,12 +83,15 @@ class Directory extends StageBase
 
 
 
-    public function getTargetPath()
+    public function getTargetPath(): void
     {
     }
 
 
 
+    /**
+     * @return Finder|false
+     */
     public function getFinder($targetPath, $fast = true)
     {
         $finder = false;

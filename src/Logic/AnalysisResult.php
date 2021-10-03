@@ -121,8 +121,10 @@ class AnalysisResult
      * Add an output filter to delegate to the analysis result object.
      *
      * @param OutputFilterInterface $filter filter instance.
+     *
+     * @return void
      */
-    public function setResultsFilter(OutputFilterInterface $filter)
+    public function setResultsFilter(OutputFilterInterface $filter): void
     {
         $this->filter = $filter;
     }

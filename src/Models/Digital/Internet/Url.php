@@ -62,17 +62,17 @@ class Url extends Base
         'url' => 'url'
     ];
 
-    public function linksFrom()
+    public function linksFrom(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('Finder\Models\Digital\Internet\UrlLink', 'from_bot_internet_url_id', 'id');
     }
 
-    public function linksTo()
+    public function linksTo(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('Finder\Models\Digital\Internet\UrlLink', 'to_bot_internet_url_id', 'id');
     }
 
-    public function domain()
+    public function domain(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo('Fabrica\Models\Infra\Domain', 'infra_domain_id', 'id');
     }

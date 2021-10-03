@@ -7,12 +7,12 @@ use Operador\Contracts\StageInterface;
 
 class FileType
 {
-    public static function run($file)
+    public static function run($file): void
     {
 
     }
         
-    public static function excell($eloquentClasses)
+    public static function excell($eloquentClasses): void
     {
         
         // $collection = (new FastExcel)->configureCsv(';', '#', '\n', 'gbk') //, 'gbk'

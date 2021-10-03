@@ -16,7 +16,7 @@ use Muleta\Helps\DebugHelper;
 class Photos extends Spider
 {
 
-    public function analyse()
+    public function analyse(): void
     {
 
         $finder = new Finder();

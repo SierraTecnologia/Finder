@@ -20,6 +20,13 @@ class iCalEasyReader
 	private $_lastitem = null;
 	private $_ignored = false;
 
+	/**
+	 * @param false|string $data
+	 *
+	 * @return (null|null[])[][]|false
+	 *
+	 * @psalm-return array<array<int|string, list<null>|null>>|false
+	 */
 	public function &load($data)
 	{
 		$this->ical = false;
@@ -133,7 +140,14 @@ class iCalEasyReader
 		return $this->ical;
 	}
 
-	public function addType(&$value, $item)
+	/**
+	 * @param string[] $value
+	 *
+	 * @return string[]
+	 *
+	 * @psalm-return array<string>
+	 */
+	public function addType(array &$value, string $item): array
 	{
 		$type = explode('=', $item);
 
@@ -145,7 +159,13 @@ class iCalEasyReader
 		return $value;
 	}
 
-	public function addItem($line, $group, $parentgroup)
+	/**
+	 * @param null|string $group
+	 * @param null|string $parentgroup
+	 *
+	 * @return void
+	 */
+	public function addItem(string $line, ?string $group, ?string $parentgroup)
 	{
 		$line = $this->transformLine($line);
 		$item = explode(':', $line, 2);
@@ -187,7 +207,12 @@ class iCalEasyReader
 		}
 	}
 
-	public function processMultivalue(&$value)
+	/**
+	 * @return string|string[]
+	 *
+	 * @psalm-return array<string, string>|string
+	 */
+	public function processMultivalue(string &$value)
 	{
 		$z = explode(';', $value);
 		if (count($z) > 1) {
@@ -201,7 +226,7 @@ class iCalEasyReader
 		return $value;
 	}
 
-	public function concatItem($line)
+	public function concatItem(string $line): void
 	{
 		if (!$this->_ignored) {
 			$line = mb_substr($line, 1);
@@ -215,7 +240,7 @@ class iCalEasyReader
 		}
 	}
 
-	public function transformLine($line)
+	public function transformLine(string $line)
 	{
 		$patterns = ['\\\\[n]', '\\\\[t]', '\\\\,', '\\\\;'];
 		$replacements = ["\n", "\t", ",", ";"];
@@ -223,7 +248,13 @@ class iCalEasyReader
 		return $this->mb_eregi_replace_all($patterns, $replacements, $line);
 	}
 
-	public function mb_eregi_replace_all($pattern, $replacement, $string)
+	/**
+	 * @param string[] $pattern
+	 * @param string[] $replacement
+	 *
+	 * @return false|string
+	 */
+	public function mb_eregi_replace_all(array $pattern, array $replacement, string $string)
 	{
 		if (is_array($pattern) and is_array($replacement)) {
 			foreach ($pattern as $i => $pattern) {
@@ -240,14 +271,20 @@ class iCalEasyReader
 		return $string;
 	}
 
-	public function ignoreLine($line)
+	/**
+	 * @return bool|true
+	 */
+	public function ignoreLine(string $line)
 	{
 		$ignore = substr($line, 0, 2) == 'X-' or trim($line) == '';
 		$this->_ignored = $this->isLineContinuation($line) ? $this->_ignored : $ignore;
 		return $ignore;
 	}
 
-	public function isLineContinuation($line)
+	/**
+	 * @param false|string $line
+	 */
+	public function isLineContinuation($line): bool
 	{
 		return $line !== false && in_array($line[0], [" ", "\t"]);
 	}

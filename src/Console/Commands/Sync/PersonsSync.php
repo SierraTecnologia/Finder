@@ -35,9 +35,9 @@ class PersonsSync extends Command
     /**
      * Execute the console command.
      *
-     * @return mixed
+     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $count = 0;
         $countTotal = Person::count();

@@ -75,9 +75,9 @@ class History
     /**
      * Stores history data.
      *
-     * @return boolean true if successfully wrote to the JSON file.
+     * @return int true if successfully wrote to the JSON file.
      */
-    public function save()
+    public function save(): int
     {
         $file = new SplFileObject($this->getHistoryFilePath(), 'w');
         return $file->fwrite(json_encode($this->getData()));
@@ -107,8 +107,10 @@ class History
      * Overwrite current data.
      *
      * @param array $data history data.
+     *
+     * @return void
      */
-    protected function setData(array $data)
+    protected function setData(array $data): void
     {
         $this->cachedData = $data;
     }

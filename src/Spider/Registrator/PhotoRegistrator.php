@@ -20,7 +20,7 @@ class PhotoRegistrator extends FileRegistrator
         parent::__construct($target, $parent);
     }
 
-    public function havePerson($code)
+    public function havePerson($code): void
     {
 
 

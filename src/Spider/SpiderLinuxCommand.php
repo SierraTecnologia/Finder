@@ -82,13 +82,13 @@ class SpiderLinuxCommand
         }
     }
 
-    public function getAdapter()
+    public function getAdapter(): void
     {
 
         $adapter = new Local(__DIR__.'/path/to/root/');
     }
 
-    public function getFilesystem()
+    public function getFilesystem(): void
     {
 
         $filesystem = new Filesystem($adapter);
@@ -167,8 +167,10 @@ class SpiderLinuxCommand
      * Add an output filter to delegate to the analysis result object.
      *
      * @param OutputFilterInterface $filter filter instance.
+     *
+     * @return void
      */
-    public function setResultsFilter(OutputFilterInterface $filter)
+    public function setResultsFilter(OutputFilterInterface $filter): void
     {
         $this->resultsFilter = $filter;
     }
@@ -187,9 +189,9 @@ class SpiderLinuxCommand
     /**
      * List of PHP analys integration classes.
      *
-     * @return string[] array of class names.
+     * @return void
      */
-    protected function getAnalysisToolsClasses()
+    protected function getAnalysisToolsClasses(): void
     {
         $this->languageClass::getAnalysisToolsClasses();
     }

@@ -12,7 +12,7 @@ trait ExtensionManagerTrait
 {
     protected $file = false;
 
-    protected function setFile($file)
+    protected function setFile($file): void
     {
         if (is_string($file)) {
             $this->stringPath = true;
@@ -32,13 +32,18 @@ trait ExtensionManagerTrait
 
     /**
      * Lógica
+     *
+     * @return true
      */
-    protected function run()
+    protected function run(): bool
     {
         DebugHelper::debug('Run ExtensionManager '.$this->getFile());
         return $this->identificar();
     }
-    protected function identificar()
+    /**
+     * @return true
+     */
+    protected function identificar(): bool
     {
         if (!isset(static::$identificadores)) {
             return true;
