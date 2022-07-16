@@ -49,7 +49,6 @@
         "google/photos-library": ">=1.4",
         "league/pipeline": "^1.0",
         "league/climate": ">=3.4",
-<<<<<<< HEAD
         "sierratecnologia/crypto": "^0.4.0",
         "privatejustice/tramite": "^0.4.0",
         "friendsofphp/php-cs-fixer": "*",
@@ -60,11 +59,6 @@
         "sierratecnologia/operador": "^0.4.0",
         "sierratecnologia/integrations": "^0.4.0",
         "sierratecnologia/fabrica": "^0.4.0",
-=======
-        "sierratecnologia/crypto": "^0.4",
-        "symfony/dom-crawler": "*",
-        "cache/filesystem-adapter": ">=1.0",
->>>>>>> master
         "phpoffice/phppresentation": "*",
         "phpoffice/phpspreadsheet": "*",
         "phpoffice/phpword": "*",
