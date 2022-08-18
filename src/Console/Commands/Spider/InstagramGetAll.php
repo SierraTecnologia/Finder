@@ -4,6 +4,7 @@ namespace Finder\Console\Commands\Spider;
 
 use Operador\Actions\Instagram\GetMidias;
 use Operador\Actions\Instagram\GetStories;
+use Operador\Actions\Instagram\GetInbox;
 use Operador\Actions\Instagram\GetFollowers;
 use Telefonica\Models\Digital\Account;
 use Illuminate\Console\Command;
@@ -17,7 +18,7 @@ class InstagramGetAll extends Command
      *
      * @var string
      */
-    protected $signature = 'sitec:spider:getall';
+    protected $signature = 'data:spider:getall';
 
     /**
      * The console command description.
@@ -38,9 +39,9 @@ class InstagramGetAll extends Command
         
         $account = Account::where('username', 'ricardorsierra')->first();
 
-        // (new GetMidias($account))->prepare('avilafmaria')->execute();
-        (new GetMidias($account))->prepare('isabel.vicsf')->execute();
+        (new GetInbox($account))->prepare()->execute();
+        // (new GetFollowers($account))->prepare('graziely_goncalves_')->execute();
+        // (new GetMidias($account))->prepare('graziely_goncalves_')->execute();
         // (new GetStories($account))->prepare('jean_grey380')->execute();
-        // (new GetFollowers($account))->prepare('jean_grey380')->execute();
     }
 }

@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 use Telefonica\Models\Actors\Person;
 use Finder\Pipelines\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
-use Stalker\Models\Imagen;
 
 class Export extends Command
 {
@@ -15,7 +14,7 @@ class Export extends Command
      *
      * @var string
      */
-    protected $signature = 'siexport:finder:export';
+    protected $signature = 'data:finder:export';
 
     /**
      * The console command description.

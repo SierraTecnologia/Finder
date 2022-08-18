@@ -71,7 +71,6 @@
         "symfony/dom-crawler": "*",
         "league/flysystem-sftp": "^1.0|^2.0",
         "srmklive/flysystem-dropbox-v2": "^1.0",
-        "raiym/instagram-php-scraper": ">=0.9.10",
         "jaeger/querylist": ">=4.1"
     },
     "autoload": {
