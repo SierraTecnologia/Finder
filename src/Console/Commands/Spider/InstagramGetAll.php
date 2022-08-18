@@ -39,7 +39,7 @@ class InstagramGetAll extends Command
         
         $account = Account::where('username', 'ricardorsierra')->first();
 
-        (new GetInbox($account))->prepare()->execute();
+        (new GetInbox($account))->prepare('ricardorsierra')->execute();
         // (new GetFollowers($account))->prepare('graziely_goncalves_')->execute();
         // (new GetMidias($account))->prepare('graziely_goncalves_')->execute();
         // (new GetStories($account))->prepare('jean_grey380')->execute();
