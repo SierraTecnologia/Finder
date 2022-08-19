@@ -18,14 +18,14 @@ class InstagramGetAll extends Command
      *
      * @var string
      */
-    protected $signature = 'data:spider:getall';
+    protected $signature = 'data:finder:getall';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Display an inspiring quote';
+    protected $description = 'Procura por dados no instagram';
 
     /**
      * Execute the console command.

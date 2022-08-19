@@ -28,7 +28,7 @@ class File extends StageBase
         //     $pipeline = ProjectBuilder::getPipelineWithOutput($this->getOutput());
         //     // Process Pipeline
         //     return $pipeline(
-        //         \Fabrica\Entities\ProjectEntity::make($payload)
+        //         \Finder\Entities\ProjectEntity::make($payload)
         //     );
         // }
 

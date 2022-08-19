@@ -74,6 +74,6 @@ class Url extends Base
 
     public function domain(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo('Fabrica\Models\Infra\Domain', 'infra_domain_id', 'id');
+        return $this->belongsTo('Finder\Models\Infra\Domain', 'infra_domain_id', 'id');
     }
 }

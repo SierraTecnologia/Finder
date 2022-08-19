@@ -3,9 +3,9 @@
 namespace Finder\Pipelines\Finder;
 
 use Operador\Contracts\Stage as StageBase;
-use Fabrica\Models\Code\Commit;
+use Finder\Models\Code\Commit;
 use Illuminate\Support\Collection;
-use Fabrica\Helps\Git\GitRepo;
+use Integrations\Tools\Programs\Git\GitRepo;
 
 class Repository extends StageBase
 {

@@ -3,9 +3,9 @@
 namespace Finder\Models;
 
 use Pedreiro\Models\Base;
-use Fabrica\Models\Code\Issue;
-use Fabrica\Models\Code\Field;
-use Fabrica\Models\Code\Project;
+use Finder\Models\Code\Issue;
+use Finder\Models\Code\Field;
+use Finder\Models\Code\Project;
 
 class Reference extends Base
 {
