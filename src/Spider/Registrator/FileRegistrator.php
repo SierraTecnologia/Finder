@@ -3,7 +3,7 @@ namespace Finder\Spider\Registrator;
 
 use Finder\Contracts\Spider\TargetManager;
 
-use Stalker\Models\File;
+use MediaManager\Models\File;
 use Finder\Models\Digital\Internet\ComputerFile;
 
 /**
@@ -99,6 +99,12 @@ class FileRegistrator extends TargetManager
             'writable' => $target->isWritable(),
             'readable' => $target->isReadable(),
             'executable' => $target->isExecutable(),
+
+            'title' => $target->getClientOriginalName(),
+            'extension' => $target->guessClientExtension(),
+            'size' => $target->getClientSize(),
+            'mime' => $target->getClientMimeType(),
+            'hash' => md5_file($target->getRealPath()),
             // 'file' => $target->getFile(),
             // 'dir' => $target->getDir(),
             // 'link' => $target->getLink(),

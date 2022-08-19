@@ -41,9 +41,9 @@ class Directory extends Command
             // '/sierra/Dev/Fodasse/bitcoin'
             // '/sierra/Dev'
             // '/Data'
-            Storage::disk('sierra')->path('/'),
-            Storage::disk('ordem')->path('/'),
-            Storage::disk('data')->path('/')
+            Storage::disk('sierra')->path('/1'),
+            // Storage::disk('ordem')->path('/'),
+            // Storage::disk('data')->path('/')
             // '/sierra/Driver'
         ];
         $pipeline = DirectoryBuilder::getPipelineWithOutput($this);
