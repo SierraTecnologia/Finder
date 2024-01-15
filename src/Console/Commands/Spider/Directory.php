@@ -41,7 +41,7 @@ class Directory extends Command
             // '/sierra/Dev/Fodasse/bitcoin'
             // '/sierra/Dev'
             // '/Data'
-            Storage::disk('sierra')->path('/1'),
+            Storage::disk('sierra')->path('/V1'),
             // Storage::disk('ordem')->path('/'),
             // Storage::disk('data')->path('/')
             // '/sierra/Driver'
