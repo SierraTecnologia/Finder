@@ -3,8 +3,7 @@ namespace Finder\Spider\Registrator;
 
 use Finder\Contracts\Spider\TargetManager;
 
-use Stalker\Models\File;
-use Stalker\Models\Imagen;
+use MediaManager\Models\Imagen;
 use Finder\Models\Digital\Internet\ComputerFile;
 use Telefonica\Models\Actors\Person;
 

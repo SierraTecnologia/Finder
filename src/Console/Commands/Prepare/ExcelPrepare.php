@@ -6,7 +6,6 @@ use Illuminate\Console\Command;
 use Telefonica\Models\Actors\Person;
 use Finder\Pipelines\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
-use Stalker\Models\Imagen;
 
 use Rap2hpoutre\FastExcel\FastExcel;
 
@@ -23,7 +22,7 @@ class ExcelPrepare extends Command
      *
      * @var string
      */
-    protected $signature = 'simport:finder:excell';
+    protected $signature = 'data:finder:excell';
 
     /**
      * The console command description.

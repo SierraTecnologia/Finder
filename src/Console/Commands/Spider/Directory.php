@@ -10,6 +10,7 @@ use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;
 use App\Plugins\Integrations\PhotoAcompanhante\Import;
 
+use Storage;
 use Finder\Pipelines\Builders\DirectoryBuilder;
 
 class Directory extends Command
@@ -19,7 +20,7 @@ class Directory extends Command
      *
      * @var string
      */
-    protected $signature = 'sitec:spider:directorys';
+    protected $signature = 'data:finder:directorys';
 
     /**
      * The console command description.
@@ -38,7 +39,11 @@ class Directory extends Command
 
         $paths = [
             // '/sierra/Dev/Fodasse/bitcoin'
-            '/sierra/Dev'
+            // '/sierra/Dev'
+            // '/Data'
+            Storage::disk('sierra')->path('/V1'),
+            // Storage::disk('ordem')->path('/'),
+            // Storage::disk('data')->path('/')
             // '/sierra/Driver'
         ];
         $pipeline = DirectoryBuilder::getPipelineWithOutput($this);
@@ -46,7 +51,7 @@ class Directory extends Command
         foreach ($paths as $path) {
             // Process Pipeline
             $pipeline(
-                \Fabrica\Entities\DirectoryEntity::make($path)
+                \Finder\Entities\DirectoryEntity::make($path)
             );
         }
         

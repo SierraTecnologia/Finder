@@ -24,7 +24,7 @@ class Account extends StageBase
             $pipeline = RepositoryBuilder::getPipelineWithOutput($this->getOutput());
             // Process Pipeline
             return $pipeline(
-                \Fabrica\Entities\RepositoryEntity::make($payload)
+                \Finder\Entities\RepositoryEntity::make($payload)
             );
         }
 

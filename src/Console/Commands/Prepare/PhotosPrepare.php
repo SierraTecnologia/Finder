@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Telefonica\Models\Actors\Person;
 use Finder\Pipelines\Track\PersonTrack;
 use Illuminate\Support\Facades\Storage;
-use Stalker\Models\Imagen;
+use MediaManager\Models\Imagen;
 
 use Muleta\Utils\Modificators\StringModificator;
 
@@ -17,7 +17,7 @@ class PhotosPrepare extends Command
      *
      * @var string
      */
-    protected $signature = 'simport:finder:photos';
+    protected $signature = 'data:finder:photos';
 
     /**
      * The console command description.

@@ -54,14 +54,14 @@ class Directory extends StageBase
         foreach ($payload->directorys as $directory) {
             $this->info('Process Sub Pasta: '.$directory->getRealPath());
             $pipeline->process(
-                \Fabrica\Entities\DirectoryEntity::make($directory)
+                \Finder\Entities\DirectoryEntity::make($directory)
             );
         }
         $pipeline = FileBuilder::getPipelineWithOutput($this->getOutput());
         foreach ($payload->files as $file) {
             $this->info('Process Sub File: '.$file->getRealPath());
             $pipeline->process(
-                \Fabrica\Entities\FileEntity::make($file)
+                \Finder\Entities\FileEntity::make($file)
             );
         }
 
@@ -73,7 +73,7 @@ class Directory extends StageBase
             $pipeline = ProjectBuilder::getPipelineWithOutput($this->getOutput());
             // Process Pipeline
             return $pipeline(
-                \Fabrica\Entities\ProjectEntity::make($payload)
+                \Finder\Entities\ProjectEntity::make($payload)
             );
         }
 
