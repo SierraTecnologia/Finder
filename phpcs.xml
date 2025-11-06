@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ruleset name="Finder">
+    <description>Finder PHP CodeSniffer Configuration</description>
+
+    <!-- Arquivos a serem verificados -->
+    <file>src</file>
+
+    <!-- Padrão PSR-12 -->
+    <rule ref="PSR12"/>
+
+    <!-- Excluir vendor e arquivos de cache -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/storage/*</exclude-pattern>
+    <exclude-pattern>*/cache/*</exclude-pattern>
+    <exclude-pattern>*/bootstrap/*</exclude-pattern>
+
+    <!-- Configurações adicionais -->
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <arg name="parallel" value="8"/>
+
+    <!-- Mostrar progresso -->
+    <arg value="p"/>
+</ruleset>
